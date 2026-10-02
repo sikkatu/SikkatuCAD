@@ -857,40 +857,40 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 ?: (currentParsed as? ParsedCadFile.Nc)?.program?.header?.get("Thickness")?.toDoubleOrNull()
                 ?: 10.0
             setText("%.2f".format(defaultThickness).trimEnd('0').trimEnd('.'))
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
         }
         val materialInput = EditText(this).apply {
             hint = getString(R.string.s0116)
             setText("Q235B")
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
         }
         val sheetWInput = EditText(this).apply {
             hint = getString(R.string.s0117)
             setText("%.0f".format(document.bounds.width))
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
         }
         val sheetHInput = EditText(this).apply {
             hint = getString(R.string.s0118)
             setText("%.0f".format(document.bounds.height))
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
         }
         val nameInput = EditText(this).apply {
             hint = getString(R.string.s0119)
             setText(fileName.substringBeforeLast('.', fileName) + "_auto")
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
         }
@@ -1075,8 +1075,8 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             setText(store[item.id].orEmpty())
             hint = getString(R.string.ui_no_translation)
             textSize = 13f
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(12.dp, 8.dp, 12.dp, 8.dp)
             addTextChangedListener { store[item.id] = it?.toString().orEmpty() }
@@ -1194,11 +1194,40 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         binding.sideContent.addView(sectionTitle(getString(R.string.ui_render_check)))
         binding.sideContent.addView(actionRow("📸 " + getString(R.string.ui_save_png)) { exportCanvasPng() })
         binding.sideContent.addView(infoCard(getString(R.string.ui_render_check) to getString(R.string.ui_png_purpose)))
-        binding.sideContent.addView(sectionTitle(getString(R.string.ui_about)))
+        binding.sideContent.addView(sectionTitle(getString(R.string.ui_about_title)))
         binding.sideContent.addView(infoCard(
-            getString(R.string.ui_editor) to "SikkatuCAD — DXF/DWG",
-            getString(R.string.ui_formats) to "DXF, DWG"
+            getString(R.string.ui_about) to getString(R.string.ui_about_text),
+            getString(R.string.ui_license_title) to getString(R.string.ui_license_text)
         ))
+        binding.sideContent.addView(sectionTitle(getString(R.string.ui_links_title)))
+        binding.sideContent.addView(actionRow("📄 " + getString(R.string.ui_view_readme)) { showReadmeDialog() })
+        binding.sideContent.addView(actionRow("⭐ " + getString(R.string.ui_link_github)) { openWebLink("https://github.com/sikkatu/SikkatuCAD") })
+        binding.sideContent.addView(actionRow("✈ " + getString(R.string.ui_link_tg_channel)) { openWebLink("https://t.me/sikkatu") })
+        binding.sideContent.addView(actionRow("💬 " + getString(R.string.ui_link_tg_chat)) { openWebLink("https://t.me/sikkatuCAD") })
+    }
+    /** Show the full README + license text in a scrollable dialog. */
+    private fun showReadmeDialog() {
+        val scroll = android.widget.ScrollView(this)
+        val text = TextView(this).apply {
+            text = getString(R.string.ui_readme_full)
+            textSize = 13f
+            setTextColor(getColor(R.color.textPrimary))
+            setPadding(48, 36, 48, 36)
+        }
+        scroll.addView(text)
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.ui_view_readme))
+            .setView(scroll)
+            .setPositiveButton(android.R.string.ok, null)
+            .show()
+    }
+    /** Open a web link in the browser. */
+    private fun openWebLink(url: String) {
+        runCatching {
+            startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse(url)))
+        }.onFailure {
+            binding.statusText.text = "Cannot open link: " + url
+        }
     }
     private fun showTranslationPanel() {
         showSidePanel(null, getString(R.string.ui_translation_panel))
@@ -1267,16 +1296,16 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         val widthField = EditText(this).apply {
             hint = getString(R.string.s0129)
             setText("%.3f".format(bounds.width))
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
         }
         val heightField = EditText(this).apply {
             hint = getString(R.string.s0130)
             setText("%.3f".format(bounds.height))
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
         }
@@ -1414,8 +1443,8 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         val input = EditText(this).apply {
             hint = getString(R.string.s0147)
             setText(lastSearchQuery)
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(14.dp, 14.dp, 14.dp, 14.dp)
             layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
@@ -1628,26 +1657,26 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             binding.sideContent.addView(infoLine(getString(R.string.s0182), summary))
         }
         binding.sideContent.addView(sectionTitle(getString(R.string.s0183)))
-        binding.sideContent.addView(actionRowIconized("📏", getString(R.string.s0184), "Ruler: two points - segment length") {
+        binding.sideContent.addView(actionRowIconized("📏", getString(R.string.s0184), getString(R.string.ui_hint_distance)) {
             measureMode = MeasureMode.DISTANCE
             binding.dxfCanvasView.setMeasureMode(measureMode)
             binding.statusText.text = getString(R.string.s0185)
             showMeasurePanel()
         })
-        binding.sideContent.addView(actionRowIconized("📐", getString(R.string.s0186), "Angle between three points") {
+        binding.sideContent.addView(actionRowIconized("📐", getString(R.string.s0186), getString(R.string.ui_hint_angle)) {
             measureMode = MeasureMode.ANGLE
             binding.dxfCanvasView.setMeasureMode(measureMode)
             binding.statusText.text = getString(R.string.s0187)
             showMeasurePanel()
         })
-        binding.sideContent.addView(actionRowIconized("⬠", getString(R.string.s0188), "Area by point contour") {
+        binding.sideContent.addView(actionRowIconized("⬠", getString(R.string.s0188), getString(R.string.ui_hint_area)) {
             measureMode = MeasureMode.AREA
             binding.dxfCanvasView.setMeasureMode(measureMode)
             binding.dxfCanvasView.setAreaAutoClose(areaAutoClose)
             binding.statusText.text = getString(R.string.s0189)
             showMeasurePanel()
         })
-        binding.sideContent.addView(actionRowIconized("✋", getString(R.string.s0190), "Exit measurement mode") {
+        binding.sideContent.addView(actionRowIconized("✋", getString(R.string.s0190), getString(R.string.ui_hint_exit)) {
             measureMode = MeasureMode.NONE
             binding.dxfCanvasView.setMeasureMode(MeasureMode.NONE)
             binding.statusText.text = getString(R.string.s0191)
@@ -1664,8 +1693,8 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             })
         }
         if (measureMode != MeasureMode.NONE) {
-            binding.sideContent.addView(actionRowIconized("↩", getString(R.string.s0195), "Remove last point") { binding.dxfCanvasView.undoMeasurementStep() })
-            binding.sideContent.addView(actionRowIconized("🧹", getString(R.string.s0196), "Reset current measurement") { binding.dxfCanvasView.clearMeasurement() })
+            binding.sideContent.addView(actionRowIconized("↩", getString(R.string.s0195), getString(R.string.ui_hint_undo)) { binding.dxfCanvasView.undoMeasurementStep() })
+            binding.sideContent.addView(actionRowIconized("🧹", getString(R.string.s0196), getString(R.string.ui_hint_reset)) { binding.dxfCanvasView.clearMeasurement() })
         }
         binding.sideContent.addView(sectionTitle(getString(R.string.s0197)))
         binding.sideContent.addView(primaryActionRow(getString(R.string.s0198)) { showCadEditPanel() })
@@ -1780,15 +1809,16 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             val input = EditText(this@MainActivity).apply {
                 tag = tagValue
                 setText("%.4f".format(value))
-                setTextColor(getColor(R.color.panelTextPrimary))
-                setHintTextColor(getColor(R.color.panelTextSecondary))
+                setTextColor(getColor(R.color.textPrimary))
+                setHintTextColor(getColor(R.color.textSecondary))
                 background = getDrawable(R.drawable.bg_panel)
                 setPadding(14.dp, 14.dp, 14.dp, 14.dp)
             }
             addView(TextView(this@MainActivity).apply {
                 text = label
                 textSize = 12f
-                setTextColor(getColor(R.color.panelTextSecondary))
+                // labels sit on a light AlertDialog background -> dark text
+                setTextColor(getColor(R.color.textSecondary))
             })
             addView(input)
         }
@@ -3670,20 +3700,20 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         val qtyInput = EditText(this).apply {
             setText(part.quantity.toString())
             inputType = android.text.InputType.TYPE_CLASS_NUMBER
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
         }
         val rotInput = EditText(this).apply {
             setText(part.rotationDeg.toString())
             inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_SIGNED
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
         }
         val mirrorBox = CheckBox(this).apply {
-            setTextColor(getColor(R.color.panelTextPrimary))
+            setTextColor(getColor(R.color.textPrimary))
             text = getString(R.string.s0404)
             isChecked = part.mirrorX
-            setTextColor(getColor(R.color.panelTextPrimary))
+            setTextColor(getColor(R.color.textPrimary))
         }
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.s0405))
@@ -4259,8 +4289,8 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             hint = getString(R.string.s0449)
             setText(workspaceMetadata["sheet_width"]?.toDoubleOrNull()?.let { "%.0f".format(it) } ?: "3000")
             textSize = 12f
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             setPadding(10.dp, 8.dp, 10.dp, 8.dp)
             background = getDrawable(R.drawable.bg_panel)
             inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
@@ -4269,8 +4299,8 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             hint = getString(R.string.s0268)
             setText(workspaceMetadata["sheet_height"]?.toDoubleOrNull()?.let { "%.0f".format(it) } ?: "1500")
             textSize = 12f
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             setPadding(10.dp, 8.dp, 10.dp, 8.dp)
             background = getDrawable(R.drawable.bg_panel)
             inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
@@ -4279,8 +4309,8 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             hint = getString(R.string.s0346)
             setText(workspaceMetadata["sheet_thickness"]?.toDoubleOrNull()?.let { "%.0f".format(it) } ?: "10")
             textSize = 12f
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             setPadding(10.dp, 8.dp, 10.dp, 8.dp)
             background = getDrawable(R.drawable.bg_panel)
             inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
@@ -4336,8 +4366,8 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             hint = getString(R.string.s0459)
             setText("10")
             textSize = 12f
-            setTextColor(getColor(R.color.panelTextPrimary))
-            setHintTextColor(getColor(R.color.panelTextSecondary))
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
             setPadding(10.dp, 8.dp, 10.dp, 8.dp)
             background = getDrawable(R.drawable.bg_panel)
             inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL

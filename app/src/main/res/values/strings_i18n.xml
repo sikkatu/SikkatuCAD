@@ -537,4 +537,39 @@ Only visible labels are translated (TEXT/MTEXT/ATTRIB); layer and block names ar
     <string name="ui_pick_point">Tap the drawing to pick a point</string>
     <string name="ui_tap_edit">Tap a text or line to edit it</string>
     <string name="ui_pick_first">Pick a point on the drawing first.</string>
+    <string name="ui_hint_distance">Ruler: tap two points - segment length</string>
+    <string name="ui_hint_angle">Angle between three points</string>
+    <string name="ui_hint_area">Area by point contour</string>
+    <string name="ui_hint_exit">Exit measurement mode</string>
+    <string name="ui_hint_undo">Remove last point</string>
+    <string name="ui_hint_reset">Reset current measurement</string>
+    <string name="ui_about_title">SikkatuCAD</string>
+    <string name="ui_about_text">Drawing text editor and translator. Open and view DXF/DWG, translate labels EN/TH, save drawings. Everything runs locally - no internet access.</string>
+    <string name="ui_links_title">Links</string>
+    <string name="ui_link_github">GitHub (source code)</string>
+    <string name="ui_link_tg_channel">Telegram channel</string>
+    <string name="ui_link_tg_chat">Telegram chat</string>
+    <string name="ui_license_title">License</string>
+    <string name="ui_license_text">Source-available: read, build and use freely. No forks or modifications. See LICENSE.md in the repository.</string>
+    <string name="ui_view_readme">View README &amp; License (full text)</string>
+    <string name="ui_readme_full">SikkatuCAD - mobile CAD drawing text editor and viewer for Android. Works with DXF and DWG drawings.
+
+FEATURES
+- Open and view DXF / DWG construction drawings (facades, plans, sections);
+- Translate text labels (TEXT / MTEXT / ATTRIB) from Russian into English and Thai: export texts to JSON, translate, import back into the drawing;
+- Save edited drawings as DXF (reliable) or DWG (experimental);
+- Measurements: distance, angle, area; auto-dimensioning;
+- Geometry editing: line, rectangle, circle, arc, polyline, text;
+- Layer control, PNG view export.
+
+PRIVACY
+The app does not send anything to the internet. All drawing operations run locally on the device. You can verify this - the full source code is on GitHub.
+
+LICENSE
+Source-available: you may read, build and use freely (including commercially), but no forks, no modifications, no redistribution of modified versions. The name Sikkatu / SikkatuCAD and the cone logo may not be used for derivative products. Full text: LICENSE.md in the repository.
+
+Links:
+GitHub: https://github.com/sikkatu/SikkatuCAD
+Telegram channel: https://t.me/sikkatu
+Telegram chat: https://t.me/sikkatuCAD</string>
 </resources>

@@ -537,4 +537,39 @@
     <string name="ui_pick_point">Тапните по чертежу чтобы выбрать точку</string>
     <string name="ui_tap_edit">Тапните по тексту или линии для редактирования</string>
     <string name="ui_pick_first">Сначала выберите точку на чертеже.</string>
+    <string name="ui_hint_distance">Линейка: две точки — длина отрезка</string>
+    <string name="ui_hint_angle">Угол между тремя точками</string>
+    <string name="ui_hint_area">Площадь по контуру точек</string>
+    <string name="ui_hint_exit">Выключить режим замеров</string>
+    <string name="ui_hint_undo">Убрать последнюю точку</string>
+    <string name="ui_hint_reset">Сбросить текущий замер</string>
+    <string name="ui_about_title">SikkatuCAD</string>
+    <string name="ui_about_text">Редактор и переводчик надписей чертежей. Открытие и просмотр DXF/DWG, перевод надписей EN/TH, сохранение чертежей. Всё работает локально - без доступа в интернет.</string>
+    <string name="ui_links_title">Ссылки</string>
+    <string name="ui_link_github">GitHub (исходный код)</string>
+    <string name="ui_link_tg_channel">Телеграм-канал</string>
+    <string name="ui_link_tg_chat">Телеграм-чат</string>
+    <string name="ui_license_title">Лицензия</string>
+    <string name="ui_license_text">Код открыт для чтения и сборки. Без форков и модификаций. См. LICENSE.md в репозитории.</string>
+    <string name="ui_view_readme">Посмотреть README и лицензию (полный текст)</string>
+    <string name="ui_readme_full">SikkatuCAD - мобильный редактор и просмотрщик чертежей CAD для Android. Работает с файлами DXF и DWG.
+
+ВОЗМОЖНОСТИ
+- Открытие и просмотр чертежей DXF / DWG (фасады, планы, разрезы);
+- Перевод надписей (TEXT / MTEXT / ATTRIB) с русского на английский и тайский: экспорт текстов в JSON, перевод, импорт обратно в чертёж;
+- Сохранение изменённых чертежей в DXF (надёжно) или DWG (экспериментально);
+- Замеры: расстояние, угол, площадь; авто-размеры;
+- Редактирование геометрии: линия, прямоугольник, окружность, дуга, полилиния, текст;
+- Управление слоями, экспорт вида в PNG.
+
+ПРИВАТНОСТЬ
+Приложение не отправляет данные в интернет. Все операции с чертежами происходят локально на устройстве. Это можно проверить - весь исходный код на GitHub.
+
+ЛИЦЕНЗИЯ
+Код открыт: можно читать, собирать и использовать свободно (в т.ч. коммерчески), но нельзя форкать, изменять и распространять изменённые версии. Имя Sikkatu / SikkatuCAD и логотип-конус нельзя использовать для производных продуктов. Полный текст: LICENSE.md в репозитории.
+
+Ссылки:
+GitHub: https://github.com/sikkatu/SikkatuCAD
+Телеграм-канал: https://t.me/sikkatu
+Телеграм-чат: https://t.me/sikkatuCAD</string>
 </resources>

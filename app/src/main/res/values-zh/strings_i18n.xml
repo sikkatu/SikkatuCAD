@@ -537,4 +537,39 @@
     <string name="ui_pick_point">点击图纸选择一个点</string>
     <string name="ui_tap_edit">点击文本或线条进行编辑</string>
     <string name="ui_pick_first">请先在图纸上选一个点。</string>
+    <string name="ui_hint_distance">标尺：两点 — 线段长度</string>
+    <string name="ui_hint_angle">三点之间的角度</string>
+    <string name="ui_hint_area">按点轮廓的面积</string>
+    <string name="ui_hint_exit">退出测量模式</string>
+    <string name="ui_hint_undo">移除最后一个点</string>
+    <string name="ui_hint_reset">重置当前测量</string>
+    <string name="ui_about_title">SikkatuCAD</string>
+    <string name="ui_about_text">图纸文字编辑翻译器。打开查看 DXF/DWG，翻译标注 EN/TH，保存图纸。完全本地运行 — 无需联网。</string>
+    <string name="ui_links_title">链接</string>
+    <string name="ui_link_github">GitHub（源代码）</string>
+    <string name="ui_link_tg_channel">Telegram 频道</string>
+    <string name="ui_link_tg_chat">Telegram 聊天</string>
+    <string name="ui_license_title">许可证</string>
+    <string name="ui_license_text">代码开放可读可编译。禁止 Fork 和修改。详见仓库中的 LICENSE.md。</string>
+    <string name="ui_view_readme">查看 README 与许可证（全文）</string>
+    <string name="ui_readme_full">SikkatuCAD - Android 移动端 CAD 图纸文字编辑器和查看器。支持 DXF 和 DWG 图纸。
+
+功能
+- 打开和查看 DXF / DWG 建筑图纸（立面图、平面图、剖面图）；
+- 翻译文字标注（TEXT / MTEXT / ATTRIB）：俄语 → 英语 / 泰语，导出 JSON 翻译后导入回图纸；
+- 保存为 DXF（可靠）或 DWG（实验性）；
+- 测量：距离、角度、面积；自动标注；
+- 几何编辑：直线、矩形、圆、弧、多段线、文字；
+- 图层控制、导出 PNG。
+
+隐私
+应用不发送任何数据到互联网。所有图纸操作都在设备本地完成。可以自行验证 - 完整源代码在 GitHub 上。
+
+许可证
+代码开放：可自由阅读、编译和使用（含商业用途），但禁止 Fork、修改和分发修改版本。禁止将 Sikkatu / SikkatuCAD 名称及锥形标志用于衍生产品。完整文本见仓库中的 LICENSE.md。
+
+链接：
+GitHub: https://github.com/sikkatu/SikkatuCAD
+Telegram 频道: https://t.me/sikkatu
+Telegram 聊天: https://t.me/sikkatuCAD</string>
 </resources>
