@@ -173,7 +173,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         fun savedLanguage(context: Context): String {
             return prefs(context).getString(KEY_LANGUAGE, "").orEmpty()
         }
-        /** URI файла, который нужно переоткрыть после смены языка (recreate). */
+        /** File URI to reopen after language change (recreate). */
         @Volatile private var pendingReopenUri: Uri? = null
         private fun prefs(context: Context): SharedPreferences =
             context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -193,14 +193,14 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(wrapLocale(newBase, savedLanguage(newBase)))
     }
-    /** Переключатель языка интерфейса: English / Русский / 中文 / System. */
+    /** Interface language picker. */
     private fun showLanguageDialog() {
         val labels = arrayOf("English", "Русский", "中文", "System default")
         val codes = arrayOf("en", "ru", "zh", "")
         val current = savedLanguage(this)
         val checked = codes.indexOf(current).coerceAtLeast(0)
         AlertDialog.Builder(this)
-            .setTitle("Interface language / Язык интерфейса")
+            .setTitle("Interface language")
             .setSingleChoiceItems(labels, checked) { dialog, which ->
                 val code = codes[which]
                 if (code != current) {
@@ -319,7 +319,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
 
         handleIntent(intent)
         updateViewModeChips()
-        // Переоткрытие файла после смены языка (recreate): чертёж не должен теряться.
+        // Reopen file after language change (recreate): the drawing must not be lost.
         pendingReopenUri?.let { uri ->
             pendingReopenUri = null
             binding.root.post { openUri(uri, persistPermission = false) }
@@ -605,7 +605,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 ncBevelEnabled = true
                 val doc = parsed.document
                 if (doc != null) {
-                    // DWG сконвертирован в DXF через Rust-мост — рисуем полноценный чертёж.
+                    // DWG was converted to DXF via the Rust bridge - render the full drawing.
                     binding.statusText.text = getString(R.string.s0071, doc.entities.size)
                     binding.fileTypeChip.text = "DWG"
                     binding.metaChip.text = parsed.preview.readableVersion
@@ -689,7 +689,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         binding.metaChip.text = "-"
         ncBevelEnabled = true
         updateViewModeChips()
-        // Кнопка возврата к последнему чертежу
+        // Button to return to the last drawing
         val reopen = lastOpenedUri
         binding.reopenFileButton.visibility = if (reopen != null) View.VISIBLE else View.GONE
         binding.reopenFileButton.setOnClickListener {
@@ -722,7 +722,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             })
         }
         if (currentUri != null) {
-            binding.sideContent.addView(actionRow("Перевод надписей (EN / TH)") { showTranslationPanel() })
+            binding.sideContent.addView(actionRow("Text translation (EN / TH)") { showTranslationPanel() })
         }
         binding.sideContent.addView(actionRow(getString(R.string.s0092)) { openDocumentTree.launch(null) })
 
@@ -937,17 +937,17 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 runOnUiThread {
                     val baseName = (currentFileName ?: document.fileName).substringBeforeLast('.')
                     exportDocument.launch("${baseName}_edited.dxf")
-                    binding.statusText.text = "DXF подготовлен: сохраняется только изменение текста"
+                    binding.statusText.text = "DXF ready - only text changes are saved"
                 }
             }.onFailure { error ->
                 runOnUiThread {
-                    binding.statusText.text = "Экспорт DXF не удался: ${error.message ?: "неизвестная ошибка"}"
+                    binding.statusText.text = "DXF export failed: ${error.message ?: "unknown error"}"
                 }
             }
         }
     }
 
-    // ==================== Перевод надписей (Rust bridge) ====================
+    // ==================== Text translation (Rust bridge) ====================
 
     private var translationSession: Long? = null
     private var translationItems: List<CadBridge.TextItem> = emptyList()
@@ -960,40 +960,40 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         worker.execute {
             runCatching {
                 val body = contentResolver.openInputStream(uri)?.use { it.readBytes() }
-                    ?: error("Не удалось прочитать файл")
+                    ?: error("Cannot read file")
                 CadBridge.parseTranslationJson(String(body, Charsets.UTF_8))
             }.onSuccess { (en, th) ->
                 runOnUiThread {
                     translationEn.putAll(en)
                     translationTh.putAll(th)
                     renderTranslationRows()
-                    binding.statusText.text = "Перевод загружен: ${en.size} EN / ${th.size} TH"
+                    binding.statusText.text = "Translation loaded: ${en.size} EN / ${th.size} TH"
                 }
             }.onFailure { error ->
                 runOnUiThread {
-                    binding.statusText.text = "Ошибка JSON: ${error.message ?: "неизвестно"}"
+                    binding.statusText.text = "JSON error: ${error.message ?: "unknown"}"
                 }
             }
         }
     }
 
-    /** Копирует текущий файл во временный и открывает сессию моста. */
+    /** Copy current file to a temp file and open a bridge session. */
     private fun openTranslationSession(): Long {
         translationSession?.let { return it }
-        val uri = currentUri ?: error("Файл не открыт")
+        val uri = currentUri ?: error("No file open")
         val name = currentFileName ?: "drawing.dwg"
         val ext = name.substringAfterLast('.', "dwg")
         val tmp = File(cacheDir, "cad_translate_src.$ext")
         contentResolver.openInputStream(uri)?.use { input ->
             tmp.outputStream().use { output -> input.copyTo(output) }
-        } ?: error("Не удалось прочитать файл")
+        } ?: error("Cannot read file")
         val sid = CadBridge.open(tmp.absolutePath).getOrThrow()
         translationSession = sid
         return sid
     }
 
     private fun extractTranslationTexts() {
-        binding.statusText.text = "Извлечение текстов…"
+        binding.statusText.text = "Extracting texts…"
         worker.execute {
             runCatching {
                 val sid = openTranslationSession()
@@ -1005,13 +1005,13 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                     renderTranslationRows()
                     val cyr = items.count { it.text.any { c -> c.code in 0x0400..0x04FF } }
                     binding.statusText.text =
-                        "Текстов: ${items.size} (из них с кириллицей: $cyr) · формат: ${
+                        "Texts: ${items.size} (Cyrillic: $cyr) · format: ${
                             CadBridge.sourceFormat(sid).getOrDefault("?")
                         }"
                 }
             }.onFailure { error ->
                 runOnUiThread {
-                    binding.statusText.text = "Извлечение не удалось: ${error.message ?: "неизвестно"}"
+                    binding.statusText.text = "Extraction failed: ${error.message ?: "unknown"}"
                 }
             }
         }
@@ -1022,7 +1022,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         translationRowsContainer.removeAllViews()
         if (translationItems.isEmpty()) {
             translationRowsContainer.addView(
-                entryView("Тексты", "Нажмите «Извлечь тексты» или загрузите JSON перевода.")
+                entryView("Texts", "Tap Extract texts or load a translation JSON.")
             )
             return
         }
@@ -1073,7 +1073,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     private fun translationField(item: CadBridge.TextItem, store: MutableMap<String, String>): EditText {
         return EditText(this).apply {
             setText(store[item.id].orEmpty())
-            hint = "— без перевода —"
+            hint = "— no translation —"
             textSize = 13f
             setTextColor(getColor(R.color.panelTextPrimary))
             setHintTextColor(getColor(R.color.panelTextSecondary))
@@ -1085,7 +1085,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
 
     private fun exportTranslationJson() {
         if (translationItems.isEmpty()) {
-            binding.statusText.text = "Сначала извлеките тексты."
+            binding.statusText.text = "Extract texts first."
             return
         }
         val rows = translationItems.map {
@@ -1099,19 +1099,19 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     }
 
     /**
-     * Сохраняет чертёж с переводом: [format] = "dxf" | "dwg", [lang] = "en" | "th".
-     * Пустое поле перевода означает «оставить оригинал».
+     * Save drawing with translation: [format] = "dxf" | "dwg", [lang] = "en" | "th".
+     * Empty translation field means "keep original".
      */
     private fun saveTranslated(format: String, lang: String) {
         if (translationItems.isEmpty()) {
-            binding.statusText.text = "Сначала извлеките тексты."
+            binding.statusText.text = "Extract texts first."
             return
         }
         val edits = translationItems.associate { item ->
             val value = if (lang == "en") translationEn[item.id].orEmpty() else translationTh[item.id].orEmpty()
             item.id to value.ifBlank { item.text }
         }
-        binding.statusText.text = "Подготовка файла ($format, ${lang.uppercase()})…"
+        binding.statusText.text = "Preparing file ($format, ${lang.uppercase()})…"
         worker.execute {
             runCatching {
                 val sid = openTranslationSession()
@@ -1127,26 +1127,26 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 pendingExportBytes = bytes
                 runOnUiThread {
                     val base = (currentFileName ?: "drawing").substringBeforeLast('.')
-                    val suffix = if (format == "dwg") "DWG (экспериментально)" else "DXF"
+                    val suffix = if (format == "dwg") "DWG (experimental)" else "DXF"
                     exportDocument.launch("${base}_${lang}.${format}")
                     binding.statusText.text =
-                        "Готово ($suffix, ${lang.uppercase()}): проверьте результат" +
-                            if (format == "dwg") " в AutoCAD — запись DWG экспериментальная." else "."
+                        "Done ($suffix, ${lang.uppercase()}): check the result" +
+                            if (format == "dwg") " in AutoCAD — DWG writing is experimental." else "."
                 }
             }.onFailure { error ->
                 runOnUiThread {
-                    binding.statusText.text = "Сохранение не удалось: ${error.message ?: "неизвестно"}"
+                    binding.statusText.text = "Save failed: ${error.message ?: "unknown"}"
                 }
             }
         }
     }
 
-    /** Панель перевода надписей: извлечение текстов, JSON, сохранение EN/TH. */
-    /** Панель настроек: выбор языка интерфейса и краткая справка. */
+    /** Text translation panel: extract texts, JSON, save EN/TH. */
+    /** Settings panel: interface language picker and brief info. */
     /**
-     * Сохраняет текущий вид чертежа в PNG (для самопроверки рендера).
-     * Файл кладётся в /sdcard/Download/cad_preview_<имя>_<время>.png —
-     * его можно открыть и проверить визуально, в т.ч. автоматически.
+     * Save current drawing view as PNG (for render self-check).
+     * The file goes to Downloads/cad_preview_<name>_<time>.png —
+     * it can be opened and checked visually, including automatically.
      */
     private fun exportCanvasPng() {
         val canvasView = binding.dxfCanvasView
@@ -1169,13 +1169,13 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         val ts = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
         pendingExportBytes = bytes
         exportDocument.launch("cad_preview_${safeName}_${ts}.png")
-        binding.statusText.text = "PNG готов — выберите папку для сохранения"
+        binding.statusText.text = "PNG ready — choose a folder to save"
     }
     private fun showSettingsPanel() {
         showSidePanel(binding.actionSettings, getString(R.string.action_settings))
         binding.sideContent.removeAllViews()
         binding.sideContent.addView(sectionTitle(getString(R.string.language_picker)))
-        val langLabels = arrayOf("Русский", "English", "中文", "System")
+        val langLabels = arrayOf("English", "Русский", "中文", "System")
         val langCodes = arrayOf("ru", "en", "zh", "")
         val current = savedLanguage(this)
         val currentIndex = langCodes.indexOf(current).coerceAtLeast(0)
@@ -1191,41 +1191,41 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             }
             binding.sideContent.addView(row)
         }
-        binding.sideContent.addView(sectionTitle("Проверка рендера"))
-        binding.sideContent.addView(actionRow("📸 Сохранить вид чертежа в PNG") { exportCanvasPng() })
-        binding.sideContent.addView(infoCard("Зачем" to "PNG сохраняется в Загрузки — по нему можно проверить отображение чертежа"))
-        binding.sideContent.addView(sectionTitle("О программе"))
+        binding.sideContent.addView(sectionTitle("Render check"))
+        binding.sideContent.addView(actionRow("📸 Save drawing view as PNG") { exportCanvasPng() })
+        binding.sideContent.addView(infoCard("Purpose" to "PNG is saved to Downloads — use it to verify the drawing display"))
+        binding.sideContent.addView(sectionTitle("About"))
         binding.sideContent.addView(infoCard(
-            "Редактор" to "SikkatuCAD — чертежи DXF/DWG + перевод надписей",
-            "Форматы" to "DXF, DWG — открытие и сохранение"
+            "Editor" to "SikkatuCAD — DXF/DWG drawings + text translation",
+            "Formats" to "DXF, DWG — open and save"
         ))
     }
     private fun showTranslationPanel() {
-        showSidePanel(null, "Перевод надписей")
+        showSidePanel(null, "Text translation")
         binding.sideContent.removeAllViews()
-        binding.sideContent.addView(sectionTitle("Перевод надписей (EN / TH)"))
-        binding.sideContent.addView(entryView("Файл", currentFileName ?: "-"))
-        binding.sideContent.addView(actionRow("Извлечь тексты из чертежа") { extractTranslationTexts() })
-        binding.sideContent.addView(actionRow("Загрузить JSON перевода") {
+        binding.sideContent.addView(sectionTitle("Text translation (EN / TH)"))
+        binding.sideContent.addView(entryView("File", currentFileName ?: "-"))
+        binding.sideContent.addView(actionRow("Extract texts from drawing") { extractTranslationTexts() })
+        binding.sideContent.addView(actionRow("Load translation JSON") {
             translationImport.launch(arrayOf("application/json", "text/plain", "*/*"))
         })
-        binding.sideContent.addView(actionRow("Экспорт JSON перевода") { exportTranslationJson() })
-        binding.sideContent.addView(sectionTitle("Сохранить с переводом"))
-        binding.sideContent.addView(primaryActionRow("Сохранить DXF (EN)") { saveTranslated("dxf", "en") })
-        binding.sideContent.addView(actionRow("Сохранить DXF (TH)") { saveTranslated("dxf", "th") })
-        binding.sideContent.addView(actionRow("Сохранить DWG (эксперим.) EN") { saveTranslated("dwg", "en") })
-        binding.sideContent.addView(actionRow("Сохранить DWG (эксперим.) TH") { saveTranslated("dwg", "th") })
+        binding.sideContent.addView(actionRow("Export translation JSON") { exportTranslationJson() })
+        binding.sideContent.addView(sectionTitle("Save with translation"))
+        binding.sideContent.addView(primaryActionRow("Save DXF (EN)") { saveTranslated("dxf", "en") })
+        binding.sideContent.addView(actionRow("Save DXF (TH)") { saveTranslated("dxf", "th") })
+        binding.sideContent.addView(actionRow("Save DWG (experimental) EN") { saveTranslated("dwg", "en") })
+        binding.sideContent.addView(actionRow("Save DWG (experimental) TH") { saveTranslated("dwg", "th") })
         binding.sideContent.addView(
             TextView(this).apply {
-                text = "⚠ Запись DWG экспериментальная — обязательно проверьте результат в AutoCAD. " +
-                    "Надёжный формат — DXF.\nПереводятся только видимые надписи (TEXT/MTEXT/ATTRIB); " +
-                    "имена слоёв и блоков не переводятся — они не видны на экране и в печати."
+                text = "⚠ DWG writing is experimental — always verify the result in AutoCAD. " +
+                    "The reliable format is DXF.\nOnly visible labels are translated (TEXT/MTEXT/ATTRIB); " +
+                    "layer and block names are not translated — they are invisible on screen and in print."
                 textSize = 11f
                 setTextColor(getColor(R.color.panelTextSecondary))
                 setPadding(12.dp, 6.dp, 12.dp, 10.dp)
             }
         )
-        binding.sideContent.addView(sectionTitle("Тексты чертежа"))
+        binding.sideContent.addView(sectionTitle("Drawing texts"))
         translationRowsContainer = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             layoutParams = LinearLayout.LayoutParams(
@@ -1503,7 +1503,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     private var lastOpenedUri: android.net.Uri? = null
     private var lastOpenedFileName: String? = null
     private fun returnToHome() {
-        // Запоминаем последний файл, чтобы можно было вернуться к чертежу
+        // Remember last file so the user can return to the drawing
         lastOpenedUri = currentUri
         lastOpenedFileName = currentFileName
         currentParsed = null
@@ -1627,26 +1627,26 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             binding.sideContent.addView(infoLine(getString(R.string.s0182), summary))
         }
         binding.sideContent.addView(sectionTitle(getString(R.string.s0183)))
-        binding.sideContent.addView(actionRowIconized("📏", getString(R.string.s0184), "Линейка: две точки — длина отрезка") {
+        binding.sideContent.addView(actionRowIconized("📏", getString(R.string.s0184), "Ruler: two points - segment length") {
             measureMode = MeasureMode.DISTANCE
             binding.dxfCanvasView.setMeasureMode(measureMode)
             binding.statusText.text = getString(R.string.s0185)
             showMeasurePanel()
         })
-        binding.sideContent.addView(actionRowIconized("📐", getString(R.string.s0186), "Угол между тремя точками") {
+        binding.sideContent.addView(actionRowIconized("📐", getString(R.string.s0186), "Angle between three points") {
             measureMode = MeasureMode.ANGLE
             binding.dxfCanvasView.setMeasureMode(measureMode)
             binding.statusText.text = getString(R.string.s0187)
             showMeasurePanel()
         })
-        binding.sideContent.addView(actionRowIconized("⬠", getString(R.string.s0188), "Площадь по контуру точек") {
+        binding.sideContent.addView(actionRowIconized("⬠", getString(R.string.s0188), "Area by point contour") {
             measureMode = MeasureMode.AREA
             binding.dxfCanvasView.setMeasureMode(measureMode)
             binding.dxfCanvasView.setAreaAutoClose(areaAutoClose)
             binding.statusText.text = getString(R.string.s0189)
             showMeasurePanel()
         })
-        binding.sideContent.addView(actionRowIconized("✋", getString(R.string.s0190), "Выключить режим замеров") {
+        binding.sideContent.addView(actionRowIconized("✋", getString(R.string.s0190), "Exit measurement mode") {
             measureMode = MeasureMode.NONE
             binding.dxfCanvasView.setMeasureMode(MeasureMode.NONE)
             binding.statusText.text = getString(R.string.s0191)
@@ -1663,8 +1663,8 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             })
         }
         if (measureMode != MeasureMode.NONE) {
-            binding.sideContent.addView(actionRowIconized("↩", getString(R.string.s0195), "Убрать последнюю точку") { binding.dxfCanvasView.undoMeasurementStep() })
-            binding.sideContent.addView(actionRowIconized("🧹", getString(R.string.s0196), "Сбросить текущий замер") { binding.dxfCanvasView.clearMeasurement() })
+            binding.sideContent.addView(actionRowIconized("↩", getString(R.string.s0195), "Remove last point") { binding.dxfCanvasView.undoMeasurementStep() })
+            binding.sideContent.addView(actionRowIconized("🧹", getString(R.string.s0196), "Reset current measurement") { binding.dxfCanvasView.clearMeasurement() })
         }
         binding.sideContent.addView(sectionTitle(getString(R.string.s0197)))
         binding.sideContent.addView(primaryActionRow(getString(R.string.s0198)) { showCadEditPanel() })
@@ -2660,7 +2660,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         }
     }
 
-    /** Компактная кнопка-плитка с иконкой (для сетки 2 колонки). */
+    /** Compact icon tile button (for 2-column grid). */
     private fun gridButton(icon: String, label: String, block: () -> Unit): TextView {
         return TextView(this).apply {
             text = icon + "\n" + label
@@ -2672,7 +2672,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             setOnClickListener { block() }
         }
     }
-    /** Ряд из двух компактных плиток. */
+    /** Row of two compact tiles. */
     private fun gridRow(a: TextView, b: TextView? = null): LinearLayout {
         return LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
@@ -2685,7 +2685,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
                 ?: addView(View(context), LinearLayout.LayoutParams(0, 1, 1f))
         }
     }
-    /** Строка-действие с поясняющей иконкой слева. */
+    /** Action row with an explanatory icon on the left. */
     private fun actionRowIconized(icon: String, label: String, hint: String? = null, block: () -> Unit): TextView {
         return TextView(this).apply {
             text = if (hint == null) icon + "   " + label else icon + "   " + label + "  -  " + hint
@@ -3090,7 +3090,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         }
     }
 
-    /** Информационная карточка: несколько строк в ОДНОЙ рамке (не похоже на кнопки). */
+    /** Info card: multiple rows in ONE frame (not button-like). */
     private fun infoCard(vararg rows: Pair<String, String>): LinearLayout {
         val card = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
@@ -3130,7 +3130,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         val row = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(4.dp, 10.dp, 4.dp, 10.dp)
-            // Информативный блок — НЕ кнопка: плоский фон без обводки
+            // Info block - NOT a button: flat background, no border
             background = getDrawable(R.drawable.bg_info_card)
             val params = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,

@@ -395,7 +395,7 @@ class DocumentParser(private val activity: MainActivity) {
         val raw = readRawDxf(uri)
         return parseDxfText(raw.text, raw.charset.name(), fileName)
     }
-    /** Разбирает DXF-текст (используется и для DWG, сконвертированного через мост). */
+    /** Parse DXF text (also used for DWG converted via the bridge). */
     private fun parseDxfText(text: String, charsetName: String, fileName: String): DxfDocument {
         val pairs = parseDxfPairs(text.split(Regex("\r\n|\n|\r")))
         val headerInfo = parseHeaderInfo(pairs)
@@ -586,9 +586,9 @@ class DocumentParser(private val activity: MainActivity) {
                     blockName?.let { name ->
                         val resolvedBlock = blockResolver(name)
                         if (resolvedBlock != null) {
-                            // Мировая_точка = insert + R*S*(p - base_point).
-                            // Содержимое блока хранится в мировых координатах, а базовая точка блока
-                            // совпадает с точкой вставки — поэтому вычитаем её перед трансформацией.
+                            // World_point = insert + R*S*(p - base_point).
+                            // Block content is stored in world coordinates and the block base point
+                            // equals the insert point — so subtract it before transforming.
                             val basePoint = resolvedBlock.first
                             val radBase = Math.toRadians(rotation)
                             val bxs = basePoint.x * scaleX
@@ -1290,17 +1290,17 @@ class DocumentParser(private val activity: MainActivity) {
         return DxfArc(center, radius, start, end, block.single("8"))
     }
 
-    /** Prиводит MTEXT/TEXT к читаемому виду: убирает коды форматирования. */
-    /** Приводит MTEXT/TEXT к читаемому виду: убирает коды форматирования AutoCAD. */
-    /** Приводит MTEXT/TEXT к читаемому виду: убирает коды форматирования AutoCAD. */
-    /** Приводит MTEXT/TEXT к читаемому виду: убирает коды форматирования AutoCAD. */
-    /** Приводит MTEXT/TEXT к читаемому виду: убирает коды форматирования AutoCAD. */
-    /** Публичная обёртка: чистый текст для отображения в UI (без MTEXT-кодов). */
+    /** Convert MTEXT/TEXT to readable form: strip formatting codes. */
+    /** Convert MTEXT/TEXT to readable form: strip AutoCAD formatting codes. */
+    /** Convert MTEXT/TEXT to readable form: strip AutoCAD formatting codes. */
+    /** Convert MTEXT/TEXT to readable form: strip AutoCAD formatting codes. */
+    /** Convert MTEXT/TEXT to readable form: strip AutoCAD formatting codes. */
+    /** Public wrapper: clean text for UI display (no MTEXT codes). */
     fun plainTextForDisplay(raw: String): String = plainText(raw)
 
     private fun plainText(raw: String): String {
         var t = raw
-        // Стёкинг \Sверх^низ; -> верх/низ (пустая нижняя часть -> просто верх)
+        // Stacking \S top^bottom; -> top/bottom (empty bottom -> just top)
         t = t.replace(Regex("""\\S([^;{}]*);""")) { m ->
             val body = m.groupValues[1]
             val parts = body.split("^")
@@ -1308,17 +1308,17 @@ class DocumentParser(private val activity: MainActivity) {
             val bottom = parts.getOrNull(1).orEmpty().trim()
             if (bottom.isEmpty()) { if (top.equals("о", true) || top.equals("o", true)) "°" else top } else top + "/" + bottom
         }
-        // Перевод строки \P
+        // Paragraph line break \P
         t = t.replace("""\P""", "\n")
-        // Команды с аргументом до ';' (\f..;, \W..;, \H..;, \pqc;, \pt..;)
+        // Commands with argument up to ';' (\f..;, \W..;, \H..;, \pqc;, \pt..;)
         t = t.replace(Regex("""\\[A-Za-z][^;\\{}]*;"""), "")
-        // \A + код присоединения: часто без ';' (\A1{...}) — иначе цифра остаётся в тексте
+        // \A + attachment code: often without ';' (\A1{...}) — otherwise the digit stays in text
         t = t.replace(Regex("""\\A[0-9]*"""), "")
-        // Одиночные команды без ';'
+        // Single commands without ';'
         t = t.replace(Regex("""\\[A-Za-z]"""), "")
-        // Скобки группировки абзацев MTEXT
+        // MTEXT paragraph grouping braces
         t = t.replace("{", "").replace("}", "")
-        // Спецсимволы AutoCAD
+        // AutoCAD special symbols
         t = t.replace("%%d", "°").replace("%%D", "°")
             .replace("%%c", "Ø").replace("%%C", "Ø")
             .replace("%%p", "±").replace("%%P", "±")

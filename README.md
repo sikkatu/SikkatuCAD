@@ -1,45 +1,44 @@
 # SikkatuCAD
 
-Мобильный редактор надписей и просмотра чертежей DXF / DWG для Android.
-Интерфейс: русский / English / 中文.
+[Русский](README.ru.md) | [中文](README.zh.md)
 
 ![SikkatuCAD](app/src/main/res/drawable/ic_sikkatu_logo.png)
 
-## Возможности
+Mobile CAD drawing text editor and viewer for Android. Works with **DXF** and **DWG** drawings.
+Interface: English / Russian / Chinese.
 
-- **Открытие и просмотр** чертежей DXF / DWG (конструкции, фасады, планы);
-- **Перевод надписей** TEXT / MTEXT / ATTRIB: русский → English / ไทย
-  (экспорт текстов в JSON, перевод, импорт обратно в чертёж);
-- **Сохранение** в DXF (надёжно) и DWG (экспериментально);
-- Замеры: расстояние, угол, площадь;
-- Редактирование геометрии: линии, круги, прямоугольники, текст;
-- Слои, авто-размеры, PNG-экспорт вида.
+## Features
 
-## Данные
+- **Open and view** DXF / DWG construction drawings (facades, plans, sections);
+- **Translate text labels** (TEXT / MTEXT / ATTRIB) from Russian into English and Thai:
+  export texts to JSON → translate → import back into the drawing;
+- **Save** edited drawings as DXF (reliable) or DWG (experimental);
+- Measurements: distance, angle, area; auto-dimensioning;
+- Geometry editing: line, rectangle, circle, arc, polyline, text;
+- Layer control, PNG view export.
 
-Приложение **не отправляет данные в интернет**: все операции с чертежами
-происходят локально на устройстве. Это можно проверить по исходному коду
-(см. ниже).
+## Privacy
 
-## Сборка
+The app **does not send anything to the internet**. All drawing operations run locally on the device.
+You can verify this yourself — the full source code is in this repository.
+
+## Building
 
 ```bash
-cd androidcad
+git clone https://github.com/sikkatu/SikkatuCAD.git
 ./gradlew assembleDebug
 # APK: app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Требуется Android Studio Hedgehog+ / JDK 17, NDK + Rust для нативного моста:
+Requirements: JDK 17, Android SDK 34. Native DWG engine (Rust):
 
 ```bash
 cd rust-bridge
 cargo build --release --target aarch64-linux-android --lib
-# скопировать libcadbridge.so в app/src/main/jniLibs/arm64-v8a/
+# copy libcadbridge.so to app/src/main/jniLibs/arm64-v8a/
 ```
 
-## Лицензия
+## License
 
-Код открыт для проверки безопасности, но **не для форка и модификации** —
-см. [LICENSE.md](LICENSE.md). Собирайте и используйте без изменений.
-
-Сторонние компоненты — см. [NOTICE.md](NOTICE.md).
+Source-available: read, build and use freely — but **no forks, no modifications**.
+See [LICENSE.md](LICENSE.md). Third-party components: [NOTICE.md](NOTICE.md).
