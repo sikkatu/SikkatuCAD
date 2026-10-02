@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="s0001">Невозможно прочитать PDF-файл</string>
+    <string name="s0002">В PDF нет конвертируемых векторных путей.</string>
+    <string name="s0003">мм</string>
+    <string name="s0005">Неизвестная версия</string>
+    <string name="s0006">Неизвестно</string>
+    <string name="s0007">В текущем проекте создан вход для просмотра DWG, но для полной визуализации требуется доступ к библиотеке синтаксического анализа C/C++.</string>
+    <string name="s0008" formatted="true">Ширина %1$s · Высота %2$s</string>
+    <string name="s0009" formatted="false">Выбранная начальная точка: %.2f, %.2f.</string>
+    <string name="s0010" formatted="false">Выбранная начальная точка: %.2f, %.2f, вы можете перетащить/масштабировать вид и щелкнуть вторую точку.</string>
+    <string name="s0011" formatted="true">Ширина %1$s</string>
+    <string name="s0012" formatted="true">Высокий %1$s</string>
+    <string name="s0013" formatted="true">R %1$s / дуга %2$s</string>
+    <string name="s0014" formatted="true">длинный %1$s</string>
+    <string name="s0015" formatted="true">длинный %1$s</string>
+    <string name="s0016" formatted="true">R %1$s Длина дуги %2$s</string>
+    <string name="s0017">свободная точка</string>
+    <string name="s0018">конечная точка</string>
+    <string name="s0019">середина</string>
+    <string name="s0020">ближайший</string>
+    <string name="s0021" formatted="false">Расстояние измерения: %.2f</string>
+    <string name="s0022" formatted="false">Угловая точка 1/3: %.2f, %.2f</string>
+    <string name="s0023">Угловая точка 2/3: Продолжайте выбирать третью точку.</string>
+    <string name="s0024" formatted="false">Угол: %.2f°</string>
+    <string name="s0025" formatted="true">Точка площади %1$s/3: продолжить выбор точек</string>
+    <string name="s0026" formatted="true">Точка площади %1$s: продолжайте выбирать точки или нажмите «Завершить площадь».</string>
+    <string name="s0027" formatted="false">Площадь: %.2f Периметр: %.2f</string>
+    <string name="s0028">Измерение расстояния: нажмите дважды, чтобы определить точку.</string>
+    <string name="s0029">Измерение угла: нажмите последовательно три точки.</string>
+    <string name="s0030">Измерение площади: непрерывно нажимайте на точки контура.</string>
+    <string name="s0031">В сжатом пакете не обнаружено поддерживаемых файлов чертежей.</string>
+    <string name="s0032">Невозможно прочитать путь к файлу</string>
+    <string name="s0033">Файл без имени</string>
+    <string name="s0034">Невозможно прочитать файл импорта</string>
+    <string name="s0035">Невозможно прочитать сжатый пакет</string>
+    <string name="s0036" formatted="true">%1$s\nУправляемые %2$s файлы · %3$s</string>
+    <string name="s0037">Не запущено</string>
+    <string name="s0038">Невозможно записать в целевой файл</string>
+    <string name="s0039">Экспорт завершен</string>
+    <string name="s0040" formatted="true">Экспорт не удался: %1$s</string>
+    <string name="s0041">Невозможно прочитать текущий файл</string>
+    <string name="s0042">Верстка import.dxf</string>
+    <string name="s0043" formatted="true">Импортированный файл макета: %1$s</string>
+    <string name="s0044" formatted="true">Не удалось импортировать набор текста: %1$s</string>
+    <string name="s0045">Пожалуйста, сначала откройте рисунок</string>
+    <string name="s0046" formatted="true">Автоматическая маркировка включена: %1$s</string>
+    <string name="s0047">Автоматическая маркировка отключена.</string>
+    <string name="s0048">Переключен на 2D-вид.</string>
+    <string name="s0049">Переключился на 3D-вид, перетащите и поверните</string>
+    <string name="s0050">Отображение наклона включено</string>
+    <string name="s0051">Индикация наклона отключена. Чтобы отобразить изображение, нажмите «Прямой рез».</string>
+    <string name="s0052">Отображается пустая строка смещения</string>
+    <string name="s0053">Пустая строка смены скрыта</string>
+    <string name="s0054">Нет графики, доступной для экспорта</string>
+    <string name="s0055">Без имени</string>
+    <string name="s0056">Снять метку</string>
+    <string name="s0057">Аннотация в один клик</string>
+    <string name="s0058" formatted="true">Разархивирование %1$s</string>
+    <string name="s0059" formatted="true">Импорт %1$s</string>
+    <string name="s0060">Ошибка импорта: в сжатом пакете не найден поддерживаемый файл чертежа.</string>
+    <string name="s0061" formatted="true">, всего было импортировано %1$s рисунков</string>
+    <string name="s0062" formatted="true">Разархивирован в выделенный каталог: %1$s%2$s</string>
+    <string name="s0063" formatted="true">Импортировано в специальный каталог: %1$s</string>
+    <string name="s0064" formatted="true">Не удалось импортировать: %1$s, попробуйте открыть напрямую.</string>
+    <string name="s0065" formatted="true">Разбор %1$s</string>
+    <string name="s0066" formatted="true">Не удалось выполнить анализ: %1$s</string>
+    <string name="s0067">Невозможно открыть файл</string>
+    <string name="s0068">Убедитесь, что файл доступен для чтения и имеет формат .dxf, .dwg, .gen, .nc или .pdf.</string>
+    <string name="s0069" formatted="true">Не удалось загрузить образец: %1$s</string>
+    <string name="s0070" formatted="true">Регенерация до %1$s</string>
+    <string name="s0071" formatted="true">Количество объектов: %1$s</string>
+    <string name="s0072" formatted="true">Слой %1$s · %2$s</string>
+    <string name="s0073" formatted="true">Слой %1$s</string>
+    <string name="s0074">Открыть DXF</string>
+    <string name="s0075" formatted="true">Раздел процесса GEN:%1$s</string>
+    <string name="s0076">Открыть ОБЩ</string>
+    <string name="s0077" formatted="true">Сегмент траектории NC: %1$s</string>
+    <string name="s0078">Открытый НЗ</string>
+    <string name="s0079" formatted="true">Распознан файл DWG: %1$s</string>
+    <string name="s0080">Информация о предварительном просмотре DWG</string>
+    <string name="s0081" formatted="true">Код версии: %1$s\nИдентифицированная версия: %2$s\n\n%3$s</string>
+    <string name="s0082">иллюстрировать</string>
+    <string name="s0083">Файл</string>
+    <string name="s0084">Файлы коллекции</string>
+    <string name="s0085">Избранных файлов пока нет. Открыв чертеж, вы можете сохранить текущий файл в деталях.</string>
+    <string name="s0086">Импортировать файл</string>
+    <string name="s0087">Импорт сначала будет скопирован в каталог категорий конкретного приложения, а затем открыт из копии; при удалении истории по умолчанию удаляются только записи, чтобы избежать случайного удаления исходных рисунков.</string>
+    <string name="s0088">выделенный каталог</string>
+    <string name="s0089">+ Создать новый чертеж САПР</string>
+    <string name="s0090">+ Импортировать местные карты</string>
+    <string name="s0091">Сохранить DXF (сохранить исходную структуру изображения)</string>
+    <string name="s0092">Выберите корневой каталог хранилища файлов.</string>
+    <string name="s0093">текущий файл</string>
+    <string name="s0094">Отменить избранное текущего файла</string>
+    <string name="s0095">Сохранить текущий файл</string>
+    <string name="s0096" formatted="true">Собрано %1$s</string>
+    <string name="s0097" formatted="true">Отменена коллекция %1$s</string>
+    <string name="s0098">исторические документы</string>
+    <string name="s0099">состояние</string>
+    <string name="s0100">Пока нет истории</string>
+    <string name="s0101">Закрепить вверху ·</string>
+    <string name="s0102">История удалена</string>
+    <string name="s0103">Посмотреть полную историю</string>
+    <string name="s0104">Групповой предварительный просмотр</string>
+    <string name="s0105">Группа</string>
+    <string name="s0106">После импорта или открытия чертежей они будут автоматически сгруппированы по типу, например DXF/DWG/PDF/NC.</string>
+    <string name="s0107">Очистить файлы истории</string>
+    <string name="s0108">Файлы истории удалены</string>
+    <string name="s0109" formatted="true">%1$s · %2$s</string>
+    <string name="s0110">Управляемая копия удалена.</string>
+    <string name="s0111">Удаление не удалось: файл недоступен для записи или не существует.</string>
+    <string name="s0112">Пока нет записей</string>
+    <string name="s0113">NC генерируется автоматически</string>
+    <string name="s0114">Внешние границы</string>
+    <string name="s0115">Толщина (мм)</string>
+    <string name="s0116">Материал</string>
+    <string name="s0117">Длина доски</string>
+    <string name="s0118">Ширина доски</string>
+    <string name="s0119">Имя программы/имя экспорта</string>
+    <string name="s0120">Название программы</string>
+    <string name="s0121">Создание и экспорт ЧПУ</string>
+    <string name="s0122">NC создан, выберите место сохранения.</string>
+    <string name="s0123">Для сохранённого исходного потока в настоящее время нет DXF.</string>
+    <string name="s0124">Невозможно обработать DXF</string>
+    <string name="s0125" formatted="true">Текущий размер распознавания: Ш %1$s / В %2$s мм.</string>
+    <string name="s0126" formatted="true">Исходный размер PDF: Ш %1$s / В %2$s мм.</string>
+    <string name="s0127" formatted="true">Коэффициент автоматического распознавания: 1:%1$s, в настоящее время применяется %2$sx</string>
+    <string name="s0128">Коэффициент автоматического распознавания: не распознан</string>
+    <string name="s0129">Целевая ширина (мм), предпочтительная</string>
+    <string name="s0130">Высота цели (мм), если оставить пустым, она будет пропорциональна ширине.</string>
+    <string name="s0131">Калибровка размера PDF</string>
+    <string name="s0132">Применить коэффициент распознавания</string>
+    <string name="s0133">Масштаб чертежа не распознан</string>
+    <string name="s0134">Отмена</string>
+    <string name="s0135">приложение</string>
+    <string name="s0136">Введите действительный целевой размер</string>
+    <string name="s0137">Калибровка размера PDF</string>
+    <string name="s0138">Размеры PDF, откалиброванные по масштабу</string>
+    <string name="s0139">Библиотека файлов</string>
+    <string name="s0140">Ни один каталог еще не выбран. Нажав выше «Выбрать корневой каталог библиотеки файлов», вы сможете просматривать все файлы так же, как в исходном приложении.</string>
+    <string name="s0141">текущий каталог</string>
+    <string name="s0142">Вернуться на предыдущий уровень</string>
+    <string name="s0143">Оглавление</string>
+    <string name="s0144">В текущем каталоге нет файлов для отображения</string>
+    <string name="s0145" formatted="true">[Содержание] %1$s</string>
+    <string name="s0146">Поиск файлов</string>
+    <string name="s0147">Введите ключевое слово имени файла</string>
+    <string name="s0148">поиск</string>
+    <string name="s0149">намекать</string>
+    <string name="s0150">Поиск будет рекурсивно искать файлы .dxf/.dwg/.gen в выбранном вами корне библиотеки.</string>
+    <string name="s0151">Сначала выберите корневой каталог библиотеки файлов.</string>
+    <string name="s0152">Пожалуйста, введите ключевые слова для поиска</string>
+    <string name="s0153" formatted="true">Поиск %1$s</string>
+    <string name="s0154">Результаты поиска</string>
+    <string name="s0155">результат</string>
+    <string name="s0156">Соответствующий файл не найден</string>
+    <string name="s0157" formatted="true">Поиск завершен: %1$s результатов</string>
+    <string name="s0158">Переключен на альбомный экран</string>
+    <string name="s0159">Переключен на портретный экран</string>
+    <string name="s0160">граница доски</string>
+    <string name="s0161">Идти по пустому</string>
+    <string name="s0162">Прямой крой</string>
+    <string name="s0163">Фаска А+</string>
+    <string name="s0164">Фаска А-</string>
+    <string name="s0165">Фаска B+</string>
+    <string name="s0166">Фаска Б-</string>
+    <string name="s0167">Элементы управления слоями</string>
+    <string name="s0168">Текущий файл не является DXF, и в настоящее время нет переключаемых слоев.</string>
+    <string name="s0169">Показать текст PDF</string>
+    <string name="s0170">Показан PDF-текст</string>
+    <string name="s0171">Текст PDF скрыт</string>
+    <string name="s0172">Показать все</string>
+    <string name="s0173">Скрыть все</string>
+    <string name="s0174">сущности</string>
+    <string name="s0175">· Исходный файл закрыт</string>
+    <string name="s0176">· Исходный файл заморожен</string>
+    <string name="s0177">В настоящее время это файл GEN, просмотрите его на панели предварительного просмотра.</string>
+    <string name="s0178">Текущий чертеж не поддерживает измерения</string>
+    <string name="s0179">Измерить/аннотировать</string>
+    <string name="s0180">Автоматическая маркировка</string>
+    <string name="s0181">Отмечайте ширину и высоту рисунков одним щелчком мыши</string>
+    <string name="s0182">размер границы</string>
+    <string name="s0183">Ручное измерение</string>
+    <string name="s0184">измерение расстояния</string>
+    <string name="s0185">Измерение расстояния включено</string>
+    <string name="s0186">измерение угла</string>
+    <string name="s0187">Измерение угла включено</string>
+    <string name="s0188">измерение площади</string>
+    <string name="s0189">Измерение площади включено</string>
+    <string name="s0190">Близкое измерение</string>
+    <string name="s0191">Измерение выключено</string>
+    <string name="s0192">Автоматическое закрытие: открыто</string>
+    <string name="s0193">Автоматическое закрытие: выключено</string>
+    <string name="s0194">Завершенная площадь</string>
+    <string name="s0195">сделай шаг назад</string>
+    <string name="s0196">Четкие измерения</string>
+    <string name="s0197">Редактор САПР</string>
+    <string name="s0198">Открытые профессиональные инструменты рисования</string>
+    <string name="s0199">Нажмите на холст, чтобы выбрать сегмент линии, а затем обрезать, скопировать или удалить его; вы также можете напрямую создать прямоугольник/круг/текст.</string>
+    <string name="s0200">Текущий режим</string>
+    <string name="s0201">Не включено</string>
+    <string name="s0202">расстояние</string>
+    <string name="s0203">угол</string>
+    <string name="s0204">область</string>
+    <string name="s0205">Количество слоев</string>
+    <string name="s0206">Для текущего графика нет данных предварительного просмотра.</string>
+    <string name="s0207">Репетиция удара ножом</string>
+    <string name="s0208">траектория</string>
+    <string name="s0209">пустой след</string>
+    <string name="s0210">Подчеркнуть</string>
+    <string name="s0211">резка</string>
+    <string name="s0212">Редактирование сегмента линии</string>
+    <string name="s0213">Тип</string>
+    <string name="s0214">Слои</string>
+    <string name="s0215">по умолчанию</string>
+    <string name="s0216">фактическая длина</string>
+    <string name="s0217">разность координат</string>
+    <string name="s0218">Изменить длину</string>
+    <string name="s0219">Сохранить изменения</string>
+    <string name="s0220">Пожалуйста, введите действительные координаты</string>
+    <string name="s0221">Снимите флажок</string>
+    <string name="s0222">История</string>
+    <string name="s0223">Начальная точка</string>
+    <string name="s0224">Начальная точка Y</string>
+    <string name="s0225">конечная точка</string>
+    <string name="s0226">Конечная точка Y</string>
+    <string name="s0227">Изменить сегмент линии</string>
+    <string name="s0228">Сегмент линии обновлен.</string>
+    <string name="s0229">В настоящее время нет редактируемой графики</string>
+    <string name="s0230">Чертеж/редактирование САПР</string>
+    <string name="s0231">Создание графики</string>
+    <string name="s0232">Создайте новый пустой рисунок/холст.</string>
+    <string name="s0233">Создайте прямую линию</string>
+    <string name="s0234">Создать прямоугольник</string>
+    <string name="s0235">Создать круг</string>
+    <string name="s0236">Создать дугу</string>
+    <string name="s0237">Создать полилинию</string>
+    <string name="s0238">Добавить текст</string>
+    <string name="s0239">Часто используемые библиотеки/стандартные детали</string>
+    <string name="s0240">Г-образный уголок стальной/кронштейн</string>
+    <string name="s0241">Г-образный уголок стальной</string>
+    <string name="s0242">Швеллер стальной/П-образного сечения</string>
+    <string name="s0243">Швеллер стальной</string>
+    <string name="s0244">двутавр / двутавровое сечение</string>
+    <string name="s0245">двутавр</string>
+    <string name="s0246">Набор отверстий для фланцев/болтов</string>
+    <string name="s0247">Фланец</string>
+    <string name="s0248">Длинная пластина с круглыми отверстиями</string>
+    <string name="s0249">Редактировать операции</string>
+    <string name="s0250">Редактировать свойства выбранного объекта</string>
+    <string name="s0251">Копировать выбранные объекты</string>
+    <string name="s0252">Вставить копию (смещение 25 мм)</string>
+    <string name="s0253">Отрезок линии обрезки 10%</string>
+    <string name="s0254">Удалить выбранные объекты</string>
+    <string name="s0255">история</string>
+    <string name="s0256">Отмена</string>
+    <string name="s0257">Повторить</string>
+    <string name="s0258">Текущий выбор</string>
+    <string name="s0259">Не выбрано</string>
+    <string name="s0260">буфер обмена</string>
+    <string name="s0261">Объект уже существует и может быть вставлен</string>
+    <string name="s0262">нулевой</string>
+    <string name="s0263">Количество объектов</string>
+    <string name="s0264">Новая графика</string>
+    <string name="s0265" formatted="true">Слой %1$s · %2$s</string>
+    <string name="s0266">имя файла</string>
+    <string name="s0267">Создайте новый файл Graphic.dxf.</string>
+    <string name="s0268">ширина</string>
+    <string name="s0269">высокий</string>
+    <string name="s0270">Создайте новый чертеж САПР.</string>
+    <string name="s0271">пустой холст</string>
+    <string name="s0272" formatted="true">Создано новое пустое изображение: %1$s</string>
+    <string name="s0273">Шаблон с рамкой</string>
+    <string name="s0274" formatted="true">Новое изображение с рамкой: %1$s</string>
+    <string name="s0275">Начальная точкаX</string>
+    <string name="s0276">Начальная точка Y</string>
+    <string name="s0277">Конечная точкаX</string>
+    <string name="s0278">Конечная точка Y</string>
+    <string name="s0279">создавать</string>
+    <string name="s0280">ЦентрX</string>
+    <string name="s0281">Центр Y</string>
+    <string name="s0282">радиус</string>
+    <string name="s0283">начальный угол</string>
+    <string name="s0284">конечный угол</string>
+    <string name="s0285">Последовательность точек x,y;x,y</string>
+    <string name="s0286">Закрыто(1/0)</string>
+    <string name="s0287">Полилинии требуют минимум 2 точки.</string>
+    <string name="s0288">Вставить Х</string>
+    <string name="s0289">Вставить Y</string>
+    <string name="s0290">Толщина пластины/диаметр отверстия</string>
+    <string name="s0291" formatted="true">Вставить%1$s</string>
+    <string name="s0292">вставлять</string>
+    <string name="s0293">содержание</string>
+    <string name="s0294">добавить в</string>
+    <string name="s0295">Сначала выберите объект для редактирования</string>
+    <string name="s0296">Редактировать свойства объекта</string>
+    <string name="s0297">Свойства выбранного объекта обновлены.</string>
+    <string name="s0298">Пожалуйста, сначала выберите объект на холсте</string>
+    <string name="s0299">Выбранные объекты скопированы</string>
+    <string name="s0300">Буфер обмена пуст</string>
+    <string name="s0301">Вставить объекты</string>
+    <string name="s0302">Копия объекта вставлена.</string>
+    <string name="s0303">Пожалуйста, сначала выберите объект, который нужно удалить</string>
+    <string name="s0304">Удалить объект</string>
+    <string name="s0305">Выбранный объект удален.</string>
+    <string name="s0306">Сначала выберите сегмент линии, который вы хотите обрезать.</string>
+    <string name="s0307">Сегмент линии обрезается пропорционально</string>
+    <string name="s0308">Нет необратимой истории</string>
+    <string name="s0309" formatted="true">Отменено: %1$s</string>
+    <string name="s0310">Нет истории, которую нужно переделывать</string>
+    <string name="s0311" formatted="true">Переделано: %1$s</string>
+    <string name="s0312">шаг</string>
+    <string name="s0313">Пока нет истории</string>
+    <string name="s0314" formatted="true">Текущий шаг %1$s</string>
+    <string name="s0315" formatted="true">Шаг %1$s</string>
+    <string name="s0316">Моделирование траектории инструмента</string>
+    <string name="s0317">участок склона</string>
+    <string name="s0318">контроль предварительного просмотра</string>
+    <string name="s0319">скорость</string>
+    <string name="s0320">расписание</string>
+    <string name="s0321">останавливаться</string>
+    <string name="s0322" formatted="true">%1$s Предварительный просмотр остановлен</string>
+    <string name="s0323">пауза</string>
+    <string name="s0324">продолжать</string>
+    <string name="s0325">начинать</string>
+    <string name="s0326" formatted="true">%1$s Предварительный просмотр приостановлен</string>
+    <string name="s0327" formatted="true">%1$s Выполняется предварительный просмотр</string>
+    <string name="s0328">Бег</string>
+    <string name="s0329">Приостановленный</string>
+    <string name="s0330">объем</string>
+    <string name="s0331">единица</string>
+    <string name="s0332">Не указано</string>
+    <string name="s0333">соотношение PDF</string>
+    <string name="s0334">Текущий масштаб</string>
+    <string name="s0335">Толщина пластины</string>
+    <string name="s0336">Стратегия типографики</string>
+    <string name="s0337">граница</string>
+    <string name="s0338">PDF-текст</string>
+    <string name="s0339">Показаны</string>
+    <string name="s0340">Скрытый</string>
+    <string name="s0341">Количество сегментов</string>
+    <string name="s0342">Раздел процесса</string>
+    <string name="s0343">Количество деталей</string>
+    <string name="s0344">тарелка</string>
+    <string name="s0345">сегмент траектории</string>
+    <string name="s0346">толщина</string>
+    <string name="s0347">Краткое описание скоса</string>
+    <string name="s0348">Уголок</string>
+    <string name="s0349">Угол Б</string>
+    <string name="s0350">Версия</string>
+    <string name="s0351">код версии</string>
+    <string name="s0352">Файл не открыт</string>
+    <string name="s0353">импортировать</string>
+    <string name="s0354">собирать</string>
+    <string name="s0355">все</string>
+    <string name="s0356">Нет информации о предварительном просмотре</string>
+    <string name="s0357">Открыть</string>
+    <string name="s0358">Подробности</string>
+    <string name="s0359">удалить</string>
+    <string name="s0360" formatted="true">%1$s файлы ›</string>
+    <string name="s0361">Детали документа</string>
+    <string name="s0362">Вернуться на панель файлов</string>
+    <string name="s0363">Рекордное время</string>
+    <string name="s0364">Закреплено</string>
+    <string name="s0365">обычный</string>
+    <string name="s0366">режим управления</string>
+    <string name="s0367">Эскроу-копия, безопасна для удаления</string>
+    <string name="s0368">Внешняя ссылка, удалять только записи</string>
+    <string name="s0369">локальный путь</string>
+    <string name="s0370">источник</string>
+    <string name="s0371">отображаемое имя</string>
+    <string name="s0372">размер</string>
+    <string name="s0373">время модификации</string>
+    <string name="s0374">открыть файл</string>
+    <string name="s0375">Открепить</string>
+    <string name="s0376">История контактов</string>
+    <string name="s0377">История обновлена</string>
+    <string name="s0378">Удалить из истории</string>
+    <string name="s0379">Удаление управляемой копии</string>
+    <string name="s0380">Текущие сведения о файле</string>
+    <string name="s0381">Вернуться на страницу импорта</string>
+    <string name="s0382">Предварительный просмотр</string>
+    <string name="s0383">Отменить избранное</string>
+    <string name="s0384">Повторно импортируйте файл</string>
+    <string name="s0385">Предварительный просмотр преобразования PDF</string>
+    <string name="s0386">DXF-чертеж</string>
+    <string name="s0387" formatted="true">%1$s · %2$s объекты · %3$s слои · W %4$s / H %5$s</string>
+    <string name="s0388" formatted="true">Файл процесса GEN · %1$s разделов · %2$s разделов процесса</string>
+    <string name="s0389" formatted="true">Программа ЧПУ · %1$s траектории · %2$s</string>
+    <string name="s0390" formatted="true">Чертежи DWG · %1$s · %2$s</string>
+    <string name="s0391">Файл выбран, предварительный просмотр еще не создан</string>
+    <string name="s0392">прикрепить сверху</string>
+    <string name="s0393" formatted="true">Деталь %1$s · Пластина %2$s x %3$s · Процесс %4$s</string>
+    <string name="s0394" formatted="true">Раздел %1$s · Часть %2$s</string>
+    <string name="s0395" formatted="true">Траектория %1$s · %2$s · Пластина %3$s x %4$s</string>
+    <string name="s0396" formatted="true">Траектория %1$s · Пластина %2$s x %3$s</string>
+    <string name="s0397" formatted="true">Траектория %1$s</string>
+    <string name="s0398" formatted="true">Симметричная канавка ±%1$s</string>
+    <string name="s0399" formatted="true">Симметричная канавка ±%1$s</string>
+    <string name="s0400" formatted="true">B Симметричная канавка ±%1$s</string>
+    <string name="s0401" formatted="true">Фаска %1$s</string>
+    <string name="s0402">Нет фаски</string>
+    <string name="s0403">Деталей пока нет</string>
+    <string name="s0404">Зеркало Х</string>
+    <string name="s0405">Редактировать часть</string>
+    <string name="s0406">количество</string>
+    <string name="s0407">Вращение (градусы)</string>
+    <string name="s0408">сохранять</string>
+    <string name="s0409">осуществлять</string>
+    <string name="s0410">Параметры прямоугольника</string>
+    <string name="s0411" formatted="true">Прямоугольник%1$s</string>
+    <string name="s0412">Круговые параметры</string>
+    <string name="s0413" formatted="true">Раунд%1$s</string>
+    <string name="s0414">Нет частей для набора текста</string>
+    <string name="s0415">Результаты верстки</string>
+    <string name="s0416">Использование</string>
+    <string name="s0417">Размещено</string>
+    <string name="s0418">Потраченная площадь</string>
+    <string name="s0419">Части, которые нельзя разместить:</string>
+    <string name="s0420">Предложения по оптимизации</string>
+    <string name="s0421">предположение</string>
+    <string name="s0422" formatted="true">Набор текста завершен: %1$s/%2$s ​​частей, коэффициент использования %3$s%%</string>
+    <string name="s0423">Сравнение планировок:</string>
+    <string name="s0424" formatted="true">Коэффициент использования: %1$s%%</string>
+    <string name="s0425" formatted="true">Размещено: %1$s/%2$s</string>
+    <string name="s0426" formatted="true">Ненужная площадь: %1$s</string>
+    <string name="s0427" formatted="true">Рекомендуемое использование: %1$s</string>
+    <string name="s0428">Сравнение планов планировки</string>
+    <string name="s0429">Применяйте лучшие практики</string>
+    <string name="s0430" formatted="true">Лучшее примененное решение: %1$s</string>
+    <string name="s0431">Невозможно выполнить верстку доски</string>
+    <string name="s0432">Автоматическое разделение досок завершено</string>
+    <string name="s0433" formatted="true">Общее количество досок: %1$s</string>
+    <string name="s0434" formatted="true">Табличка %1$s:</string>
+    <string name="s0435" formatted="true">Размещено: %1$s</string>
+    <string name="s0436" formatted="true">Коэффициент использования: %1$s%%</string>
+    <string name="s0437" formatted="true">Общее размещение: %1$s/%2$s</string>
+    <string name="s0438">Результаты верстки разделенной доски</string>
+    <string name="s0439" formatted="true">Применяемая раскладка платы: %1$s листов.</string>
+    <string name="s0440">Типографика применена</string>
+    <string name="s0441">Нет результатов макета, доступных для применения.</string>
+    <string name="s0442">Импорт верстки</string>
+    <string name="s0443" formatted="true">Слой %1$s · Объект %2$s</string>
+    <string name="s0444">Сегмент линии выбран, и координаты можно изменить.</string>
+    <string name="s0445">Завершенный</string>
+    <string name="s0446">Репетиция завершена</string>
+    <string name="s0447">Интеллектуальная верстка (автономно)</string>
+    <string name="s0448">Параметры платы</string>
+    <string name="s0449">длина</string>
+    <string name="s0450">Рекомендуемые доски</string>
+    <string name="s0451">Применить рекомендуемые размеры</string>
+    <string name="s0452" formatted="true">Пластина %1$s x %2$s</string>
+    <string name="s0453">импорт/галерея</string>
+    <string name="s0454">Импортировать файлы деталей</string>
+    <string name="s0455">Добавить прямоугольник</string>
+    <string name="s0456">Добавить круг</string>
+    <string name="s0457">Список запчастей</string>
+    <string name="s0458">Параметры набора</string>
+    <string name="s0459">расстояние</string>
+    <string name="s0460">Автоматический раскрой</string>
+    <string name="s0461">План сравнения</string>
+    <string name="s0462">Автоматическое разделение досок</string>
+    <string name="s0463">Подать заявку на просмотр</string>
+    <string name="s0464" formatted="true">⚠ Коэффициент использования низкий (%1$s%%), рекомендуется скорректировать расположение деталей или размер пластины.</string>
+    <string name="s0465" formatted="true">⚠ Есть %1$s деталей, которые невозможно разместить. Рекомендуется увеличить размер пластины или уменьшить расстояние.</string>
+    <string name="s0466" formatted="true">💡 Расстояние большое (%1$sмм), вы можете попытаться уменьшить его, чтобы улучшить использование.</string>
+    <string name="s0467">💡 Коэффициент использования доски очень высок, рассмотрите возможность использования досок большего размера или разделения их на несколько досок.</string>
+    <string name="s0468">FFD (первый подходящий, по убыванию)</string>
+    <string name="s0469">Сортировка деталей по площади (от больших к меньшим); 4 угла поворота на деталь</string>
+    <string name="s0470" formatted="true">%1$s (№ %2$s)</string>
+    <string name="s0471">Наилучшее заполнение</string>
+    <string name="s0472">Выбор позиции с наименьшими потерями места для каждой детали</string>
+    <string name="s0473">Полосами</string>
+    <string name="s0474">Укладка рядами, каждый ряд как можно плотнее; подходит для длинных деталей</string>
+    <string name="s0475">Неизвестная ошибка</string>
+    <string name="s0476">Не удалось прочитать файл DXF</string>
+    <string name="s0477">Не удалось прочитать файл</string>
+    <string name="s0478">Не указано</string>
+    <string name="s0479">Дюймы</string>
+    <string name="s0480">Футы</string>
+    <string name="s0481">Мили</string>
+    <string name="s0482">Миллиметры</string>
+    <string name="s0483">Сантиметры</string>
+    <string name="s0484">Метры</string>
+    <string name="s0485">Километры</string>
+    <string name="s0486">Микродюймы</string>
+    <string name="s0487">Милы</string>
+    <string name="s0488">Ярды</string>
+    <string name="s0489">Ангстремы</string>
+    <string name="s0490">Нанометры</string>
+    <string name="s0491">Микроны</string>
+    <string name="s0492">Дециметры</string>
+    <string name="s0493">Дециметры</string>
+    <string name="s0494">Декаметры</string>
+    <string name="s0495">Гектометры</string>
+    <string name="s0496">Гигаметры</string>
+    <string name="s0497">Астрономические единицы</string>
+    <string name="s0498">Световые годы</string>
+    <string name="s0499">Парсеки</string>
+    <string name="s0500" formatted="true">Код единицы %1$s</string>
+    <string name="s0502">Это бинарный DXF, который пока не поддерживается. Экспортируйте чертеж в ASCII (текстовый) DXF и откройте его снова.</string>
+    <string name="s0503">Файл не содержит отображаемых объектов чертежа. Если он был сохранён в AutoCAD как DWG и просто переименован в .dxf, сохраните его как настоящий DXF-файл.</string>
+</resources>

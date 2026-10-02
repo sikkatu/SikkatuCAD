@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App surfaces: quieter, lighter technical dark mode -->
+    <color name="surface">#F6F8FC</color>
+    <color name="surfaceDark">#060A12</color>
+    <color name="appBar">#0A1020</color>
+    <color name="navBar">#09111F</color>
+    <color name="canvasPanel">#0A1224</color>
+    <color name="emptyPanelBg">#121B2D</color>
+
+    <!-- Floating panels -->
+    <color name="panel">#FAFCFF</color>
+    <color name="panelDark">#121A2E</color>
+    <color name="panelSoft">#F4F8FF</color>
+    <color name="panelGlass">#FAFFFFFF</color>
+
+    <!-- Intelligent accent system -->
+    <color name="accent">#38BDF8</color>
+    <color name="accentStrong">#3B82F6</color>
+    <color name="accentViolet">#8B5CF6</color>
+    <color name="accentMint">#34D399</color>
+    <color name="accentSoft">#E0F2FE</color>
+    <color name="accentSoftDark">#183A5A</color>
+    <color name="accentGlow">#6638BDF8</color>
+
+    <!-- Navigation -->
+    <color name="navItemBg">#0016212F</color>
+    <color name="navItemSelected">#263B82F6</color>
+
+    <!-- Strokes and text -->
+    <color name="darkStroke">#2A3852</color>
+    <color name="stroke">#D9E3F0</color>
+    <color name="strokeSoft">#EAF0F8</color>
+    <color name="textPrimary">#0F172A</color>
+    <color name="textSecondary">#64748B</color>
+    <color name="textTertiary">#94A3B8</color>
+    <color name="textOnDark">#F8FAFC</color>
+    <color name="textMutedOnDark">#A7B4C8</color>
+    <!-- Текст на тёмных панелях -->
+    <color name="panelTextPrimary">#F0F6FF</color>
+    <color name="panelTextSecondary">#B8C7DC</color>
+
+    <!-- CAD canvas palette -->
+    <color name="canvasBg">#08111F</color>
+    <color name="canvasGrid">#24324A</color>
+    <color name="entityLine">#F8FAFC</color>
+    <color name="entityAccent">#7DD3FC</color>
+
+    <!-- Status -->
+    <color name="warning">#D97706</color>
+    <color name="warningSoft">#FFF7E6</color>
+</resources>

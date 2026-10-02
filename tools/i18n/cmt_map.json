@@ -1,0 +1,174 @@
+{
+"c001": {
+"zh": "多指手势开始时立即切到缩放/移动优先，避免测量吸附和单指平移状态干扰缩放焦点。",
+"en": "Switch to zoom/move priority immediately when a multi-finger gesture starts, to avoid measurement adsorption and single-finger panning states from interfering with the zoom focus."
+},
+"c002": {
+"zh": "缩放由 ScaleGestureDetector 独占处理；同步当前位置，防止缩放结束后下一次单指移动使用旧坐标导致跳动。",
+"en": "Scaling is handled exclusively by ScaleGestureDetector; the current position is synchronized to prevent the next single-finger movement after scaling ends from using old coordinates and causing jitter."
+},
+"c003": {
+"zh": "记录剩余手指的位置，避免从双指缩放回到单指时出现位移突变。",
+"en": "Record the position of the remaining fingers to avoid sudden changes in displacement when zooming from two fingers back to one finger."
+},
+"c004": {
+"zh": "确保 GEN 操作送入画布仿真引擎",
+"en": "Make sure GEN operations are fed into the canvas emulation engine"
+},
+"c005": {
+"zh": "确保预演数据与当前文档同步",
+"en": "Make sure preview data is in sync with the current document"
+},
+"c006": {
+"zh": "执行排版算法",
+"en": "Execute typesetting algorithm"
+},
+"c007": {
+"zh": "更新工作区",
+"en": "Update workspace"
+},
+"c008": {
+"zh": "更新结果显示",
+"en": "Update results display"
+},
+"c009": {
+"zh": "找到最优方案",
+"en": "Find the optimal solution"
+},
+"c010": {
+"zh": "合并所有板材的排版结果",
+"en": "Merge layout results for all panels"
+},
+"c011": {
+"zh": "平移该板材的所有实体",
+"en": "Translate all entities of this sheet"
+},
+"c012": {
+"zh": "板材尺寸与厚度",
+"en": "Board size and thickness"
+},
+"c013": {
+"zh": "排版策略选择",
+"en": "Typesetting strategy selection"
+},
+"c014": {
+"zh": "排版结果显示",
+"en": "Typesetting result display"
+},
+"c015": {
+"zh": "放置位置 X",
+"en": "Place position X"
+},
+"c016": {
+"zh": "放置位置 Y",
+"en": "Place position Y"
+},
+"c017": {
+"zh": "利用率 0-100%",
+"en": "Utilization rate 0-100%"
+},
+"c018": {
+"zh": "浪费面积",
+"en": "Wasted area"
+},
+"c019": {
+"zh": "成功放置的零件数",
+"en": "Number of successfully placed parts"
+},
+"c020": {
+"zh": "无法放置的零件",
+"en": "Parts that cannot be placed"
+},
+"c021": {
+"zh": "已放置零件列表",
+"en": "Placed parts list"
+},
+"c022": {
+"zh": "检查是否超出板材边界",
+"en": "Check if plate boundary is exceeded"
+},
+"c023": {
+"zh": "检查碰撞",
+"en": "Check for collisions"
+},
+"c024": {
+"zh": "检查利用率",
+"en": "Check utilization"
+},
+"c025": {
+"zh": "检查无法放置的零件",
+"en": "Check for parts that cannot be placed"
+},
+"c026": {
+"zh": "检查间距",
+"en": "Check spacing"
+},
+"c027": {
+"zh": "检查是否需要分板",
+"en": "Check whether splitting is required"
+},
+"c028": {
+"zh": "无法放置任何零件，可能是零件太大",
+"en": "Unable to place any part, maybe the part is too big"
+},
+"c029": {
+"zh": "按名称扣减数量，避免同名零件被整组误删",
+"en": "Deduct quantity by name to avoid accidentally deleting parts with the same name from the entire group"
+},
+"c030": {
+"zh": "防止无限循环",
+"en": "Prevent infinite loop"
+},
+"c031": {
+"zh": "考虑间距",
+"en": "Consider spacing"
+},
+"c032": {
+"zh": "增加20%的间距",
+"en": "Add 20% spacing"
+},
+"c033": {
+"zh": "尝试找到最接近的板材尺寸",
+"en": "Try to find the closest plate size"
+},
+"c034": {
+"zh": "移除当前位置之后的历史",
+"en": "Remove history after current location"
+},
+"c035": {
+"zh": "按面积从大到小排序",
+"en": "Sort by area from largest to smallest"
+},
+"c036": {
+"zh": "对每个零件类型进行排列",
+"en": "Arrange each part type"
+},
+"c037": {
+"zh": "尝试4个旋转角度",
+"en": "Try 4 rotation angles"
+},
+"c038": {
+"zh": "从左到右、从上到下扫描",
+"en": "Scan from left to right, top to bottom"
+},
+"c039": {
+"zh": "步进",
+"en": "step by step"
+},
+"c040": {
+"zh": "在网格上尝试放置",
+"en": "Try placement on the grid"
+},
+"c041": {
+"zh": "计算浪费面积（简化：使用右下角空间）",
+"en": "Calculate wasted area (simplified: use bottom right space)"
+},
+"c042": {
+"zh": "尝试在当前行放置",
+"en": "Try placing at the current line"
+},
+"c043": {
+"zh": "如果当前行放不下，尝试新行",
+"en": "If the current row does not fit, try a new row"
+}
+}

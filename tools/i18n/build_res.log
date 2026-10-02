@@ -1,0 +1,33 @@
+nohup: ignoring input
+unique literals: 474 | comment texts: 43 | jobs: 517
+  ... translated 40 strings
+  ... translated 80 strings
+  ... translated 120 strings
+  ... translated 160 strings
+  ... translated 200 strings
+  ... translated 240 strings
+  ... translated 280 strings
+  ... translated 320 strings
+  ... translated 360 strings
+  ... translated 400 strings
+  ... translated 440 strings
+  ... translated 480 strings
+  ... translated 520 strings
+  ... translated 560 strings
+  ... translated 600 strings
+  ... translated 640 strings
+  ... translated 680 strings
+  ... translated 720 strings
+  ... translated 760 strings
+  ... translated 800 strings
+  ... translated 840 strings
+  ... translated 880 strings
+  ... translated 920 strings
+  ... translated 960 strings
+  ... translated 1000 strings
+translation cache complete (1034 new this run)
+resource strings: 473 (inline keeps: 1)
+wrote /root/androidcad/tools/i18n/../../app/src/main/res/values/strings_i18n.xml
+wrote /root/androidcad/tools/i18n/../../app/src/main/res/values-ru/strings_i18n.xml
+wrote /root/androidcad/tools/i18n/../../app/src/main/res/values-zh/strings_i18n.xml
+wrote res_map.json (474 entries) and cmt_map.json (43 entries)

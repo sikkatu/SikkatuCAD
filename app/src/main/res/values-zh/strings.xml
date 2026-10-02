@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chinese strings (third selectable language). -->
+<resources>
+    <string name="app_name">SikkatuCAD</string>
+    <string name="status_idle">等待打开图纸或工艺文件</string>
+    <string name="no_file">未选择文件</string>
+    <string name="open_file">打开</string>
+    <string name="empty_hint">移动端 CAD 看图与工艺预演</string>
+    <string name="empty_subtitle">打开 DXF / DWG 图纸。编辑和翻译标注文字、测量、导出。</string>
+    <string name="action_file">文件</string>
+    <string name="action_layers">视图</string>
+    <string name="action_measure">工具</string>
+    <string name="action_simulation">预演</string>
+    <string name="action_nesting">排版</string>
+    <string name="action_export">导出</string>
+    <string name="action_info">信息</string>
+    <string name="action_texts">文本</string>
+    <string name="action_settings">设置</string>
+    <string name="language_picker">界面语言</string>
+    <string name="language_current">语言：%1$s</string>
+    <string name="reopen_last">返回图纸</string>
+    <string name="panel_layers">图层控制</string>
+    <string name="panel_file">文件库</string>
+    <string name="panel_info">文件信息</string>
+    <string name="panel_default">面板</string>
+    <string name="close_panel">关闭面板</string>
+    <string name="chip_auto_dimension">标注</string>
+    <string name="chip_view_2d">2D</string>
+    <string name="chip_view_3d">3D</string>
+    <string name="chip_bevel">坡口</string>
+    <string name="chip_rapid">空移</string>
+    <string name="file_type_unknown">-</string>
+    <string name="nc_code_title">NC 代码</string>
+    <string name="generate_nc">生成 NC</string>
+</resources>

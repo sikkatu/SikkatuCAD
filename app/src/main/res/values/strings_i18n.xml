@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="s0001">Unable to read PDF file</string>
+    <string name="s0002">There are no convertible vector paths in PDF</string>
+    <string name="s0003">mm</string>
+    <string name="s0005">Unknown version</string>
+    <string name="s0006">Unknown</string>
+    <string name="s0007">The current project has created a DWG viewing entrance, but complete rendering requires access to the C/C++ parsing library.</string>
+    <string name="s0008" formatted="true">Width %1$s · Height %2$s</string>
+    <string name="s0009" formatted="false">Selected starting point: %.2f, %.2f</string>
+    <string name="s0010" formatted="false">Selected starting point: %.2f, %.2f, you can drag/zoom the view and click the second point</string>
+    <string name="s0011" formatted="true">Width %1$s</string>
+    <string name="s0012" formatted="true">High %1$s</string>
+    <string name="s0013" formatted="true">R %1$s / arc %2$s</string>
+    <string name="s0014" formatted="true">long %1$s</string>
+    <string name="s0015" formatted="true">long %1$s</string>
+    <string name="s0016" formatted="true">R %1$s Arc length %2$s</string>
+    <string name="s0017">free point</string>
+    <string name="s0018">endpoint</string>
+    <string name="s0019">midpoint</string>
+    <string name="s0020">closest</string>
+    <string name="s0021" formatted="false">Measuring distance: %.2f</string>
+    <string name="s0022" formatted="false">Angle point 1/3: %.2f, %.2f</string>
+    <string name="s0023">Angle point 2/3: Continue to select the third point</string>
+    <string name="s0024" formatted="false">Angle: %.2f°</string>
+    <string name="s0025" formatted="true">Area point %1$s/3: continue to select points</string>
+    <string name="s0026" formatted="true">Area point %1$s: Continue to select points or click \"Complete Area\"</string>
+    <string name="s0027" formatted="false">Area: %.2f Perimeter: %.2f</string>
+    <string name="s0028">Distance measurement: click twice to take a point</string>
+    <string name="s0029">Angle measurement: click three points in sequence</string>
+    <string name="s0030">Area measurement: continuously click on the contour points</string>
+    <string name="s0031">No supported drawing files were found in the compressed package.</string>
+    <string name="s0032">Unable to read file path</string>
+    <string name="s0033">Untitled file</string>
+    <string name="s0034">Unable to read import file</string>
+    <string name="s0035">Unable to read compressed package</string>
+    <string name="s0036" formatted="true">%1$s\nManaged %2$s files · %3$s</string>
+    <string name="s0037">Not started</string>
+    <string name="s0038">Unable to write to target file</string>
+    <string name="s0039">Export completed</string>
+    <string name="s0040" formatted="true">Export failed: %1$s</string>
+    <string name="s0041">Unable to read current file</string>
+    <string name="s0042">Typesetting import.dxf</string>
+    <string name="s0043" formatted="true">Imported layout file: %1$s</string>
+    <string name="s0044" formatted="true">Typesetting import failed: %1$s</string>
+    <string name="s0045">Please open the drawing first</string>
+    <string name="s0046" formatted="true">Automatic labeling is on: %1$s</string>
+    <string name="s0047">Automatic labeling is turned off</string>
+    <string name="s0048">Switched to 2D view</string>
+    <string name="s0049">Switched to 3D view, drag and rotate</string>
+    <string name="s0050">The bevel display is turned on</string>
+    <string name="s0051">The bevel display is turned off, press Straight Cut to display</string>
+    <string name="s0052">The empty shift line is shown</string>
+    <string name="s0053">The empty shift line is hidden</string>
+    <string name="s0054">No graphics available for export</string>
+    <string name="s0055">Untitled</string>
+    <string name="s0056">Unlabel</string>
+    <string name="s0057">One-click annotation</string>
+    <string name="s0058" formatted="true">Unzipping %1$s</string>
+    <string name="s0059" formatted="true">Importing %1$s</string>
+    <string name="s0060">Import failed: No supported drawing file found in the compressed package</string>
+    <string name="s0061" formatted="true">, a total of %1$s drawings were imported</string>
+    <string name="s0062" formatted="true">Unzipped to a dedicated directory: %1$s%2$s</string>
+    <string name="s0063" formatted="true">Imported into dedicated directory: %1$s</string>
+    <string name="s0064" formatted="true">Import failed: %1$s, try to open directly</string>
+    <string name="s0065" formatted="true">Parsing %1$s</string>
+    <string name="s0066" formatted="true">Parse failed: %1$s</string>
+    <string name="s0067">Unable to open file</string>
+    <string name="s0068">Please confirm that the file is readable and in .dxf, .dwg, .gen, .nc, or .pdf format.</string>
+    <string name="s0069" formatted="true">Sample loading failed: %1$s</string>
+    <string name="s0070" formatted="true">Regenerating to %1$s</string>
+    <string name="s0071" formatted="true">Objects: %1$s</string>
+    <string name="s0072" formatted="true">Layer %1$s · %2$s</string>
+    <string name="s0073" formatted="true">Layer %1$s</string>
+    <string name="s0074">Open DXF</string>
+    <string name="s0075" formatted="true">GEN process section:%1$s</string>
+    <string name="s0076">Open GEN</string>
+    <string name="s0077" formatted="true">NC trajectory segment: %1$s</string>
+    <string name="s0078">Open NC</string>
+    <string name="s0079" formatted="true">DWG file recognized: %1$s</string>
+    <string name="s0080">DWG preview information</string>
+    <string name="s0081" formatted="true">Version code: %1$s\nIdentified version: %2$s\n\n%3$s</string>
+    <string name="s0082">illustrate</string>
+    <string name="s0083">File</string>
+    <string name="s0084">Collection files</string>
+    <string name="s0085">There are no favorite files yet. After opening the drawing, you can save the current file in the details.</string>
+    <string name="s0086">Import file</string>
+    <string name="s0087">The import will first be copied to the application-specific category directory and then opened from the copy; history deletion will only remove records by default to avoid accidentally deleting the original drawings.</string>
+    <string name="s0088">dedicated directory</string>
+    <string name="s0089">+ Create a new CAD drawing</string>
+    <string name="s0090">+ Import local maps</string>
+    <string name="s0091">Save DXF (retain original image structure)</string>
+    <string name="s0092">Select the file vault root directory</string>
+    <string name="s0093">current file</string>
+    <string name="s0094">Cancel favorites of current file</string>
+    <string name="s0095">Save current file</string>
+    <string name="s0096" formatted="true">Collected %1$s</string>
+    <string name="s0097" formatted="true">Canceled collection %1$s</string>
+    <string name="s0098">historical documents</string>
+    <string name="s0099">state</string>
+    <string name="s0100">No history yet</string>
+    <string name="s0101">Pin to the top ·</string>
+    <string name="s0102">History deleted</string>
+    <string name="s0103">View full history</string>
+    <string name="s0104">Group preview</string>
+    <string name="s0105">Group</string>
+    <string name="s0106">After importing or opening drawings, they will be automatically grouped by type such as DXF / DWG / PDF / NC.</string>
+    <string name="s0107">Clear history files</string>
+    <string name="s0108">History files cleared</string>
+    <string name="s0109" formatted="true">%1$s · %2$s</string>
+    <string name="s0110">Managed copy deleted</string>
+    <string name="s0111">Delete failed: file is not writable or does not exist</string>
+    <string name="s0112">No record yet</string>
+    <string name="s0113">NC automatically generated</string>
+    <string name="s0114">Outer bounds</string>
+    <string name="s0115">Thickness(mm)</string>
+    <string name="s0116">Material</string>
+    <string name="s0117">Board length</string>
+    <string name="s0118">Board width</string>
+    <string name="s0119">Program name/export name</string>
+    <string name="s0120">Program name</string>
+    <string name="s0121">Generate and export NC</string>
+    <string name="s0122">NC has been generated, please select the save location</string>
+    <string name="s0123">There is currently no DXF for сохранённого исходного потока</string>
+    <string name="s0124">Unable подготовить DXF</string>
+    <string name="s0125" formatted="true">Current recognition size: W %1$s / H %2$s mm</string>
+    <string name="s0126" formatted="true">Original PDF size: W %1$s / H %2$s mm</string>
+    <string name="s0127" formatted="true">Automatic recognition ratio: 1:%1$s, currently applied %2$sx</string>
+    <string name="s0128">Automatic recognition ratio: not recognized</string>
+    <string name="s0129">Target width (mm), preferred</string>
+    <string name="s0130">Target height (mm), if left blank, it will be proportional to the width.</string>
+    <string name="s0131">PDF size calibration</string>
+    <string name="s0132">Apply recognition ratio</string>
+    <string name="s0133">Drawing scale not recognized</string>
+    <string name="s0134">Cancel</string>
+    <string name="s0135">application</string>
+    <string name="s0136">Please enter a valid target size</string>
+    <string name="s0137">PDF size calibration</string>
+    <string name="s0138">PDF dimensions calibrated to scale</string>
+    <string name="s0139">File library</string>
+    <string name="s0140">No directory has been selected yet. After clicking \"Select file library root directory\" above, you can browse all files just like the original application.</string>
+    <string name="s0141">current directory</string>
+    <string name="s0142">Return to previous level</string>
+    <string name="s0143">Table of contents</string>
+    <string name="s0144">There are no files to display in the current directory</string>
+    <string name="s0145" formatted="true">[Contents] %1$s</string>
+    <string name="s0146">Search files</string>
+    <string name="s0147">Enter the file name keyword</string>
+    <string name="s0148">search</string>
+    <string name="s0149">hint</string>
+    <string name="s0150">The search will recursively look for .dxf / .dwg / .gen files within the library root of your choice.</string>
+    <string name="s0151">Please select the file library root directory first</string>
+    <string name="s0152">Please enter search keywords</string>
+    <string name="s0153" formatted="true">Searching %1$s</string>
+    <string name="s0154">Search results</string>
+    <string name="s0155">result</string>
+    <string name="s0156">No matching file found</string>
+    <string name="s0157" formatted="true">Search completed: %1$s results</string>
+    <string name="s0158">Switched to landscape screen</string>
+    <string name="s0159">Switched to portrait screen</string>
+    <string name="s0160">board border</string>
+    <string name="s0161">Walk on empty</string>
+    <string name="s0162">Straight cut</string>
+    <string name="s0163">Bevel A+</string>
+    <string name="s0164">Bevel A-</string>
+    <string name="s0165">Bevel B+</string>
+    <string name="s0166">Bevel B-</string>
+    <string name="s0167">Layer controls</string>
+    <string name="s0168">The current file is not a DXF and there are currently no switchable layers.</string>
+    <string name="s0169">Show PDF text</string>
+    <string name="s0170">PDF text shown</string>
+    <string name="s0171">PDF text hidden</string>
+    <string name="s0172">Show all</string>
+    <string name="s0173">Hide all</string>
+    <string name="s0174">entities</string>
+    <string name="s0175">· The original file is closed</string>
+    <string name="s0176">· Original file frozen</string>
+    <string name="s0177">It is currently a GEN file, please view the cut in the preview panel.</string>
+    <string name="s0178">The current drawing does not support measurement</string>
+    <string name="s0179">Measure/Annotate</string>
+    <string name="s0180">Automatic labeling</string>
+    <string name="s0181">Mark the width and height of drawings with one click</string>
+    <string name="s0182">border size</string>
+    <string name="s0183">Manual measurement</string>
+    <string name="s0184">distance measurement</string>
+    <string name="s0185">Distance measurement is on</string>
+    <string name="s0186">angle measurement</string>
+    <string name="s0187">Angle measurement is on</string>
+    <string name="s0188">area measurement</string>
+    <string name="s0189">Area measurement is enabled</string>
+    <string name="s0190">Close measurement</string>
+    <string name="s0191">Measurement is off</string>
+    <string name="s0192">Automatic closing: open</string>
+    <string name="s0193">Automatic closing: off</string>
+    <string name="s0194">Completed area</string>
+    <string name="s0195">take a step back</string>
+    <string name="s0196">Clear measurements</string>
+    <string name="s0197">CAD editor</string>
+    <string name="s0198">Open professional drawing tools</string>
+    <string name="s0199">Click on the canvas to select a line segment and then trim, copy, or delete it; you can also directly create a rectangle/circle/text.</string>
+    <string name="s0200">Current mode</string>
+    <string name="s0201">Not turned on</string>
+    <string name="s0202">distance</string>
+    <string name="s0203">angle</string>
+    <string name="s0204">area</string>
+    <string name="s0205">Number of layers</string>
+    <string name="s0206">There is no preview data for the current graph</string>
+    <string name="s0207">Rehearsal of the knife move</string>
+    <string name="s0208">trajectory</string>
+    <string name="s0209">empty trace</string>
+    <string name="s0210">Underline</string>
+    <string name="s0211">cutting</string>
+    <string name="s0212">Line segment editing</string>
+    <string name="s0213">Type</string>
+    <string name="s0214">Layers</string>
+    <string name="s0215">default</string>
+    <string name="s0216">actual length</string>
+    <string name="s0217">coordinate difference</string>
+    <string name="s0218">Modify length</string>
+    <string name="s0219">Save changes</string>
+    <string name="s0220">Please enter valid coordinates</string>
+    <string name="s0221">Uncheck</string>
+    <string name="s0222">History</string>
+    <string name="s0223">Starting point</string>
+    <string name="s0224">Starting point Y</string>
+    <string name="s0225">end point</string>
+    <string name="s0226">End point Y</string>
+    <string name="s0227">Modify line segment</string>
+    <string name="s0228">Line segment updated</string>
+    <string name="s0229">There are currently no editable graphics</string>
+    <string name="s0230">CAD drawing/editing</string>
+    <string name="s0231">Create graphics</string>
+    <string name="s0232">Create a new blank graphic/canvas</string>
+    <string name="s0233">Create a straight line</string>
+    <string name="s0234">Create rectangle</string>
+    <string name="s0235">Create circle</string>
+    <string name="s0236">Create arc</string>
+    <string name="s0237">Create polyline</string>
+    <string name="s0238">Add text</string>
+    <string name="s0239">Commonly used libraries/standard parts</string>
+    <string name="s0240">L-shaped angle steel/bracket</string>
+    <string name="s0241">L shaped angle steel</string>
+    <string name="s0242">Channel steel / U-shaped section</string>
+    <string name="s0243">Channel steel</string>
+    <string name="s0244">I-beam / H-section</string>
+    <string name="s0245">I-beam</string>
+    <string name="s0246">Flange/bolt hole array</string>
+    <string name="s0247">Flange</string>
+    <string name="s0248">Long round hole plate</string>
+    <string name="s0249">Edit operations</string>
+    <string name="s0250">Edit selected object properties</string>
+    <string name="s0251">Copy selected entities</string>
+    <string name="s0252">Paste copy (offset 25mm)</string>
+    <string name="s0253">Trim line segment 10%</string>
+    <string name="s0254">Delete selected entities</string>
+    <string name="s0255">history</string>
+    <string name="s0256">Cancel</string>
+    <string name="s0257">Redo</string>
+    <string name="s0258">Current selection</string>
+    <string name="s0259">Not selected</string>
+    <string name="s0260">clipboard</string>
+    <string name="s0261">Entity already exists and can be pasted</string>
+    <string name="s0262">null</string>
+    <string name="s0263">Number of entities</string>
+    <string name="s0264">New graphic</string>
+    <string name="s0265" formatted="true">Layer %1$s · %2$s</string>
+    <string name="s0266">file name</string>
+    <string name="s0267">Create new graphic.dxf</string>
+    <string name="s0268">width</string>
+    <string name="s0269">high</string>
+    <string name="s0270">Create a new CAD drawing</string>
+    <string name="s0271">blank canvas</string>
+    <string name="s0272" formatted="true">A new blank graphic has been created: %1$s</string>
+    <string name="s0273">Template with border</string>
+    <string name="s0274" formatted="true">New bordered graphic: %1$s</string>
+    <string name="s0275">Starting pointX</string>
+    <string name="s0276">Starting point Y</string>
+    <string name="s0277">End pointX</string>
+    <string name="s0278">End point Y</string>
+    <string name="s0279">create</string>
+    <string name="s0280">CenterX</string>
+    <string name="s0281">Center Y</string>
+    <string name="s0282">radius</string>
+    <string name="s0283">starting angle</string>
+    <string name="s0284">end angle</string>
+    <string name="s0285">Point sequence x,y;x,y</string>
+    <string name="s0286">Closed(1/0)</string>
+    <string name="s0287">Polylines require at least 2 points</string>
+    <string name="s0288">Insert X</string>
+    <string name="s0289">Insert Y</string>
+    <string name="s0290">Plate thickness/hole diameter</string>
+    <string name="s0291" formatted="true">Insert%1$s</string>
+    <string name="s0292">insert</string>
+    <string name="s0293">content</string>
+    <string name="s0294">Add to</string>
+    <string name="s0295">Please select the entity to edit first</string>
+    <string name="s0296">Edit object properties</string>
+    <string name="s0297">Selected object properties updated</string>
+    <string name="s0298">Please select the entity in the canvas first</string>
+    <string name="s0299">Selected entities copied</string>
+    <string name="s0300">Clipboard is empty</string>
+    <string name="s0301">Paste entities</string>
+    <string name="s0302">Entity copy pasted</string>
+    <string name="s0303">Please select the entity to delete first</string>
+    <string name="s0304">Delete entity</string>
+    <string name="s0305">Selected entity deleted</string>
+    <string name="s0306">Please select the line segment you want to trim first</string>
+    <string name="s0307">Line segment trimmed proportionally</string>
+    <string name="s0308">No undoable history</string>
+    <string name="s0309" formatted="true">Canceled: %1$s</string>
+    <string name="s0310">No history to redo</string>
+    <string name="s0311" formatted="true">Redone: %1$s</string>
+    <string name="s0312">step</string>
+    <string name="s0313">No history yet</string>
+    <string name="s0314" formatted="true">Current step %1$s</string>
+    <string name="s0315" formatted="true">Step %1$s</string>
+    <string name="s0316">Tool path simulation</string>
+    <string name="s0317">slope section</string>
+    <string name="s0318">preview control</string>
+    <string name="s0319">speed</string>
+    <string name="s0320">schedule</string>
+    <string name="s0321">stop</string>
+    <string name="s0322" formatted="true">%1$s Preview has stopped</string>
+    <string name="s0323">pause</string>
+    <string name="s0324">continue</string>
+    <string name="s0325">start</string>
+    <string name="s0326" formatted="true">%1$s Preview has been suspended</string>
+    <string name="s0327" formatted="true">%1$s Preview in progress</string>
+    <string name="s0328">Running</string>
+    <string name="s0329">Suspended</string>
+    <string name="s0330">scope</string>
+    <string name="s0331">unit</string>
+    <string name="s0332">Unspecified</string>
+    <string name="s0333">PDF ratio</string>
+    <string name="s0334">Current zoom</string>
+    <string name="s0335">Plate thickness</string>
+    <string name="s0336">Typography strategy</string>
+    <string name="s0337">boundary</string>
+    <string name="s0338">PDF text</string>
+    <string name="s0339">Showing</string>
+    <string name="s0340">Hidden</string>
+    <string name="s0341">Number of segments</string>
+    <string name="s0342">Process section</string>
+    <string name="s0343">Number of parts</string>
+    <string name="s0344">plate</string>
+    <string name="s0345">trajectory segment</string>
+    <string name="s0346">thickness</string>
+    <string name="s0347">Bevel summary</string>
+    <string name="s0348">A corner</string>
+    <string name="s0349">B corner</string>
+    <string name="s0350">Version</string>
+    <string name="s0351">version code</string>
+    <string name="s0352">File not opened</string>
+    <string name="s0353">import</string>
+    <string name="s0354">collect</string>
+    <string name="s0355">all</string>
+    <string name="s0356">No preview information</string>
+    <string name="s0357">Open</string>
+    <string name="s0358">Details</string>
+    <string name="s0359">delete</string>
+    <string name="s0360" formatted="true">%1$s files ›</string>
+    <string name="s0361">Document details</string>
+    <string name="s0362">Return to file panel</string>
+    <string name="s0363">Record time</string>
+    <string name="s0364">Pinned</string>
+    <string name="s0365">ordinary</string>
+    <string name="s0366">management mode</string>
+    <string name="s0367">Escrow copy, safe for deletion</string>
+    <string name="s0368">External reference, only remove records</string>
+    <string name="s0369">local path</string>
+    <string name="s0370">source</string>
+    <string name="s0371">display name</string>
+    <string name="s0372">size</string>
+    <string name="s0373">modification time</string>
+    <string name="s0374">open file</string>
+    <string name="s0375">Unpin</string>
+    <string name="s0376">Pin history</string>
+    <string name="s0377">History updated</string>
+    <string name="s0378">Remove from history</string>
+    <string name="s0379">Delete a managed copy</string>
+    <string name="s0380">Current file details</string>
+    <string name="s0381">Return to import page</string>
+    <string name="s0382">Preview</string>
+    <string name="s0383">Cancel favorites</string>
+    <string name="s0384">Reimport the file</string>
+    <string name="s0385">PDF conversion preview</string>
+    <string name="s0386">DXF drawing</string>
+    <string name="s0387" formatted="true">%1$s · %2$s entities · %3$s layers · W %4$s / H %5$s</string>
+    <string name="s0388" formatted="true">GEN process file · %1$s sections · %2$s process sections</string>
+    <string name="s0389" formatted="true">NC program · %1$s trajectories · %2$s</string>
+    <string name="s0390" formatted="true">DWG drawings · %1$s · %2$s</string>
+    <string name="s0391">File selected, preview not generated yet</string>
+    <string name="s0392">pin to top</string>
+    <string name="s0393" formatted="true">Part %1$s · Plate %2$s x %3$s · Process %4$s</string>
+    <string name="s0394" formatted="true">Section %1$s · Part %2$s</string>
+    <string name="s0395" formatted="true">Trajectory %1$s · %2$s · Plate %3$s x %4$s</string>
+    <string name="s0396" formatted="true">Trajectory %1$s · Plate %2$s x %3$s</string>
+    <string name="s0397" formatted="true">Trajectory %1$s</string>
+    <string name="s0398" formatted="true">Symmetrical groove ±%1$s</string>
+    <string name="s0399" formatted="true">A symmetrical groove ±%1$s</string>
+    <string name="s0400" formatted="true">B Symmetrical groove ±%1$s</string>
+    <string name="s0401" formatted="true">Bevel %1$s</string>
+    <string name="s0402">No bevel</string>
+    <string name="s0403">No parts yet</string>
+    <string name="s0404">Mirror X</string>
+    <string name="s0405">Edit part</string>
+    <string name="s0406">quantity</string>
+    <string name="s0407">Rotation (degrees)</string>
+    <string name="s0408">save</string>
+    <string name="s0409">implement</string>
+    <string name="s0410">Rectangle parameters</string>
+    <string name="s0411" formatted="true">Rectangle%1$s</string>
+    <string name="s0412">Circular parameters</string>
+    <string name="s0413" formatted="true">Round%1$s</string>
+    <string name="s0414">No parts to typeset</string>
+    <string name="s0415">Typesetting results</string>
+    <string name="s0416">Utilization</string>
+    <string name="s0417">Placed</string>
+    <string name="s0418">Wasted area</string>
+    <string name="s0419">Parts that cannot be placed:</string>
+    <string name="s0420">Optimization suggestions</string>
+    <string name="s0421">suggestion</string>
+    <string name="s0422" formatted="true">Typesetting completed: %1$s/%2$s ​​parts, utilization rate %3$s%%</string>
+    <string name="s0423">Comparison of layout plans:</string>
+    <string name="s0424" formatted="true">Utilization rate: %1$s%%</string>
+    <string name="s0425" formatted="true">Placed: %1$s/%2$s</string>
+    <string name="s0426" formatted="true">Wasted area: %1$s</string>
+    <string name="s0427" formatted="true">Recommended use: %1$s</string>
+    <string name="s0428">Comparison of layout plans</string>
+    <string name="s0429">Apply best practices</string>
+    <string name="s0430" formatted="true">Best solution applied: %1$s</string>
+    <string name="s0431">Unable to perform board typesetting</string>
+    <string name="s0432">Automatic board splitting is completed</string>
+    <string name="s0433" formatted="true">Total number of boards: %1$s</string>
+    <string name="s0434" formatted="true">Plate %1$s:</string>
+    <string name="s0435" formatted="true">Placed: %1$s</string>
+    <string name="s0436" formatted="true">Utilization rate: %1$s%%</string>
+    <string name="s0437" formatted="true">Total placement: %1$s/%2$s</string>
+    <string name="s0438">Split board typesetting results</string>
+    <string name="s0439" formatted="true">Applied board layout: %1$s sheets</string>
+    <string name="s0440">Typography applied</string>
+    <string name="s0441">No layout results available to apply</string>
+    <string name="s0442">Typesetting import</string>
+    <string name="s0443" formatted="true">Layer %1$s · Entity %2$s</string>
+    <string name="s0444">The line segment has been selected and the coordinates can be modified</string>
+    <string name="s0445">Completed</string>
+    <string name="s0446">Rehearsal completed</string>
+    <string name="s0447">Intelligent typesetting (standalone)</string>
+    <string name="s0448">Board parameters</string>
+    <string name="s0449">length</string>
+    <string name="s0450">Recommended boards</string>
+    <string name="s0451">Apply recommended sizes</string>
+    <string name="s0452" formatted="true">Plate %1$s x %2$s</string>
+    <string name="s0453">import/gallery</string>
+    <string name="s0454">Import part files</string>
+    <string name="s0455">Add rectangle</string>
+    <string name="s0456">Add circle</string>
+    <string name="s0457">Parts list</string>
+    <string name="s0458">Typesetting parameters</string>
+    <string name="s0459">spacing</string>
+    <string name="s0460">Automatic nesting</string>
+    <string name="s0461">Comparison plan</string>
+    <string name="s0462">Automatic board splitting</string>
+    <string name="s0463">Apply to view</string>
+    <string name="s0464" formatted="true">⚠ The utilization rate is low (%1$s%%), it is recommended to adjust the part arrangement or plate size</string>
+    <string name="s0465" formatted="true">⚠ There are %1$s parts that cannot be placed. It is recommended to increase the plate size or reduce the spacing.</string>
+    <string name="s0466" formatted="true">💡 The spacing is large (%1$smm), you can try to reduce the spacing to improve utilization</string>
+    <string name="s0467">💡 The board utilization rate is very high, consider using larger boards or dividing them into multiple boards</string>
+    <string name="s0468">FFD (First Fit Decreasing)</string>
+    <string name="s0469">Sort parts by area (largest first); try 4 rotation angles for each part</string>
+    <string name="s0470" formatted="true">%1$s (No. %2$s)</string>
+    <string name="s0471">Best Fit</string>
+    <string name="s0472">Choose the placement with the least wasted space for each part</string>
+    <string name="s0473">Stripe</string>
+    <string name="s0474">Pack row by row as compactly as possible; good for long parts</string>
+    <string name="s0475">Unknown error</string>
+    <string name="s0476">Unable to read DXF file</string>
+    <string name="s0477">Unable to read file</string>
+    <string name="s0478">Unspecified</string>
+    <string name="s0479">Inches</string>
+    <string name="s0480">Feet</string>
+    <string name="s0481">Miles</string>
+    <string name="s0482">Millimeters</string>
+    <string name="s0483">Centimeters</string>
+    <string name="s0484">Meters</string>
+    <string name="s0485">Kilometers</string>
+    <string name="s0486">Microinches</string>
+    <string name="s0487">Mils</string>
+    <string name="s0488">Yards</string>
+    <string name="s0489">Angstroms</string>
+    <string name="s0490">Nanometers</string>
+    <string name="s0491">Microns</string>
+    <string name="s0492">Decimeters</string>
+    <string name="s0493">Decimeters</string>
+    <string name="s0494">Decameters</string>
+    <string name="s0495">Hectometers</string>
+    <string name="s0496">Gigameters</string>
+    <string name="s0497">Astronomical units</string>
+    <string name="s0498">Light years</string>
+    <string name="s0499">Parsecs</string>
+    <string name="s0500" formatted="true">Unit code %1$s</string>
+    <string name="s0502">This file is a binary DXF, which is not supported yet. Please export the drawing as an ASCII (text) DXF and open it again.</string>
+    <string name="s0503">This file contains no displayable drawing entities. If it was exported from AutoCAD as DWG and only renamed to .dxf, please save it as a real DXF file.</string>
+</resources>

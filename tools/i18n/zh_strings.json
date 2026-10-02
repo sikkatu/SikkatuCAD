@@ -1,0 +1,1565 @@
+{
+ "压缩包内未发现支持的图纸文件": [
+  "FileLibraryStore.kt"
+ ],
+ "无法读取文件路径": [
+  "FileLibraryStore.kt"
+ ],
+ "未命名文件": [
+  "FileLibraryStore.kt",
+  "MainActivity.kt"
+ ],
+ "无法读取导入文件": [
+  "FileLibraryStore.kt"
+ ],
+ "无法读取压缩包": [
+  "FileLibraryStore.kt"
+ ],
+ "${root.absolutePath}\\n已管理 ${files.size} 个文件 · ${formatSize(size)}": [
+  "FileLibraryStore.kt"
+ ],
+ "FFD (首次适配递减)": [
+  "NestingStrategy.kt"
+ ],
+ "按零件面积从大到小排列，对每个零件尝试4个旋转角度": [
+  "NestingStrategy.kt"
+ ],
+ "${part.name} (第 ${it + 1} 个)": [
+  "NestingStrategy.kt"
+ ],
+ "BestFit (最优适配)": [
+  "NestingStrategy.kt"
+ ],
+ "对每个零件选择浪费空间最少的放置位置": [
+  "NestingStrategy.kt"
+ ],
+ "条纹排列": [
+  "NestingStrategy.kt"
+ ],
+ "按行排列，每行尽可能紧凑，适合长条形零件": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 按面积从大到小排序": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 对每个零件类型进行排列": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 尝试4个旋转角度": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 从左到右、从上到下扫描": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 步进": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 在网格上尝试放置": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 计算浪费面积（简化：使用右下角空间）": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 尝试在当前行放置": [
+  "NestingStrategy.kt"
+ ],
+ "COMMENT:// 如果当前行放不下，尝试新行": [
+  "NestingStrategy.kt"
+ ],
+ "⚠ 利用率较低 (${String.format(": [
+  "NestingOptimizer.kt"
+ ],
+ ", result.utilization)}%)，建议调整零件排列或板材尺寸": [
+  "NestingOptimizer.kt"
+ ],
+ "⚠ 有 ${result.failedParts.size} 个零件无法放置，建议增加板材尺寸或减少间距": [
+  "NestingOptimizer.kt"
+ ],
+ "💡 间距较大 (${minGap}mm)，可尝试减小间距以提高利用率": [
+  "NestingOptimizer.kt"
+ ],
+ "💡 板材利用率很高，考虑使用更大的板材或分成多张板": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 检查利用率": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 检查无法放置的零件": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 检查间距": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 检查是否需要分板": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 无法放置任何零件，可能是零件太大": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 按名称扣减数量，避免同名零件被整组误删": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 防止无限循环": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 考虑间距": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 增加20%的间距": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 尝试找到最接近的板材尺寸": [
+  "NestingOptimizer.kt"
+ ],
+ "COMMENT:// 移除当前位置之后的历史": [
+  "NestingOptimizer.kt"
+ ],
+ "未开始": [
+  "MainActivity.kt"
+ ],
+ "无法写入目标文件": [
+  "MainActivity.kt"
+ ],
+ "导出完成": [
+  "MainActivity.kt"
+ ],
+ "导出失败：${error.message ?: ": [
+  "MainActivity.kt"
+ ],
+ "无法读取当前文件": [
+  "MainActivity.kt"
+ ],
+ "排版导入.dxf": [
+  "MainActivity.kt"
+ ],
+ "已导入排版文件：${it.fileName}": [
+  "MainActivity.kt"
+ ],
+ "排版导入失败：${error.message}": [
+  "MainActivity.kt"
+ ],
+ "请先打开图纸": [
+  "MainActivity.kt"
+ ],
+ "自动标注已开启：${binding.dxfCanvasView.autoDimensionSummary().orEmpty()}": [
+  "MainActivity.kt"
+ ],
+ "自动标注已关闭": [
+  "MainActivity.kt"
+ ],
+ "已切换到 2D 视图": [
+  "MainActivity.kt"
+ ],
+ "已切换到 3D 视图，可拖动旋转": [
+  "MainActivity.kt"
+ ],
+ "坡口显示已开启": [
+  "MainActivity.kt"
+ ],
+ "坡口显示已关闭，按直切显示": [
+  "MainActivity.kt"
+ ],
+ "空移线已显示": [
+  "MainActivity.kt"
+ ],
+ "空移线已隐藏": [
+  "MainActivity.kt"
+ ],
+ "没有可导出的图形": [
+  "MainActivity.kt"
+ ],
+ "未命名": [
+  "MainActivity.kt"
+ ],
+ "取消标注": [
+  "MainActivity.kt"
+ ],
+ "一键标注": [
+  "MainActivity.kt"
+ ],
+ "正在解压 $sourceName": [
+  "MainActivity.kt"
+ ],
+ "正在导入 $sourceName": [
+  "MainActivity.kt"
+ ],
+ "导入失败：压缩包内未发现支持的图纸文件": [
+  "MainActivity.kt"
+ ],
+ "，共导入 ${refs.size} 个图纸": [
+  "MainActivity.kt"
+ ],
+ "已解压到专用目录：${firstRef.name}$suffix": [
+  "MainActivity.kt"
+ ],
+ "已导入到专用目录：${firstRef.name}": [
+  "MainActivity.kt"
+ ],
+ "导入失败：${error.message ?: ": [
+  "MainActivity.kt"
+ ],
+ "}，尝试直接打开": [
+  "MainActivity.kt"
+ ],
+ "正在解析 $fileName": [
+  "MainActivity.kt"
+ ],
+ "解析失败：${error.message ?: ": [
+  "MainActivity.kt"
+ ],
+ "无法打开文件": [
+  "MainActivity.kt"
+ ],
+ "请确认文件可读，并且格式是 .dxf、.dwg、.gen、.nc 或 .pdf。": [
+  "MainActivity.kt"
+ ],
+ "示例加载失败：${error.message ?: ": [
+  "MainActivity.kt"
+ ],
+ "正在重生成 $name": [
+  "MainActivity.kt"
+ ],
+ "DXF 实体数：${parsed.document.entities.size}": [
+  "MainActivity.kt"
+ ],
+ "图层 ${parsed.document.layers.size} · $it": [
+  "MainActivity.kt"
+ ],
+ "图层 ${parsed.document.layers.size}": [
+  "MainActivity.kt"
+ ],
+ "打开 DXF": [
+  "MainActivity.kt"
+ ],
+ "GEN 工艺段：${parsed.document.operations.size}": [
+  "MainActivity.kt"
+ ],
+ "打开 GEN": [
+  "MainActivity.kt"
+ ],
+ "NC 轨迹段：${parsed.program.moves.size}": [
+  "MainActivity.kt"
+ ],
+ "打开 NC": [
+  "MainActivity.kt"
+ ],
+ "DWG 文件已识别：${parsed.preview.readableVersion}": [
+  "MainActivity.kt"
+ ],
+ "DWG 预览信息": [
+  "MainActivity.kt"
+ ],
+ "版本码：${parsed.preview.versionCode}\\n识别版本：${parsed.preview.readableVersion}\\n\\n${parsed.preview.note}": [
+  "MainActivity.kt"
+ ],
+ "说明": [
+  "MainActivity.kt"
+ ],
+ "文件": [
+  "MainActivity.kt"
+ ],
+ "收藏文件": [
+  "MainActivity.kt"
+ ],
+ "还没有收藏文件。打开图纸后可在详情中收藏当前文件。": [
+  "MainActivity.kt"
+ ],
+ "导入文件": [
+  "MainActivity.kt"
+ ],
+ "导入会先复制到应用专用分类目录，再从副本打开；历史删除默认只移除记录，避免误删原始图纸。": [
+  "MainActivity.kt"
+ ],
+ "专用目录": [
+  "MainActivity.kt"
+ ],
+ "＋ 新建 CAD 图形": [
+  "MainActivity.kt"
+ ],
+ "＋ 导入本地图纸": [
+  "MainActivity.kt"
+ ],
+ "保存 DXF（保留原图结构）": [
+  "MainActivity.kt"
+ ],
+ "选择文件库根目录": [
+  "MainActivity.kt"
+ ],
+ "当前文件": [
+  "MainActivity.kt"
+ ],
+ "取消收藏当前文件": [
+  "MainActivity.kt"
+ ],
+ "收藏当前文件": [
+  "MainActivity.kt"
+ ],
+ "已收藏 $fileName": [
+  "MainActivity.kt"
+ ],
+ "已取消收藏 $fileName": [
+  "MainActivity.kt"
+ ],
+ "历史文件": [
+  "MainActivity.kt"
+ ],
+ "状态": [
+  "MainActivity.kt"
+ ],
+ "暂无历史记录": [
+  "MainActivity.kt"
+ ],
+ "置顶 · ": [
+  "MainActivity.kt"
+ ],
+ "已删除历史记录": [
+  "MainActivity.kt"
+ ],
+ "查看全部历史": [
+  "MainActivity.kt"
+ ],
+ "分组预览": [
+  "MainActivity.kt"
+ ],
+ "分组": [
+  "MainActivity.kt"
+ ],
+ "导入或打开图纸后，将按 DXF / DWG / PDF / NC 等类型自动分组。": [
+  "MainActivity.kt"
+ ],
+ "清空历史文件": [
+  "MainActivity.kt"
+ ],
+ "已清空历史文件": [
+  "MainActivity.kt"
+ ],
+ "$type · ${files.size} 个": [
+  "MainActivity.kt"
+ ],
+ "已删除托管副本": [
+  "MainActivity.kt"
+ ],
+ "删除失败：文件不可写或不存在": [
+  "MainActivity.kt"
+ ],
+ "暂无记录": [
+  "MainActivity.kt"
+ ],
+ "NC 自动生成": [
+  "MainActivity.kt"
+ ],
+ "外轮廓": [
+  "MainActivity.kt"
+ ],
+ "厚度(毫米)": [
+  "MainActivity.kt"
+ ],
+ "材质": [
+  "MainActivity.kt"
+ ],
+ "板材长度": [
+  "MainActivity.kt"
+ ],
+ "板材宽度": [
+  "MainActivity.kt"
+ ],
+ "程序名/导出名": [
+  "MainActivity.kt"
+ ],
+ "程序名": [
+  "MainActivity.kt"
+ ],
+ "生成并导出 NC": [
+  "MainActivity.kt"
+ ],
+ "已生成 NC，请选择保存位置": [
+  "MainActivity.kt"
+ ],
+ "当前 DXF 没有 сохранённого исходного потока": [
+  "MainActivity.kt"
+ ],
+ "无法 подготовить DXF": [
+  "MainActivity.kt"
+ ],
+ "当前识别尺寸: W ${": [
+  "MainActivity.kt"
+ ],
+ "原始PDF尺寸: W ${": [
+  "MainActivity.kt"
+ ],
+ "自动识别比例: 1:${": [
+  "MainActivity.kt"
+ ],
+ ".format(it)}，当前套用 ${": [
+  "MainActivity.kt"
+ ],
+ "自动识别比例: 未识别": [
+  "MainActivity.kt"
+ ],
+ "目标宽度(mm)，优先使用": [
+  "MainActivity.kt"
+ ],
+ "目标高度(mm)，留空则按宽度等比": [
+  "MainActivity.kt"
+ ],
+ "PDF 尺寸校准": [
+  "MainActivity.kt"
+ ],
+ "套用识别比例": [
+  "MainActivity.kt"
+ ],
+ "没有识别到图纸比例": [
+  "MainActivity.kt"
+ ],
+ "取消": [
+  "MainActivity.kt"
+ ],
+ "应用": [
+  "MainActivity.kt"
+ ],
+ "请输入有效的目标尺寸": [
+  "MainActivity.kt"
+ ],
+ "PDF尺寸校准": [
+  "MainActivity.kt"
+ ],
+ "已按比例校准 PDF 尺寸": [
+  "MainActivity.kt"
+ ],
+ "文件库": [
+  "MainActivity.kt"
+ ],
+ "还没有选择目录。点击上面的“选择文件库根目录”后，就可以像原应用一样浏览所有文件。": [
+  "MainActivity.kt"
+ ],
+ "当前目录": [
+  "MainActivity.kt"
+ ],
+ "返回上一级": [
+  "MainActivity.kt"
+ ],
+ "目录": [
+  "MainActivity.kt"
+ ],
+ "当前目录没有可显示的文件": [
+  "MainActivity.kt"
+ ],
+ "[目录] ${child.name}": [
+  "MainActivity.kt"
+ ],
+ "搜索文件": [
+  "MainActivity.kt"
+ ],
+ "输入文件名关键字": [
+  "MainActivity.kt"
+ ],
+ "搜索": [
+  "MainActivity.kt"
+ ],
+ "提示": [
+  "MainActivity.kt"
+ ],
+ "搜索会在你选择的文件库根目录内递归查找 .dxf / .dwg / .gen 文件。": [
+  "MainActivity.kt"
+ ],
+ "请先选择文件库根目录": [
+  "MainActivity.kt"
+ ],
+ "请输入搜索关键字": [
+  "MainActivity.kt"
+ ],
+ "正在搜索 $query": [
+  "MainActivity.kt"
+ ],
+ "搜索结果": [
+  "MainActivity.kt"
+ ],
+ "结果": [
+  "MainActivity.kt"
+ ],
+ "没有找到匹配文件": [
+  "MainActivity.kt"
+ ],
+ "搜索完成：${results.size} 个结果": [
+  "MainActivity.kt"
+ ],
+ "已切换为横屏": [
+  "MainActivity.kt"
+ ],
+ "已切换为竖屏": [
+  "MainActivity.kt"
+ ],
+ "板材边框": [
+  "MainActivity.kt"
+ ],
+ "空走": [
+  "MainActivity.kt"
+ ],
+ "直切": [
+  "MainActivity.kt"
+ ],
+ "坡口 A+": [
+  "MainActivity.kt"
+ ],
+ "坡口 A-": [
+  "MainActivity.kt"
+ ],
+ "坡口 B+": [
+  "MainActivity.kt"
+ ],
+ "坡口 B-": [
+  "MainActivity.kt"
+ ],
+ "图层控制": [
+  "MainActivity.kt"
+ ],
+ "当前文件不是 DXF，暂时没有可切换图层。": [
+  "MainActivity.kt"
+ ],
+ "显示 PDF 文字": [
+  "MainActivity.kt"
+ ],
+ "已显示 PDF 文字": [
+  "MainActivity.kt"
+ ],
+ "已隐藏 PDF 文字": [
+  "MainActivity.kt"
+ ],
+ "全部显示": [
+  "MainActivity.kt"
+ ],
+ "全部隐藏": [
+  "MainActivity.kt"
+ ],
+ " 个实体": [
+  "MainActivity.kt"
+ ],
+ "  ·  原文件关闭": [
+  "MainActivity.kt"
+ ],
+ "  ·  原文件冻结": [
+  "MainActivity.kt"
+ ],
+ "当前为 GEN 文件，请在预演面板查看走刀": [
+  "MainActivity.kt"
+ ],
+ "当前图形不支持测量": [
+  "MainActivity.kt"
+ ],
+ "测量 / 标注": [
+  "MainActivity.kt"
+ ],
+ "自动标注": [
+  "MainActivity.kt"
+ ],
+ "一键标注图纸宽高": [
+  "MainActivity.kt"
+ ],
+ "边界尺寸": [
+  "MainActivity.kt"
+ ],
+ "手动测量": [
+  "MainActivity.kt"
+ ],
+ "距离测量": [
+  "MainActivity.kt"
+ ],
+ "距离测量已开启": [
+  "MainActivity.kt"
+ ],
+ "角度测量": [
+  "MainActivity.kt"
+ ],
+ "角度测量已开启": [
+  "MainActivity.kt"
+ ],
+ "面积测量": [
+  "MainActivity.kt"
+ ],
+ "面积测量已开启": [
+  "MainActivity.kt"
+ ],
+ "关闭测量": [
+  "MainActivity.kt"
+ ],
+ "测量已关闭": [
+  "MainActivity.kt"
+ ],
+ "自动闭合：开": [
+  "MainActivity.kt"
+ ],
+ "自动闭合：关": [
+  "MainActivity.kt"
+ ],
+ "完成面积": [
+  "MainActivity.kt"
+ ],
+ "回退一步": [
+  "MainActivity.kt"
+ ],
+ "清空测量": [
+  "MainActivity.kt"
+ ],
+ "CAD 编辑": [
+  "MainActivity.kt"
+ ],
+ "打开专业绘图工具": [
+  "MainActivity.kt"
+ ],
+ "点击画布选择线段后可修剪、复制、删除；也可直接创建矩形/圆/文本。": [
+  "MainActivity.kt"
+ ],
+ "当前模式": [
+  "MainActivity.kt"
+ ],
+ "未开启": [
+  "MainActivity.kt"
+ ],
+ "距离": [
+  "MainActivity.kt"
+ ],
+ "角度": [
+  "MainActivity.kt"
+ ],
+ "面积": [
+  "MainActivity.kt"
+ ],
+ "图层数": [
+  "MainActivity.kt"
+ ],
+ "当前图形无可预演的数据": [
+  "MainActivity.kt"
+ ],
+ "走刀预演": [
+  "MainActivity.kt"
+ ],
+ "轨迹": [
+  "MainActivity.kt"
+ ],
+ "空走线": [
+  "MainActivity.kt"
+ ],
+ "划线": [
+  "MainActivity.kt"
+ ],
+ "切割": [
+  "MainActivity.kt"
+ ],
+ "线段编辑": [
+  "MainActivity.kt"
+ ],
+ "类型": [
+  "MainActivity.kt"
+ ],
+ "图层": [
+  "MainActivity.kt"
+ ],
+ "默认": [
+  "MainActivity.kt"
+ ],
+ "实际长度": [
+  "MainActivity.kt"
+ ],
+ "坐标差": [
+  "MainActivity.kt"
+ ],
+ "修改长度": [
+  "MainActivity.kt"
+ ],
+ "保存修改": [
+  "MainActivity.kt"
+ ],
+ "请输入有效坐标": [
+  "MainActivity.kt"
+ ],
+ "取消选中": [
+  "MainActivity.kt"
+ ],
+ "历史记录": [
+  "MainActivity.kt"
+ ],
+ "起点 X": [
+  "MainActivity.kt"
+ ],
+ "起点 Y": [
+  "MainActivity.kt"
+ ],
+ "终点 X": [
+  "MainActivity.kt"
+ ],
+ "终点 Y": [
+  "MainActivity.kt"
+ ],
+ "修改线段": [
+  "MainActivity.kt"
+ ],
+ "线段已更新": [
+  "MainActivity.kt"
+ ],
+ "当前没有可编辑图形": [
+  "MainActivity.kt"
+ ],
+ "CAD 绘图 / 编辑": [
+  "MainActivity.kt"
+ ],
+ "创建图形": [
+  "MainActivity.kt"
+ ],
+ "新建空白图形 / 画布": [
+  "MainActivity.kt"
+ ],
+ "创建直线": [
+  "MainActivity.kt"
+ ],
+ "创建矩形": [
+  "MainActivity.kt"
+ ],
+ "创建圆": [
+  "MainActivity.kt"
+ ],
+ "创建圆弧": [
+  "MainActivity.kt"
+ ],
+ "创建多段线": [
+  "MainActivity.kt"
+ ],
+ "添加文字": [
+  "MainActivity.kt"
+ ],
+ "常用图库 / 标准件": [
+  "MainActivity.kt"
+ ],
+ "L 型角钢 / 支架": [
+  "MainActivity.kt"
+ ],
+ "L 型角钢": [
+  "MainActivity.kt"
+ ],
+ "槽钢 / U 型截面": [
+  "MainActivity.kt"
+ ],
+ "槽钢": [
+  "MainActivity.kt"
+ ],
+ "工字钢 / H 型截面": [
+  "MainActivity.kt"
+ ],
+ "工字钢": [
+  "MainActivity.kt"
+ ],
+ "法兰盘 / 螺栓孔阵列": [
+  "MainActivity.kt"
+ ],
+ "法兰盘": [
+  "MainActivity.kt"
+ ],
+ "长圆孔板": [
+  "MainActivity.kt"
+ ],
+ "编辑操作": [
+  "MainActivity.kt"
+ ],
+ "编辑选中对象属性": [
+  "MainActivity.kt"
+ ],
+ "复制选中实体": [
+  "MainActivity.kt"
+ ],
+ "粘贴副本（偏移 25mm）": [
+  "MainActivity.kt"
+ ],
+ "修剪线段 10%": [
+  "MainActivity.kt"
+ ],
+ "删除选中实体": [
+  "MainActivity.kt"
+ ],
+ "历史": [
+  "MainActivity.kt"
+ ],
+ "撤销": [
+  "MainActivity.kt"
+ ],
+ "重做": [
+  "MainActivity.kt"
+ ],
+ "当前选择": [
+  "MainActivity.kt"
+ ],
+ "未选择": [
+  "MainActivity.kt"
+ ],
+ "剪贴板": [
+  "MainActivity.kt"
+ ],
+ "已有实体，可粘贴": [
+  "MainActivity.kt"
+ ],
+ "空": [
+  "MainActivity.kt"
+ ],
+ "实体数": [
+  "MainActivity.kt"
+ ],
+ "新建图形": [
+  "MainActivity.kt"
+ ],
+ "图层 ${document.layers.size} · ${document.units ?: ": [
+  "MainActivity.kt"
+ ],
+ "文件名": [
+  "MainActivity.kt"
+ ],
+ "新建图形.dxf": [
+  "MainActivity.kt"
+ ],
+ "宽度": [
+  "MainActivity.kt"
+ ],
+ "高度": [
+  "MainActivity.kt"
+ ],
+ "新建 CAD 图形": [
+  "MainActivity.kt"
+ ],
+ "空白画布": [
+  "MainActivity.kt"
+ ],
+ "已新建空白图形：$name": [
+  "MainActivity.kt"
+ ],
+ "带边框模板": [
+  "MainActivity.kt"
+ ],
+ "已新建带边框图形：$name": [
+  "MainActivity.kt"
+ ],
+ "起点X": [
+  "MainActivity.kt"
+ ],
+ "起点Y": [
+  "MainActivity.kt"
+ ],
+ "终点X": [
+  "MainActivity.kt"
+ ],
+ "终点Y": [
+  "MainActivity.kt"
+ ],
+ "创建": [
+  "MainActivity.kt"
+ ],
+ "中心X": [
+  "MainActivity.kt"
+ ],
+ "中心Y": [
+  "MainActivity.kt"
+ ],
+ "半径": [
+  "MainActivity.kt"
+ ],
+ "起始角": [
+  "MainActivity.kt"
+ ],
+ "终止角": [
+  "MainActivity.kt"
+ ],
+ "点列 x,y;x,y": [
+  "MainActivity.kt"
+ ],
+ "闭合(1/0)": [
+  "MainActivity.kt"
+ ],
+ "多段线至少需要 2 个点": [
+  "MainActivity.kt"
+ ],
+ "插入X": [
+  "MainActivity.kt"
+ ],
+ "插入Y": [
+  "MainActivity.kt"
+ ],
+ "板厚/孔径": [
+  "MainActivity.kt"
+ ],
+ "插入$template": [
+  "MainActivity.kt"
+ ],
+ "插入": [
+  "MainActivity.kt"
+ ],
+ "内容": [
+  "MainActivity.kt"
+ ],
+ "添加": [
+  "MainActivity.kt"
+ ],
+ "请先选择要编辑的实体": [
+  "MainActivity.kt"
+ ],
+ "编辑对象属性": [
+  "MainActivity.kt"
+ ],
+ "已更新选中对象属性": [
+  "MainActivity.kt"
+ ],
+ "请先在画布中选择实体": [
+  "MainActivity.kt"
+ ],
+ "已复制选中实体": [
+  "MainActivity.kt"
+ ],
+ "剪贴板为空": [
+  "MainActivity.kt"
+ ],
+ "粘贴实体": [
+  "MainActivity.kt"
+ ],
+ "已粘贴实体副本": [
+  "MainActivity.kt"
+ ],
+ "请先选择要删除的实体": [
+  "MainActivity.kt"
+ ],
+ "删除实体": [
+  "MainActivity.kt"
+ ],
+ "已删除选中实体": [
+  "MainActivity.kt"
+ ],
+ "请先选择要修剪的线段": [
+  "MainActivity.kt"
+ ],
+ "已按比例修剪线段": [
+  "MainActivity.kt"
+ ],
+ "没有可撤销的历史": [
+  "MainActivity.kt"
+ ],
+ "已撤销：${historyLabels.getOrNull(historyIndex).orEmpty()}": [
+  "MainActivity.kt"
+ ],
+ "没有可重做的历史": [
+  "MainActivity.kt"
+ ],
+ "已重做：${historyLabels.getOrNull(historyIndex).orEmpty()}": [
+  "MainActivity.kt"
+ ],
+ "步骤": [
+  "MainActivity.kt"
+ ],
+ "暂无历史": [
+  "MainActivity.kt"
+ ],
+ "当前步骤 ${index + 1}": [
+  "MainActivity.kt"
+ ],
+ "步骤 ${index + 1}": [
+  "MainActivity.kt"
+ ],
+ "走刀模拟": [
+  "MainActivity.kt"
+ ],
+ "坡口段": [
+  "MainActivity.kt"
+ ],
+ "预演控制": [
+  "MainActivity.kt"
+ ],
+ "速度": [
+  "MainActivity.kt"
+ ],
+ "进度": [
+  "MainActivity.kt"
+ ],
+ "停止": [
+  "MainActivity.kt"
+ ],
+ "$labelPrefix 预演已停止": [
+  "MainActivity.kt"
+ ],
+ "暂停": [
+  "MainActivity.kt"
+ ],
+ "继续": [
+  "MainActivity.kt"
+ ],
+ "开始": [
+  "MainActivity.kt"
+ ],
+ "$labelPrefix 预演已暂停": [
+  "MainActivity.kt"
+ ],
+ "$labelPrefix 预演进行中": [
+  "MainActivity.kt"
+ ],
+ "运行中": [
+  "MainActivity.kt"
+ ],
+ "已暂停": [
+  "MainActivity.kt"
+ ],
+ "范围": [
+  "MainActivity.kt"
+ ],
+ "单位": [
+  "MainActivity.kt"
+ ],
+ "未指定": [
+  "MainActivity.kt"
+ ],
+ "PDF比例": [
+  "MainActivity.kt"
+ ],
+ "当前缩放": [
+  "MainActivity.kt"
+ ],
+ "板厚": [
+  "MainActivity.kt"
+ ],
+ "排版策略": [
+  "MainActivity.kt"
+ ],
+ "边界": [
+  "MainActivity.kt"
+ ],
+ "PDF文字": [
+  "MainActivity.kt"
+ ],
+ "显示中": [
+  "MainActivity.kt"
+ ],
+ "已隐藏": [
+  "MainActivity.kt"
+ ],
+ "区段数": [
+  "MainActivity.kt"
+ ],
+ "工艺段": [
+  "MainActivity.kt"
+ ],
+ "零件数": [
+  "MainActivity.kt"
+ ],
+ "板材": [
+  "MainActivity.kt"
+ ],
+ "轨迹段": [
+  "MainActivity.kt"
+ ],
+ "厚度": [
+  "MainActivity.kt"
+ ],
+ "坡口摘要": [
+  "MainActivity.kt"
+ ],
+ "A 角": [
+  "MainActivity.kt"
+ ],
+ "B 角": [
+  "MainActivity.kt"
+ ],
+ "版本": [
+  "MainActivity.kt"
+ ],
+ "版本码": [
+  "MainActivity.kt"
+ ],
+ "未打开文件": [
+  "MainActivity.kt"
+ ],
+ "导入": [
+  "MainActivity.kt"
+ ],
+ "收藏": [
+  "MainActivity.kt"
+ ],
+ "所有": [
+  "MainActivity.kt"
+ ],
+ "无预览信息": [
+  "MainActivity.kt"
+ ],
+ "打开": [
+  "MainActivity.kt"
+ ],
+ "详情": [
+  "MainActivity.kt"
+ ],
+ "删除": [
+  "MainActivity.kt"
+ ],
+ "$count 个文件  ›": [
+  "MainActivity.kt"
+ ],
+ "文件详情": [
+  "MainActivity.kt"
+ ],
+ "返回文件面板": [
+  "MainActivity.kt"
+ ],
+ "记录时间": [
+  "MainActivity.kt"
+ ],
+ "已置顶": [
+  "MainActivity.kt"
+ ],
+ "普通": [
+  "MainActivity.kt"
+ ],
+ "管理模式": [
+  "MainActivity.kt"
+ ],
+ "托管副本，可安全删除": [
+  "MainActivity.kt"
+ ],
+ "外部引用，只移除记录": [
+  "MainActivity.kt"
+ ],
+ "本地路径": [
+  "MainActivity.kt"
+ ],
+ "来源": [
+  "MainActivity.kt"
+ ],
+ "显示名称": [
+  "MainActivity.kt"
+ ],
+ "大小": [
+  "MainActivity.kt"
+ ],
+ "未知": [
+  "DocumentParser.kt",
+  "MainActivity.kt"
+ ],
+ "修改时间": [
+  "MainActivity.kt"
+ ],
+ "打开文件": [
+  "MainActivity.kt"
+ ],
+ "取消置顶": [
+  "MainActivity.kt"
+ ],
+ "置顶历史记录": [
+  "MainActivity.kt"
+ ],
+ "已更新历史记录": [
+  "MainActivity.kt"
+ ],
+ "从历史中移除": [
+  "MainActivity.kt"
+ ],
+ "删除托管副本": [
+  "MainActivity.kt"
+ ],
+ "当前文件详情": [
+  "MainActivity.kt"
+ ],
+ "返回导入页": [
+  "MainActivity.kt"
+ ],
+ "预览": [
+  "MainActivity.kt"
+ ],
+ "取消收藏": [
+  "MainActivity.kt"
+ ],
+ "重新导入文件": [
+  "MainActivity.kt"
+ ],
+ "PDF 转换预览": [
+  "MainActivity.kt"
+ ],
+ "DXF 图纸": [
+  "MainActivity.kt"
+ ],
+ "$type · ${document.entities.size} 个实体 · ${document.layers.size} 个图层 · W ${": [
+  "MainActivity.kt"
+ ],
+ "GEN 工艺文件 · ${parsed.document.sections.size} 个区段 · ${parsed.document.operations.size} 个工艺段": [
+  "MainActivity.kt"
+ ],
+ "NC 程序 · ${parsed.program.moves.size} 条轨迹 · ${ncBevelSummary(parsed.program)}": [
+  "MainActivity.kt"
+ ],
+ "DWG 图纸 · ${parsed.preview.readableVersion} · ${parsed.preview.versionCode}": [
+  "MainActivity.kt"
+ ],
+ "已选择文件，尚未生成预览": [
+  "MainActivity.kt"
+ ],
+ "置顶": [
+  "MainActivity.kt"
+ ],
+ "零件 $parts · 板材 ${rawLength.toInt()} x ${rawWidth.toInt()} · 工艺 ${document.operations.size}": [
+  "MainActivity.kt"
+ ],
+ "区段 ${document.sections.size} · 零件 $parts": [
+  "MainActivity.kt"
+ ],
+ "轨迹 ${program.moves.size} · $summary · 板材 $sx x $sy": [
+  "MainActivity.kt"
+ ],
+ "轨迹 ${program.moves.size} · 板材 $sx x $sy": [
+  "MainActivity.kt"
+ ],
+ "轨迹 ${program.moves.size}": [
+  "MainActivity.kt"
+ ],
+ "对称坡口 ±${": [
+  "MainActivity.kt"
+ ],
+ "A 对称坡口 ±${": [
+  "MainActivity.kt"
+ ],
+ "B 对称坡口 ±${": [
+  "MainActivity.kt"
+ ],
+ "坡口 ${aValues.plus(bValues).joinToString(": [
+  "MainActivity.kt"
+ ],
+ "无坡口": [
+  "MainActivity.kt"
+ ],
+ "毫米": [
+  "DocumentParser.kt",
+  "MainActivity.kt"
+ ],
+ "暂无零件": [
+  "MainActivity.kt"
+ ],
+ "镜像 X": [
+  "MainActivity.kt"
+ ],
+ "编辑零件": [
+  "MainActivity.kt"
+ ],
+ "数量": [
+  "MainActivity.kt"
+ ],
+ "旋转(度)": [
+  "MainActivity.kt"
+ ],
+ "保存": [
+  "MainActivity.kt"
+ ],
+ "执行": [
+  "MainActivity.kt"
+ ],
+ "矩形参数": [
+  "MainActivity.kt"
+ ],
+ "矩形${nestingParts.size + 1}": [
+  "MainActivity.kt"
+ ],
+ "圆形参数": [
+  "MainActivity.kt"
+ ],
+ "圆形${nestingParts.size + 1}": [
+  "MainActivity.kt"
+ ],
+ "没有零件可排版": [
+  "MainActivity.kt"
+ ],
+ "排版结果": [
+  "MainActivity.kt"
+ ],
+ "利用率": [
+  "MainActivity.kt"
+ ],
+ "已放置": [
+  "MainActivity.kt"
+ ],
+ "浪费面积": [
+  "MainActivity.kt"
+ ],
+ "无法放置的零件：": [
+  "MainActivity.kt"
+ ],
+ "优化建议": [
+  "MainActivity.kt"
+ ],
+ "建议": [
+  "MainActivity.kt"
+ ],
+ "排版完成: ${result.placedCount}/${nestingParts.sumOf { it.quantity }} 零件, 利用率 ${": [
+  "MainActivity.kt"
+ ],
+ "排版方案对比：": [
+  "MainActivity.kt"
+ ],
+ "   利用率: ${": [
+  "MainActivity.kt"
+ ],
+ "   已放置: ${result.placedCount}/${nestingParts.sumOf { it.quantity }}": [
+  "MainActivity.kt"
+ ],
+ "   浪费面积: ${": [
+  "MainActivity.kt"
+ ],
+ "推荐使用: ${bestResult?.first?.name}": [
+  "MainActivity.kt"
+ ],
+ "排版方案对比": [
+  "MainActivity.kt"
+ ],
+ "应用最优方案": [
+  "MainActivity.kt"
+ ],
+ "已应用最优方案: ${strategy.name}": [
+  "MainActivity.kt"
+ ],
+ "无法进行分板排版": [
+  "MainActivity.kt"
+ ],
+ "自动分板完成": [
+  "MainActivity.kt"
+ ],
+ "总板数: ${results.size}": [
+  "MainActivity.kt"
+ ],
+ "板材 ${index + 1}:": [
+  "MainActivity.kt"
+ ],
+ "  已放置: ${result.placedCount}": [
+  "MainActivity.kt"
+ ],
+ "  利用率: ${": [
+  "MainActivity.kt"
+ ],
+ "总放置: ${results.sumOf { it.placedCount }}/$totalRequested": [
+  "MainActivity.kt"
+ ],
+ "分板排版结果": [
+  "MainActivity.kt"
+ ],
+ "已应用分板排版: ${results.size} 张板材": [
+  "MainActivity.kt"
+ ],
+ "已应用排版": [
+  "MainActivity.kt"
+ ],
+ "没有可应用的排版结果": [
+  "MainActivity.kt"
+ ],
+ "排版导入": [
+  "MainActivity.kt"
+ ],
+ "图层 ${nested.layers.size} · 实体 ${nested.entities.size}": [
+  "MainActivity.kt"
+ ],
+ "已选中线段，可修改坐标": [
+  "MainActivity.kt"
+ ],
+ "已完成": [
+  "MainActivity.kt"
+ ],
+ "预演完成": [
+  "MainActivity.kt"
+ ],
+ "智能排版（独立）": [
+  "MainActivity.kt"
+ ],
+ "板材参数": [
+  "MainActivity.kt"
+ ],
+ "长度": [
+  "MainActivity.kt"
+ ],
+ "推荐板材": [
+  "MainActivity.kt"
+ ],
+ "套用推荐尺寸": [
+  "MainActivity.kt"
+ ],
+ "板材 ${": [
+  "MainActivity.kt"
+ ],
+ "导入/图库": [
+  "MainActivity.kt"
+ ],
+ "导入零件文件": [
+  "MainActivity.kt"
+ ],
+ "添加矩形": [
+  "MainActivity.kt"
+ ],
+ "添加圆形": [
+  "MainActivity.kt"
+ ],
+ "零件列表": [
+  "MainActivity.kt"
+ ],
+ "排版参数": [
+  "MainActivity.kt"
+ ],
+ "间距": [
+  "MainActivity.kt"
+ ],
+ "自动排样": [
+  "MainActivity.kt"
+ ],
+ "对比方案": [
+  "MainActivity.kt"
+ ],
+ "自动分板": [
+  "MainActivity.kt"
+ ],
+ "应用到视图": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 确保 GEN 操作送入画布仿真引擎": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 确保预演数据与当前文档同步": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 执行排版算法": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 更新工作区": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 更新结果显示": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 找到最优方案": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 合并所有板材的排版结果": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 平移该板材的所有实体": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 板材尺寸与厚度": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 排版策略选择": [
+  "MainActivity.kt"
+ ],
+ "COMMENT:// 排版结果显示": [
+  "MainActivity.kt"
+ ],
+ "无法读取 PDF 文件": [
+  "DocumentParser.kt"
+ ],
+ "PDF 中没有可转换的矢量路径": [
+  "DocumentParser.kt"
+ ],
+ "(?i)比例\\s*[:：]?\\s*1\\s*[:：]\\s*(\\d+(?:\\.\\d+)?)": [
+  "DocumentParser.kt"
+ ],
+ "未知版本": [
+  "DocumentParser.kt"
+ ],
+ "当前工程已把 DWG 查看入口做出来，但完整渲染需要再接入 C/C++ 解析库。": [
+  "DocumentParser.kt"
+ ],
+ "宽 ${formatDimensionValue(bounds.width)} · 高 ${formatDimensionValue(bounds.height)}": [
+  "DxfCanvasView.kt"
+ ],
+ "已选起点：%.2f, %.2f": [
+  "DxfCanvasView.kt"
+ ],
+ "已选起点：%.2f, %.2f，可拖动/缩放视图后点击第二点": [
+  "DxfCanvasView.kt"
+ ],
+ "宽 ${formatDimensionValue(widthValue)}": [
+  "DxfCanvasView.kt"
+ ],
+ "高 ${formatDimensionValue(heightValue)}": [
+  "DxfCanvasView.kt"
+ ],
+ "R ${formatDimensionValue(entity.radius)} / 弧 ${formatDimensionValue(arcLength)}": [
+  "DxfCanvasView.kt"
+ ],
+ "长 ${formatDimensionValue(distance(entity.start, entity.end))}": [
+  "DxfCanvasView.kt"
+ ],
+ "长 ${formatDimensionValue(distance(selection.start, selection.end))}": [
+  "DxfCanvasView.kt"
+ ],
+ "R ${formatDimensionValue(entity.radius)}  弧长 ${formatDimensionValue(arcLength)}": [
+  "DxfCanvasView.kt"
+ ],
+ "自由点": [
+  "DxfCanvasView.kt"
+ ],
+ "端点": [
+  "DxfCanvasView.kt"
+ ],
+ "中点": [
+  "DxfCanvasView.kt"
+ ],
+ "最近点": [
+  "DxfCanvasView.kt"
+ ],
+ "测量距离：%.2f": [
+  "DxfCanvasView.kt"
+ ],
+ "角度点 1/3：%.2f, %.2f": [
+  "DxfCanvasView.kt"
+ ],
+ "角度点 2/3：继续选择第三点": [
+  "DxfCanvasView.kt"
+ ],
+ "夹角：%.2f°": [
+  "DxfCanvasView.kt"
+ ],
+ "面积点 ${areaPoints.size}/3：继续选点": [
+  "DxfCanvasView.kt"
+ ],
+ "面积点 ${areaPoints.size}：继续选点或点击“完成面积”": [
+  "DxfCanvasView.kt"
+ ],
+ "面积：%.2f  周长：%.2f": [
+  "DxfCanvasView.kt"
+ ],
+ "距离测量：点击两次取点": [
+  "DxfCanvasView.kt"
+ ],
+ "角度测量：依次点击三点": [
+  "DxfCanvasView.kt"
+ ],
+ "面积测量：连续点击轮廓点": [
+  "DxfCanvasView.kt"
+ ],
+ "COMMENT:// 多指手势开始时立即切到缩放/移动优先，避免测量吸附和单指平移状态干扰缩放焦点。": [
+  "DxfCanvasView.kt"
+ ],
+ "COMMENT:// 缩放由 ScaleGestureDetector 独占处理；同步当前位置，防止缩放结束后下一次单指移动使用旧坐标导致跳动。": [
+  "DxfCanvasView.kt"
+ ],
+ "COMMENT:// 记录剩余手指的位置，避免从双指缩放回到单指时出现位移突变。": [
+  "DxfCanvasView.kt"
+ ],
+ "COMMENT:// 放置位置 X": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 放置位置 Y": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 利用率 0-100%": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 浪费面积": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 成功放置的零件数": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 无法放置的零件": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 已放置零件列表": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 检查是否超出板材边界": [
+  "NestingAlgorithm.kt"
+ ],
+ "COMMENT:// 检查碰撞": [
+  "NestingAlgorithm.kt"
+ ]
+}

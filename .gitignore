@@ -1,0 +1,19 @@
+# Build
+.gradle/
+build/
+app/build/
+local.properties
+.idea/
+*.iml
+.cxx/
+# Rust
+target/
+rust-bridge/target/
+# Output artifacts
+*.apk
+*.aab
+# Native build
+capture/
+.externalNativeBuild/
+.gradle-home/
+testdata/

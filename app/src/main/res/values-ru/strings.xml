@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Russian strings (second selectable language). -->
+<resources>
+    <string name="app_name">SikkatuCAD</string>
+    <string name="status_idle">Ожидание открытия чертежа или технологического файла</string>
+    <string name="no_file">Файл не выбран</string>
+    <string name="open_file">Открыть</string>
+    <string name="empty_hint">Мобильный просмотрщик CAD</string>
+    <string name="empty_subtitle">Открывайте чертежи DXF / DWG. Редактируйте и переводите надписи, делайте замеры, экспортируйте.</string>
+    <string name="action_file">Файлы</string>
+    <string name="action_layers">Вид</string>
+    <string name="action_measure">Замеры</string>
+    <string name="action_simulation">Симуляция</string>
+    <string name="action_nesting">Раскладка</string>
+    <string name="action_export">Экспорт</string>
+    <string name="action_info">Инфо</string>
+    <string name="action_texts">Тексты</string>
+    <string name="action_settings">Настройки</string>
+    <string name="language_picker">Язык интерфейса</string>
+    <string name="language_current">Язык: %1$s</string>
+    <string name="reopen_last">Вернуть чертёж</string>
+    <string name="panel_layers">Управление слоями</string>
+    <string name="panel_file">Файлы</string>
+    <string name="panel_info">О файле</string>
+    <string name="panel_default">Панель</string>
+    <string name="close_panel">Закрыть панель</string>
+    <string name="chip_auto_dimension">Размеры</string>
+    <string name="chip_view_2d">2D</string>
+    <string name="chip_view_3d">3D</string>
+    <string name="chip_bevel">Скос</string>
+    <string name="chip_rapid">Холостой ход</string>
+    <string name="file_type_unknown">-</string>
+    <string name="nc_code_title">NC-код</string>
+    <string name="generate_nc">Создать NC</string>
+</resources>

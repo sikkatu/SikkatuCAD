@@ -1,0 +1,10811 @@
+[
+{
+"file": "DocumentParser.kt",
+"offset": 2526,
+"end": 2539,
+"raw": "无法读取 PDF 文件",
+"segments": [
+[
+"txt",
+"无法读取 PDF 文件"
+]
+],
+"exprs": [],
+"line": 56
+},
+{
+"file": "DocumentParser.kt",
+"offset": 3453,
+"end": 3470,
+"raw": "PDF 中没有可转换的矢量路径",
+"segments": [
+[
+"txt",
+"PDF 中没有可转换的矢量路径"
+]
+],
+"exprs": [],
+"line": 73
+},
+{
+"file": "DocumentParser.kt",
+"offset": 3815,
+"end": 3819,
+"raw": "毫米",
+"segments": [
+[
+"txt",
+"毫米"
+]
+],
+"exprs": [],
+"line": 79
+},
+{
+"file": "DocumentParser.kt",
+"offset": 8380,
+"end": 8425,
+"raw": "(?i)比例\\s*[:：]?\\s*1\\s*[:：]\\s*(\\d+(?:\\.\\d+)?)",
+"segments": [
+[
+"txt",
+"(?i)比例\\s*[:：]?\\s*1\\s*[:：]\\s*(\\d+(?:\\.\\d+)?)"
+]
+],
+"exprs": [],
+"line": 179
+},
+{
+"file": "DocumentParser.kt",
+"offset": 22092,
+"end": 22098,
+"raw": "未知版本",
+"segments": [
+[
+"txt",
+"未知版本"
+]
+],
+"exprs": [],
+"line": 484
+},
+{
+"file": "DocumentParser.kt",
+"offset": 22217,
+"end": 22221,
+"raw": "未知",
+"segments": [
+[
+"txt",
+"未知"
+]
+],
+"exprs": [],
+"line": 488
+},
+{
+"file": "DocumentParser.kt",
+"offset": 22284,
+"end": 22326,
+"raw": "当前工程已把 DWG 查看入口做出来，但完整渲染需要再接入 C/C++ 解析库。",
+"segments": [
+[
+"txt",
+"当前工程已把 DWG 查看入口做出来，但完整渲染需要再接入 C/C++ 解析库。"
+]
+],
+"exprs": [],
+"line": 490
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 17222,
+"end": 17306,
+"raw": "宽 ${formatDimensionValue(bounds.width)} · 高 ${formatDimensionValue(bounds.height)}",
+"segments": [
+[
+"txt",
+"宽 "
+],
+[
+"expr",
+"formatDimensionValue(bounds.width)"
+],
+[
+"txt",
+" · 高 "
+],
+[
+"expr",
+"formatDimensionValue(bounds.height)"
+]
+],
+"exprs": [
+"formatDimensionValue(bounds.width)",
+"formatDimensionValue(bounds.height)"
+],
+"line": 453
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 18624,
+"end": 18641,
+"raw": "已选起点：%.2f, %.2f",
+"segments": [
+[
+"txt",
+"已选起点：%.2f, %.2f"
+]
+],
+"exprs": [],
+"line": 505
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 31021,
+"end": 31053,
+"raw": "已选起点：%.2f, %.2f，可拖动/缩放视图后点击第二点",
+"segments": [
+[
+"txt",
+"已选起点：%.2f, %.2f，可拖动/缩放视图后点击第二点"
+]
+],
+"exprs": [],
+"line": 791
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 90334,
+"end": 90373,
+"raw": "宽 ${formatDimensionValue(widthValue)}",
+"segments": [
+[
+"txt",
+"宽 "
+],
+[
+"expr",
+"formatDimensionValue(widthValue)"
+]
+],
+"exprs": [
+"formatDimensionValue(widthValue)"
+],
+"line": 2063
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 90943,
+"end": 90983,
+"raw": "高 ${formatDimensionValue(heightValue)}",
+"segments": [
+[
+"txt",
+"高 "
+],
+[
+"expr",
+"formatDimensionValue(heightValue)"
+]
+],
+"exprs": [
+"formatDimensionValue(heightValue)"
+],
+"line": 2070
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 93248,
+"end": 93329,
+"raw": "R ${formatDimensionValue(entity.radius)} / 弧 ${formatDimensionValue(arcLength)}",
+"segments": [
+[
+"txt",
+"R "
+],
+[
+"expr",
+"formatDimensionValue(entity.radius)"
+],
+[
+"txt",
+" / 弧 "
+],
+[
+"expr",
+"formatDimensionValue(arcLength)"
+]
+],
+"exprs": [
+"formatDimensionValue(entity.radius)",
+"formatDimensionValue(arcLength)"
+],
+"line": 2113
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 94185,
+"end": 94248,
+"raw": "长 ${formatDimensionValue(distance(entity.start, entity.end))}",
+"segments": [
+[
+"txt",
+"长 "
+],
+[
+"expr",
+"formatDimensionValue(distance(entity.start, entity.end))"
+]
+],
+"exprs": [
+"formatDimensionValue(distance(entity.start, entity.end))"
+],
+"line": 2130
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 94362,
+"end": 94431,
+"raw": "长 ${formatDimensionValue(distance(selection.start, selection.end))}",
+"segments": [
+[
+"txt",
+"长 "
+],
+[
+"expr",
+"formatDimensionValue(distance(selection.start, selection.end))"
+]
+],
+"exprs": [
+"formatDimensionValue(distance(selection.start, selection.end))"
+],
+"line": 2131
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 94881,
+"end": 94962,
+"raw": "R ${formatDimensionValue(entity.radius)}  弧长 ${formatDimensionValue(arcLength)}",
+"segments": [
+[
+"txt",
+"R "
+],
+[
+"expr",
+"formatDimensionValue(entity.radius)"
+],
+[
+"txt",
+"  弧长 "
+],
+[
+"expr",
+"formatDimensionValue(arcLength)"
+]
+],
+"exprs": [
+"formatDimensionValue(entity.radius)",
+"formatDimensionValue(arcLength)"
+],
+"line": 2142
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 102376,
+"end": 102381,
+"raw": "自由点",
+"segments": [
+[
+"txt",
+"自由点"
+]
+],
+"exprs": [],
+"line": 2319
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 106727,
+"end": 106731,
+"raw": "端点",
+"segments": [
+[
+"txt",
+"端点"
+]
+],
+"exprs": [],
+"line": 2398
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 106834,
+"end": 106838,
+"raw": "中点",
+"segments": [
+[
+"txt",
+"中点"
+]
+],
+"exprs": [],
+"line": 2399
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 106952,
+"end": 106957,
+"raw": "最近点",
+"segments": [
+[
+"txt",
+"最近点"
+]
+],
+"exprs": [],
+"line": 2400
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 107001,
+"end": 107006,
+"raw": "自由点",
+"segments": [
+[
+"txt",
+"自由点"
+]
+],
+"exprs": [],
+"line": 2401
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 108869,
+"end": 108880,
+"raw": "测量距离：%.2f",
+"segments": [
+[
+"txt",
+"测量距离：%.2f"
+]
+],
+"exprs": [],
+"line": 2440
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 109052,
+"end": 109072,
+"raw": "角度点 1/3：%.2f, %.2f",
+"segments": [
+[
+"txt",
+"角度点 1/3：%.2f, %.2f"
+]
+],
+"exprs": [],
+"line": 2446
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 109133,
+"end": 109150,
+"raw": "角度点 2/3：继续选择第三点",
+"segments": [
+[
+"txt",
+"角度点 2/3：继续选择第三点"
+]
+],
+"exprs": [],
+"line": 2447
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 109171,
+"end": 109181,
+"raw": "夹角：%.2f°",
+"segments": [
+[
+"txt",
+"夹角：%.2f°"
+]
+],
+"exprs": [],
+"line": 2448
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 109451,
+"end": 109482,
+"raw": "面积点 ${areaPoints.size}/3：继续选点",
+"segments": [
+[
+"txt",
+"面积点 "
+],
+[
+"expr",
+"areaPoints.size"
+],
+[
+"txt",
+"/3：继续选点"
+]
+],
+"exprs": [
+"areaPoints.size"
+],
+"line": 2454
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 109601,
+"end": 109639,
+"raw": "面积点 ${areaPoints.size}：继续选点或点击“完成面积”",
+"segments": [
+[
+"txt",
+"面积点 "
+],
+[
+"expr",
+"areaPoints.size"
+],
+[
+"txt",
+"：继续选点或点击“完成面积”"
+]
+],
+"exprs": [
+"areaPoints.size"
+],
+"line": 2457
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 109776,
+"end": 109794,
+"raw": "面积：%.2f  周长：%.2f",
+"segments": [
+[
+"txt",
+"面积：%.2f  周长：%.2f"
+]
+],
+"exprs": [],
+"line": 2461
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 109983,
+"end": 109996,
+"raw": "距离测量：点击两次取点",
+"segments": [
+[
+"txt",
+"距离测量：点击两次取点"
+]
+],
+"exprs": [],
+"line": 2467
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 110030,
+"end": 110043,
+"raw": "角度测量：依次点击三点",
+"segments": [
+[
+"txt",
+"角度测量：依次点击三点"
+]
+],
+"exprs": [],
+"line": 2468
+},
+{
+"file": "DxfCanvasView.kt",
+"offset": 110076,
+"end": 110090,
+"raw": "面积测量：连续点击轮廓点",
+"segments": [
+[
+"txt",
+"面积测量：连续点击轮廓点"
+]
+],
+"exprs": [],
+"line": 2469
+},
+{
+"file": "FileLibraryStore.kt",
+"offset": 5733,
+"end": 5749,
+"raw": "压缩包内未发现支持的图纸文件",
+"segments": [
+[
+"txt",
+"压缩包内未发现支持的图纸文件"
+]
+],
+"exprs": [],
+"line": 153
+},
+{
+"file": "FileLibraryStore.kt",
+"offset": 5891,
+"end": 5901,
+"raw": "无法读取文件路径",
+"segments": [
+[
+"txt",
+"无法读取文件路径"
+]
+],
+"exprs": [],
+"line": 156
+},
+{
+"file": "FileLibraryStore.kt",
+"offset": 6606,
+"end": 6613,
+"raw": "未命名文件",
+"segments": [
+[
+"txt",
+"未命名文件"
+]
+],
+"exprs": [],
+"line": 169
+},
+{
+"file": "FileLibraryStore.kt",
+"offset": 6823,
+"end": 6833,
+"raw": "无法读取导入文件",
+"segments": [
+[
+"txt",
+"无法读取导入文件"
+]
+],
+"exprs": [],
+"line": 173
+},
+{
+"file": "FileLibraryStore.kt",
+"offset": 7952,
+"end": 7961,
+"raw": "无法读取压缩包",
+"segments": [
+[
+"txt",
+"无法读取压缩包"
+]
+],
+"exprs": [],
+"line": 194
+},
+{
+"file": "FileLibraryStore.kt",
+"offset": 10586,
+"end": 10653,
+"raw": "${root.absolutePath}\\n已管理 ${files.size} 个文件 · ${formatSize(size)}",
+"segments": [
+[
+"expr",
+"root.absolutePath"
+],
+[
+"txt",
+"\\n已管理 "
+],
+[
+"expr",
+"files.size"
+],
+[
+"txt",
+" 个文件 · "
+],
+[
+"expr",
+"formatSize(size)"
+]
+],
+"exprs": [
+"root.absolutePath",
+"files.size",
+"formatSize(size)"
+],
+"line": 246
+},
+{
+"file": "FileLibraryStore.kt",
+"offset": 12941,
+"end": 12948,
+"raw": "未命名文件",
+"segments": [
+[
+"txt",
+"未命名文件"
+]
+],
+"exprs": [],
+"line": 300
+},
+{
+"file": "MainActivity.kt",
+"offset": 2274,
+"end": 2279,
+"raw": "未开始",
+"segments": [
+[
+"txt",
+"未开始"
+]
+],
+"exprs": [],
+"line": 58
+},
+{
+"file": "MainActivity.kt",
+"offset": 4320,
+"end": 4330,
+"raw": "无法写入目标文件",
+"segments": [
+[
+"txt",
+"无法写入目标文件"
+]
+],
+"exprs": [],
+"line": 102
+},
+{
+"file": "MainActivity.kt",
+"offset": 4524,
+"end": 4530,
+"raw": "导出完成",
+"segments": [
+[
+"txt",
+"导出完成"
+]
+],
+"exprs": [],
+"line": 107
+},
+{
+"file": "MainActivity.kt",
+"offset": 4728,
+"end": 4761,
+"raw": "导出失败：${error.message ?: \"未知错误\"}",
+"segments": [
+[
+"txt",
+"导出失败："
+],
+[
+"expr",
+"error.message ?: \"未知错误\""
+]
+],
+"exprs": [
+"error.message ?: \"未知错误\""
+],
+"line": 112
+},
+{
+"file": "MainActivity.kt",
+"offset": 5111,
+"end": 5121,
+"raw": "无法读取当前文件",
+"segments": [
+[
+"txt",
+"无法读取当前文件"
+]
+],
+"exprs": [],
+"line": 122
+},
+{
+"file": "MainActivity.kt",
+"offset": 5247,
+"end": 5257,
+"raw": "无法写入目标文件",
+"segments": [
+[
+"txt",
+"无法写入目标文件"
+]
+],
+"exprs": [],
+"line": 124
+},
+{
+"file": "MainActivity.kt",
+"offset": 5449,
+"end": 5455,
+"raw": "导出完成",
+"segments": [
+[
+"txt",
+"导出完成"
+]
+],
+"exprs": [],
+"line": 130
+},
+{
+"file": "MainActivity.kt",
+"offset": 5587,
+"end": 5620,
+"raw": "导出失败：${error.message ?: \"未知错误\"}",
+"segments": [
+[
+"txt",
+"导出失败："
+],
+[
+"expr",
+"error.message ?: \"未知错误\""
+]
+],
+"exprs": [
+"error.message ?: \"未知错误\""
+],
+"line": 134
+},
+{
+"file": "MainActivity.kt",
+"offset": 5937,
+"end": 5947,
+"raw": "排版导入.dxf",
+"segments": [
+[
+"txt",
+"排版导入.dxf"
+]
+],
+"exprs": [],
+"line": 144
+},
+{
+"file": "MainActivity.kt",
+"offset": 6613,
+"end": 6637,
+"raw": "已导入排版文件：${it.fileName}",
+"segments": [
+[
+"txt",
+"已导入排版文件："
+],
+[
+"expr",
+"it.fileName"
+]
+],
+"exprs": [
+"it.fileName"
+],
+"line": 158
+},
+{
+"file": "MainActivity.kt",
+"offset": 6814,
+"end": 6839,
+"raw": "排版导入失败：${error.message}",
+"segments": [
+[
+"txt",
+"排版导入失败："
+],
+[
+"expr",
+"error.message"
+]
+],
+"exprs": [
+"error.message"
+],
+"line": 163
+},
+{
+"file": "MainActivity.kt",
+"offset": 8133,
+"end": 8141,
+"raw": "请先打开图纸",
+"segments": [
+[
+"txt",
+"请先打开图纸"
+]
+],
+"exprs": [],
+"line": 192
+},
+{
+"file": "MainActivity.kt",
+"offset": 8442,
+"end": 8509,
+"raw": "自动标注已开启：${binding.dxfCanvasView.autoDimensionSummary().orEmpty()}",
+"segments": [
+[
+"txt",
+"自动标注已开启："
+],
+[
+"expr",
+"binding.dxfCanvasView.autoDimensionSummary().orEmpty()"
+]
+],
+"exprs": [
+"binding.dxfCanvasView.autoDimensionSummary().orEmpty()"
+],
+"line": 199
+},
+{
+"file": "MainActivity.kt",
+"offset": 8547,
+"end": 8556,
+"raw": "自动标注已关闭",
+"segments": [
+[
+"txt",
+"自动标注已关闭"
+]
+],
+"exprs": [],
+"line": 201
+},
+{
+"file": "MainActivity.kt",
+"offset": 8892,
+"end": 8904,
+"raw": "已切换到 2D 视图",
+"segments": [
+[
+"txt",
+"已切换到 2D 视图"
+]
+],
+"exprs": [],
+"line": 209
+},
+{
+"file": "MainActivity.kt",
+"offset": 9113,
+"end": 9131,
+"raw": "已切换到 3D 视图，可拖动旋转",
+"segments": [
+[
+"txt",
+"已切换到 3D 视图，可拖动旋转"
+]
+],
+"exprs": [],
+"line": 214
+},
+{
+"file": "MainActivity.kt",
+"offset": 9472,
+"end": 9481,
+"raw": "坡口显示已开启",
+"segments": [
+[
+"txt",
+"坡口显示已开启"
+]
+],
+"exprs": [],
+"line": 221
+},
+{
+"file": "MainActivity.kt",
+"offset": 9487,
+"end": 9502,
+"raw": "坡口显示已关闭，按直切显示",
+"segments": [
+[
+"txt",
+"坡口显示已关闭，按直切显示"
+]
+],
+"exprs": [],
+"line": 221
+},
+{
+"file": "MainActivity.kt",
+"offset": 9806,
+"end": 9814,
+"raw": "空移线已显示",
+"segments": [
+[
+"txt",
+"空移线已显示"
+]
+],
+"exprs": [],
+"line": 228
+},
+{
+"file": "MainActivity.kt",
+"offset": 9918,
+"end": 9926,
+"raw": "空移线已隐藏",
+"segments": [
+[
+"txt",
+"空移线已隐藏"
+]
+],
+"exprs": [],
+"line": 231
+},
+{
+"file": "MainActivity.kt",
+"offset": 10660,
+"end": 10670,
+"raw": "没有可导出的图形",
+"segments": [
+[
+"txt",
+"没有可导出的图形"
+]
+],
+"exprs": [],
+"line": 249
+},
+{
+"file": "MainActivity.kt",
+"offset": 10769,
+"end": 10774,
+"raw": "未命名",
+"segments": [
+[
+"txt",
+"未命名"
+]
+],
+"exprs": [],
+"line": 252
+},
+{
+"file": "MainActivity.kt",
+"offset": 15467,
+"end": 15473,
+"raw": "取消标注",
+"segments": [
+[
+"txt",
+"取消标注"
+]
+],
+"exprs": [],
+"line": 371
+},
+{
+"file": "MainActivity.kt",
+"offset": 15479,
+"end": 15485,
+"raw": "一键标注",
+"segments": [
+[
+"txt",
+"一键标注"
+]
+],
+"exprs": [],
+"line": 371
+},
+{
+"file": "MainActivity.kt",
+"offset": 15955,
+"end": 15962,
+"raw": "未命名文件",
+"segments": [
+[
+"txt",
+"未命名文件"
+]
+],
+"exprs": [],
+"line": 383
+},
+{
+"file": "MainActivity.kt",
+"offset": 16041,
+"end": 16059,
+"raw": "正在解压 $sourceName",
+"segments": [
+[
+"txt",
+"正在解压 "
+],
+[
+"expr",
+"sourceName"
+]
+],
+"exprs": [
+"sourceName"
+],
+"line": 384
+},
+{
+"file": "MainActivity.kt",
+"offset": 16065,
+"end": 16083,
+"raw": "正在导入 $sourceName",
+"segments": [
+[
+"txt",
+"正在导入 "
+],
+[
+"expr",
+"sourceName"
+]
+],
+"exprs": [
+"sourceName"
+],
+"line": 384
+},
+{
+"file": "MainActivity.kt",
+"offset": 16669,
+"end": 16690,
+"raw": "导入失败：压缩包内未发现支持的图纸文件",
+"segments": [
+[
+"txt",
+"导入失败：压缩包内未发现支持的图纸文件"
+]
+],
+"exprs": [],
+"line": 397
+},
+{
+"file": "MainActivity.kt",
+"offset": 16818,
+"end": 16841,
+"raw": "，共导入 ${refs.size} 个图纸",
+"segments": [
+[
+"txt",
+"，共导入 "
+],
+[
+"expr",
+"refs.size"
+],
+[
+"txt",
+" 个图纸"
+]
+],
+"exprs": [
+"refs.size"
+],
+"line": 400
+},
+{
+"file": "MainActivity.kt",
+"offset": 16974,
+"end": 17008,
+"raw": "已解压到专用目录：${firstRef.name}$suffix",
+"segments": [
+[
+"txt",
+"已解压到专用目录："
+],
+[
+"expr",
+"firstRef.name"
+],
+[
+"expr",
+"suffix"
+]
+],
+"exprs": [
+"firstRef.name",
+"suffix"
+],
+"line": 402
+},
+{
+"file": "MainActivity.kt",
+"offset": 17070,
+"end": 17097,
+"raw": "已导入到专用目录：${firstRef.name}",
+"segments": [
+[
+"txt",
+"已导入到专用目录："
+],
+[
+"expr",
+"firstRef.name"
+]
+],
+"exprs": [
+"firstRef.name"
+],
+"line": 404
+},
+{
+"file": "MainActivity.kt",
+"offset": 17465,
+"end": 17505,
+"raw": "导入失败：${error.message ?: \"未知错误\"}，尝试直接打开",
+"segments": [
+[
+"txt",
+"导入失败："
+],
+[
+"expr",
+"error.message ?: \"未知错误\""
+],
+[
+"txt",
+"，尝试直接打开"
+]
+],
+"exprs": [
+"error.message ?: \"未知错误\""
+],
+"line": 413
+},
+{
+"file": "MainActivity.kt",
+"offset": 18045,
+"end": 18052,
+"raw": "未命名文件",
+"segments": [
+[
+"txt",
+"未命名文件"
+]
+],
+"exprs": [],
+"line": 429
+},
+{
+"file": "MainActivity.kt",
+"offset": 18242,
+"end": 18258,
+"raw": "正在解析 $fileName",
+"segments": [
+[
+"txt",
+"正在解析 "
+],
+[
+"expr",
+"fileName"
+]
+],
+"exprs": [
+"fileName"
+],
+"line": 434
+},
+{
+"file": "MainActivity.kt",
+"offset": 18572,
+"end": 18605,
+"raw": "解析失败：${error.message ?: \"未知错误\"}",
+"segments": [
+[
+"txt",
+"解析失败："
+],
+[
+"expr",
+"error.message ?: \"未知错误\""
+]
+],
+"exprs": [
+"error.message ?: \"未知错误\""
+],
+"line": 443
+},
+{
+"file": "MainActivity.kt",
+"offset": 18677,
+"end": 18685,
+"raw": "无法打开文件",
+"segments": [
+[
+"txt",
+"无法打开文件"
+]
+],
+"exprs": [],
+"line": 445
+},
+{
+"file": "MainActivity.kt",
+"offset": 18718,
+"end": 18760,
+"raw": "请确认文件可读，并且格式是 .dxf、.dwg、.gen、.nc 或 .pdf。",
+"segments": [
+[
+"txt",
+"请确认文件可读，并且格式是 .dxf、.dwg、.gen、.nc 或 .pdf。"
+]
+],
+"exprs": [],
+"line": 446
+},
+{
+"file": "MainActivity.kt",
+"offset": 19288,
+"end": 19323,
+"raw": "示例加载失败：${error.message ?: \"未知错误\"}",
+"segments": [
+[
+"txt",
+"示例加载失败："
+],
+[
+"expr",
+"error.message ?: \"未知错误\""
+]
+],
+"exprs": [
+"error.message ?: \"未知错误\""
+],
+"line": 462
+},
+{
+"file": "MainActivity.kt",
+"offset": 19478,
+"end": 19485,
+"raw": "未命名文件",
+"segments": [
+[
+"txt",
+"未命名文件"
+]
+],
+"exprs": [],
+"line": 468
+},
+{
+"file": "MainActivity.kt",
+"offset": 19568,
+"end": 19581,
+"raw": "正在重生成 $name",
+"segments": [
+[
+"txt",
+"正在重生成 "
+],
+[
+"expr",
+"name"
+]
+],
+"exprs": [
+"name"
+],
+"line": 470
+},
+{
+"file": "MainActivity.kt",
+"offset": 20243,
+"end": 20285,
+"raw": "DXF 实体数：${parsed.document.entities.size}",
+"segments": [
+[
+"txt",
+"DXF 实体数："
+],
+[
+"expr",
+"parsed.document.entities.size"
+]
+],
+"exprs": [
+"parsed.document.entities.size"
+],
+"line": 488
+},
+{
+"file": "MainActivity.kt",
+"offset": 20405,
+"end": 20446,
+"raw": "图层 ${parsed.document.layers.size} · $it",
+"segments": [
+[
+"txt",
+"图层 "
+],
+[
+"expr",
+"parsed.document.layers.size"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"it"
+]
+],
+"exprs": [
+"parsed.document.layers.size",
+"it"
+],
+"line": 490
+},
+{
+"file": "MainActivity.kt",
+"offset": 20472,
+"end": 20507,
+"raw": "图层 ${parsed.document.layers.size}",
+"segments": [
+[
+"txt",
+"图层 "
+],
+[
+"expr",
+"parsed.document.layers.size"
+]
+],
+"exprs": [
+"parsed.document.layers.size"
+],
+"line": 491
+},
+{
+"file": "MainActivity.kt",
+"offset": 21152,
+"end": 21160,
+"raw": "打开 DXF",
+"segments": [
+[
+"txt",
+"打开 DXF"
+]
+],
+"exprs": [],
+"line": 501
+},
+{
+"file": "MainActivity.kt",
+"offset": 21822,
+"end": 21866,
+"raw": "GEN 工艺段：${parsed.document.operations.size}",
+"segments": [
+[
+"txt",
+"GEN 工艺段："
+],
+[
+"expr",
+"parsed.document.operations.size"
+]
+],
+"exprs": [
+"parsed.document.operations.size"
+],
+"line": 514
+},
+{
+"file": "MainActivity.kt",
+"offset": 22557,
+"end": 22565,
+"raw": "打开 GEN",
+"segments": [
+[
+"txt",
+"打开 GEN"
+]
+],
+"exprs": [],
+"line": 525
+},
+{
+"file": "MainActivity.kt",
+"offset": 23204,
+"end": 23241,
+"raw": "NC 轨迹段：${parsed.program.moves.size}",
+"segments": [
+[
+"txt",
+"NC 轨迹段："
+],
+[
+"expr",
+"parsed.program.moves.size"
+]
+],
+"exprs": [
+"parsed.program.moves.size"
+],
+"line": 538
+},
+{
+"file": "MainActivity.kt",
+"offset": 23934,
+"end": 23941,
+"raw": "打开 NC",
+"segments": [
+[
+"txt",
+"打开 NC"
+]
+],
+"exprs": [],
+"line": 550
+},
+{
+"file": "MainActivity.kt",
+"offset": 24597,
+"end": 24642,
+"raw": "DWG 文件已识别：${parsed.preview.readableVersion}",
+"segments": [
+[
+"txt",
+"DWG 文件已识别："
+],
+[
+"expr",
+"parsed.preview.readableVersion"
+]
+],
+"exprs": [
+"parsed.preview.readableVersion"
+],
+"line": 564
+},
+{
+"file": "MainActivity.kt",
+"offset": 25179,
+"end": 25189,
+"raw": "DWG 预览信息",
+"segments": [
+[
+"txt",
+"DWG 预览信息"
+]
+],
+"exprs": [],
+"line": 573
+},
+{
+"file": "MainActivity.kt",
+"offset": 25218,
+"end": 25319,
+"raw": "版本码：${parsed.preview.versionCode}\\n识别版本：${parsed.preview.readableVersion}\\n\\n${parsed.preview.note}",
+"segments": [
+[
+"txt",
+"版本码："
+],
+[
+"expr",
+"parsed.preview.versionCode"
+],
+[
+"txt",
+"\\n识别版本："
+],
+[
+"expr",
+"parsed.preview.readableVersion"
+],
+[
+"txt",
+"\\n\\n"
+],
+[
+"expr",
+"parsed.preview.note"
+]
+],
+"exprs": [
+"parsed.preview.versionCode",
+"parsed.preview.readableVersion",
+"parsed.preview.note"
+],
+"line": 574
+},
+{
+"file": "MainActivity.kt",
+"offset": 26397,
+"end": 26401,
+"raw": "说明",
+"segments": [
+[
+"txt",
+"说明"
+]
+],
+"exprs": [],
+"line": 600
+},
+{
+"file": "MainActivity.kt",
+"offset": 27451,
+"end": 27455,
+"raw": "文件",
+"segments": [
+[
+"txt",
+"文件"
+]
+],
+"exprs": [],
+"line": 628
+},
+{
+"file": "MainActivity.kt",
+"offset": 27751,
+"end": 27757,
+"raw": "收藏文件",
+"segments": [
+[
+"txt",
+"收藏文件"
+]
+],
+"exprs": [],
+"line": 634
+},
+{
+"file": "MainActivity.kt",
+"offset": 27788,
+"end": 27815,
+"raw": "还没有收藏文件。打开图纸后可在详情中收藏当前文件。",
+"segments": [
+[
+"txt",
+"还没有收藏文件。打开图纸后可在详情中收藏当前文件。"
+]
+],
+"exprs": [],
+"line": 634
+},
+{
+"file": "MainActivity.kt",
+"offset": 28031,
+"end": 28037,
+"raw": "导入文件",
+"segments": [
+[
+"txt",
+"导入文件"
+]
+],
+"exprs": [],
+"line": 641
+},
+{
+"file": "MainActivity.kt",
+"offset": 28086,
+"end": 28090,
+"raw": "说明",
+"segments": [
+[
+"txt",
+"说明"
+]
+],
+"exprs": [],
+"line": 642
+},
+{
+"file": "MainActivity.kt",
+"offset": 28092,
+"end": 28138,
+"raw": "导入会先复制到应用专用分类目录，再从副本打开；历史删除默认只移除记录，避免误删原始图纸。",
+"segments": [
+[
+"txt",
+"导入会先复制到应用专用分类目录，再从副本打开；历史删除默认只移除记录，避免误删原始图纸。"
+]
+],
+"exprs": [],
+"line": 642
+},
+{
+"file": "MainActivity.kt",
+"offset": 28187,
+"end": 28193,
+"raw": "专用目录",
+"segments": [
+[
+"txt",
+"专用目录"
+]
+],
+"exprs": [],
+"line": 643
+},
+{
+"file": "MainActivity.kt",
+"offset": 28280,
+"end": 28293,
+"raw": "＋ 新建 CAD 图形",
+"segments": [
+[
+"txt",
+"＋ 新建 CAD 图形"
+]
+],
+"exprs": [],
+"line": 644
+},
+{
+"file": "MainActivity.kt",
+"offset": 28376,
+"end": 28386,
+"raw": "＋ 导入本地图纸",
+"segments": [
+[
+"txt",
+"＋ 导入本地图纸"
+]
+],
+"exprs": [],
+"line": 645
+},
+{
+"file": "MainActivity.kt",
+"offset": 28597,
+"end": 28613,
+"raw": "保存 DXF（保留原图结构）",
+"segments": [
+[
+"txt",
+"保存 DXF（保留原图结构）"
+]
+],
+"exprs": [],
+"line": 647
+},
+{
+"file": "MainActivity.kt",
+"offset": 28730,
+"end": 28740,
+"raw": "选择文件库根目录",
+"segments": [
+[
+"txt",
+"选择文件库根目录"
+]
+],
+"exprs": [],
+"line": 651
+},
+{
+"file": "MainActivity.kt",
+"offset": 28879,
+"end": 28885,
+"raw": "当前文件",
+"segments": [
+[
+"txt",
+"当前文件"
+]
+],
+"exprs": [],
+"line": 654
+},
+{
+"file": "MainActivity.kt",
+"offset": 28939,
+"end": 28945,
+"raw": "当前文件",
+"segments": [
+[
+"txt",
+"当前文件"
+]
+],
+"exprs": [],
+"line": 655
+},
+{
+"file": "MainActivity.kt",
+"offset": 29377,
+"end": 29387,
+"raw": "取消收藏当前文件",
+"segments": [
+[
+"txt",
+"取消收藏当前文件"
+]
+],
+"exprs": [],
+"line": 664
+},
+{
+"file": "MainActivity.kt",
+"offset": 29393,
+"end": 29401,
+"raw": "收藏当前文件",
+"segments": [
+[
+"txt",
+"收藏当前文件"
+]
+],
+"exprs": [],
+"line": 664
+},
+{
+"file": "MainActivity.kt",
+"offset": 29529,
+"end": 29544,
+"raw": "已收藏 $fileName",
+"segments": [
+[
+"txt",
+"已收藏 "
+],
+[
+"expr",
+"fileName"
+]
+],
+"exprs": [
+"fileName"
+],
+"line": 666
+},
+{
+"file": "MainActivity.kt",
+"offset": 29550,
+"end": 29567,
+"raw": "已取消收藏 $fileName",
+"segments": [
+[
+"txt",
+"已取消收藏 "
+],
+[
+"expr",
+"fileName"
+]
+],
+"exprs": [
+"fileName"
+],
+"line": 666
+},
+{
+"file": "MainActivity.kt",
+"offset": 29733,
+"end": 29739,
+"raw": "历史文件",
+"segments": [
+[
+"txt",
+"历史文件"
+]
+],
+"exprs": [],
+"line": 672
+},
+{
+"file": "MainActivity.kt",
+"offset": 29829,
+"end": 29833,
+"raw": "状态",
+"segments": [
+[
+"txt",
+"状态"
+]
+],
+"exprs": [],
+"line": 674
+},
+{
+"file": "MainActivity.kt",
+"offset": 29835,
+"end": 29843,
+"raw": "暂无历史记录",
+"segments": [
+[
+"txt",
+"暂无历史记录"
+]
+],
+"exprs": [],
+"line": 674
+},
+{
+"file": "MainActivity.kt",
+"offset": 30102,
+"end": 30109,
+"raw": "置顶 · ",
+"segments": [
+[
+"txt",
+"置顶 · "
+]
+],
+"exprs": [],
+"line": 680
+},
+{
+"file": "MainActivity.kt",
+"offset": 30576,
+"end": 30585,
+"raw": "已删除历史记录",
+"segments": [
+[
+"txt",
+"已删除历史记录"
+]
+],
+"exprs": [],
+"line": 688
+},
+{
+"file": "MainActivity.kt",
+"offset": 30733,
+"end": 30741,
+"raw": "查看全部历史",
+"segments": [
+[
+"txt",
+"查看全部历史"
+]
+],
+"exprs": [],
+"line": 693
+},
+{
+"file": "MainActivity.kt",
+"offset": 30977,
+"end": 30983,
+"raw": "分组预览",
+"segments": [
+[
+"txt",
+"分组预览"
+]
+],
+"exprs": [],
+"line": 700
+},
+{
+"file": "MainActivity.kt",
+"offset": 31069,
+"end": 31073,
+"raw": "分组",
+"segments": [
+[
+"txt",
+"分组"
+]
+],
+"exprs": [],
+"line": 702
+},
+{
+"file": "MainActivity.kt",
+"offset": 31075,
+"end": 31118,
+"raw": "导入或打开图纸后，将按 DXF / DWG / PDF / NC 等类型自动分组。",
+"segments": [
+[
+"txt",
+"导入或打开图纸后，将按 DXF / DWG / PDF / NC 等类型自动分组。"
+]
+],
+"exprs": [],
+"line": 702
+},
+{
+"file": "MainActivity.kt",
+"offset": 31517,
+"end": 31523,
+"raw": "历史文件",
+"segments": [
+[
+"txt",
+"历史文件"
+]
+],
+"exprs": [],
+"line": 714
+},
+{
+"file": "MainActivity.kt",
+"offset": 31669,
+"end": 31673,
+"raw": "状态",
+"segments": [
+[
+"txt",
+"状态"
+]
+],
+"exprs": [],
+"line": 717
+},
+{
+"file": "MainActivity.kt",
+"offset": 31675,
+"end": 31683,
+"raw": "暂无历史记录",
+"segments": [
+[
+"txt",
+"暂无历史记录"
+]
+],
+"exprs": [],
+"line": 717
+},
+{
+"file": "MainActivity.kt",
+"offset": 31761,
+"end": 31769,
+"raw": "清空历史文件",
+"segments": [
+[
+"txt",
+"清空历史文件"
+]
+],
+"exprs": [],
+"line": 720
+},
+{
+"file": "MainActivity.kt",
+"offset": 31855,
+"end": 31864,
+"raw": "已清空历史文件",
+"segments": [
+[
+"txt",
+"已清空历史文件"
+]
+],
+"exprs": [],
+"line": 722
+},
+{
+"file": "MainActivity.kt",
+"offset": 32055,
+"end": 32080,
+"raw": "$type · ${files.size} 个",
+"segments": [
+[
+"expr",
+"type"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"files.size"
+],
+[
+"txt",
+" 个"
+]
+],
+"exprs": [
+"type",
+"files.size"
+],
+"line": 726
+},
+{
+"file": "MainActivity.kt",
+"offset": 32308,
+"end": 32315,
+"raw": "置顶 · ",
+"segments": [
+[
+"txt",
+"置顶 · "
+]
+],
+"exprs": [],
+"line": 731
+},
+{
+"file": "MainActivity.kt",
+"offset": 32838,
+"end": 32847,
+"raw": "已删除托管副本",
+"segments": [
+[
+"txt",
+"已删除托管副本"
+]
+],
+"exprs": [],
+"line": 740
+},
+{
+"file": "MainActivity.kt",
+"offset": 32853,
+"end": 32869,
+"raw": "删除失败：文件不可写或不存在",
+"segments": [
+[
+"txt",
+"删除失败：文件不可写或不存在"
+]
+],
+"exprs": [],
+"line": 740
+},
+{
+"file": "MainActivity.kt",
+"offset": 33024,
+"end": 33033,
+"raw": "已删除历史记录",
+"segments": [
+[
+"txt",
+"已删除历史记录"
+]
+],
+"exprs": [],
+"line": 743
+},
+{
+"file": "MainActivity.kt",
+"offset": 33269,
+"end": 33275,
+"raw": "暂无记录",
+"segments": [
+[
+"txt",
+"暂无记录"
+]
+],
+"exprs": [],
+"line": 752
+},
+{
+"file": "MainActivity.kt",
+"offset": 33416,
+"end": 33420,
+"raw": "状态",
+"segments": [
+[
+"txt",
+"状态"
+]
+],
+"exprs": [],
+"line": 755
+},
+{
+"file": "MainActivity.kt",
+"offset": 33605,
+"end": 33630,
+"raw": "$type · ${files.size} 个",
+"segments": [
+[
+"expr",
+"type"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"files.size"
+],
+[
+"txt",
+" 个"
+]
+],
+"exprs": [
+"type",
+"files.size"
+],
+"line": 759
+},
+{
+"file": "MainActivity.kt",
+"offset": 34253,
+"end": 34262,
+"raw": "NC 自动生成",
+"segments": [
+[
+"txt",
+"NC 自动生成"
+]
+],
+"exprs": [],
+"line": 774
+},
+{
+"file": "MainActivity.kt",
+"offset": 34391,
+"end": 34396,
+"raw": "外轮廓",
+"segments": [
+[
+"txt",
+"外轮廓"
+]
+],
+"exprs": [],
+"line": 777
+},
+{
+"file": "MainActivity.kt",
+"offset": 34521,
+"end": 34529,
+"raw": "厚度(毫米)",
+"segments": [
+[
+"txt",
+"厚度(毫米)"
+]
+],
+"exprs": [],
+"line": 779
+},
+{
+"file": "MainActivity.kt",
+"offset": 35139,
+"end": 35143,
+"raw": "材质",
+"segments": [
+[
+"txt",
+"材质"
+]
+],
+"exprs": [],
+"line": 790
+},
+{
+"file": "MainActivity.kt",
+"offset": 35478,
+"end": 35484,
+"raw": "板材长度",
+"segments": [
+[
+"txt",
+"板材长度"
+]
+],
+"exprs": [],
+"line": 798
+},
+{
+"file": "MainActivity.kt",
+"offset": 35848,
+"end": 35854,
+"raw": "板材宽度",
+"segments": [
+[
+"txt",
+"板材宽度"
+]
+],
+"exprs": [],
+"line": 806
+},
+{
+"file": "MainActivity.kt",
+"offset": 36217,
+"end": 36226,
+"raw": "程序名/导出名",
+"segments": [
+[
+"txt",
+"程序名/导出名"
+]
+],
+"exprs": [],
+"line": 814
+},
+{
+"file": "MainActivity.kt",
+"offset": 36567,
+"end": 36575,
+"raw": "厚度(毫米)",
+"segments": [
+[
+"txt",
+"厚度(毫米)"
+]
+],
+"exprs": [],
+"line": 822
+},
+{
+"file": "MainActivity.kt",
+"offset": 36607,
+"end": 36611,
+"raw": "材质",
+"segments": [
+[
+"txt",
+"材质"
+]
+],
+"exprs": [],
+"line": 823
+},
+{
+"file": "MainActivity.kt",
+"offset": 36642,
+"end": 36648,
+"raw": "板材长度",
+"segments": [
+[
+"txt",
+"板材长度"
+]
+],
+"exprs": [],
+"line": 824
+},
+{
+"file": "MainActivity.kt",
+"offset": 36677,
+"end": 36683,
+"raw": "板材宽度",
+"segments": [
+[
+"txt",
+"板材宽度"
+]
+],
+"exprs": [],
+"line": 825
+},
+{
+"file": "MainActivity.kt",
+"offset": 36712,
+"end": 36717,
+"raw": "程序名",
+"segments": [
+[
+"txt",
+"程序名"
+]
+],
+"exprs": [],
+"line": 826
+},
+{
+"file": "MainActivity.kt",
+"offset": 37124,
+"end": 37134,
+"raw": "生成并导出 NC",
+"segments": [
+[
+"txt",
+"生成并导出 NC"
+]
+],
+"exprs": [],
+"line": 836
+},
+{
+"file": "MainActivity.kt",
+"offset": 37745,
+"end": 37761,
+"raw": "已生成 NC，请选择保存位置",
+"segments": [
+[
+"txt",
+"已生成 NC，请选择保存位置"
+]
+],
+"exprs": [],
+"line": 845
+},
+{
+"file": "MainActivity.kt",
+"offset": 37936,
+"end": 37977,
+"raw": "当前 DXF 没有 сохранённого исходного потока",
+"segments": [
+[
+"txt",
+"当前 DXF 没有 сохранённого исходного потока"
+]
+],
+"exprs": [],
+"line": 852
+},
+{
+"file": "MainActivity.kt",
+"offset": 38151,
+"end": 38171,
+"raw": "无法 подготовить DXF",
+"segments": [
+[
+"txt",
+"无法 подготовить DXF"
+]
+],
+"exprs": [],
+"line": 858
+},
+{
+"file": "MainActivity.kt",
+"offset": 39609,
+"end": 39690,
+"raw": "当前识别尺寸: W ${\"%.3f\".format(bounds.width)} / H ${\"%.3f\".format(bounds.height)} mm",
+"segments": [
+[
+"txt",
+"当前识别尺寸: W "
+],
+[
+"expr",
+"\"%.3f\".format(bounds.width)"
+],
+[
+"txt",
+" / H "
+],
+[
+"expr",
+"\"%.3f\".format(bounds.height)"
+],
+[
+"txt",
+" mm"
+]
+],
+"exprs": [
+"\"%.3f\".format(bounds.width)",
+"\"%.3f\".format(bounds.height)"
+],
+"line": 889
+},
+{
+"file": "MainActivity.kt",
+"offset": 39824,
+"end": 39914,
+"raw": "原始PDF尺寸: W ${\"%.3f\".format(baseBounds.width)} / H ${\"%.3f\".format(baseBounds.height)} mm",
+"segments": [
+[
+"txt",
+"原始PDF尺寸: W "
+],
+[
+"expr",
+"\"%.3f\".format(baseBounds.width)"
+],
+[
+"txt",
+" / H "
+],
+[
+"expr",
+"\"%.3f\".format(baseBounds.height)"
+],
+[
+"txt",
+" mm"
+]
+],
+"exprs": [
+"\"%.3f\".format(baseBounds.width)",
+"\"%.3f\".format(baseBounds.height)"
+],
+"line": 893
+},
+{
+"file": "MainActivity.kt",
+"offset": 40070,
+"end": 40139,
+"raw": "自动识别比例: 1:${\"%.3f\".format(it)}，当前套用 ${\"%.4f\".format(currentScale)}x",
+"segments": [
+[
+"txt",
+"自动识别比例: 1:"
+],
+[
+"expr",
+"\"%.3f\".format(it)"
+],
+[
+"txt",
+"，当前套用 "
+],
+[
+"expr",
+"\"%.4f\".format(currentScale)"
+],
+[
+"txt",
+"x"
+]
+],
+"exprs": [
+"\"%.3f\".format(it)",
+"\"%.4f\".format(currentScale)"
+],
+"line": 897
+},
+{
+"file": "MainActivity.kt",
+"offset": 40161,
+"end": 40174,
+"raw": "自动识别比例: 未识别",
+"segments": [
+[
+"txt",
+"自动识别比例: 未识别"
+]
+],
+"exprs": [],
+"line": 898
+},
+{
+"file": "MainActivity.kt",
+"offset": 40310,
+"end": 40325,
+"raw": "目标宽度(mm)，优先使用",
+"segments": [
+[
+"txt",
+"目标宽度(mm)，优先使用"
+]
+],
+"exprs": [],
+"line": 902
+},
+{
+"file": "MainActivity.kt",
+"offset": 40680,
+"end": 40699,
+"raw": "目标高度(mm)，留空则按宽度等比",
+"segments": [
+[
+"txt",
+"目标高度(mm)，留空则按宽度等比"
+]
+],
+"exprs": [],
+"line": 910
+},
+{
+"file": "MainActivity.kt",
+"offset": 41247,
+"end": 41257,
+"raw": "PDF 尺寸校准",
+"segments": [
+[
+"txt",
+"PDF 尺寸校准"
+]
+],
+"exprs": [],
+"line": 923
+},
+{
+"file": "MainActivity.kt",
+"offset": 41319,
+"end": 41327,
+"raw": "套用识别比例",
+"segments": [
+[
+"txt",
+"套用识别比例"
+]
+],
+"exprs": [],
+"line": 925
+},
+{
+"file": "MainActivity.kt",
+"offset": 41480,
+"end": 41491,
+"raw": "没有识别到图纸比例",
+"segments": [
+[
+"txt",
+"没有识别到图纸比例"
+]
+],
+"exprs": [],
+"line": 928
+},
+{
+"file": "MainActivity.kt",
+"offset": 41641,
+"end": 41645,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 933
+},
+{
+"file": "MainActivity.kt",
+"offset": 41684,
+"end": 41688,
+"raw": "应用",
+"segments": [
+[
+"txt",
+"应用"
+]
+],
+"exprs": [],
+"line": 934
+},
+{
+"file": "MainActivity.kt",
+"offset": 42315,
+"end": 42327,
+"raw": "请输入有效的目标尺寸",
+"segments": [
+[
+"txt",
+"请输入有效的目标尺寸"
+]
+],
+"exprs": [],
+"line": 943
+},
+{
+"file": "MainActivity.kt",
+"offset": 42954,
+"end": 42963,
+"raw": "PDF尺寸校准",
+"segments": [
+[
+"txt",
+"PDF尺寸校准"
+]
+],
+"exprs": [],
+"line": 960
+},
+{
+"file": "MainActivity.kt",
+"offset": 43309,
+"end": 43324,
+"raw": "已按比例校准 PDF 尺寸",
+"segments": [
+[
+"txt",
+"已按比例校准 PDF 尺寸"
+]
+],
+"exprs": [],
+"line": 965
+},
+{
+"file": "MainActivity.kt",
+"offset": 45150,
+"end": 45155,
+"raw": "文件库",
+"segments": [
+[
+"txt",
+"文件库"
+]
+],
+"exprs": [],
+"line": 1004
+},
+{
+"file": "MainActivity.kt",
+"offset": 45157,
+"end": 45200,
+"raw": "还没有选择目录。点击上面的“选择文件库根目录”后，就可以像原应用一样浏览所有文件。",
+"segments": [
+[
+"txt",
+"还没有选择目录。点击上面的“选择文件库根目录”后，就可以像原应用一样浏览所有文件。"
+]
+],
+"exprs": [],
+"line": 1004
+},
+{
+"file": "MainActivity.kt",
+"offset": 45352,
+"end": 45358,
+"raw": "当前目录",
+"segments": [
+[
+"txt",
+"当前目录"
+]
+],
+"exprs": [],
+"line": 1008
+},
+{
+"file": "MainActivity.kt",
+"offset": 45478,
+"end": 45485,
+"raw": "返回上一级",
+"segments": [
+[
+"txt",
+"返回上一级"
+]
+],
+"exprs": [],
+"line": 1010
+},
+{
+"file": "MainActivity.kt",
+"offset": 45939,
+"end": 45943,
+"raw": "目录",
+"segments": [
+[
+"txt",
+"目录"
+]
+],
+"exprs": [],
+"line": 1019
+},
+{
+"file": "MainActivity.kt",
+"offset": 45945,
+"end": 45959,
+"raw": "当前目录没有可显示的文件",
+"segments": [
+[
+"txt",
+"当前目录没有可显示的文件"
+]
+],
+"exprs": [],
+"line": 1019
+},
+{
+"file": "MainActivity.kt",
+"offset": 46074,
+"end": 46094,
+"raw": "[目录] ${child.name}",
+"segments": [
+[
+"txt",
+"[目录] "
+],
+[
+"expr",
+"child.name"
+]
+],
+"exprs": [
+"child.name"
+],
+"line": 1023
+},
+{
+"file": "MainActivity.kt",
+"offset": 46114,
+"end": 46121,
+"raw": "未命名文件",
+"segments": [
+[
+"txt",
+"未命名文件"
+]
+],
+"exprs": [],
+"line": 1023
+},
+{
+"file": "MainActivity.kt",
+"offset": 46659,
+"end": 46665,
+"raw": "搜索文件",
+"segments": [
+[
+"txt",
+"搜索文件"
+]
+],
+"exprs": [],
+"line": 1038
+},
+{
+"file": "MainActivity.kt",
+"offset": 47086,
+"end": 47096,
+"raw": "输入文件名关键字",
+"segments": [
+[
+"txt",
+"输入文件名关键字"
+]
+],
+"exprs": [],
+"line": 1049
+},
+{
+"file": "MainActivity.kt",
+"offset": 47534,
+"end": 47538,
+"raw": "搜索",
+"segments": [
+[
+"txt",
+"搜索"
+]
+],
+"exprs": [],
+"line": 1058
+},
+{
+"file": "MainActivity.kt",
+"offset": 48355,
+"end": 48359,
+"raw": "提示",
+"segments": [
+[
+"txt",
+"提示"
+]
+],
+"exprs": [],
+"line": 1078
+},
+{
+"file": "MainActivity.kt",
+"offset": 48361,
+"end": 48405,
+"raw": "搜索会在你选择的文件库根目录内递归查找 .dxf / .dwg / .gen 文件。",
+"segments": [
+[
+"txt",
+"搜索会在你选择的文件库根目录内递归查找 .dxf / .dwg / .gen 文件。"
+]
+],
+"exprs": [],
+"line": 1078
+},
+{
+"file": "MainActivity.kt",
+"offset": 48592,
+"end": 48604,
+"raw": "请先选择文件库根目录",
+"segments": [
+[
+"txt",
+"请先选择文件库根目录"
+]
+],
+"exprs": [],
+"line": 1085
+},
+{
+"file": "MainActivity.kt",
+"offset": 48703,
+"end": 48713,
+"raw": "请输入搜索关键字",
+"segments": [
+[
+"txt",
+"请输入搜索关键字"
+]
+],
+"exprs": [],
+"line": 1089
+},
+{
+"file": "MainActivity.kt",
+"offset": 48777,
+"end": 48790,
+"raw": "正在搜索 $query",
+"segments": [
+[
+"txt",
+"正在搜索 "
+],
+[
+"expr",
+"query"
+]
+],
+"exprs": [
+"query"
+],
+"line": 1092
+},
+{
+"file": "MainActivity.kt",
+"offset": 49073,
+"end": 49079,
+"raw": "搜索结果",
+"segments": [
+[
+"txt",
+"搜索结果"
+]
+],
+"exprs": [],
+"line": 1098
+},
+{
+"file": "MainActivity.kt",
+"offset": 49181,
+"end": 49185,
+"raw": "结果",
+"segments": [
+[
+"txt",
+"结果"
+]
+],
+"exprs": [],
+"line": 1100
+},
+{
+"file": "MainActivity.kt",
+"offset": 49187,
+"end": 49197,
+"raw": "没有找到匹配文件",
+"segments": [
+[
+"txt",
+"没有找到匹配文件"
+]
+],
+"exprs": [],
+"line": 1100
+},
+{
+"file": "MainActivity.kt",
+"offset": 49545,
+"end": 49571,
+"raw": "搜索完成：${results.size} 个结果",
+"segments": [
+[
+"txt",
+"搜索完成："
+],
+[
+"expr",
+"results.size"
+],
+[
+"txt",
+" 个结果"
+]
+],
+"exprs": [
+"results.size"
+],
+"line": 1108
+},
+{
+"file": "MainActivity.kt",
+"offset": 50495,
+"end": 50503,
+"raw": "已切换为横屏",
+"segments": [
+[
+"txt",
+"已切换为横屏"
+]
+],
+"exprs": [],
+"line": 1131
+},
+{
+"file": "MainActivity.kt",
+"offset": 50533,
+"end": 50541,
+"raw": "已切换为竖屏",
+"segments": [
+[
+"txt",
+"已切换为竖屏"
+]
+],
+"exprs": [],
+"line": 1133
+},
+{
+"file": "MainActivity.kt",
+"offset": 51569,
+"end": 51575,
+"raw": "板材边框",
+"segments": [
+[
+"txt",
+"板材边框"
+]
+],
+"exprs": [],
+"line": 1162
+},
+{
+"file": "MainActivity.kt",
+"offset": 51607,
+"end": 51611,
+"raw": "空走",
+"segments": [
+[
+"txt",
+"空走"
+]
+],
+"exprs": [],
+"line": 1163
+},
+{
+"file": "MainActivity.kt",
+"offset": 51641,
+"end": 51645,
+"raw": "直切",
+"segments": [
+[
+"txt",
+"直切"
+]
+],
+"exprs": [],
+"line": 1164
+},
+{
+"file": "MainActivity.kt",
+"offset": 51683,
+"end": 51690,
+"raw": "坡口 A+",
+"segments": [
+[
+"txt",
+"坡口 A+"
+]
+],
+"exprs": [],
+"line": 1165
+},
+{
+"file": "MainActivity.kt",
+"offset": 51728,
+"end": 51735,
+"raw": "坡口 A-",
+"segments": [
+[
+"txt",
+"坡口 A-"
+]
+],
+"exprs": [],
+"line": 1166
+},
+{
+"file": "MainActivity.kt",
+"offset": 51773,
+"end": 51780,
+"raw": "坡口 B+",
+"segments": [
+[
+"txt",
+"坡口 B+"
+]
+],
+"exprs": [],
+"line": 1167
+},
+{
+"file": "MainActivity.kt",
+"offset": 51818,
+"end": 51825,
+"raw": "坡口 B-",
+"segments": [
+[
+"txt",
+"坡口 B-"
+]
+],
+"exprs": [],
+"line": 1168
+},
+{
+"file": "MainActivity.kt",
+"offset": 52891,
+"end": 52897,
+"raw": "图层控制",
+"segments": [
+[
+"txt",
+"图层控制"
+]
+],
+"exprs": [],
+"line": 1188
+},
+{
+"file": "MainActivity.kt",
+"offset": 52899,
+"end": 52922,
+"raw": "当前文件不是 DXF，暂时没有可切换图层。",
+"segments": [
+[
+"txt",
+"当前文件不是 DXF，暂时没有可切换图层。"
+]
+],
+"exprs": [],
+"line": 1188
+},
+{
+"file": "MainActivity.kt",
+"offset": 53309,
+"end": 53320,
+"raw": "显示 PDF 文字",
+"segments": [
+[
+"txt",
+"显示 PDF 文字"
+]
+],
+"exprs": [],
+"line": 1197
+},
+{
+"file": "MainActivity.kt",
+"offset": 53617,
+"end": 53629,
+"raw": "已显示 PDF 文字",
+"segments": [
+[
+"txt",
+"已显示 PDF 文字"
+]
+],
+"exprs": [],
+"line": 1202
+},
+{
+"file": "MainActivity.kt",
+"offset": 53780,
+"end": 53792,
+"raw": "已隐藏 PDF 文字",
+"segments": [
+[
+"txt",
+"已隐藏 PDF 文字"
+]
+],
+"exprs": [],
+"line": 1205
+},
+{
+"file": "MainActivity.kt",
+"offset": 54056,
+"end": 54062,
+"raw": "全部显示",
+"segments": [
+[
+"txt",
+"全部显示"
+]
+],
+"exprs": [],
+"line": 1213
+},
+{
+"file": "MainActivity.kt",
+"offset": 54249,
+"end": 54255,
+"raw": "全部隐藏",
+"segments": [
+[
+"txt",
+"全部隐藏"
+]
+],
+"exprs": [],
+"line": 1218
+},
+{
+"file": "MainActivity.kt",
+"offset": 54888,
+"end": 54894,
+"raw": " 个实体",
+"segments": [
+[
+"txt",
+" 个实体"
+]
+],
+"exprs": [],
+"line": 1232
+},
+{
+"file": "MainActivity.kt",
+"offset": 54953,
+"end": 54965,
+"raw": "  ·  原文件关闭",
+"segments": [
+[
+"txt",
+"  ·  原文件关闭"
+]
+],
+"exprs": [],
+"line": 1233
+},
+{
+"file": "MainActivity.kt",
+"offset": 55027,
+"end": 55039,
+"raw": "  ·  原文件冻结",
+"segments": [
+[
+"txt",
+"  ·  原文件冻结"
+]
+],
+"exprs": [],
+"line": 1234
+},
+{
+"file": "MainActivity.kt",
+"offset": 55619,
+"end": 55642,
+"raw": "当前为 GEN 文件，请在预演面板查看走刀",
+"segments": [
+[
+"txt",
+"当前为 GEN 文件，请在预演面板查看走刀"
+]
+],
+"exprs": [],
+"line": 1249
+},
+{
+"file": "MainActivity.kt",
+"offset": 55706,
+"end": 55717,
+"raw": "当前图形不支持测量",
+"segments": [
+[
+"txt",
+"当前图形不支持测量"
+]
+],
+"exprs": [],
+"line": 1251
+},
+{
+"file": "MainActivity.kt",
+"offset": 55806,
+"end": 55815,
+"raw": "测量 / 标注",
+"segments": [
+[
+"txt",
+"测量 / 标注"
+]
+],
+"exprs": [],
+"line": 1255
+},
+{
+"file": "MainActivity.kt",
+"offset": 55911,
+"end": 55917,
+"raw": "自动标注",
+"segments": [
+[
+"txt",
+"自动标注"
+]
+],
+"exprs": [],
+"line": 1257
+},
+{
+"file": "MainActivity.kt",
+"offset": 55995,
+"end": 56005,
+"raw": "一键标注图纸宽高",
+"segments": [
+[
+"txt",
+"一键标注图纸宽高"
+]
+],
+"exprs": [],
+"line": 1259
+},
+{
+"file": "MainActivity.kt",
+"offset": 56336,
+"end": 56403,
+"raw": "自动标注已开启：${binding.dxfCanvasView.autoDimensionSummary().orEmpty()}",
+"segments": [
+[
+"txt",
+"自动标注已开启："
+],
+[
+"expr",
+"binding.dxfCanvasView.autoDimensionSummary().orEmpty()"
+]
+],
+"exprs": [
+"binding.dxfCanvasView.autoDimensionSummary().orEmpty()"
+],
+"line": 1265
+},
+{
+"file": "MainActivity.kt",
+"offset": 56449,
+"end": 56458,
+"raw": "自动标注已关闭",
+"segments": [
+[
+"txt",
+"自动标注已关闭"
+]
+],
+"exprs": [],
+"line": 1267
+},
+{
+"file": "MainActivity.kt",
+"offset": 56712,
+"end": 56718,
+"raw": "边界尺寸",
+"segments": [
+[
+"txt",
+"边界尺寸"
+]
+],
+"exprs": [],
+"line": 1274
+},
+{
+"file": "MainActivity.kt",
+"offset": 56789,
+"end": 56795,
+"raw": "手动测量",
+"segments": [
+[
+"txt",
+"手动测量"
+]
+],
+"exprs": [],
+"line": 1276
+},
+{
+"file": "MainActivity.kt",
+"offset": 56844,
+"end": 56850,
+"raw": "距离测量",
+"segments": [
+[
+"txt",
+"距离测量"
+]
+],
+"exprs": [],
+"line": 1277
+},
+{
+"file": "MainActivity.kt",
+"offset": 57001,
+"end": 57010,
+"raw": "距离测量已开启",
+"segments": [
+[
+"txt",
+"距离测量已开启"
+]
+],
+"exprs": [],
+"line": 1280
+},
+{
+"file": "MainActivity.kt",
+"offset": 57099,
+"end": 57105,
+"raw": "角度测量",
+"segments": [
+[
+"txt",
+"角度测量"
+]
+],
+"exprs": [],
+"line": 1283
+},
+{
+"file": "MainActivity.kt",
+"offset": 57253,
+"end": 57262,
+"raw": "角度测量已开启",
+"segments": [
+[
+"txt",
+"角度测量已开启"
+]
+],
+"exprs": [],
+"line": 1286
+},
+{
+"file": "MainActivity.kt",
+"offset": 57351,
+"end": 57357,
+"raw": "面积测量",
+"segments": [
+[
+"txt",
+"面积测量"
+]
+],
+"exprs": [],
+"line": 1289
+},
+{
+"file": "MainActivity.kt",
+"offset": 57570,
+"end": 57579,
+"raw": "面积测量已开启",
+"segments": [
+[
+"txt",
+"面积测量已开启"
+]
+],
+"exprs": [],
+"line": 1293
+},
+{
+"file": "MainActivity.kt",
+"offset": 57668,
+"end": 57674,
+"raw": "关闭测量",
+"segments": [
+[
+"txt",
+"关闭测量"
+]
+],
+"exprs": [],
+"line": 1296
+},
+{
+"file": "MainActivity.kt",
+"offset": 57826,
+"end": 57833,
+"raw": "测量已关闭",
+"segments": [
+[
+"txt",
+"测量已关闭"
+]
+],
+"exprs": [],
+"line": 1299
+},
+{
+"file": "MainActivity.kt",
+"offset": 57992,
+"end": 58000,
+"raw": "自动闭合：开",
+"segments": [
+[
+"txt",
+"自动闭合：开"
+]
+],
+"exprs": [],
+"line": 1303
+},
+{
+"file": "MainActivity.kt",
+"offset": 58006,
+"end": 58014,
+"raw": "自动闭合：关",
+"segments": [
+[
+"txt",
+"自动闭合：关"
+]
+],
+"exprs": [],
+"line": 1303
+},
+{
+"file": "MainActivity.kt",
+"offset": 58235,
+"end": 58241,
+"raw": "完成面积",
+"segments": [
+[
+"txt",
+"完成面积"
+]
+],
+"exprs": [],
+"line": 1308
+},
+{
+"file": "MainActivity.kt",
+"offset": 58431,
+"end": 58437,
+"raw": "回退一步",
+"segments": [
+[
+"txt",
+"回退一步"
+]
+],
+"exprs": [],
+"line": 1313
+},
+{
+"file": "MainActivity.kt",
+"offset": 58538,
+"end": 58544,
+"raw": "清空测量",
+"segments": [
+[
+"txt",
+"清空测量"
+]
+],
+"exprs": [],
+"line": 1314
+},
+{
+"file": "MainActivity.kt",
+"offset": 58651,
+"end": 58659,
+"raw": "CAD 编辑",
+"segments": [
+[
+"txt",
+"CAD 编辑"
+]
+],
+"exprs": [],
+"line": 1316
+},
+{
+"file": "MainActivity.kt",
+"offset": 58715,
+"end": 58725,
+"raw": "打开专业绘图工具",
+"segments": [
+[
+"txt",
+"打开专业绘图工具"
+]
+],
+"exprs": [],
+"line": 1317
+},
+{
+"file": "MainActivity.kt",
+"offset": 58796,
+"end": 58800,
+"raw": "提示",
+"segments": [
+[
+"txt",
+"提示"
+]
+],
+"exprs": [],
+"line": 1318
+},
+{
+"file": "MainActivity.kt",
+"offset": 58802,
+"end": 58837,
+"raw": "点击画布选择线段后可修剪、复制、删除；也可直接创建矩形/圆/文本。",
+"segments": [
+[
+"txt",
+"点击画布选择线段后可修剪、复制、删除；也可直接创建矩形/圆/文本。"
+]
+],
+"exprs": [],
+"line": 1318
+},
+{
+"file": "MainActivity.kt",
+"offset": 58885,
+"end": 58891,
+"raw": "当前模式",
+"segments": [
+[
+"txt",
+"当前模式"
+]
+],
+"exprs": [],
+"line": 1319
+},
+{
+"file": "MainActivity.kt",
+"offset": 58946,
+"end": 58951,
+"raw": "未开启",
+"segments": [
+[
+"txt",
+"未开启"
+]
+],
+"exprs": [],
+"line": 1320
+},
+{
+"file": "MainActivity.kt",
+"offset": 58988,
+"end": 58992,
+"raw": "距离",
+"segments": [
+[
+"txt",
+"距离"
+]
+],
+"exprs": [],
+"line": 1321
+},
+{
+"file": "MainActivity.kt",
+"offset": 59026,
+"end": 59030,
+"raw": "角度",
+"segments": [
+[
+"txt",
+"角度"
+]
+],
+"exprs": [],
+"line": 1322
+},
+{
+"file": "MainActivity.kt",
+"offset": 59063,
+"end": 59067,
+"raw": "面积",
+"segments": [
+[
+"txt",
+"面积"
+]
+],
+"exprs": [],
+"line": 1323
+},
+{
+"file": "MainActivity.kt",
+"offset": 59125,
+"end": 59130,
+"raw": "图层数",
+"segments": [
+[
+"txt",
+"图层数"
+]
+],
+"exprs": [],
+"line": 1325
+},
+{
+"file": "MainActivity.kt",
+"offset": 59452,
+"end": 59457,
+"raw": "未开始",
+"segments": [
+[
+"txt",
+"未开始"
+]
+],
+"exprs": [],
+"line": 1334
+},
+{
+"file": "MainActivity.kt",
+"offset": 59773,
+"end": 59786,
+"raw": "当前图形无可预演的数据",
+"segments": [
+[
+"txt",
+"当前图形无可预演的数据"
+]
+],
+"exprs": [],
+"line": 1341
+},
+{
+"file": "MainActivity.kt",
+"offset": 59857,
+"end": 59863,
+"raw": "走刀预演",
+"segments": [
+[
+"txt",
+"走刀预演"
+]
+],
+"exprs": [],
+"line": 1344
+},
+{
+"file": "MainActivity.kt",
+"offset": 60013,
+"end": 60017,
+"raw": "轨迹",
+"segments": [
+[
+"txt",
+"轨迹"
+]
+],
+"exprs": [],
+"line": 1348
+},
+{
+"file": "MainActivity.kt",
+"offset": 60168,
+"end": 60173,
+"raw": "未开始",
+"segments": [
+[
+"txt",
+"未开始"
+]
+],
+"exprs": [],
+"line": 1353
+},
+{
+"file": "MainActivity.kt",
+"offset": 60791,
+"end": 60796,
+"raw": "空走线",
+"segments": [
+[
+"txt",
+"空走线"
+]
+],
+"exprs": [],
+"line": 1364
+},
+{
+"file": "MainActivity.kt",
+"offset": 60903,
+"end": 60907,
+"raw": "划线",
+"segments": [
+[
+"txt",
+"划线"
+]
+],
+"exprs": [],
+"line": 1365
+},
+{
+"file": "MainActivity.kt",
+"offset": 61017,
+"end": 61021,
+"raw": "切割",
+"segments": [
+[
+"txt",
+"切割"
+]
+],
+"exprs": [],
+"line": 1366
+},
+{
+"file": "MainActivity.kt",
+"offset": 61231,
+"end": 61237,
+"raw": "线段编辑",
+"segments": [
+[
+"txt",
+"线段编辑"
+]
+],
+"exprs": [],
+"line": 1371
+},
+{
+"file": "MainActivity.kt",
+"offset": 61329,
+"end": 61333,
+"raw": "类型",
+"segments": [
+[
+"txt",
+"类型"
+]
+],
+"exprs": [],
+"line": 1373
+},
+{
+"file": "MainActivity.kt",
+"offset": 61397,
+"end": 61401,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1374
+},
+{
+"file": "MainActivity.kt",
+"offset": 61422,
+"end": 61426,
+"raw": "默认",
+"segments": [
+[
+"txt",
+"默认"
+]
+],
+"exprs": [],
+"line": 1374
+},
+{
+"file": "MainActivity.kt",
+"offset": 61474,
+"end": 61480,
+"raw": "实际长度",
+"segments": [
+[
+"txt",
+"实际长度"
+]
+],
+"exprs": [],
+"line": 1375
+},
+{
+"file": "MainActivity.kt",
+"offset": 61590,
+"end": 61595,
+"raw": "坐标差",
+"segments": [
+[
+"txt",
+"坐标差"
+]
+],
+"exprs": [],
+"line": 1376
+},
+{
+"file": "MainActivity.kt",
+"offset": 61793,
+"end": 61799,
+"raw": "修改长度",
+"segments": [
+[
+"txt",
+"修改长度"
+]
+],
+"exprs": [],
+"line": 1378
+},
+{
+"file": "MainActivity.kt",
+"offset": 62004,
+"end": 62010,
+"raw": "保存修改",
+"segments": [
+[
+"txt",
+"保存修改"
+]
+],
+"exprs": [],
+"line": 1381
+},
+{
+"file": "MainActivity.kt",
+"offset": 62652,
+"end": 62661,
+"raw": "请输入有效坐标",
+"segments": [
+[
+"txt",
+"请输入有效坐标"
+]
+],
+"exprs": [],
+"line": 1388
+},
+{
+"file": "MainActivity.kt",
+"offset": 63046,
+"end": 63052,
+"raw": "取消选中",
+"segments": [
+[
+"txt",
+"取消选中"
+]
+],
+"exprs": [],
+"line": 1398
+},
+{
+"file": "MainActivity.kt",
+"offset": 63227,
+"end": 63233,
+"raw": "历史记录",
+"segments": [
+[
+"txt",
+"历史记录"
+]
+],
+"exprs": [],
+"line": 1403
+},
+{
+"file": "MainActivity.kt",
+"offset": 63522,
+"end": 63528,
+"raw": "起点 X",
+"segments": [
+[
+"txt",
+"起点 X"
+]
+],
+"exprs": [],
+"line": 1410
+},
+{
+"file": "MainActivity.kt",
+"offset": 63594,
+"end": 63600,
+"raw": "起点 Y",
+"segments": [
+[
+"txt",
+"起点 Y"
+]
+],
+"exprs": [],
+"line": 1411
+},
+{
+"file": "MainActivity.kt",
+"offset": 63666,
+"end": 63672,
+"raw": "终点 X",
+"segments": [
+[
+"txt",
+"终点 X"
+]
+],
+"exprs": [],
+"line": 1412
+},
+{
+"file": "MainActivity.kt",
+"offset": 63734,
+"end": 63740,
+"raw": "终点 Y",
+"segments": [
+[
+"txt",
+"终点 Y"
+]
+],
+"exprs": [],
+"line": 1413
+},
+{
+"file": "MainActivity.kt",
+"offset": 65852,
+"end": 65858,
+"raw": "修改线段",
+"segments": [
+[
+"txt",
+"修改线段"
+]
+],
+"exprs": [],
+"line": 1461
+},
+{
+"file": "MainActivity.kt",
+"offset": 66029,
+"end": 66036,
+"raw": "线段已更新",
+"segments": [
+[
+"txt",
+"线段已更新"
+]
+],
+"exprs": [],
+"line": 1464
+},
+{
+"file": "MainActivity.kt",
+"offset": 66227,
+"end": 66238,
+"raw": "当前没有可编辑图形",
+"segments": [
+[
+"txt",
+"当前没有可编辑图形"
+]
+],
+"exprs": [],
+"line": 1470
+},
+{
+"file": "MainActivity.kt",
+"offset": 66313,
+"end": 66326,
+"raw": "CAD 绘图 / 编辑",
+"segments": [
+[
+"txt",
+"CAD 绘图 / 编辑"
+]
+],
+"exprs": [],
+"line": 1473
+},
+{
+"file": "MainActivity.kt",
+"offset": 66422,
+"end": 66428,
+"raw": "创建图形",
+"segments": [
+[
+"txt",
+"创建图形"
+]
+],
+"exprs": [],
+"line": 1475
+},
+{
+"file": "MainActivity.kt",
+"offset": 66484,
+"end": 66497,
+"raw": "新建空白图形 / 画布",
+"segments": [
+[
+"txt",
+"新建空白图形 / 画布"
+]
+],
+"exprs": [],
+"line": 1476
+},
+{
+"file": "MainActivity.kt",
+"offset": 66573,
+"end": 66579,
+"raw": "创建直线",
+"segments": [
+[
+"txt",
+"创建直线"
+]
+],
+"exprs": [],
+"line": 1477
+},
+{
+"file": "MainActivity.kt",
+"offset": 66663,
+"end": 66669,
+"raw": "创建矩形",
+"segments": [
+[
+"txt",
+"创建矩形"
+]
+],
+"exprs": [],
+"line": 1478
+},
+{
+"file": "MainActivity.kt",
+"offset": 66758,
+"end": 66763,
+"raw": "创建圆",
+"segments": [
+[
+"txt",
+"创建圆"
+]
+],
+"exprs": [],
+"line": 1479
+},
+{
+"file": "MainActivity.kt",
+"offset": 66849,
+"end": 66855,
+"raw": "创建圆弧",
+"segments": [
+[
+"txt",
+"创建圆弧"
+]
+],
+"exprs": [],
+"line": 1480
+},
+{
+"file": "MainActivity.kt",
+"offset": 66938,
+"end": 66945,
+"raw": "创建多段线",
+"segments": [
+[
+"txt",
+"创建多段线"
+]
+],
+"exprs": [],
+"line": 1481
+},
+{
+"file": "MainActivity.kt",
+"offset": 67033,
+"end": 67039,
+"raw": "添加文字",
+"segments": [
+[
+"txt",
+"添加文字"
+]
+],
+"exprs": [],
+"line": 1482
+},
+{
+"file": "MainActivity.kt",
+"offset": 67126,
+"end": 67138,
+"raw": "常用图库 / 标准件",
+"segments": [
+[
+"txt",
+"常用图库 / 标准件"
+]
+],
+"exprs": [],
+"line": 1483
+},
+{
+"file": "MainActivity.kt",
+"offset": 67187,
+"end": 67199,
+"raw": "L 型角钢 / 支架",
+"segments": [
+[
+"txt",
+"L 型角钢 / 支架"
+]
+],
+"exprs": [],
+"line": 1484
+},
+{
+"file": "MainActivity.kt",
+"offset": 67238,
+"end": 67245,
+"raw": "L 型角钢",
+"segments": [
+[
+"txt",
+"L 型角钢"
+]
+],
+"exprs": [],
+"line": 1484
+},
+{
+"file": "MainActivity.kt",
+"offset": 67296,
+"end": 67308,
+"raw": "槽钢 / U 型截面",
+"segments": [
+[
+"txt",
+"槽钢 / U 型截面"
+]
+],
+"exprs": [],
+"line": 1485
+},
+{
+"file": "MainActivity.kt",
+"offset": 67347,
+"end": 67351,
+"raw": "槽钢",
+"segments": [
+[
+"txt",
+"槽钢"
+]
+],
+"exprs": [],
+"line": 1485
+},
+{
+"file": "MainActivity.kt",
+"offset": 67402,
+"end": 67415,
+"raw": "工字钢 / H 型截面",
+"segments": [
+[
+"txt",
+"工字钢 / H 型截面"
+]
+],
+"exprs": [],
+"line": 1486
+},
+{
+"file": "MainActivity.kt",
+"offset": 67454,
+"end": 67459,
+"raw": "工字钢",
+"segments": [
+[
+"txt",
+"工字钢"
+]
+],
+"exprs": [],
+"line": 1486
+},
+{
+"file": "MainActivity.kt",
+"offset": 67510,
+"end": 67523,
+"raw": "法兰盘 / 螺栓孔阵列",
+"segments": [
+[
+"txt",
+"法兰盘 / 螺栓孔阵列"
+]
+],
+"exprs": [],
+"line": 1487
+},
+{
+"file": "MainActivity.kt",
+"offset": 67562,
+"end": 67567,
+"raw": "法兰盘",
+"segments": [
+[
+"txt",
+"法兰盘"
+]
+],
+"exprs": [],
+"line": 1487
+},
+{
+"file": "MainActivity.kt",
+"offset": 67618,
+"end": 67624,
+"raw": "长圆孔板",
+"segments": [
+[
+"txt",
+"长圆孔板"
+]
+],
+"exprs": [],
+"line": 1488
+},
+{
+"file": "MainActivity.kt",
+"offset": 67663,
+"end": 67669,
+"raw": "长圆孔板",
+"segments": [
+[
+"txt",
+"长圆孔板"
+]
+],
+"exprs": [],
+"line": 1488
+},
+{
+"file": "MainActivity.kt",
+"offset": 67723,
+"end": 67729,
+"raw": "编辑操作",
+"segments": [
+[
+"txt",
+"编辑操作"
+]
+],
+"exprs": [],
+"line": 1489
+},
+{
+"file": "MainActivity.kt",
+"offset": 67778,
+"end": 67788,
+"raw": "编辑选中对象属性",
+"segments": [
+[
+"txt",
+"编辑选中对象属性"
+]
+],
+"exprs": [],
+"line": 1490
+},
+{
+"file": "MainActivity.kt",
+"offset": 67872,
+"end": 67880,
+"raw": "复制选中实体",
+"segments": [
+[
+"txt",
+"复制选中实体"
+]
+],
+"exprs": [],
+"line": 1491
+},
+{
+"file": "MainActivity.kt",
+"offset": 67954,
+"end": 67969,
+"raw": "粘贴副本（偏移 25mm）",
+"segments": [
+[
+"txt",
+"粘贴副本（偏移 25mm）"
+]
+],
+"exprs": [],
+"line": 1492
+},
+{
+"file": "MainActivity.kt",
+"offset": 68045,
+"end": 68055,
+"raw": "修剪线段 10%",
+"segments": [
+[
+"txt",
+"修剪线段 10%"
+]
+],
+"exprs": [],
+"line": 1493
+},
+{
+"file": "MainActivity.kt",
+"offset": 68133,
+"end": 68141,
+"raw": "删除选中实体",
+"segments": [
+[
+"txt",
+"删除选中实体"
+]
+],
+"exprs": [],
+"line": 1494
+},
+{
+"file": "MainActivity.kt",
+"offset": 68220,
+"end": 68224,
+"raw": "历史",
+"segments": [
+[
+"txt",
+"历史"
+]
+],
+"exprs": [],
+"line": 1495
+},
+{
+"file": "MainActivity.kt",
+"offset": 68273,
+"end": 68277,
+"raw": "撤销",
+"segments": [
+[
+"txt",
+"撤销"
+]
+],
+"exprs": [],
+"line": 1496
+},
+{
+"file": "MainActivity.kt",
+"offset": 68344,
+"end": 68348,
+"raw": "重做",
+"segments": [
+[
+"txt",
+"重做"
+]
+],
+"exprs": [],
+"line": 1497
+},
+{
+"file": "MainActivity.kt",
+"offset": 68414,
+"end": 68420,
+"raw": "当前选择",
+"segments": [
+[
+"txt",
+"当前选择"
+]
+],
+"exprs": [],
+"line": 1498
+},
+{
+"file": "MainActivity.kt",
+"offset": 68485,
+"end": 68490,
+"raw": "未选择",
+"segments": [
+[
+"txt",
+"未选择"
+]
+],
+"exprs": [],
+"line": 1498
+},
+{
+"file": "MainActivity.kt",
+"offset": 68538,
+"end": 68543,
+"raw": "剪贴板",
+"segments": [
+[
+"txt",
+"剪贴板"
+]
+],
+"exprs": [],
+"line": 1499
+},
+{
+"file": "MainActivity.kt",
+"offset": 68574,
+"end": 68584,
+"raw": "已有实体，可粘贴",
+"segments": [
+[
+"txt",
+"已有实体，可粘贴"
+]
+],
+"exprs": [],
+"line": 1499
+},
+{
+"file": "MainActivity.kt",
+"offset": 68590,
+"end": 68593,
+"raw": "空",
+"segments": [
+[
+"txt",
+"空"
+]
+],
+"exprs": [],
+"line": 1499
+},
+{
+"file": "MainActivity.kt",
+"offset": 68641,
+"end": 68646,
+"raw": "实体数",
+"segments": [
+[
+"txt",
+"实体数"
+]
+],
+"exprs": [],
+"line": 1500
+},
+{
+"file": "MainActivity.kt",
+"offset": 69058,
+"end": 69064,
+"raw": "新建图形",
+"segments": [
+[
+"txt",
+"新建图形"
+]
+],
+"exprs": [],
+"line": 1511
+},
+{
+"file": "MainActivity.kt",
+"offset": 69368,
+"end": 69424,
+"raw": "图层 ${document.layers.size} · ${document.units ?: \"mm\"}",
+"segments": [
+[
+"txt",
+"图层 "
+],
+[
+"expr",
+"document.layers.size"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"document.units ?: \"mm\""
+]
+],
+"exprs": [
+"document.layers.size",
+"document.units ?: \"mm\""
+],
+"line": 1518
+},
+{
+"file": "MainActivity.kt",
+"offset": 70075,
+"end": 70080,
+"raw": "文件名",
+"segments": [
+[
+"txt",
+"文件名"
+]
+],
+"exprs": [],
+"line": 1532
+},
+{
+"file": "MainActivity.kt",
+"offset": 70084,
+"end": 70094,
+"raw": "新建图形.dxf",
+"segments": [
+[
+"txt",
+"新建图形.dxf"
+]
+],
+"exprs": [],
+"line": 1532
+},
+{
+"file": "MainActivity.kt",
+"offset": 70096,
+"end": 70100,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 1532
+},
+{
+"file": "MainActivity.kt",
+"offset": 70112,
+"end": 70116,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1532
+},
+{
+"file": "MainActivity.kt",
+"offset": 70127,
+"end": 70131,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1532
+},
+{
+"file": "MainActivity.kt",
+"offset": 70205,
+"end": 70216,
+"raw": "新建 CAD 图形",
+"segments": [
+[
+"txt",
+"新建 CAD 图形"
+]
+],
+"exprs": [],
+"line": 1535
+},
+{
+"file": "MainActivity.kt",
+"offset": 70276,
+"end": 70282,
+"raw": "空白画布",
+"segments": [
+[
+"txt",
+"空白画布"
+]
+],
+"exprs": [],
+"line": 1537
+},
+{
+"file": "MainActivity.kt",
+"offset": 70334,
+"end": 70339,
+"raw": "文件名",
+"segments": [
+[
+"txt",
+"文件名"
+]
+],
+"exprs": [],
+"line": 1538
+},
+{
+"file": "MainActivity.kt",
+"offset": 70351,
+"end": 70361,
+"raw": "新建图形.dxf",
+"segments": [
+[
+"txt",
+"新建图形.dxf"
+]
+],
+"exprs": [],
+"line": 1538
+},
+{
+"file": "MainActivity.kt",
+"offset": 70401,
+"end": 70405,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 1539
+},
+{
+"file": "MainActivity.kt",
+"offset": 70471,
+"end": 70475,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1540
+},
+{
+"file": "MainActivity.kt",
+"offset": 70630,
+"end": 70645,
+"raw": "已新建空白图形：$name",
+"segments": [
+[
+"txt",
+"已新建空白图形："
+],
+[
+"expr",
+"name"
+]
+],
+"exprs": [
+"name"
+],
+"line": 1541
+},
+{
+"file": "MainActivity.kt",
+"offset": 70726,
+"end": 70733,
+"raw": "带边框模板",
+"segments": [
+[
+"txt",
+"带边框模板"
+]
+],
+"exprs": [],
+"line": 1544
+},
+{
+"file": "MainActivity.kt",
+"offset": 70785,
+"end": 70790,
+"raw": "文件名",
+"segments": [
+[
+"txt",
+"文件名"
+]
+],
+"exprs": [],
+"line": 1545
+},
+{
+"file": "MainActivity.kt",
+"offset": 70802,
+"end": 70812,
+"raw": "新建图形.dxf",
+"segments": [
+[
+"txt",
+"新建图形.dxf"
+]
+],
+"exprs": [],
+"line": 1545
+},
+{
+"file": "MainActivity.kt",
+"offset": 70852,
+"end": 70856,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 1546
+},
+{
+"file": "MainActivity.kt",
+"offset": 70922,
+"end": 70926,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1547
+},
+{
+"file": "MainActivity.kt",
+"offset": 70995,
+"end": 70999,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1548
+},
+{
+"file": "MainActivity.kt",
+"offset": 71270,
+"end": 71286,
+"raw": "已新建带边框图形：$name",
+"segments": [
+[
+"txt",
+"已新建带边框图形："
+],
+[
+"expr",
+"name"
+]
+],
+"exprs": [
+"name"
+],
+"line": 1550
+},
+{
+"file": "MainActivity.kt",
+"offset": 71368,
+"end": 71372,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1553
+},
+{
+"file": "MainActivity.kt",
+"offset": 71497,
+"end": 71502,
+"raw": "起点X",
+"segments": [
+[
+"txt",
+"起点X"
+]
+],
+"exprs": [],
+"line": 1558
+},
+{
+"file": "MainActivity.kt",
+"offset": 71511,
+"end": 71516,
+"raw": "起点Y",
+"segments": [
+[
+"txt",
+"起点Y"
+]
+],
+"exprs": [],
+"line": 1558
+},
+{
+"file": "MainActivity.kt",
+"offset": 71525,
+"end": 71530,
+"raw": "终点X",
+"segments": [
+[
+"txt",
+"终点X"
+]
+],
+"exprs": [],
+"line": 1558
+},
+{
+"file": "MainActivity.kt",
+"offset": 71541,
+"end": 71546,
+"raw": "终点Y",
+"segments": [
+[
+"txt",
+"终点Y"
+]
+],
+"exprs": [],
+"line": 1558
+},
+{
+"file": "MainActivity.kt",
+"offset": 71555,
+"end": 71559,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1558
+},
+{
+"file": "MainActivity.kt",
+"offset": 71631,
+"end": 71637,
+"raw": "创建直线",
+"segments": [
+[
+"txt",
+"创建直线"
+]
+],
+"exprs": [],
+"line": 1560
+},
+{
+"file": "MainActivity.kt",
+"offset": 71697,
+"end": 71701,
+"raw": "创建",
+"segments": [
+[
+"txt",
+"创建"
+]
+],
+"exprs": [],
+"line": 1562
+},
+{
+"file": "MainActivity.kt",
+"offset": 71751,
+"end": 71756,
+"raw": "起点X",
+"segments": [
+[
+"txt",
+"起点X"
+]
+],
+"exprs": [],
+"line": 1563
+},
+{
+"file": "MainActivity.kt",
+"offset": 71841,
+"end": 71846,
+"raw": "起点Y",
+"segments": [
+[
+"txt",
+"起点Y"
+]
+],
+"exprs": [],
+"line": 1564
+},
+{
+"file": "MainActivity.kt",
+"offset": 71931,
+"end": 71936,
+"raw": "终点X",
+"segments": [
+[
+"txt",
+"终点X"
+]
+],
+"exprs": [],
+"line": 1565
+},
+{
+"file": "MainActivity.kt",
+"offset": 72021,
+"end": 72026,
+"raw": "终点Y",
+"segments": [
+[
+"txt",
+"终点Y"
+]
+],
+"exprs": [],
+"line": 1566
+},
+{
+"file": "MainActivity.kt",
+"offset": 72114,
+"end": 72118,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1567
+},
+{
+"file": "MainActivity.kt",
+"offset": 72275,
+"end": 72281,
+"raw": "创建直线",
+"segments": [
+[
+"txt",
+"创建直线"
+]
+],
+"exprs": [],
+"line": 1568
+},
+{
+"file": "MainActivity.kt",
+"offset": 72363,
+"end": 72367,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1571
+},
+{
+"file": "MainActivity.kt",
+"offset": 72529,
+"end": 72533,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 1576
+},
+{
+"file": "MainActivity.kt",
+"offset": 72544,
+"end": 72548,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1576
+},
+{
+"file": "MainActivity.kt",
+"offset": 72558,
+"end": 72562,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1576
+},
+{
+"file": "MainActivity.kt",
+"offset": 72643,
+"end": 72649,
+"raw": "创建矩形",
+"segments": [
+[
+"txt",
+"创建矩形"
+]
+],
+"exprs": [],
+"line": 1579
+},
+{
+"file": "MainActivity.kt",
+"offset": 72709,
+"end": 72713,
+"raw": "创建",
+"segments": [
+[
+"txt",
+"创建"
+]
+],
+"exprs": [],
+"line": 1581
+},
+{
+"file": "MainActivity.kt",
+"offset": 72936,
+"end": 72940,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 1584
+},
+{
+"file": "MainActivity.kt",
+"offset": 73024,
+"end": 73028,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1585
+},
+{
+"file": "MainActivity.kt",
+"offset": 73116,
+"end": 73120,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1586
+},
+{
+"file": "MainActivity.kt",
+"offset": 73306,
+"end": 73312,
+"raw": "创建矩形",
+"segments": [
+[
+"txt",
+"创建矩形"
+]
+],
+"exprs": [],
+"line": 1588
+},
+{
+"file": "MainActivity.kt",
+"offset": 73394,
+"end": 73398,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1591
+},
+{
+"file": "MainActivity.kt",
+"offset": 73525,
+"end": 73530,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1596
+},
+{
+"file": "MainActivity.kt",
+"offset": 73539,
+"end": 73544,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1596
+},
+{
+"file": "MainActivity.kt",
+"offset": 73553,
+"end": 73557,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1596
+},
+{
+"file": "MainActivity.kt",
+"offset": 73567,
+"end": 73571,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1596
+},
+{
+"file": "MainActivity.kt",
+"offset": 73643,
+"end": 73648,
+"raw": "创建圆",
+"segments": [
+[
+"txt",
+"创建圆"
+]
+],
+"exprs": [],
+"line": 1598
+},
+{
+"file": "MainActivity.kt",
+"offset": 73708,
+"end": 73712,
+"raw": "创建",
+"segments": [
+[
+"txt",
+"创建"
+]
+],
+"exprs": [],
+"line": 1600
+},
+{
+"file": "MainActivity.kt",
+"offset": 73761,
+"end": 73766,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1601
+},
+{
+"file": "MainActivity.kt",
+"offset": 73850,
+"end": 73855,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1602
+},
+{
+"file": "MainActivity.kt",
+"offset": 73939,
+"end": 73943,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1603
+},
+{
+"file": "MainActivity.kt",
+"offset": 74031,
+"end": 74035,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1604
+},
+{
+"file": "MainActivity.kt",
+"offset": 74179,
+"end": 74184,
+"raw": "创建圆",
+"segments": [
+[
+"txt",
+"创建圆"
+]
+],
+"exprs": [],
+"line": 1605
+},
+{
+"file": "MainActivity.kt",
+"offset": 74266,
+"end": 74270,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1608
+},
+{
+"file": "MainActivity.kt",
+"offset": 74394,
+"end": 74399,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1613
+},
+{
+"file": "MainActivity.kt",
+"offset": 74408,
+"end": 74413,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1613
+},
+{
+"file": "MainActivity.kt",
+"offset": 74422,
+"end": 74426,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1613
+},
+{
+"file": "MainActivity.kt",
+"offset": 74436,
+"end": 74441,
+"raw": "起始角",
+"segments": [
+[
+"txt",
+"起始角"
+]
+],
+"exprs": [],
+"line": 1613
+},
+{
+"file": "MainActivity.kt",
+"offset": 74450,
+"end": 74455,
+"raw": "终止角",
+"segments": [
+[
+"txt",
+"终止角"
+]
+],
+"exprs": [],
+"line": 1613
+},
+{
+"file": "MainActivity.kt",
+"offset": 74465,
+"end": 74469,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1613
+},
+{
+"file": "MainActivity.kt",
+"offset": 74541,
+"end": 74547,
+"raw": "创建圆弧",
+"segments": [
+[
+"txt",
+"创建圆弧"
+]
+],
+"exprs": [],
+"line": 1615
+},
+{
+"file": "MainActivity.kt",
+"offset": 74607,
+"end": 74611,
+"raw": "创建",
+"segments": [
+[
+"txt",
+"创建"
+]
+],
+"exprs": [],
+"line": 1617
+},
+{
+"file": "MainActivity.kt",
+"offset": 74660,
+"end": 74665,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1618
+},
+{
+"file": "MainActivity.kt",
+"offset": 74749,
+"end": 74754,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1619
+},
+{
+"file": "MainActivity.kt",
+"offset": 74838,
+"end": 74842,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1620
+},
+{
+"file": "MainActivity.kt",
+"offset": 74930,
+"end": 74935,
+"raw": "起始角",
+"segments": [
+[
+"txt",
+"起始角"
+]
+],
+"exprs": [],
+"line": 1621
+},
+{
+"file": "MainActivity.kt",
+"offset": 75000,
+"end": 75005,
+"raw": "终止角",
+"segments": [
+[
+"txt",
+"终止角"
+]
+],
+"exprs": [],
+"line": 1622
+},
+{
+"file": "MainActivity.kt",
+"offset": 75073,
+"end": 75077,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1623
+},
+{
+"file": "MainActivity.kt",
+"offset": 75230,
+"end": 75236,
+"raw": "创建圆弧",
+"segments": [
+[
+"txt",
+"创建圆弧"
+]
+],
+"exprs": [],
+"line": 1624
+},
+{
+"file": "MainActivity.kt",
+"offset": 75318,
+"end": 75322,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1627
+},
+{
+"file": "MainActivity.kt",
+"offset": 75451,
+"end": 75463,
+"raw": "点列 x,y;x,y",
+"segments": [
+[
+"txt",
+"点列 x,y;x,y"
+]
+],
+"exprs": [],
+"line": 1632
+},
+{
+"file": "MainActivity.kt",
+"offset": 75487,
+"end": 75496,
+"raw": "闭合(1/0)",
+"segments": [
+[
+"txt",
+"闭合(1/0)"
+]
+],
+"exprs": [],
+"line": 1632
+},
+{
+"file": "MainActivity.kt",
+"offset": 75505,
+"end": 75509,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1632
+},
+{
+"file": "MainActivity.kt",
+"offset": 75581,
+"end": 75588,
+"raw": "创建多段线",
+"segments": [
+[
+"txt",
+"创建多段线"
+]
+],
+"exprs": [],
+"line": 1634
+},
+{
+"file": "MainActivity.kt",
+"offset": 75648,
+"end": 75652,
+"raw": "创建",
+"segments": [
+[
+"txt",
+"创建"
+]
+],
+"exprs": [],
+"line": 1636
+},
+{
+"file": "MainActivity.kt",
+"offset": 75721,
+"end": 75733,
+"raw": "点列 x,y;x,y",
+"segments": [
+[
+"txt",
+"点列 x,y;x,y"
+]
+],
+"exprs": [],
+"line": 1637
+},
+{
+"file": "MainActivity.kt",
+"offset": 75821,
+"end": 75835,
+"raw": "多段线至少需要 2 个点",
+"segments": [
+[
+"txt",
+"多段线至少需要 2 个点"
+]
+],
+"exprs": [],
+"line": 1639
+},
+{
+"file": "MainActivity.kt",
+"offset": 75941,
+"end": 75950,
+"raw": "闭合(1/0)",
+"segments": [
+[
+"txt",
+"闭合(1/0)"
+]
+],
+"exprs": [],
+"line": 1642
+},
+{
+"file": "MainActivity.kt",
+"offset": 76000,
+"end": 76004,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1643
+},
+{
+"file": "MainActivity.kt",
+"offset": 76149,
+"end": 76156,
+"raw": "创建多段线",
+"segments": [
+[
+"txt",
+"创建多段线"
+]
+],
+"exprs": [],
+"line": 1644
+},
+{
+"file": "MainActivity.kt",
+"offset": 76238,
+"end": 76242,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1647
+},
+{
+"file": "MainActivity.kt",
+"offset": 76389,
+"end": 76394,
+"raw": "插入X",
+"segments": [
+[
+"txt",
+"插入X"
+]
+],
+"exprs": [],
+"line": 1652
+},
+{
+"file": "MainActivity.kt",
+"offset": 76403,
+"end": 76408,
+"raw": "插入Y",
+"segments": [
+[
+"txt",
+"插入Y"
+]
+],
+"exprs": [],
+"line": 1652
+},
+{
+"file": "MainActivity.kt",
+"offset": 76417,
+"end": 76421,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 1652
+},
+{
+"file": "MainActivity.kt",
+"offset": 76432,
+"end": 76436,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1652
+},
+{
+"file": "MainActivity.kt",
+"offset": 76447,
+"end": 76454,
+"raw": "板厚/孔径",
+"segments": [
+[
+"txt",
+"板厚/孔径"
+]
+],
+"exprs": [],
+"line": 1652
+},
+{
+"file": "MainActivity.kt",
+"offset": 76464,
+"end": 76468,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1652
+},
+{
+"file": "MainActivity.kt",
+"offset": 76540,
+"end": 76553,
+"raw": "插入$template",
+"segments": [
+[
+"txt",
+"插入"
+],
+[
+"expr",
+"template"
+]
+],
+"exprs": [
+"template"
+],
+"line": 1654
+},
+{
+"file": "MainActivity.kt",
+"offset": 76613,
+"end": 76617,
+"raw": "插入",
+"segments": [
+[
+"txt",
+"插入"
+]
+],
+"exprs": [],
+"line": 1656
+},
+{
+"file": "MainActivity.kt",
+"offset": 76666,
+"end": 76671,
+"raw": "插入X",
+"segments": [
+[
+"txt",
+"插入X"
+]
+],
+"exprs": [],
+"line": 1657
+},
+{
+"file": "MainActivity.kt",
+"offset": 76734,
+"end": 76739,
+"raw": "插入Y",
+"segments": [
+[
+"txt",
+"插入Y"
+]
+],
+"exprs": [],
+"line": 1658
+},
+{
+"file": "MainActivity.kt",
+"offset": 76802,
+"end": 76806,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 1659
+},
+{
+"file": "MainActivity.kt",
+"offset": 76871,
+"end": 76875,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1660
+},
+{
+"file": "MainActivity.kt",
+"offset": 76940,
+"end": 76947,
+"raw": "板厚/孔径",
+"segments": [
+[
+"txt",
+"板厚/孔径"
+]
+],
+"exprs": [],
+"line": 1661
+},
+{
+"file": "MainActivity.kt",
+"offset": 77015,
+"end": 77019,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1662
+},
+{
+"file": "MainActivity.kt",
+"offset": 77226,
+"end": 77239,
+"raw": "插入$template",
+"segments": [
+[
+"txt",
+"插入"
+],
+[
+"expr",
+"template"
+]
+],
+"exprs": [
+"template"
+],
+"line": 1664
+},
+{
+"file": "MainActivity.kt",
+"offset": 77321,
+"end": 77325,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1667
+},
+{
+"file": "MainActivity.kt",
+"offset": 77979,
+"end": 77986,
+"raw": "L 型角钢",
+"segments": [
+[
+"txt",
+"L 型角钢"
+]
+],
+"exprs": [],
+"line": 1683
+},
+{
+"file": "MainActivity.kt",
+"offset": 78159,
+"end": 78163,
+"raw": "槽钢",
+"segments": [
+[
+"txt",
+"槽钢"
+]
+],
+"exprs": [],
+"line": 1684
+},
+{
+"file": "MainActivity.kt",
+"offset": 78388,
+"end": 78393,
+"raw": "工字钢",
+"segments": [
+[
+"txt",
+"工字钢"
+]
+],
+"exprs": [],
+"line": 1685
+},
+{
+"file": "MainActivity.kt",
+"offset": 78645,
+"end": 78650,
+"raw": "法兰盘",
+"segments": [
+[
+"txt",
+"法兰盘"
+]
+],
+"exprs": [],
+"line": 1690
+},
+{
+"file": "MainActivity.kt",
+"offset": 79175,
+"end": 79181,
+"raw": "长圆孔板",
+"segments": [
+[
+"txt",
+"长圆孔板"
+]
+],
+"exprs": [],
+"line": 1699
+},
+{
+"file": "MainActivity.kt",
+"offset": 80114,
+"end": 80118,
+"raw": "内容",
+"segments": [
+[
+"txt",
+"内容"
+]
+],
+"exprs": [],
+"line": 1722
+},
+{
+"file": "MainActivity.kt",
+"offset": 80130,
+"end": 80134,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1722
+},
+{
+"file": "MainActivity.kt",
+"offset": 80144,
+"end": 80148,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1722
+},
+{
+"file": "MainActivity.kt",
+"offset": 80220,
+"end": 80226,
+"raw": "添加文字",
+"segments": [
+[
+"txt",
+"添加文字"
+]
+],
+"exprs": [],
+"line": 1724
+},
+{
+"file": "MainActivity.kt",
+"offset": 80286,
+"end": 80290,
+"raw": "添加",
+"segments": [
+[
+"txt",
+"添加"
+]
+],
+"exprs": [],
+"line": 1726
+},
+{
+"file": "MainActivity.kt",
+"offset": 80516,
+"end": 80520,
+"raw": "内容",
+"segments": [
+[
+"txt",
+"内容"
+]
+],
+"exprs": [],
+"line": 1729
+},
+{
+"file": "MainActivity.kt",
+"offset": 80583,
+"end": 80587,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1730
+},
+{
+"file": "MainActivity.kt",
+"offset": 80655,
+"end": 80659,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1731
+},
+{
+"file": "MainActivity.kt",
+"offset": 80812,
+"end": 80818,
+"raw": "添加文字",
+"segments": [
+[
+"txt",
+"添加文字"
+]
+],
+"exprs": [],
+"line": 1732
+},
+{
+"file": "MainActivity.kt",
+"offset": 80900,
+"end": 80904,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1735
+},
+{
+"file": "MainActivity.kt",
+"offset": 81132,
+"end": 81144,
+"raw": "请先选择要编辑的实体",
+"segments": [
+[
+"txt",
+"请先选择要编辑的实体"
+]
+],
+"exprs": [],
+"line": 1742
+},
+{
+"file": "MainActivity.kt",
+"offset": 81327,
+"end": 81332,
+"raw": "起点X",
+"segments": [
+[
+"txt",
+"起点X"
+]
+],
+"exprs": [],
+"line": 1747
+},
+{
+"file": "MainActivity.kt",
+"offset": 81363,
+"end": 81368,
+"raw": "起点Y",
+"segments": [
+[
+"txt",
+"起点Y"
+]
+],
+"exprs": [],
+"line": 1747
+},
+{
+"file": "MainActivity.kt",
+"offset": 81399,
+"end": 81404,
+"raw": "终点X",
+"segments": [
+[
+"txt",
+"终点X"
+]
+],
+"exprs": [],
+"line": 1747
+},
+{
+"file": "MainActivity.kt",
+"offset": 81433,
+"end": 81438,
+"raw": "终点Y",
+"segments": [
+[
+"txt",
+"终点Y"
+]
+],
+"exprs": [],
+"line": 1747
+},
+{
+"file": "MainActivity.kt",
+"offset": 81467,
+"end": 81471,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1747
+},
+{
+"file": "MainActivity.kt",
+"offset": 81534,
+"end": 81539,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1748
+},
+{
+"file": "MainActivity.kt",
+"offset": 81571,
+"end": 81576,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1748
+},
+{
+"file": "MainActivity.kt",
+"offset": 81608,
+"end": 81612,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1748
+},
+{
+"file": "MainActivity.kt",
+"offset": 81642,
+"end": 81646,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1748
+},
+{
+"file": "MainActivity.kt",
+"offset": 81706,
+"end": 81711,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1749
+},
+{
+"file": "MainActivity.kt",
+"offset": 81743,
+"end": 81748,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1749
+},
+{
+"file": "MainActivity.kt",
+"offset": 81780,
+"end": 81784,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1749
+},
+{
+"file": "MainActivity.kt",
+"offset": 81814,
+"end": 81819,
+"raw": "起始角",
+"segments": [
+[
+"txt",
+"起始角"
+]
+],
+"exprs": [],
+"line": 1749
+},
+{
+"file": "MainActivity.kt",
+"offset": 81853,
+"end": 81858,
+"raw": "终止角",
+"segments": [
+[
+"txt",
+"终止角"
+]
+],
+"exprs": [],
+"line": 1749
+},
+{
+"file": "MainActivity.kt",
+"offset": 81890,
+"end": 81894,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1749
+},
+{
+"file": "MainActivity.kt",
+"offset": 82029,
+"end": 82033,
+"raw": "内容",
+"segments": [
+[
+"txt",
+"内容"
+]
+],
+"exprs": [],
+"line": 1750
+},
+{
+"file": "MainActivity.kt",
+"offset": 82050,
+"end": 82054,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1750
+},
+{
+"file": "MainActivity.kt",
+"offset": 82084,
+"end": 82088,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1750
+},
+{
+"file": "MainActivity.kt",
+"offset": 82153,
+"end": 82165,
+"raw": "点列 x,y;x,y",
+"segments": [
+[
+"txt",
+"点列 x,y;x,y"
+]
+],
+"exprs": [],
+"line": 1751
+},
+{
+"file": "MainActivity.kt",
+"offset": 82224,
+"end": 82233,
+"raw": "闭合(1/0)",
+"segments": [
+[
+"txt",
+"闭合(1/0)"
+]
+],
+"exprs": [],
+"line": 1751
+},
+{
+"file": "MainActivity.kt",
+"offset": 82270,
+"end": 82274,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1751
+},
+{
+"file": "MainActivity.kt",
+"offset": 82404,
+"end": 82414,
+"raw": "编辑选中对象属性",
+"segments": [
+[
+"txt",
+"编辑选中对象属性"
+]
+],
+"exprs": [],
+"line": 1755
+},
+{
+"file": "MainActivity.kt",
+"offset": 82474,
+"end": 82478,
+"raw": "应用",
+"segments": [
+[
+"txt",
+"应用"
+]
+],
+"exprs": [],
+"line": 1757
+},
+{
+"file": "MainActivity.kt",
+"offset": 82652,
+"end": 82657,
+"raw": "起点X",
+"segments": [
+[
+"txt",
+"起点X"
+]
+],
+"exprs": [],
+"line": 1760
+},
+{
+"file": "MainActivity.kt",
+"offset": 82708,
+"end": 82713,
+"raw": "起点Y",
+"segments": [
+[
+"txt",
+"起点Y"
+]
+],
+"exprs": [],
+"line": 1760
+},
+{
+"file": "MainActivity.kt",
+"offset": 82802,
+"end": 82807,
+"raw": "终点X",
+"segments": [
+[
+"txt",
+"终点X"
+]
+],
+"exprs": [],
+"line": 1761
+},
+{
+"file": "MainActivity.kt",
+"offset": 82856,
+"end": 82861,
+"raw": "终点Y",
+"segments": [
+[
+"txt",
+"终点Y"
+]
+],
+"exprs": [],
+"line": 1761
+},
+{
+"file": "MainActivity.kt",
+"offset": 82943,
+"end": 82947,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1762
+},
+{
+"file": "MainActivity.kt",
+"offset": 83105,
+"end": 83110,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1765
+},
+{
+"file": "MainActivity.kt",
+"offset": 83162,
+"end": 83167,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1765
+},
+{
+"file": "MainActivity.kt",
+"offset": 83253,
+"end": 83257,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1766
+},
+{
+"file": "MainActivity.kt",
+"offset": 83339,
+"end": 83343,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1767
+},
+{
+"file": "MainActivity.kt",
+"offset": 83498,
+"end": 83503,
+"raw": "中心X",
+"segments": [
+[
+"txt",
+"中心X"
+]
+],
+"exprs": [],
+"line": 1770
+},
+{
+"file": "MainActivity.kt",
+"offset": 83555,
+"end": 83560,
+"raw": "中心Y",
+"segments": [
+[
+"txt",
+"中心Y"
+]
+],
+"exprs": [],
+"line": 1770
+},
+{
+"file": "MainActivity.kt",
+"offset": 83646,
+"end": 83650,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 1771
+},
+{
+"file": "MainActivity.kt",
+"offset": 83737,
+"end": 83742,
+"raw": "起始角",
+"segments": [
+[
+"txt",
+"起始角"
+]
+],
+"exprs": [],
+"line": 1772
+},
+{
+"file": "MainActivity.kt",
+"offset": 83831,
+"end": 83836,
+"raw": "终止角",
+"segments": [
+[
+"txt",
+"终止角"
+]
+],
+"exprs": [],
+"line": 1773
+},
+{
+"file": "MainActivity.kt",
+"offset": 83920,
+"end": 83924,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1774
+},
+{
+"file": "MainActivity.kt",
+"offset": 84228,
+"end": 84232,
+"raw": "内容",
+"segments": [
+[
+"txt",
+"内容"
+]
+],
+"exprs": [],
+"line": 1778
+},
+{
+"file": "MainActivity.kt",
+"offset": 84305,
+"end": 84309,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 1779
+},
+{
+"file": "MainActivity.kt",
+"offset": 84391,
+"end": 84395,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1780
+},
+{
+"file": "MainActivity.kt",
+"offset": 84553,
+"end": 84565,
+"raw": "点列 x,y;x,y",
+"segments": [
+[
+"txt",
+"点列 x,y;x,y"
+]
+],
+"exprs": [],
+"line": 1783
+},
+{
+"file": "MainActivity.kt",
+"offset": 84666,
+"end": 84675,
+"raw": "闭合(1/0)",
+"segments": [
+[
+"txt",
+"闭合(1/0)"
+]
+],
+"exprs": [],
+"line": 1784
+},
+{
+"file": "MainActivity.kt",
+"offset": 84706,
+"end": 84710,
+"raw": "图层",
+"segments": [
+[
+"txt",
+"图层"
+]
+],
+"exprs": [],
+"line": 1784
+},
+{
+"file": "MainActivity.kt",
+"offset": 85094,
+"end": 85102,
+"raw": "编辑对象属性",
+"segments": [
+[
+"txt",
+"编辑对象属性"
+]
+],
+"exprs": [],
+"line": 1791
+},
+{
+"file": "MainActivity.kt",
+"offset": 85146,
+"end": 85157,
+"raw": "已更新选中对象属性",
+"segments": [
+[
+"txt",
+"已更新选中对象属性"
+]
+],
+"exprs": [],
+"line": 1792
+},
+{
+"file": "MainActivity.kt",
+"offset": 85238,
+"end": 85242,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 1795
+},
+{
+"file": "MainActivity.kt",
+"offset": 85404,
+"end": 85416,
+"raw": "请先在画布中选择实体",
+"segments": [
+[
+"txt",
+"请先在画布中选择实体"
+]
+],
+"exprs": [],
+"line": 1801
+},
+{
+"file": "MainActivity.kt",
+"offset": 85611,
+"end": 85620,
+"raw": "已复制选中实体",
+"segments": [
+[
+"txt",
+"已复制选中实体"
+]
+],
+"exprs": [],
+"line": 1806
+},
+{
+"file": "MainActivity.kt",
+"offset": 85836,
+"end": 85843,
+"raw": "剪贴板为空",
+"segments": [
+[
+"txt",
+"剪贴板为空"
+]
+],
+"exprs": [],
+"line": 1813
+},
+{
+"file": "MainActivity.kt",
+"offset": 85983,
+"end": 85989,
+"raw": "粘贴实体",
+"segments": [
+[
+"txt",
+"粘贴实体"
+]
+],
+"exprs": [],
+"line": 1816
+},
+{
+"file": "MainActivity.kt",
+"offset": 86025,
+"end": 86034,
+"raw": "已粘贴实体副本",
+"segments": [
+[
+"txt",
+"已粘贴实体副本"
+]
+],
+"exprs": [],
+"line": 1817
+},
+{
+"file": "MainActivity.kt",
+"offset": 86254,
+"end": 86266,
+"raw": "请先选择要删除的实体",
+"segments": [
+[
+"txt",
+"请先选择要删除的实体"
+]
+],
+"exprs": [],
+"line": 1824
+},
+{
+"file": "MainActivity.kt",
+"offset": 86559,
+"end": 86565,
+"raw": "删除实体",
+"segments": [
+[
+"txt",
+"删除实体"
+]
+],
+"exprs": [],
+"line": 1831
+},
+{
+"file": "MainActivity.kt",
+"offset": 86662,
+"end": 86671,
+"raw": "已删除选中实体",
+"segments": [
+[
+"txt",
+"已删除选中实体"
+]
+],
+"exprs": [],
+"line": 1833
+},
+{
+"file": "MainActivity.kt",
+"offset": 86847,
+"end": 86859,
+"raw": "请先选择要修剪的线段",
+"segments": [
+[
+"txt",
+"请先选择要修剪的线段"
+]
+],
+"exprs": [],
+"line": 1839
+},
+{
+"file": "MainActivity.kt",
+"offset": 87152,
+"end": 87162,
+"raw": "已按比例修剪线段",
+"segments": [
+[
+"txt",
+"已按比例修剪线段"
+]
+],
+"exprs": [],
+"line": 1845
+},
+{
+"file": "MainActivity.kt",
+"offset": 90148,
+"end": 90158,
+"raw": "没有可撤销的历史",
+"segments": [
+[
+"txt",
+"没有可撤销的历史"
+]
+],
+"exprs": [],
+"line": 1911
+},
+{
+"file": "MainActivity.kt",
+"offset": 90239,
+"end": 90295,
+"raw": "已撤销：${historyLabels.getOrNull(historyIndex).orEmpty()}",
+"segments": [
+[
+"txt",
+"已撤销："
+],
+[
+"expr",
+"historyLabels.getOrNull(historyIndex).orEmpty()"
+]
+],
+"exprs": [
+"historyLabels.getOrNull(historyIndex).orEmpty()"
+],
+"line": 1915
+},
+{
+"file": "MainActivity.kt",
+"offset": 90432,
+"end": 90442,
+"raw": "没有可重做的历史",
+"segments": [
+[
+"txt",
+"没有可重做的历史"
+]
+],
+"exprs": [],
+"line": 1920
+},
+{
+"file": "MainActivity.kt",
+"offset": 90523,
+"end": 90579,
+"raw": "已重做：${historyLabels.getOrNull(historyIndex).orEmpty()}",
+"segments": [
+[
+"txt",
+"已重做："
+],
+[
+"expr",
+"historyLabels.getOrNull(historyIndex).orEmpty()"
+]
+],
+"exprs": [
+"historyLabels.getOrNull(historyIndex).orEmpty()"
+],
+"line": 1924
+},
+{
+"file": "MainActivity.kt",
+"offset": 92682,
+"end": 92686,
+"raw": "步骤",
+"segments": [
+[
+"txt",
+"步骤"
+]
+],
+"exprs": [],
+"line": 1971
+},
+{
+"file": "MainActivity.kt",
+"offset": 92688,
+"end": 92694,
+"raw": "暂无历史",
+"segments": [
+[
+"txt",
+"暂无历史"
+]
+],
+"exprs": [],
+"line": 1971
+},
+{
+"file": "MainActivity.kt",
+"offset": 92906,
+"end": 92925,
+"raw": "当前步骤 ${index + 1}",
+"segments": [
+[
+"txt",
+"当前步骤 "
+],
+[
+"expr",
+"index + 1"
+]
+],
+"exprs": [
+"index + 1"
+],
+"line": 1977
+},
+{
+"file": "MainActivity.kt",
+"offset": 92931,
+"end": 92948,
+"raw": "步骤 ${index + 1}",
+"segments": [
+[
+"txt",
+"步骤 "
+],
+[
+"expr",
+"index + 1"
+]
+],
+"exprs": [
+"index + 1"
+],
+"line": 1977
+},
+{
+"file": "MainActivity.kt",
+"offset": 93156,
+"end": 93162,
+"raw": "走刀模拟",
+"segments": [
+[
+"txt",
+"走刀模拟"
+]
+],
+"exprs": [],
+"line": 1986
+},
+{
+"file": "MainActivity.kt",
+"offset": 93321,
+"end": 93326,
+"raw": "空走线",
+"segments": [
+[
+"txt",
+"空走线"
+]
+],
+"exprs": [],
+"line": 1989
+},
+{
+"file": "MainActivity.kt",
+"offset": 93449,
+"end": 93453,
+"raw": "划线",
+"segments": [
+[
+"txt",
+"划线"
+]
+],
+"exprs": [],
+"line": 1990
+},
+{
+"file": "MainActivity.kt",
+"offset": 93579,
+"end": 93583,
+"raw": "切割",
+"segments": [
+[
+"txt",
+"切割"
+]
+],
+"exprs": [],
+"line": 1991
+},
+{
+"file": "MainActivity.kt",
+"offset": 93739,
+"end": 93744,
+"raw": "坡口段",
+"segments": [
+[
+"txt",
+"坡口段"
+]
+],
+"exprs": [],
+"line": 1994
+},
+{
+"file": "MainActivity.kt",
+"offset": 94542,
+"end": 94548,
+"raw": "预演控制",
+"segments": [
+[
+"txt",
+"预演控制"
+]
+],
+"exprs": [],
+"line": 2014
+},
+{
+"file": "MainActivity.kt",
+"offset": 94724,
+"end": 94728,
+"raw": "速度",
+"segments": [
+[
+"txt",
+"速度"
+]
+],
+"exprs": [],
+"line": 2019
+},
+{
+"file": "MainActivity.kt",
+"offset": 96141,
+"end": 96145,
+"raw": "状态",
+"segments": [
+[
+"txt",
+"状态"
+]
+],
+"exprs": [],
+"line": 2047
+},
+{
+"file": "MainActivity.kt",
+"offset": 96216,
+"end": 96220,
+"raw": "进度",
+"segments": [
+[
+"txt",
+"进度"
+]
+],
+"exprs": [],
+"line": 2048
+},
+{
+"file": "MainActivity.kt",
+"offset": 96796,
+"end": 96800,
+"raw": "停止",
+"segments": [
+[
+"txt",
+"停止"
+]
+],
+"exprs": [],
+"line": 2062
+},
+{
+"file": "MainActivity.kt",
+"offset": 96901,
+"end": 96921,
+"raw": "$labelPrefix 预演已停止",
+"segments": [
+[
+"expr",
+"labelPrefix"
+],
+[
+"txt",
+" 预演已停止"
+]
+],
+"exprs": [
+"labelPrefix"
+],
+"line": 2064
+},
+{
+"file": "MainActivity.kt",
+"offset": 97202,
+"end": 97206,
+"raw": "暂停",
+"segments": [
+[
+"txt",
+"暂停"
+]
+],
+"exprs": [],
+"line": 2073
+},
+{
+"file": "MainActivity.kt",
+"offset": 97269,
+"end": 97273,
+"raw": "继续",
+"segments": [
+[
+"txt",
+"继续"
+]
+],
+"exprs": [],
+"line": 2074
+},
+{
+"file": "MainActivity.kt",
+"offset": 97298,
+"end": 97302,
+"raw": "开始",
+"segments": [
+[
+"txt",
+"开始"
+]
+],
+"exprs": [],
+"line": 2075
+},
+{
+"file": "MainActivity.kt",
+"offset": 97502,
+"end": 97522,
+"raw": "$labelPrefix 预演已暂停",
+"segments": [
+[
+"expr",
+"labelPrefix"
+],
+[
+"txt",
+" 预演已暂停"
+]
+],
+"exprs": [
+"labelPrefix"
+],
+"line": 2080
+},
+{
+"file": "MainActivity.kt",
+"offset": 97642,
+"end": 97662,
+"raw": "$labelPrefix 预演进行中",
+"segments": [
+[
+"expr",
+"labelPrefix"
+],
+[
+"txt",
+" 预演进行中"
+]
+],
+"exprs": [
+"labelPrefix"
+],
+"line": 2083
+},
+{
+"file": "MainActivity.kt",
+"offset": 99367,
+"end": 99372,
+"raw": "运行中",
+"segments": [
+[
+"txt",
+"运行中"
+]
+],
+"exprs": [],
+"line": 2129
+},
+{
+"file": "MainActivity.kt",
+"offset": 99431,
+"end": 99436,
+"raw": "已暂停",
+"segments": [
+[
+"txt",
+"已暂停"
+]
+],
+"exprs": [],
+"line": 2130
+},
+{
+"file": "MainActivity.kt",
+"offset": 99457,
+"end": 99462,
+"raw": "未开始",
+"segments": [
+[
+"txt",
+"未开始"
+]
+],
+"exprs": [],
+"line": 2131
+},
+{
+"file": "MainActivity.kt",
+"offset": 99771,
+"end": 99775,
+"raw": "暂停",
+"segments": [
+[
+"txt",
+"暂停"
+]
+],
+"exprs": [],
+"line": 2137
+},
+{
+"file": "MainActivity.kt",
+"offset": 99834,
+"end": 99838,
+"raw": "继续",
+"segments": [
+[
+"txt",
+"继续"
+]
+],
+"exprs": [],
+"line": 2138
+},
+{
+"file": "MainActivity.kt",
+"offset": 99859,
+"end": 99863,
+"raw": "开始",
+"segments": [
+[
+"txt",
+"开始"
+]
+],
+"exprs": [],
+"line": 2139
+},
+{
+"file": "MainActivity.kt",
+"offset": 100703,
+"end": 100707,
+"raw": "类型",
+"segments": [
+[
+"txt",
+"类型"
+]
+],
+"exprs": [],
+"line": 2158
+},
+{
+"file": "MainActivity.kt",
+"offset": 100770,
+"end": 100775,
+"raw": "实体数",
+"segments": [
+[
+"txt",
+"实体数"
+]
+],
+"exprs": [],
+"line": 2159
+},
+{
+"file": "MainActivity.kt",
+"offset": 100873,
+"end": 100878,
+"raw": "图层数",
+"segments": [
+[
+"txt",
+"图层数"
+]
+],
+"exprs": [],
+"line": 2160
+},
+{
+"file": "MainActivity.kt",
+"offset": 100974,
+"end": 100978,
+"raw": "范围",
+"segments": [
+[
+"txt",
+"范围"
+]
+],
+"exprs": [],
+"line": 2161
+},
+{
+"file": "MainActivity.kt",
+"offset": 101138,
+"end": 101142,
+"raw": "单位",
+"segments": [
+[
+"txt",
+"单位"
+]
+],
+"exprs": [],
+"line": 2162
+},
+{
+"file": "MainActivity.kt",
+"offset": 101169,
+"end": 101174,
+"raw": "未指定",
+"segments": [
+[
+"txt",
+"未指定"
+]
+],
+"exprs": [],
+"line": 2162
+},
+{
+"file": "MainActivity.kt",
+"offset": 101301,
+"end": 101308,
+"raw": "PDF比例",
+"segments": [
+[
+"txt",
+"PDF比例"
+]
+],
+"exprs": [],
+"line": 2164
+},
+{
+"file": "MainActivity.kt",
+"offset": 101459,
+"end": 101465,
+"raw": "当前缩放",
+"segments": [
+[
+"txt",
+"当前缩放"
+]
+],
+"exprs": [],
+"line": 2167
+},
+{
+"file": "MainActivity.kt",
+"offset": 101659,
+"end": 101663,
+"raw": "板厚",
+"segments": [
+[
+"txt",
+"板厚"
+]
+],
+"exprs": [],
+"line": 2170
+},
+{
+"file": "MainActivity.kt",
+"offset": 101857,
+"end": 101863,
+"raw": "排版策略",
+"segments": [
+[
+"txt",
+"排版策略"
+]
+],
+"exprs": [],
+"line": 2173
+},
+{
+"file": "MainActivity.kt",
+"offset": 101987,
+"end": 101991,
+"raw": "边界",
+"segments": [
+[
+"txt",
+"边界"
+]
+],
+"exprs": [],
+"line": 2177
+},
+{
+"file": "MainActivity.kt",
+"offset": 102513,
+"end": 102520,
+"raw": "PDF文字",
+"segments": [
+[
+"txt",
+"PDF文字"
+]
+],
+"exprs": [],
+"line": 2185
+},
+{
+"file": "MainActivity.kt",
+"offset": 102614,
+"end": 102619,
+"raw": "显示中",
+"segments": [
+[
+"txt",
+"显示中"
+]
+],
+"exprs": [],
+"line": 2186
+},
+{
+"file": "MainActivity.kt",
+"offset": 102625,
+"end": 102630,
+"raw": "已隐藏",
+"segments": [
+[
+"txt",
+"已隐藏"
+]
+],
+"exprs": [],
+"line": 2186
+},
+{
+"file": "MainActivity.kt",
+"offset": 102803,
+"end": 102807,
+"raw": "类型",
+"segments": [
+[
+"txt",
+"类型"
+]
+],
+"exprs": [],
+"line": 2193
+},
+{
+"file": "MainActivity.kt",
+"offset": 102870,
+"end": 102875,
+"raw": "区段数",
+"segments": [
+[
+"txt",
+"区段数"
+]
+],
+"exprs": [],
+"line": 2194
+},
+{
+"file": "MainActivity.kt",
+"offset": 102973,
+"end": 102978,
+"raw": "工艺段",
+"segments": [
+[
+"txt",
+"工艺段"
+]
+],
+"exprs": [],
+"line": 2195
+},
+{
+"file": "MainActivity.kt",
+"offset": 103078,
+"end": 103083,
+"raw": "零件数",
+"segments": [
+[
+"txt",
+"零件数"
+]
+],
+"exprs": [],
+"line": 2196
+},
+{
+"file": "MainActivity.kt",
+"offset": 103268,
+"end": 103272,
+"raw": "板材",
+"segments": [
+[
+"txt",
+"板材"
+]
+],
+"exprs": [],
+"line": 2198
+},
+{
+"file": "MainActivity.kt",
+"offset": 103468,
+"end": 103472,
+"raw": "类型",
+"segments": [
+[
+"txt",
+"类型"
+]
+],
+"exprs": [],
+"line": 2203
+},
+{
+"file": "MainActivity.kt",
+"offset": 103534,
+"end": 103539,
+"raw": "轨迹段",
+"segments": [
+[
+"txt",
+"轨迹段"
+]
+],
+"exprs": [],
+"line": 2204
+},
+{
+"file": "MainActivity.kt",
+"offset": 103674,
+"end": 103678,
+"raw": "材质",
+"segments": [
+[
+"txt",
+"材质"
+]
+],
+"exprs": [],
+"line": 2205
+},
+{
+"file": "MainActivity.kt",
+"offset": 103782,
+"end": 103786,
+"raw": "厚度",
+"segments": [
+[
+"txt",
+"厚度"
+]
+],
+"exprs": [],
+"line": 2206
+},
+{
+"file": "MainActivity.kt",
+"offset": 104199,
+"end": 104205,
+"raw": "坡口摘要",
+"segments": [
+[
+"txt",
+"坡口摘要"
+]
+],
+"exprs": [],
+"line": 2211
+},
+{
+"file": "MainActivity.kt",
+"offset": 104297,
+"end": 104302,
+"raw": "坡口段",
+"segments": [
+[
+"txt",
+"坡口段"
+]
+],
+"exprs": [],
+"line": 2212
+},
+{
+"file": "MainActivity.kt",
+"offset": 104390,
+"end": 104395,
+"raw": "A 角",
+"segments": [
+[
+"txt",
+"A 角"
+]
+],
+"exprs": [],
+"line": 2213
+},
+{
+"file": "MainActivity.kt",
+"offset": 104505,
+"end": 104510,
+"raw": "B 角",
+"segments": [
+[
+"txt",
+"B 角"
+]
+],
+"exprs": [],
+"line": 2214
+},
+{
+"file": "MainActivity.kt",
+"offset": 104699,
+"end": 104703,
+"raw": "板材",
+"segments": [
+[
+"txt",
+"板材"
+]
+],
+"exprs": [],
+"line": 2217
+},
+{
+"file": "MainActivity.kt",
+"offset": 104884,
+"end": 104888,
+"raw": "类型",
+"segments": [
+[
+"txt",
+"类型"
+]
+],
+"exprs": [],
+"line": 2222
+},
+{
+"file": "MainActivity.kt",
+"offset": 104951,
+"end": 104955,
+"raw": "版本",
+"segments": [
+[
+"txt",
+"版本"
+]
+],
+"exprs": [],
+"line": 2223
+},
+{
+"file": "MainActivity.kt",
+"offset": 105043,
+"end": 105048,
+"raw": "版本码",
+"segments": [
+[
+"txt",
+"版本码"
+]
+],
+"exprs": [],
+"line": 2224
+},
+{
+"file": "MainActivity.kt",
+"offset": 105151,
+"end": 105155,
+"raw": "状态",
+"segments": [
+[
+"txt",
+"状态"
+]
+],
+"exprs": [],
+"line": 2227
+},
+{
+"file": "MainActivity.kt",
+"offset": 105157,
+"end": 105164,
+"raw": "未打开文件",
+"segments": [
+[
+"txt",
+"未打开文件"
+]
+],
+"exprs": [],
+"line": 2227
+},
+{
+"file": "MainActivity.kt",
+"offset": 105950,
+"end": 105954,
+"raw": "导入",
+"segments": [
+[
+"txt",
+"导入"
+]
+],
+"exprs": [],
+"line": 2250
+},
+{
+"file": "MainActivity.kt",
+"offset": 106008,
+"end": 106012,
+"raw": "历史",
+"segments": [
+[
+"txt",
+"历史"
+]
+],
+"exprs": [],
+"line": 2251
+},
+{
+"file": "MainActivity.kt",
+"offset": 106066,
+"end": 106070,
+"raw": "收藏",
+"segments": [
+[
+"txt",
+"收藏"
+]
+],
+"exprs": [],
+"line": 2252
+},
+{
+"file": "MainActivity.kt",
+"offset": 106127,
+"end": 106131,
+"raw": "所有",
+"segments": [
+[
+"txt",
+"所有"
+]
+],
+"exprs": [],
+"line": 2253
+},
+{
+"file": "MainActivity.kt",
+"offset": 106188,
+"end": 106192,
+"raw": "搜索",
+"segments": [
+[
+"txt",
+"搜索"
+]
+],
+"exprs": [],
+"line": 2254
+},
+{
+"file": "MainActivity.kt",
+"offset": 110901,
+"end": 110908,
+"raw": "无预览信息",
+"segments": [
+[
+"txt",
+"无预览信息"
+]
+],
+"exprs": [],
+"line": 2373
+},
+{
+"file": "MainActivity.kt",
+"offset": 111351,
+"end": 111355,
+"raw": "打开",
+"segments": [
+[
+"txt",
+"打开"
+]
+],
+"exprs": [],
+"line": 2385
+},
+{
+"file": "MainActivity.kt",
+"offset": 111404,
+"end": 111408,
+"raw": "详情",
+"segments": [
+[
+"txt",
+"详情"
+]
+],
+"exprs": [],
+"line": 2386
+},
+{
+"file": "MainActivity.kt",
+"offset": 111485,
+"end": 111489,
+"raw": "删除",
+"segments": [
+[
+"txt",
+"删除"
+]
+],
+"exprs": [],
+"line": 2387
+},
+{
+"file": "MainActivity.kt",
+"offset": 113183,
+"end": 113198,
+"raw": "$count 个文件  ›",
+"segments": [
+[
+"expr",
+"count"
+],
+[
+"txt",
+" 个文件  ›"
+]
+],
+"exprs": [
+"count"
+],
+"line": 2426
+},
+{
+"file": "MainActivity.kt",
+"offset": 113498,
+"end": 113504,
+"raw": "文件详情",
+"segments": [
+[
+"txt",
+"文件详情"
+]
+],
+"exprs": [],
+"line": 2435
+},
+{
+"file": "MainActivity.kt",
+"offset": 113597,
+"end": 113605,
+"raw": "返回文件面板",
+"segments": [
+[
+"txt",
+"返回文件面板"
+]
+],
+"exprs": [],
+"line": 2437
+},
+{
+"file": "MainActivity.kt",
+"offset": 113735,
+"end": 113739,
+"raw": "类型",
+"segments": [
+[
+"txt",
+"类型"
+]
+],
+"exprs": [],
+"line": 2439
+},
+{
+"file": "MainActivity.kt",
+"offset": 113874,
+"end": 113880,
+"raw": "记录时间",
+"segments": [
+[
+"txt",
+"记录时间"
+]
+],
+"exprs": [],
+"line": 2441
+},
+{
+"file": "MainActivity.kt",
+"offset": 113961,
+"end": 113965,
+"raw": "状态",
+"segments": [
+[
+"txt",
+"状态"
+]
+],
+"exprs": [],
+"line": 2442
+},
+{
+"file": "MainActivity.kt",
+"offset": 113983,
+"end": 113988,
+"raw": "已置顶",
+"segments": [
+[
+"txt",
+"已置顶"
+]
+],
+"exprs": [],
+"line": 2442
+},
+{
+"file": "MainActivity.kt",
+"offset": 113994,
+"end": 113998,
+"raw": "普通",
+"segments": [
+[
+"txt",
+"普通"
+]
+],
+"exprs": [],
+"line": 2442
+},
+{
+"file": "MainActivity.kt",
+"offset": 114046,
+"end": 114052,
+"raw": "管理模式",
+"segments": [
+[
+"txt",
+"管理模式"
+]
+],
+"exprs": [],
+"line": 2443
+},
+{
+"file": "MainActivity.kt",
+"offset": 114071,
+"end": 114083,
+"raw": "托管副本，可安全删除",
+"segments": [
+[
+"txt",
+"托管副本，可安全删除"
+]
+],
+"exprs": [],
+"line": 2443
+},
+{
+"file": "MainActivity.kt",
+"offset": 114089,
+"end": 114101,
+"raw": "外部引用，只移除记录",
+"segments": [
+[
+"txt",
+"外部引用，只移除记录"
+]
+],
+"exprs": [],
+"line": 2443
+},
+{
+"file": "MainActivity.kt",
+"offset": 114170,
+"end": 114176,
+"raw": "本地路径",
+"segments": [
+[
+"txt",
+"本地路径"
+]
+],
+"exprs": [],
+"line": 2444
+},
+{
+"file": "MainActivity.kt",
+"offset": 114251,
+"end": 114255,
+"raw": "来源",
+"segments": [
+[
+"txt",
+"来源"
+]
+],
+"exprs": [],
+"line": 2445
+},
+{
+"file": "MainActivity.kt",
+"offset": 114413,
+"end": 114419,
+"raw": "显示名称",
+"segments": [
+[
+"txt",
+"显示名称"
+]
+],
+"exprs": [],
+"line": 2448
+},
+{
+"file": "MainActivity.kt",
+"offset": 114492,
+"end": 114496,
+"raw": "大小",
+"segments": [
+[
+"txt",
+"大小"
+]
+],
+"exprs": [],
+"line": 2449
+},
+{
+"file": "MainActivity.kt",
+"offset": 114650,
+"end": 114654,
+"raw": "未知",
+"segments": [
+[
+"txt",
+"未知"
+]
+],
+"exprs": [],
+"line": 2450
+},
+{
+"file": "MainActivity.kt",
+"offset": 114704,
+"end": 114710,
+"raw": "修改时间",
+"segments": [
+[
+"txt",
+"修改时间"
+]
+],
+"exprs": [],
+"line": 2451
+},
+{
+"file": "MainActivity.kt",
+"offset": 114786,
+"end": 114792,
+"raw": "打开文件",
+"segments": [
+[
+"txt",
+"打开文件"
+]
+],
+"exprs": [],
+"line": 2453
+},
+{
+"file": "MainActivity.kt",
+"offset": 114955,
+"end": 114961,
+"raw": "取消置顶",
+"segments": [
+[
+"txt",
+"取消置顶"
+]
+],
+"exprs": [],
+"line": 2455
+},
+{
+"file": "MainActivity.kt",
+"offset": 114967,
+"end": 114975,
+"raw": "置顶历史记录",
+"segments": [
+[
+"txt",
+"置顶历史记录"
+]
+],
+"exprs": [],
+"line": 2455
+},
+{
+"file": "MainActivity.kt",
+"offset": 115079,
+"end": 115088,
+"raw": "已更新历史记录",
+"segments": [
+[
+"txt",
+"已更新历史记录"
+]
+],
+"exprs": [],
+"line": 2457
+},
+{
+"file": "MainActivity.kt",
+"offset": 115188,
+"end": 115196,
+"raw": "从历史中移除",
+"segments": [
+[
+"txt",
+"从历史中移除"
+]
+],
+"exprs": [],
+"line": 2460
+},
+{
+"file": "MainActivity.kt",
+"offset": 115297,
+"end": 115306,
+"raw": "已删除历史记录",
+"segments": [
+[
+"txt",
+"已删除历史记录"
+]
+],
+"exprs": [],
+"line": 2462
+},
+{
+"file": "MainActivity.kt",
+"offset": 115441,
+"end": 115449,
+"raw": "删除托管副本",
+"segments": [
+[
+"txt",
+"删除托管副本"
+]
+],
+"exprs": [],
+"line": 2466
+},
+{
+"file": "MainActivity.kt",
+"offset": 115582,
+"end": 115591,
+"raw": "已删除托管副本",
+"segments": [
+[
+"txt",
+"已删除托管副本"
+]
+],
+"exprs": [],
+"line": 2468
+},
+{
+"file": "MainActivity.kt",
+"offset": 115597,
+"end": 115613,
+"raw": "删除失败：文件不可写或不存在",
+"segments": [
+[
+"txt",
+"删除失败：文件不可写或不存在"
+]
+],
+"exprs": [],
+"line": 2468
+},
+{
+"file": "MainActivity.kt",
+"offset": 115847,
+"end": 115853,
+"raw": "当前文件",
+"segments": [
+[
+"txt",
+"当前文件"
+]
+],
+"exprs": [],
+"line": 2477
+},
+{
+"file": "MainActivity.kt",
+"offset": 115896,
+"end": 115904,
+"raw": "当前文件详情",
+"segments": [
+[
+"txt",
+"当前文件详情"
+]
+],
+"exprs": [],
+"line": 2478
+},
+{
+"file": "MainActivity.kt",
+"offset": 115997,
+"end": 116004,
+"raw": "返回导入页",
+"segments": [
+[
+"txt",
+"返回导入页"
+]
+],
+"exprs": [],
+"line": 2480
+},
+{
+"file": "MainActivity.kt",
+"offset": 116204,
+"end": 116208,
+"raw": "类型",
+"segments": [
+[
+"txt",
+"类型"
+]
+],
+"exprs": [],
+"line": 2485
+},
+{
+"file": "MainActivity.kt",
+"offset": 116281,
+"end": 116285,
+"raw": "预览",
+"segments": [
+[
+"txt",
+"预览"
+]
+],
+"exprs": [],
+"line": 2486
+},
+{
+"file": "MainActivity.kt",
+"offset": 116513,
+"end": 116517,
+"raw": "大小",
+"segments": [
+[
+"txt",
+"大小"
+]
+],
+"exprs": [],
+"line": 2490
+},
+{
+"file": "MainActivity.kt",
+"offset": 116671,
+"end": 116675,
+"raw": "未知",
+"segments": [
+[
+"txt",
+"未知"
+]
+],
+"exprs": [],
+"line": 2491
+},
+{
+"file": "MainActivity.kt",
+"offset": 116725,
+"end": 116731,
+"raw": "修改时间",
+"segments": [
+[
+"txt",
+"修改时间"
+]
+],
+"exprs": [],
+"line": 2492
+},
+{
+"file": "MainActivity.kt",
+"offset": 116834,
+"end": 116840,
+"raw": "取消收藏",
+"segments": [
+[
+"txt",
+"取消收藏"
+]
+],
+"exprs": [],
+"line": 2494
+},
+{
+"file": "MainActivity.kt",
+"offset": 116846,
+"end": 116852,
+"raw": "收藏文件",
+"segments": [
+[
+"txt",
+"收藏文件"
+]
+],
+"exprs": [],
+"line": 2494
+},
+{
+"file": "MainActivity.kt",
+"offset": 116972,
+"end": 116987,
+"raw": "已收藏 $fileName",
+"segments": [
+[
+"txt",
+"已收藏 "
+],
+[
+"expr",
+"fileName"
+]
+],
+"exprs": [
+"fileName"
+],
+"line": 2496
+},
+{
+"file": "MainActivity.kt",
+"offset": 116993,
+"end": 117010,
+"raw": "已取消收藏 $fileName",
+"segments": [
+[
+"txt",
+"已取消收藏 "
+],
+[
+"expr",
+"fileName"
+]
+],
+"exprs": [
+"fileName"
+],
+"line": 2496
+},
+{
+"file": "MainActivity.kt",
+"offset": 117111,
+"end": 117119,
+"raw": "重新导入文件",
+"segments": [
+[
+"txt",
+"重新导入文件"
+]
+],
+"exprs": [],
+"line": 2499
+},
+{
+"file": "MainActivity.kt",
+"offset": 117485,
+"end": 117489,
+"raw": "文件",
+"segments": [
+[
+"txt",
+"文件"
+]
+],
+"exprs": [],
+"line": 2509
+},
+{
+"file": "MainActivity.kt",
+"offset": 117746,
+"end": 117756,
+"raw": "PDF 转换预览",
+"segments": [
+[
+"txt",
+"PDF 转换预览"
+]
+],
+"exprs": [],
+"line": 2517
+},
+{
+"file": "MainActivity.kt",
+"offset": 117762,
+"end": 117770,
+"raw": "DXF 图纸",
+"segments": [
+[
+"txt",
+"DXF 图纸"
+]
+],
+"exprs": [],
+"line": 2517
+},
+{
+"file": "MainActivity.kt",
+"offset": 117787,
+"end": 117945,
+"raw": "$type · ${document.entities.size} 个实体 · ${document.layers.size} 个图层 · W ${\"%.2f\".format(document.bounds.width)} / H ${\"%.2f\".format(document.bounds.height)}",
+"segments": [
+[
+"expr",
+"type"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"document.entities.size"
+],
+[
+"txt",
+" 个实体 · "
+],
+[
+"expr",
+"document.layers.size"
+],
+[
+"txt",
+" 个图层 · W "
+],
+[
+"expr",
+"\"%.2f\".format(document.bounds.width)"
+],
+[
+"txt",
+" / H "
+],
+[
+"expr",
+"\"%.2f\".format(document.bounds.height)"
+]
+],
+"exprs": [
+"type",
+"document.entities.size",
+"document.layers.size",
+"\"%.2f\".format(document.bounds.width)",
+"\"%.2f\".format(document.bounds.height)"
+],
+"line": 2518
+},
+{
+"file": "MainActivity.kt",
+"offset": 117996,
+"end": 118087,
+"raw": "GEN 工艺文件 · ${parsed.document.sections.size} 个区段 · ${parsed.document.operations.size} 个工艺段",
+"segments": [
+[
+"txt",
+"GEN 工艺文件 · "
+],
+[
+"expr",
+"parsed.document.sections.size"
+],
+[
+"txt",
+" 个区段 · "
+],
+[
+"expr",
+"parsed.document.operations.size"
+],
+[
+"txt",
+" 个工艺段"
+]
+],
+"exprs": [
+"parsed.document.sections.size",
+"parsed.document.operations.size"
+],
+"line": 2520
+},
+{
+"file": "MainActivity.kt",
+"offset": 118123,
+"end": 118201,
+"raw": "NC 程序 · ${parsed.program.moves.size} 条轨迹 · ${ncBevelSummary(parsed.program)}",
+"segments": [
+[
+"txt",
+"NC 程序 · "
+],
+[
+"expr",
+"parsed.program.moves.size"
+],
+[
+"txt",
+" 条轨迹 · "
+],
+[
+"expr",
+"ncBevelSummary(parsed.program)"
+]
+],
+"exprs": [
+"parsed.program.moves.size",
+"ncBevelSummary(parsed.program)"
+],
+"line": 2521
+},
+{
+"file": "MainActivity.kt",
+"offset": 118238,
+"end": 118314,
+"raw": "DWG 图纸 · ${parsed.preview.readableVersion} · ${parsed.preview.versionCode}",
+"segments": [
+[
+"txt",
+"DWG 图纸 · "
+],
+[
+"expr",
+"parsed.preview.readableVersion"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"parsed.preview.versionCode"
+]
+],
+"exprs": [
+"parsed.preview.readableVersion",
+"parsed.preview.versionCode"
+],
+"line": 2522
+},
+{
+"file": "MainActivity.kt",
+"offset": 118335,
+"end": 118349,
+"raw": "已选择文件，尚未生成预览",
+"segments": [
+[
+"txt",
+"已选择文件，尚未生成预览"
+]
+],
+"exprs": [],
+"line": 2523
+},
+{
+"file": "MainActivity.kt",
+"offset": 118453,
+"end": 118457,
+"raw": "未知",
+"segments": [
+[
+"txt",
+"未知"
+]
+],
+"exprs": [],
+"line": 2528
+},
+{
+"file": "MainActivity.kt",
+"offset": 119528,
+"end": 119532,
+"raw": "置顶",
+"segments": [
+[
+"txt",
+"置顶"
+]
+],
+"exprs": [],
+"line": 2558
+},
+{
+"file": "MainActivity.kt",
+"offset": 119967,
+"end": 119971,
+"raw": "删除",
+"segments": [
+[
+"txt",
+"删除"
+]
+],
+"exprs": [],
+"line": 2567
+},
+{
+"file": "MainActivity.kt",
+"offset": 121163,
+"end": 121167,
+"raw": "打开",
+"segments": [
+[
+"txt",
+"打开"
+]
+],
+"exprs": [],
+"line": 2594
+},
+{
+"file": "MainActivity.kt",
+"offset": 127935,
+"end": 128027,
+"raw": "零件 $parts · 板材 ${rawLength.toInt()} x ${rawWidth.toInt()} · 工艺 ${document.operations.size}",
+"segments": [
+[
+"txt",
+"零件 "
+],
+[
+"expr",
+"parts"
+],
+[
+"txt",
+" · 板材 "
+],
+[
+"expr",
+"rawLength.toInt()"
+],
+[
+"txt",
+" x "
+],
+[
+"expr",
+"rawWidth.toInt()"
+],
+[
+"txt",
+" · 工艺 "
+],
+[
+"expr",
+"document.operations.size"
+]
+],
+"exprs": [
+"parts",
+"rawLength.toInt()",
+"rawWidth.toInt()",
+"document.operations.size"
+],
+"line": 2752
+},
+{
+"file": "MainActivity.kt",
+"offset": 128057,
+"end": 128099,
+"raw": "区段 ${document.sections.size} · 零件 $parts",
+"segments": [
+[
+"txt",
+"区段 "
+],
+[
+"expr",
+"document.sections.size"
+],
+[
+"txt",
+" · 零件 "
+],
+[
+"expr",
+"parts"
+]
+],
+"exprs": [
+"document.sections.size",
+"parts"
+],
+"line": 2754
+},
+{
+"file": "MainActivity.kt",
+"offset": 128525,
+"end": 128577,
+"raw": "轨迹 ${program.moves.size} · $summary · 板材 $sx x $sy",
+"segments": [
+[
+"txt",
+"轨迹 "
+],
+[
+"expr",
+"program.moves.size"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"summary"
+],
+[
+"txt",
+" · 板材 "
+],
+[
+"expr",
+"sx"
+],
+[
+"txt",
+" x "
+],
+[
+"expr",
+"sy"
+]
+],
+"exprs": [
+"program.moves.size",
+"summary",
+"sx",
+"sy"
+],
+"line": 2765
+},
+{
+"file": "MainActivity.kt",
+"offset": 128615,
+"end": 128656,
+"raw": "轨迹 ${program.moves.size} · 板材 $sx x $sy",
+"segments": [
+[
+"txt",
+"轨迹 "
+],
+[
+"expr",
+"program.moves.size"
+],
+[
+"txt",
+" · 板材 "
+],
+[
+"expr",
+"sx"
+],
+[
+"txt",
+" x "
+],
+[
+"expr",
+"sy"
+]
+],
+"exprs": [
+"program.moves.size",
+"sx",
+"sy"
+],
+"line": 2767
+},
+{
+"file": "MainActivity.kt",
+"offset": 128700,
+"end": 128726,
+"raw": "轨迹 ${program.moves.size}",
+"segments": [
+[
+"txt",
+"轨迹 "
+],
+[
+"expr",
+"program.moves.size"
+]
+],
+"exprs": [
+"program.moves.size"
+],
+"line": 2770
+},
+{
+"file": "MainActivity.kt",
+"offset": 129277,
+"end": 129334,
+"raw": "对称坡口 ±${\"%.0f\".format(kotlin.math.abs(aValues.last()))}",
+"segments": [
+[
+"txt",
+"对称坡口 ±"
+],
+[
+"expr",
+"\"%.0f\".format(kotlin.math.abs(aValues.last()))"
+]
+],
+"exprs": [
+"\"%.0f\".format(kotlin.math.abs(aValues.last()))"
+],
+"line": 2780
+},
+{
+"file": "MainActivity.kt",
+"offset": 129361,
+"end": 129420,
+"raw": "A 对称坡口 ±${\"%.0f\".format(kotlin.math.abs(aValues.last()))}",
+"segments": [
+[
+"txt",
+"A 对称坡口 ±"
+],
+[
+"expr",
+"\"%.0f\".format(kotlin.math.abs(aValues.last()))"
+]
+],
+"exprs": [
+"\"%.0f\".format(kotlin.math.abs(aValues.last()))"
+],
+"line": 2781
+},
+{
+"file": "MainActivity.kt",
+"offset": 129447,
+"end": 129506,
+"raw": "B 对称坡口 ±${\"%.0f\".format(kotlin.math.abs(bValues.last()))}",
+"segments": [
+[
+"txt",
+"B 对称坡口 ±"
+],
+[
+"expr",
+"\"%.0f\".format(kotlin.math.abs(bValues.last()))"
+]
+],
+"exprs": [
+"\"%.0f\".format(kotlin.math.abs(bValues.last()))"
+],
+"line": 2782
+},
+{
+"file": "MainActivity.kt",
+"offset": 129569,
+"end": 129638,
+"raw": "坡口 ${aValues.plus(bValues).joinToString(\"/\") { \"%.0f\".format(it) }}",
+"segments": [
+[
+"txt",
+"坡口 "
+],
+[
+"expr",
+"aValues.plus(bValues).joinToString(\"/\") { \"%.0f\".format(it) }"
+]
+],
+"exprs": [
+"aValues.plus(bValues).joinToString(\"/\") { \"%.0f\".format(it) }"
+],
+"line": 2783
+},
+{
+"file": "MainActivity.kt",
+"offset": 129659,
+"end": 129664,
+"raw": "无坡口",
+"segments": [
+[
+"txt",
+"无坡口"
+]
+],
+"exprs": [],
+"line": 2784
+},
+{
+"file": "MainActivity.kt",
+"offset": 130909,
+"end": 130913,
+"raw": "毫米",
+"segments": [
+[
+"txt",
+"毫米"
+]
+],
+"exprs": [],
+"line": 2811
+},
+{
+"file": "MainActivity.kt",
+"offset": 149689,
+"end": 149693,
+"raw": "状态",
+"segments": [
+[
+"txt",
+"状态"
+]
+],
+"exprs": [],
+"line": 3226
+},
+{
+"file": "MainActivity.kt",
+"offset": 149695,
+"end": 149701,
+"raw": "暂无零件",
+"segments": [
+[
+"txt",
+"暂无零件"
+]
+],
+"exprs": [],
+"line": 3226
+},
+{
+"file": "MainActivity.kt",
+"offset": 150729,
+"end": 150735,
+"raw": "镜像 X",
+"segments": [
+[
+"txt",
+"镜像 X"
+]
+],
+"exprs": [],
+"line": 3251
+},
+{
+"file": "MainActivity.kt",
+"offset": 150895,
+"end": 150901,
+"raw": "编辑零件",
+"segments": [
+[
+"txt",
+"编辑零件"
+]
+],
+"exprs": [],
+"line": 3256
+},
+{
+"file": "MainActivity.kt",
+"offset": 151102,
+"end": 151106,
+"raw": "数量",
+"segments": [
+[
+"txt",
+"数量"
+]
+],
+"exprs": [],
+"line": 3260
+},
+{
+"file": "MainActivity.kt",
+"offset": 151201,
+"end": 151208,
+"raw": "旋转(度)",
+"segments": [
+[
+"txt",
+"旋转(度)"
+]
+],
+"exprs": [],
+"line": 3262
+},
+{
+"file": "MainActivity.kt",
+"offset": 151327,
+"end": 151331,
+"raw": "保存",
+"segments": [
+[
+"txt",
+"保存"
+]
+],
+"exprs": [],
+"line": 3266
+},
+{
+"file": "MainActivity.kt",
+"offset": 151677,
+"end": 151681,
+"raw": "删除",
+"segments": [
+[
+"txt",
+"删除"
+]
+],
+"exprs": [],
+"line": 3272
+},
+{
+"file": "MainActivity.kt",
+"offset": 151815,
+"end": 151819,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 3276
+},
+{
+"file": "MainActivity.kt",
+"offset": 152427,
+"end": 152431,
+"raw": "执行",
+"segments": [
+[
+"txt",
+"执行"
+]
+],
+"exprs": [],
+"line": 3291
+},
+{
+"file": "MainActivity.kt",
+"offset": 152825,
+"end": 152829,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 3303
+},
+{
+"file": "MainActivity.kt",
+"offset": 153051,
+"end": 153055,
+"raw": "高度",
+"segments": [
+[
+"txt",
+"高度"
+]
+],
+"exprs": [],
+"line": 3308
+},
+{
+"file": "MainActivity.kt",
+"offset": 153265,
+"end": 153271,
+"raw": "矩形参数",
+"segments": [
+[
+"txt",
+"矩形参数"
+]
+],
+"exprs": [],
+"line": 3313
+},
+{
+"file": "MainActivity.kt",
+"offset": 153534,
+"end": 153538,
+"raw": "添加",
+"segments": [
+[
+"txt",
+"添加"
+]
+],
+"exprs": [],
+"line": 3320
+},
+{
+"file": "MainActivity.kt",
+"offset": 153852,
+"end": 153880,
+"raw": "矩形${nestingParts.size + 1}",
+"segments": [
+[
+"txt",
+"矩形"
+],
+[
+"expr",
+"nestingParts.size + 1"
+]
+],
+"exprs": [
+"nestingParts.size + 1"
+],
+"line": 3324
+},
+{
+"file": "MainActivity.kt",
+"offset": 153976,
+"end": 153980,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 3327
+},
+{
+"file": "MainActivity.kt",
+"offset": 154125,
+"end": 154129,
+"raw": "半径",
+"segments": [
+[
+"txt",
+"半径"
+]
+],
+"exprs": [],
+"line": 3333
+},
+{
+"file": "MainActivity.kt",
+"offset": 154338,
+"end": 154344,
+"raw": "圆形参数",
+"segments": [
+[
+"txt",
+"圆形参数"
+]
+],
+"exprs": [],
+"line": 3338
+},
+{
+"file": "MainActivity.kt",
+"offset": 154571,
+"end": 154575,
+"raw": "添加",
+"segments": [
+[
+"txt",
+"添加"
+]
+],
+"exprs": [],
+"line": 3344
+},
+{
+"file": "MainActivity.kt",
+"offset": 154799,
+"end": 154827,
+"raw": "圆形${nestingParts.size + 1}",
+"segments": [
+[
+"txt",
+"圆形"
+],
+[
+"expr",
+"nestingParts.size + 1"
+]
+],
+"exprs": [
+"nestingParts.size + 1"
+],
+"line": 3347
+},
+{
+"file": "MainActivity.kt",
+"offset": 154925,
+"end": 154929,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 3350
+},
+{
+"file": "MainActivity.kt",
+"offset": 155583,
+"end": 155592,
+"raw": "没有零件可排版",
+"segments": [
+[
+"txt",
+"没有零件可排版"
+]
+],
+"exprs": [],
+"line": 3369
+},
+{
+"file": "MainActivity.kt",
+"offset": 156405,
+"end": 156411,
+"raw": "排版结果",
+"segments": [
+[
+"txt",
+"排版结果"
+]
+],
+"exprs": [],
+"line": 3393
+},
+{
+"file": "MainActivity.kt",
+"offset": 156444,
+"end": 156449,
+"raw": "利用率",
+"segments": [
+[
+"txt",
+"利用率"
+]
+],
+"exprs": [],
+"line": 3394
+},
+{
+"file": "MainActivity.kt",
+"offset": 156523,
+"end": 156528,
+"raw": "已放置",
+"segments": [
+[
+"txt",
+"已放置"
+]
+],
+"exprs": [],
+"line": 3395
+},
+{
+"file": "MainActivity.kt",
+"offset": 156624,
+"end": 156630,
+"raw": "浪费面积",
+"segments": [
+[
+"txt",
+"浪费面积"
+]
+],
+"exprs": [],
+"line": 3396
+},
+{
+"file": "MainActivity.kt",
+"offset": 156811,
+"end": 156821,
+"raw": "无法放置的零件：",
+"segments": [
+[
+"txt",
+"无法放置的零件："
+]
+],
+"exprs": [],
+"line": 3400
+},
+{
+"file": "MainActivity.kt",
+"offset": 157449,
+"end": 157455,
+"raw": "优化建议",
+"segments": [
+[
+"txt",
+"优化建议"
+]
+],
+"exprs": [],
+"line": 3415
+},
+{
+"file": "MainActivity.kt",
+"offset": 157548,
+"end": 157552,
+"raw": "建议",
+"segments": [
+[
+"txt",
+"建议"
+]
+],
+"exprs": [],
+"line": 3417
+},
+{
+"file": "MainActivity.kt",
+"offset": 157644,
+"end": 157757,
+"raw": "排版完成: ${result.placedCount}/${nestingParts.sumOf { it.quantity }} 零件, 利用率 ${\"%.1f\".format(result.utilization)}%",
+"segments": [
+[
+"txt",
+"排版完成: "
+],
+[
+"expr",
+"result.placedCount"
+],
+[
+"txt",
+"/"
+],
+[
+"expr",
+"nestingParts.sumOf { it.quantity }"
+],
+[
+"txt",
+" 零件, 利用率 "
+],
+[
+"expr",
+"\"%.1f\".format(result.utilization)"
+],
+[
+"txt",
+"%"
+]
+],
+"exprs": [
+"result.placedCount",
+"nestingParts.sumOf { it.quantity }",
+"\"%.1f\".format(result.utilization)"
+],
+"line": 3422
+},
+{
+"file": "MainActivity.kt",
+"offset": 157929,
+"end": 157938,
+"raw": "没有零件可排版",
+"segments": [
+[
+"txt",
+"没有零件可排版"
+]
+],
+"exprs": [],
+"line": 3427
+},
+{
+"file": "MainActivity.kt",
+"offset": 158399,
+"end": 158408,
+"raw": "排版方案对比：",
+"segments": [
+[
+"txt",
+"排版方案对比："
+]
+],
+"exprs": [],
+"line": 3445
+},
+{
+"file": "MainActivity.kt",
+"offset": 158682,
+"end": 158729,
+"raw": "   利用率: ${\"%.1f\".format(result.utilization)}%",
+"segments": [
+[
+"txt",
+"   利用率: "
+],
+[
+"expr",
+"\"%.1f\".format(result.utilization)"
+],
+[
+"txt",
+"%"
+]
+],
+"exprs": [
+"\"%.1f\".format(result.utilization)"
+],
+"line": 3451
+},
+{
+"file": "MainActivity.kt",
+"offset": 158758,
+"end": 158827,
+"raw": "   已放置: ${result.placedCount}/${nestingParts.sumOf { it.quantity }}",
+"segments": [
+[
+"txt",
+"   已放置: "
+],
+[
+"expr",
+"result.placedCount"
+],
+[
+"txt",
+"/"
+],
+[
+"expr",
+"nestingParts.sumOf { it.quantity }"
+]
+],
+"exprs": [
+"result.placedCount",
+"nestingParts.sumOf { it.quantity }"
+],
+"line": 3452
+},
+{
+"file": "MainActivity.kt",
+"offset": 158856,
+"end": 158902,
+"raw": "   浪费面积: ${\"%.0f\".format(result.wastedArea)}",
+"segments": [
+[
+"txt",
+"   浪费面积: "
+],
+[
+"expr",
+"\"%.0f\".format(result.wastedArea)"
+]
+],
+"exprs": [
+"\"%.0f\".format(result.wastedArea)"
+],
+"line": 3453
+},
+{
+"file": "MainActivity.kt",
+"offset": 158970,
+"end": 159004,
+"raw": "推荐使用: ${bestResult?.first?.name}",
+"segments": [
+[
+"txt",
+"推荐使用: "
+],
+[
+"expr",
+"bestResult?.first?.name"
+]
+],
+"exprs": [
+"bestResult?.first?.name"
+],
+"line": 3456
+},
+{
+"file": "MainActivity.kt",
+"offset": 159073,
+"end": 159081,
+"raw": "排版方案对比",
+"segments": [
+[
+"txt",
+"排版方案对比"
+]
+],
+"exprs": [],
+"line": 3460
+},
+{
+"file": "MainActivity.kt",
+"offset": 159147,
+"end": 159155,
+"raw": "应用最优方案",
+"segments": [
+[
+"txt",
+"应用最优方案"
+]
+],
+"exprs": [],
+"line": 3462
+},
+{
+"file": "MainActivity.kt",
+"offset": 159879,
+"end": 159906,
+"raw": "已应用最优方案: ${strategy.name}",
+"segments": [
+[
+"txt",
+"已应用最优方案: "
+],
+[
+"expr",
+"strategy.name"
+]
+],
+"exprs": [
+"strategy.name"
+],
+"line": 3475
+},
+{
+"file": "MainActivity.kt",
+"offset": 159971,
+"end": 159975,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 3478
+},
+{
+"file": "MainActivity.kt",
+"offset": 160263,
+"end": 160272,
+"raw": "没有零件可排版",
+"segments": [
+[
+"txt",
+"没有零件可排版"
+]
+],
+"exprs": [],
+"line": 3490
+},
+{
+"file": "MainActivity.kt",
+"offset": 160507,
+"end": 160517,
+"raw": "无法进行分板排版",
+"segments": [
+[
+"txt",
+"无法进行分板排版"
+]
+],
+"exprs": [],
+"line": 3499
+},
+{
+"file": "MainActivity.kt",
+"offset": 162447,
+"end": 162455,
+"raw": "自动分板完成",
+"segments": [
+[
+"txt",
+"自动分板完成"
+]
+],
+"exprs": [],
+"line": 3550
+},
+{
+"file": "MainActivity.kt",
+"offset": 162480,
+"end": 162502,
+"raw": "总板数: ${results.size}",
+"segments": [
+[
+"txt",
+"总板数: "
+],
+[
+"expr",
+"results.size"
+]
+],
+"exprs": [
+"results.size"
+],
+"line": 3551
+},
+{
+"file": "MainActivity.kt",
+"offset": 162610,
+"end": 162628,
+"raw": "板材 ${index + 1}:",
+"segments": [
+[
+"txt",
+"板材 "
+],
+[
+"expr",
+"index + 1"
+],
+[
+"txt",
+":"
+]
+],
+"exprs": [
+"index + 1"
+],
+"line": 3554
+},
+{
+"file": "MainActivity.kt",
+"offset": 162657,
+"end": 162687,
+"raw": "  已放置: ${result.placedCount}",
+"segments": [
+[
+"txt",
+"  已放置: "
+],
+[
+"expr",
+"result.placedCount"
+]
+],
+"exprs": [
+"result.placedCount"
+],
+"line": 3555
+},
+{
+"file": "MainActivity.kt",
+"offset": 162716,
+"end": 162762,
+"raw": "  利用率: ${\"%.1f\".format(result.utilization)}%",
+"segments": [
+[
+"txt",
+"  利用率: "
+],
+[
+"expr",
+"\"%.1f\".format(result.utilization)"
+],
+[
+"txt",
+"%"
+]
+],
+"exprs": [
+"\"%.1f\".format(result.utilization)"
+],
+"line": 3556
+},
+{
+"file": "MainActivity.kt",
+"offset": 162830,
+"end": 162888,
+"raw": "总放置: ${results.sumOf { it.placedCount }}/$totalRequested",
+"segments": [
+[
+"txt",
+"总放置: "
+],
+[
+"expr",
+"results.sumOf { it.placedCount }"
+],
+[
+"txt",
+"/"
+],
+[
+"expr",
+"totalRequested"
+]
+],
+"exprs": [
+"results.sumOf { it.placedCount }",
+"totalRequested"
+],
+"line": 3559
+},
+{
+"file": "MainActivity.kt",
+"offset": 162957,
+"end": 162965,
+"raw": "分板排版结果",
+"segments": [
+[
+"txt",
+"分板排版结果"
+]
+],
+"exprs": [],
+"line": 3563
+},
+{
+"file": "MainActivity.kt",
+"offset": 163031,
+"end": 163035,
+"raw": "应用",
+"segments": [
+[
+"txt",
+"应用"
+]
+],
+"exprs": [],
+"line": 3565
+},
+{
+"file": "MainActivity.kt",
+"offset": 163091,
+"end": 163121,
+"raw": "已应用分板排版: ${results.size} 张板材",
+"segments": [
+[
+"txt",
+"已应用分板排版: "
+],
+[
+"expr",
+"results.size"
+],
+[
+"txt",
+" 张板材"
+]
+],
+"exprs": [
+"results.size"
+],
+"line": 3566
+},
+{
+"file": "MainActivity.kt",
+"offset": 163168,
+"end": 163172,
+"raw": "取消",
+"segments": [
+[
+"txt",
+"取消"
+]
+],
+"exprs": [],
+"line": 3568
+},
+{
+"file": "MainActivity.kt",
+"offset": 163268,
+"end": 163275,
+"raw": "已应用排版",
+"segments": [
+[
+"txt",
+"已应用排版"
+]
+],
+"exprs": [],
+"line": 3572
+},
+{
+"file": "MainActivity.kt",
+"offset": 163364,
+"end": 163376,
+"raw": "没有可应用的排版结果",
+"segments": [
+[
+"txt",
+"没有可应用的排版结果"
+]
+],
+"exprs": [],
+"line": 3574
+},
+{
+"file": "MainActivity.kt",
+"offset": 163442,
+"end": 163448,
+"raw": "排版导入",
+"segments": [
+[
+"txt",
+"排版导入"
+]
+],
+"exprs": [],
+"line": 3577
+},
+{
+"file": "MainActivity.kt",
+"offset": 164256,
+"end": 164311,
+"raw": "图层 ${nested.layers.size} · 实体 ${nested.entities.size}",
+"segments": [
+[
+"txt",
+"图层 "
+],
+[
+"expr",
+"nested.layers.size"
+],
+[
+"txt",
+" · 实体 "
+],
+[
+"expr",
+"nested.entities.size"
+]
+],
+"exprs": [
+"nested.layers.size",
+"nested.entities.size"
+],
+"line": 3592
+},
+{
+"file": "MainActivity.kt",
+"offset": 172645,
+"end": 172686,
+"raw": "图层 ${parsed.document.layers.size} · $it",
+"segments": [
+[
+"txt",
+"图层 "
+],
+[
+"expr",
+"parsed.document.layers.size"
+],
+[
+"txt",
+" · "
+],
+[
+"expr",
+"it"
+]
+],
+"exprs": [
+"parsed.document.layers.size",
+"it"
+],
+"line": 3763
+},
+{
+"file": "MainActivity.kt",
+"offset": 172712,
+"end": 172747,
+"raw": "图层 ${parsed.document.layers.size}",
+"segments": [
+[
+"txt",
+"图层 "
+],
+[
+"expr",
+"parsed.document.layers.size"
+]
+],
+"exprs": [
+"parsed.document.layers.size"
+],
+"line": 3764
+},
+{
+"file": "MainActivity.kt",
+"offset": 173237,
+"end": 173250,
+"raw": "已选中线段，可修改坐标",
+"segments": [
+[
+"txt",
+"已选中线段，可修改坐标"
+]
+],
+"exprs": [],
+"line": 3777
+},
+{
+"file": "MainActivity.kt",
+"offset": 173788,
+"end": 173793,
+"raw": "运行中",
+"segments": [
+[
+"txt",
+"运行中"
+]
+],
+"exprs": [],
+"line": 3791
+},
+{
+"file": "MainActivity.kt",
+"offset": 173816,
+"end": 173821,
+"raw": "已暂停",
+"segments": [
+[
+"txt",
+"已暂停"
+]
+],
+"exprs": [],
+"line": 3792
+},
+{
+"file": "MainActivity.kt",
+"offset": 173842,
+"end": 173847,
+"raw": "未开始",
+"segments": [
+[
+"txt",
+"未开始"
+]
+],
+"exprs": [],
+"line": 3793
+},
+{
+"file": "MainActivity.kt",
+"offset": 174091,
+"end": 174095,
+"raw": "开始",
+"segments": [
+[
+"txt",
+"开始"
+]
+],
+"exprs": [],
+"line": 3801
+},
+{
+"file": "MainActivity.kt",
+"offset": 174126,
+"end": 174131,
+"raw": "已完成",
+"segments": [
+[
+"txt",
+"已完成"
+]
+],
+"exprs": [],
+"line": 3802
+},
+{
+"file": "MainActivity.kt",
+"offset": 174166,
+"end": 174172,
+"raw": "预演完成",
+"segments": [
+[
+"txt",
+"预演完成"
+]
+],
+"exprs": [],
+"line": 3803
+},
+{
+"file": "MainActivity.kt",
+"offset": 174405,
+"end": 174415,
+"raw": "智能排版（独立）",
+"segments": [
+[
+"txt",
+"智能排版（独立）"
+]
+],
+"exprs": [],
+"line": 3812
+},
+{
+"file": "MainActivity.kt",
+"offset": 174652,
+"end": 174658,
+"raw": "板材参数",
+"segments": [
+[
+"txt",
+"板材参数"
+]
+],
+"exprs": [],
+"line": 3819
+},
+{
+"file": "MainActivity.kt",
+"offset": 174793,
+"end": 174797,
+"raw": "长度",
+"segments": [
+[
+"txt",
+"长度"
+]
+],
+"exprs": [],
+"line": 3822
+},
+{
+"file": "MainActivity.kt",
+"offset": 175348,
+"end": 175352,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 3832
+},
+{
+"file": "MainActivity.kt",
+"offset": 175904,
+"end": 175908,
+"raw": "厚度",
+"segments": [
+[
+"txt",
+"厚度"
+]
+],
+"exprs": [],
+"line": 3842
+},
+{
+"file": "MainActivity.kt",
+"offset": 176423,
+"end": 176427,
+"raw": "长度",
+"segments": [
+[
+"txt",
+"长度"
+]
+],
+"exprs": [],
+"line": 3851
+},
+{
+"file": "MainActivity.kt",
+"offset": 176439,
+"end": 176443,
+"raw": "宽度",
+"segments": [
+[
+"txt",
+"宽度"
+]
+],
+"exprs": [],
+"line": 3851
+},
+{
+"file": "MainActivity.kt",
+"offset": 176455,
+"end": 176459,
+"raw": "厚度",
+"segments": [
+[
+"txt",
+"厚度"
+]
+],
+"exprs": [],
+"line": 3851
+},
+{
+"file": "MainActivity.kt",
+"offset": 176947,
+"end": 176953,
+"raw": "推荐板材",
+"segments": [
+[
+"txt",
+"推荐板材"
+]
+],
+"exprs": [],
+"line": 3861
+},
+{
+"file": "MainActivity.kt",
+"offset": 177070,
+"end": 177078,
+"raw": "套用推荐尺寸",
+"segments": [
+[
+"txt",
+"套用推荐尺寸"
+]
+],
+"exprs": [],
+"line": 3862
+},
+{
+"file": "MainActivity.kt",
+"offset": 178178,
+"end": 178230,
+"raw": "板材 ${\"%.0f\".format(wVal)} x ${\"%.0f\".format(hVal)}",
+"segments": [
+[
+"txt",
+"板材 "
+],
+[
+"expr",
+"\"%.0f\".format(wVal)"
+],
+[
+"txt",
+" x "
+],
+[
+"expr",
+"\"%.0f\".format(hVal)"
+]
+],
+"exprs": [
+"\"%.0f\".format(wVal)",
+"\"%.0f\".format(hVal)"
+],
+"line": 3882
+},
+{
+"file": "MainActivity.kt",
+"offset": 178497,
+"end": 178504,
+"raw": "导入/图库",
+"segments": [
+[
+"txt",
+"导入/图库"
+]
+],
+"exprs": [],
+"line": 3889
+},
+{
+"file": "MainActivity.kt",
+"offset": 178554,
+"end": 178562,
+"raw": "导入零件文件",
+"segments": [
+[
+"txt",
+"导入零件文件"
+]
+],
+"exprs": [],
+"line": 3890
+},
+{
+"file": "MainActivity.kt",
+"offset": 178661,
+"end": 178667,
+"raw": "添加矩形",
+"segments": [
+[
+"txt",
+"添加矩形"
+]
+],
+"exprs": [],
+"line": 3891
+},
+{
+"file": "MainActivity.kt",
+"offset": 178743,
+"end": 178749,
+"raw": "添加圆形",
+"segments": [
+[
+"txt",
+"添加圆形"
+]
+],
+"exprs": [],
+"line": 3892
+},
+{
+"file": "MainActivity.kt",
+"offset": 178830,
+"end": 178836,
+"raw": "零件列表",
+"segments": [
+[
+"txt",
+"零件列表"
+]
+],
+"exprs": [],
+"line": 3894
+},
+{
+"file": "MainActivity.kt",
+"offset": 178947,
+"end": 178953,
+"raw": "排版参数",
+"segments": [
+[
+"txt",
+"排版参数"
+]
+],
+"exprs": [],
+"line": 3897
+},
+{
+"file": "MainActivity.kt",
+"offset": 179021,
+"end": 179025,
+"raw": "间距",
+"segments": [
+[
+"txt",
+"间距"
+]
+],
+"exprs": [],
+"line": 3899
+},
+{
+"file": "MainActivity.kt",
+"offset": 179508,
+"end": 179512,
+"raw": "间距",
+"segments": [
+[
+"txt",
+"间距"
+]
+],
+"exprs": [],
+"line": 3909
+},
+{
+"file": "MainActivity.kt",
+"offset": 179752,
+"end": 179758,
+"raw": "排版策略",
+"segments": [
+[
+"txt",
+"排版策略"
+]
+],
+"exprs": [],
+"line": 3917
+},
+{
+"file": "MainActivity.kt",
+"offset": 181914,
+"end": 181920,
+"raw": "自动排样",
+"segments": [
+[
+"txt",
+"自动排样"
+]
+],
+"exprs": [],
+"line": 3963
+},
+{
+"file": "MainActivity.kt",
+"offset": 182418,
+"end": 182424,
+"raw": "对比方案",
+"segments": [
+[
+"txt",
+"对比方案"
+]
+],
+"exprs": [],
+"line": 3970
+},
+{
+"file": "MainActivity.kt",
+"offset": 182799,
+"end": 182805,
+"raw": "自动分板",
+"segments": [
+[
+"txt",
+"自动分板"
+]
+],
+"exprs": [],
+"line": 3976
+},
+{
+"file": "MainActivity.kt",
+"offset": 183294,
+"end": 183301,
+"raw": "应用到视图",
+"segments": [
+[
+"txt",
+"应用到视图"
+]
+],
+"exprs": [],
+"line": 3983
+},
+{
+"file": "NestingOptimizer.kt",
+"offset": 431,
+"end": 502,
+"raw": "⚠ 利用率较低 (${String.format(\"%.1f\", result.utilization)}%)，建议调整零件排列或板材尺寸",
+"segments": [
+[
+"txt",
+"⚠ 利用率较低 ("
+],
+[
+"expr",
+"String.format(\"%.1f\", result.utilization)"
+],
+[
+"txt",
+"%)，建议调整零件排列或板材尺寸"
+]
+],
+"exprs": [
+"String.format(\"%.1f\", result.utilization)"
+],
+"line": 21
+},
+{
+"file": "NestingOptimizer.kt",
+"offset": 611,
+"end": 665,
+"raw": "⚠ 有 ${result.failedParts.size} 个零件无法放置，建议增加板材尺寸或减少间距",
+"segments": [
+[
+"txt",
+"⚠ 有 "
+],
+[
+"expr",
+"result.failedParts.size"
+],
+[
+"txt",
+" 个零件无法放置，建议增加板材尺寸或减少间距"
+]
+],
+"exprs": [
+"result.failedParts.size"
+],
+"line": 26
+},
+{
+"file": "NestingOptimizer.kt",
+"offset": 751,
+"end": 787,
+"raw": "💡 间距较大 (${minGap}mm)，可尝试减小间距以提高利用率",
+"segments": [
+[
+"txt",
+"💡 间距较大 ("
+],
+[
+"expr",
+"minGap"
+],
+[
+"txt",
+"mm)，可尝试减小间距以提高利用率"
+]
+],
+"exprs": [
+"minGap"
+],
+"line": 31
+},
+{
+"file": "NestingOptimizer.kt",
+"offset": 1069,
+"end": 1096,
+"raw": "💡 板材利用率很高，考虑使用更大的板材或分成多张板",
+"segments": [
+[
+"txt",
+"💡 板材利用率很高，考虑使用更大的板材或分成多张板"
+]
+],
+"exprs": [],
+"line": 40
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 432,
+"end": 446,
+"raw": "FFD (首次适配递减)",
+"segments": [
+[
+"txt",
+"FFD (首次适配递减)"
+]
+],
+"exprs": [],
+"line": 24
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 478,
+"end": 505,
+"raw": "按零件面积从大到小排列，对每个零件尝试4个旋转角度",
+"segments": [
+[
+"txt",
+"按零件面积从大到小排列，对每个零件尝试4个旋转角度"
+]
+],
+"exprs": [],
+"line": 25
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 2493,
+"end": 2523,
+"raw": "${part.name} (第 ${it + 1} 个)",
+"segments": [
+[
+"expr",
+"part.name"
+],
+[
+"txt",
+" (第 "
+],
+[
+"expr",
+"it + 1"
+],
+[
+"txt",
+" 个)"
+]
+],
+"exprs": [
+"part.name",
+"it + 1"
+],
+"line": 78
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 5205,
+"end": 5221,
+"raw": "BestFit (最优适配)",
+"segments": [
+[
+"txt",
+"BestFit (最优适配)"
+]
+],
+"exprs": [],
+"line": 160
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 5253,
+"end": 5273,
+"raw": "对每个零件选择浪费空间最少的放置位置",
+"segments": [
+[
+"txt",
+"对每个零件选择浪费空间最少的放置位置"
+]
+],
+"exprs": [],
+"line": 161
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 7366,
+"end": 7396,
+"raw": "${part.name} (第 ${it + 1} 个)",
+"segments": [
+[
+"expr",
+"part.name"
+],
+[
+"txt",
+" (第 "
+],
+[
+"expr",
+"it + 1"
+],
+[
+"txt",
+" 个)"
+]
+],
+"exprs": [
+"part.name",
+"it + 1"
+],
+"line": 213
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 10059,
+"end": 10065,
+"raw": "条纹排列",
+"segments": [
+[
+"txt",
+"条纹排列"
+]
+],
+"exprs": [],
+"line": 295
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 10097,
+"end": 10119,
+"raw": "按行排列，每行尽可能紧凑，适合长条形零件",
+"segments": [
+[
+"txt",
+"按行排列，每行尽可能紧凑，适合长条形零件"
+]
+],
+"exprs": [],
+"line": 296
+},
+{
+"file": "NestingStrategy.kt",
+"offset": 12983,
+"end": 13013,
+"raw": "${part.name} (第 ${it + 1} 个)",
+"segments": [
+[
+"expr",
+"part.name"
+],
+[
+"txt",
+" (第 "
+],
+[
+"expr",
+"it + 1"
+],
+[
+"txt",
+" 个)"
+]
+],
+"exprs": [
+"part.name",
+"it + 1"
+],
+"line": 367
+}
+]

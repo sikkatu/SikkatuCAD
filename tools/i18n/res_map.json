@@ -1,0 +1,4211 @@
+{
+ "s0001": {
+  "zh": "无法读取 PDF 文件",
+  "masked": "无法读取 PDF 文件",
+  "exprs": [],
+  "en": "Unable to read PDF file",
+  "ru": "Невозможно прочитать PDF-файл",
+  "resourceable": true
+ },
+ "s0002": {
+  "zh": "PDF 中没有可转换的矢量路径",
+  "masked": "PDF 中没有可转换的矢量路径",
+  "exprs": [],
+  "en": "There are no convertible vector paths in PDF",
+  "ru": "В PDF нет конвертируемых векторных путей.",
+  "resourceable": true
+ },
+ "s0003": {
+  "zh": "毫米",
+  "masked": "毫米",
+  "exprs": [],
+  "en": "mm",
+  "ru": "мм",
+  "resourceable": true
+ },
+ "s0004": {
+  "zh": "(?i)比例\\s*[:：]?\\s*1\\s*[:：]\\s*(\\d+(?:\\.\\d+)?)",
+  "masked": "(?i)比例\\s*[:：]?\\s*1\\s*[:：]\\s*(\\d+(?:\\.\\d+)?)",
+  "exprs": [],
+  "en": "(?i) Ratio\\s*[::]?\\s*1\\s*[::]\\s*(\\d+(?:\\.\\d+)?)",
+  "ru": "(?i) Отношение\\s*[::]?\\s*1\\s*[::]\\s*(\\d+(?:\\.\\d+)?)",
+  "resourceable": false
+ },
+ "s0005": {
+  "zh": "未知版本",
+  "masked": "未知版本",
+  "exprs": [],
+  "en": "Unknown version",
+  "ru": "Неизвестная версия",
+  "resourceable": true
+ },
+ "s0006": {
+  "zh": "未知",
+  "masked": "未知",
+  "exprs": [],
+  "en": "Unknown",
+  "ru": "Неизвестно",
+  "resourceable": true
+ },
+ "s0007": {
+  "zh": "当前工程已把 DWG 查看入口做出来，但完整渲染需要再接入 C/C++ 解析库。",
+  "masked": "当前工程已把 DWG 查看入口做出来，但完整渲染需要再接入 C/C++ 解析库。",
+  "exprs": [],
+  "en": "The current project has created a DWG viewing entrance, but complete rendering requires access to the C/C++ parsing library.",
+  "ru": "В текущем проекте создан вход для просмотра DWG, но для полной визуализации требуется доступ к библиотеке синтаксического анализа C/C++.",
+  "resourceable": true
+ },
+ "s0008": {
+  "zh": "宽 ${formatDimensionValue(bounds.width)} · 高 ${formatDimensionValue(bounds.height)}",
+  "masked": "宽 0 · 高 1",
+  "exprs": [
+   "formatDimensionValue(bounds.width)",
+   "formatDimensionValue(bounds.height)"
+  ],
+  "en": "Width 0 · Height 1",
+  "ru": "Ширина 0 · Высота 1",
+  "resourceable": true
+ },
+ "s0009": {
+  "zh": "已选起点：%.2f, %.2f",
+  "masked": "已选起点：%.2f, %.2f",
+  "exprs": [],
+  "en": "Selected starting point: %.2f, %.2f",
+  "ru": "Выбранная начальная точка: %.2f, %.2f.",
+  "resourceable": true
+ },
+ "s0010": {
+  "zh": "已选起点：%.2f, %.2f，可拖动/缩放视图后点击第二点",
+  "masked": "已选起点：%.2f, %.2f，可拖动/缩放视图后点击第二点",
+  "exprs": [],
+  "en": "Selected starting point: %.2f, %.2f, you can drag/zoom the view and click the second point",
+  "ru": "Выбранная начальная точка: %.2f, %.2f, вы можете перетащить/масштабировать вид и щелкнуть вторую точку.",
+  "resourceable": true
+ },
+ "s0011": {
+  "zh": "宽 ${formatDimensionValue(widthValue)}",
+  "masked": "宽 0",
+  "exprs": [
+   "formatDimensionValue(widthValue)"
+  ],
+  "en": "Width 0",
+  "ru": "Ширина 0",
+  "resourceable": true
+ },
+ "s0012": {
+  "zh": "高 ${formatDimensionValue(heightValue)}",
+  "masked": "高 0",
+  "exprs": [
+   "formatDimensionValue(heightValue)"
+  ],
+  "en": "High 0",
+  "ru": "Высокий 0",
+  "resourceable": true
+ },
+ "s0013": {
+  "zh": "R ${formatDimensionValue(entity.radius)} / 弧 ${formatDimensionValue(arcLength)}",
+  "masked": "R 0 / 弧 1",
+  "exprs": [
+   "formatDimensionValue(entity.radius)",
+   "formatDimensionValue(arcLength)"
+  ],
+  "en": "R 0 / arc 1",
+  "ru": "R 0 / дуга 1",
+  "resourceable": true
+ },
+ "s0014": {
+  "zh": "长 ${formatDimensionValue(distance(entity.start, entity.end))}",
+  "masked": "长 0",
+  "exprs": [
+   "formatDimensionValue(distance(entity.start, entity.end))"
+  ],
+  "en": "long 0",
+  "ru": "длинный 0",
+  "resourceable": true
+ },
+ "s0015": {
+  "zh": "长 ${formatDimensionValue(distance(selection.start, selection.end))}",
+  "masked": "长 0",
+  "exprs": [
+   "formatDimensionValue(distance(selection.start, selection.end))"
+  ],
+  "en": "long 0",
+  "ru": "длинный 0",
+  "resourceable": true
+ },
+ "s0016": {
+  "zh": "R ${formatDimensionValue(entity.radius)}  弧长 ${formatDimensionValue(arcLength)}",
+  "masked": "R 0  弧长 1",
+  "exprs": [
+   "formatDimensionValue(entity.radius)",
+   "formatDimensionValue(arcLength)"
+  ],
+  "en": "R 0 Arc length 1",
+  "ru": "R 0 Длина дуги 1",
+  "resourceable": true
+ },
+ "s0017": {
+  "zh": "自由点",
+  "masked": "自由点",
+  "exprs": [],
+  "en": "free point",
+  "ru": "свободная точка",
+  "resourceable": true
+ },
+ "s0018": {
+  "zh": "端点",
+  "masked": "端点",
+  "exprs": [],
+  "en": "endpoint",
+  "ru": "конечная точка",
+  "resourceable": true
+ },
+ "s0019": {
+  "zh": "中点",
+  "masked": "中点",
+  "exprs": [],
+  "en": "midpoint",
+  "ru": "середина",
+  "resourceable": true
+ },
+ "s0020": {
+  "zh": "最近点",
+  "masked": "最近点",
+  "exprs": [],
+  "en": "closest",
+  "ru": "ближайший",
+  "resourceable": true
+ },
+ "s0021": {
+  "zh": "测量距离：%.2f",
+  "masked": "测量距离：%.2f",
+  "exprs": [],
+  "en": "Measuring distance: %.2f",
+  "ru": "Расстояние измерения: %.2f",
+  "resourceable": true
+ },
+ "s0022": {
+  "zh": "角度点 1/3：%.2f, %.2f",
+  "masked": "角度点 1/3：%.2f, %.2f",
+  "exprs": [],
+  "en": "Angle point 1/3: %.2f, %.2f",
+  "ru": "Угловая точка 1/3: %.2f, %.2f",
+  "resourceable": true
+ },
+ "s0023": {
+  "zh": "角度点 2/3：继续选择第三点",
+  "masked": "角度点 2/3：继续选择第三点",
+  "exprs": [],
+  "en": "Angle point 2/3: Continue to select the third point",
+  "ru": "Угловая точка 2/3: Продолжайте выбирать третью точку.",
+  "resourceable": true
+ },
+ "s0024": {
+  "zh": "夹角：%.2f°",
+  "masked": "夹角：%.2f°",
+  "exprs": [],
+  "en": "Angle: %.2f°",
+  "ru": "Угол: %.2f°",
+  "resourceable": true
+ },
+ "s0025": {
+  "zh": "面积点 ${areaPoints.size}/3：继续选点",
+  "masked": "面积点 0/3：继续选点",
+  "exprs": [
+   "areaPoints.size"
+  ],
+  "en": "Area point 0/3: continue to select points",
+  "ru": "Точка площади 0/3: продолжить выбор точек",
+  "resourceable": true
+ },
+ "s0026": {
+  "zh": "面积点 ${areaPoints.size}：继续选点或点击“完成面积”",
+  "masked": "面积点 0：继续选点或点击“完成面积”",
+  "exprs": [
+   "areaPoints.size"
+  ],
+  "en": "Area point 0: Continue to select points or click \"Complete Area\"",
+  "ru": "Точка площади 0: продолжайте выбирать точки или нажмите «Завершить площадь».",
+  "resourceable": true
+ },
+ "s0027": {
+  "zh": "面积：%.2f  周长：%.2f",
+  "masked": "面积：%.2f  周长：%.2f",
+  "exprs": [],
+  "en": "Area: %.2f Perimeter: %.2f",
+  "ru": "Площадь: %.2f Периметр: %.2f",
+  "resourceable": true
+ },
+ "s0028": {
+  "zh": "距离测量：点击两次取点",
+  "masked": "距离测量：点击两次取点",
+  "exprs": [],
+  "en": "Distance measurement: click twice to take a point",
+  "ru": "Измерение расстояния: нажмите дважды, чтобы определить точку.",
+  "resourceable": true
+ },
+ "s0029": {
+  "zh": "角度测量：依次点击三点",
+  "masked": "角度测量：依次点击三点",
+  "exprs": [],
+  "en": "Angle measurement: click three points in sequence",
+  "ru": "Измерение угла: нажмите последовательно три точки.",
+  "resourceable": true
+ },
+ "s0030": {
+  "zh": "面积测量：连续点击轮廓点",
+  "masked": "面积测量：连续点击轮廓点",
+  "exprs": [],
+  "en": "Area measurement: continuously click on the contour points",
+  "ru": "Измерение площади: непрерывно нажимайте на точки контура.",
+  "resourceable": true
+ },
+ "s0031": {
+  "zh": "压缩包内未发现支持的图纸文件",
+  "masked": "压缩包内未发现支持的图纸文件",
+  "exprs": [],
+  "en": "No supported drawing files were found in the compressed package.",
+  "ru": "В сжатом пакете не обнаружено поддерживаемых файлов чертежей.",
+  "resourceable": true
+ },
+ "s0032": {
+  "zh": "无法读取文件路径",
+  "masked": "无法读取文件路径",
+  "exprs": [],
+  "en": "Unable to read file path",
+  "ru": "Невозможно прочитать путь к файлу",
+  "resourceable": true
+ },
+ "s0033": {
+  "zh": "未命名文件",
+  "masked": "未命名文件",
+  "exprs": [],
+  "en": "Untitled file",
+  "ru": "Файл без имени",
+  "resourceable": true
+ },
+ "s0034": {
+  "zh": "无法读取导入文件",
+  "masked": "无法读取导入文件",
+  "exprs": [],
+  "en": "Unable to read import file",
+  "ru": "Невозможно прочитать файл импорта",
+  "resourceable": true
+ },
+ "s0035": {
+  "zh": "无法读取压缩包",
+  "masked": "无法读取压缩包",
+  "exprs": [],
+  "en": "Unable to read compressed package",
+  "ru": "Невозможно прочитать сжатый пакет",
+  "resourceable": true
+ },
+ "s0036": {
+  "zh": "${root.absolutePath}\\n已管理 ${files.size} 个文件 · ${formatSize(size)}",
+  "masked": "0\\n已管理 1 个文件 · 2",
+  "exprs": [
+   "root.absolutePath",
+   "files.size",
+   "formatSize(size)"
+  ],
+  "en": "0\\nManaged 1 files · 2",
+  "ru": "0\\nУправляемые 1 файлы · 2",
+  "resourceable": true
+ },
+ "s0037": {
+  "zh": "未开始",
+  "masked": "未开始",
+  "exprs": [],
+  "en": "Not started",
+  "ru": "Не запущено",
+  "resourceable": true
+ },
+ "s0038": {
+  "zh": "无法写入目标文件",
+  "masked": "无法写入目标文件",
+  "exprs": [],
+  "en": "Unable to write to target file",
+  "ru": "Невозможно записать в целевой файл",
+  "resourceable": true
+ },
+ "s0039": {
+  "zh": "导出完成",
+  "masked": "导出完成",
+  "exprs": [],
+  "en": "Export completed",
+  "ru": "Экспорт завершен",
+  "resourceable": true
+ },
+ "s0040": {
+  "zh": "导出失败：${error.message ?: \"未知错误\"}",
+  "masked": "导出失败：0",
+  "exprs": [
+   "error.message ?: \"未知错误\""
+  ],
+  "en": "Export failed: 0",
+  "ru": "Экспорт не удался: 0",
+  "resourceable": true
+ },
+ "s0041": {
+  "zh": "无法读取当前文件",
+  "masked": "无法读取当前文件",
+  "exprs": [],
+  "en": "Unable to read current file",
+  "ru": "Невозможно прочитать текущий файл",
+  "resourceable": true
+ },
+ "s0042": {
+  "zh": "排版导入.dxf",
+  "masked": "排版导入.dxf",
+  "exprs": [],
+  "en": "Typesetting import.dxf",
+  "ru": "Верстка import.dxf",
+  "resourceable": true
+ },
+ "s0043": {
+  "zh": "已导入排版文件：${it.fileName}",
+  "masked": "已导入排版文件：0",
+  "exprs": [
+   "it.fileName"
+  ],
+  "en": "Imported layout file: 0",
+  "ru": "Импортированный файл макета: 0",
+  "resourceable": true
+ },
+ "s0044": {
+  "zh": "排版导入失败：${error.message}",
+  "masked": "排版导入失败：0",
+  "exprs": [
+   "error.message"
+  ],
+  "en": "Typesetting import failed: 0",
+  "ru": "Не удалось импортировать набор текста: 0",
+  "resourceable": true
+ },
+ "s0045": {
+  "zh": "请先打开图纸",
+  "masked": "请先打开图纸",
+  "exprs": [],
+  "en": "Please open the drawing first",
+  "ru": "Пожалуйста, сначала откройте рисунок",
+  "resourceable": true
+ },
+ "s0046": {
+  "zh": "自动标注已开启：${binding.dxfCanvasView.autoDimensionSummary().orEmpty()}",
+  "masked": "自动标注已开启：0",
+  "exprs": [
+   "binding.dxfCanvasView.autoDimensionSummary().orEmpty()"
+  ],
+  "en": "Automatic labeling is on: 0",
+  "ru": "Автоматическая маркировка включена: 0",
+  "resourceable": true
+ },
+ "s0047": {
+  "zh": "自动标注已关闭",
+  "masked": "自动标注已关闭",
+  "exprs": [],
+  "en": "Automatic labeling is turned off",
+  "ru": "Автоматическая маркировка отключена.",
+  "resourceable": true
+ },
+ "s0048": {
+  "zh": "已切换到 2D 视图",
+  "masked": "已切换到 2D 视图",
+  "exprs": [],
+  "en": "Switched to 2D view",
+  "ru": "Переключен на 2D-вид.",
+  "resourceable": true
+ },
+ "s0049": {
+  "zh": "已切换到 3D 视图，可拖动旋转",
+  "masked": "已切换到 3D 视图，可拖动旋转",
+  "exprs": [],
+  "en": "Switched to 3D view, drag and rotate",
+  "ru": "Переключился на 3D-вид, перетащите и поверните",
+  "resourceable": true
+ },
+ "s0050": {
+  "zh": "坡口显示已开启",
+  "masked": "坡口显示已开启",
+  "exprs": [],
+  "en": "The bevel display is turned on",
+  "ru": "Отображение наклона включено",
+  "resourceable": true
+ },
+ "s0051": {
+  "zh": "坡口显示已关闭，按直切显示",
+  "masked": "坡口显示已关闭，按直切显示",
+  "exprs": [],
+  "en": "The bevel display is turned off, press Straight Cut to display",
+  "ru": "Индикация наклона отключена. Чтобы отобразить изображение, нажмите «Прямой рез».",
+  "resourceable": true
+ },
+ "s0052": {
+  "zh": "空移线已显示",
+  "masked": "空移线已显示",
+  "exprs": [],
+  "en": "The empty shift line is shown",
+  "ru": "Отображается пустая строка смещения",
+  "resourceable": true
+ },
+ "s0053": {
+  "zh": "空移线已隐藏",
+  "masked": "空移线已隐藏",
+  "exprs": [],
+  "en": "The empty shift line is hidden",
+  "ru": "Пустая строка смены скрыта",
+  "resourceable": true
+ },
+ "s0054": {
+  "zh": "没有可导出的图形",
+  "masked": "没有可导出的图形",
+  "exprs": [],
+  "en": "No graphics available for export",
+  "ru": "Нет графики, доступной для экспорта",
+  "resourceable": true
+ },
+ "s0055": {
+  "zh": "未命名",
+  "masked": "未命名",
+  "exprs": [],
+  "en": "Untitled",
+  "ru": "Без имени",
+  "resourceable": true
+ },
+ "s0056": {
+  "zh": "取消标注",
+  "masked": "取消标注",
+  "exprs": [],
+  "en": "Unlabel",
+  "ru": "Снять метку",
+  "resourceable": true
+ },
+ "s0057": {
+  "zh": "一键标注",
+  "masked": "一键标注",
+  "exprs": [],
+  "en": "One-click annotation",
+  "ru": "Аннотация в один клик",
+  "resourceable": true
+ },
+ "s0058": {
+  "zh": "正在解压 $sourceName",
+  "masked": "正在解压 0",
+  "exprs": [
+   "sourceName"
+  ],
+  "en": "Unzipping 0",
+  "ru": "Разархивирование 0",
+  "resourceable": true
+ },
+ "s0059": {
+  "zh": "正在导入 $sourceName",
+  "masked": "正在导入 0",
+  "exprs": [
+   "sourceName"
+  ],
+  "en": "Importing 0",
+  "ru": "Импорт 0",
+  "resourceable": true
+ },
+ "s0060": {
+  "zh": "导入失败：压缩包内未发现支持的图纸文件",
+  "masked": "导入失败：压缩包内未发现支持的图纸文件",
+  "exprs": [],
+  "en": "Import failed: No supported drawing file found in the compressed package",
+  "ru": "Ошибка импорта: в сжатом пакете не найден поддерживаемый файл чертежа.",
+  "resourceable": true
+ },
+ "s0061": {
+  "zh": "，共导入 ${refs.size} 个图纸",
+  "masked": "，共导入 0 个图纸",
+  "exprs": [
+   "refs.size"
+  ],
+  "en": ", a total of 0 drawings were imported",
+  "ru": ", всего было импортировано 0 рисунков",
+  "resourceable": true
+ },
+ "s0062": {
+  "zh": "已解压到专用目录：${firstRef.name}$suffix",
+  "masked": "已解压到专用目录：01",
+  "exprs": [
+   "firstRef.name",
+   "suffix"
+  ],
+  "en": "Unzipped to a dedicated directory: 01",
+  "ru": "Разархивирован в выделенный каталог: 01",
+  "resourceable": true
+ },
+ "s0063": {
+  "zh": "已导入到专用目录：${firstRef.name}",
+  "masked": "已导入到专用目录：0",
+  "exprs": [
+   "firstRef.name"
+  ],
+  "en": "Imported into dedicated directory: 0",
+  "ru": "Импортировано в специальный каталог: 0",
+  "resourceable": true
+ },
+ "s0064": {
+  "zh": "导入失败：${error.message ?: \"未知错误\"}，尝试直接打开",
+  "masked": "导入失败：0，尝试直接打开",
+  "exprs": [
+   "error.message ?: \"未知错误\""
+  ],
+  "en": "Import failed: 0, try to open directly",
+  "ru": "Не удалось импортировать: 0, попробуйте открыть напрямую.",
+  "resourceable": true
+ },
+ "s0065": {
+  "zh": "正在解析 $fileName",
+  "masked": "正在解析 0",
+  "exprs": [
+   "fileName"
+  ],
+  "en": "Parsing 0",
+  "ru": "Разбор 0",
+  "resourceable": true
+ },
+ "s0066": {
+  "zh": "解析失败：${error.message ?: \"未知错误\"}",
+  "masked": "解析失败：0",
+  "exprs": [
+   "error.message ?: \"未知错误\""
+  ],
+  "en": "Parse failed: 0",
+  "ru": "Не удалось выполнить анализ: 0",
+  "resourceable": true
+ },
+ "s0067": {
+  "zh": "无法打开文件",
+  "masked": "无法打开文件",
+  "exprs": [],
+  "en": "Unable to open file",
+  "ru": "Невозможно открыть файл",
+  "resourceable": true
+ },
+ "s0068": {
+  "zh": "请确认文件可读，并且格式是 .dxf、.dwg、.gen、.nc 或 .pdf。",
+  "masked": "请确认文件可读，并且格式是 .dxf、.dwg、.gen、.nc 或 .pdf。",
+  "exprs": [],
+  "en": "Please confirm that the file is readable and in .dxf, .dwg, .gen, .nc, or .pdf format.",
+  "ru": "Убедитесь, что файл доступен для чтения и имеет формат .dxf, .dwg, .gen, .nc или .pdf.",
+  "resourceable": true
+ },
+ "s0069": {
+  "zh": "示例加载失败：${error.message ?: \"未知错误\"}",
+  "masked": "示例加载失败：0",
+  "exprs": [
+   "error.message ?: \"未知错误\""
+  ],
+  "en": "Sample loading failed: 0",
+  "ru": "Не удалось загрузить образец: 0",
+  "resourceable": true
+ },
+ "s0070": {
+  "zh": "正在重生成 $name",
+  "masked": "正在重生成 0",
+  "exprs": [
+   "name"
+  ],
+  "en": "Regenerating to 0",
+  "ru": "Регенерация до 0",
+  "resourceable": true
+ },
+ "s0071": {
+  "zh": "DXF 实体数：${parsed.document.entities.size}",
+  "masked": "DXF 实体数：0",
+  "exprs": [
+   "parsed.document.entities.size"
+  ],
+  "en": "Number of DXF entities: 0",
+  "ru": "Количество объектов DXF: 0",
+  "resourceable": true
+ },
+ "s0072": {
+  "zh": "图层 ${parsed.document.layers.size} · $it",
+  "masked": "图层 0 · 1",
+  "exprs": [
+   "parsed.document.layers.size",
+   "it"
+  ],
+  "en": "Layer 0 · 1",
+  "ru": "Слой 0 · 1",
+  "resourceable": true
+ },
+ "s0073": {
+  "zh": "图层 ${parsed.document.layers.size}",
+  "masked": "图层 0",
+  "exprs": [
+   "parsed.document.layers.size"
+  ],
+  "en": "Layer 0",
+  "ru": "Слой 0",
+  "resourceable": true
+ },
+ "s0074": {
+  "zh": "打开 DXF",
+  "masked": "打开 DXF",
+  "exprs": [],
+  "en": "Open DXF",
+  "ru": "Открыть DXF",
+  "resourceable": true
+ },
+ "s0075": {
+  "zh": "GEN 工艺段：${parsed.document.operations.size}",
+  "masked": "GEN 工艺段：0",
+  "exprs": [
+   "parsed.document.operations.size"
+  ],
+  "en": "GEN process section:0",
+  "ru": "Раздел процесса GEN:0",
+  "resourceable": true
+ },
+ "s0076": {
+  "zh": "打开 GEN",
+  "masked": "打开 GEN",
+  "exprs": [],
+  "en": "Open GEN",
+  "ru": "Открыть ОБЩ",
+  "resourceable": true
+ },
+ "s0077": {
+  "zh": "NC 轨迹段：${parsed.program.moves.size}",
+  "masked": "NC 轨迹段：0",
+  "exprs": [
+   "parsed.program.moves.size"
+  ],
+  "en": "NC trajectory segment: 0",
+  "ru": "Сегмент траектории NC: 0",
+  "resourceable": true
+ },
+ "s0078": {
+  "zh": "打开 NC",
+  "masked": "打开 NC",
+  "exprs": [],
+  "en": "Open NC",
+  "ru": "Открытый НЗ",
+  "resourceable": true
+ },
+ "s0079": {
+  "zh": "DWG 文件已识别：${parsed.preview.readableVersion}",
+  "masked": "DWG 文件已识别：0",
+  "exprs": [
+   "parsed.preview.readableVersion"
+  ],
+  "en": "DWG file recognized: 0",
+  "ru": "Распознан файл DWG: 0",
+  "resourceable": true
+ },
+ "s0080": {
+  "zh": "DWG 预览信息",
+  "masked": "DWG 预览信息",
+  "exprs": [],
+  "en": "DWG preview information",
+  "ru": "Информация о предварительном просмотре DWG",
+  "resourceable": true
+ },
+ "s0081": {
+  "zh": "版本码：${parsed.preview.versionCode}\\n识别版本：${parsed.preview.readableVersion}\\n\\n${parsed.preview.note}",
+  "masked": "版本码：0\\n识别版本：1\\n\\n2",
+  "exprs": [
+   "parsed.preview.versionCode",
+   "parsed.preview.readableVersion",
+   "parsed.preview.note"
+  ],
+  "en": "Version code: 0\\nIdentified version: 1\\n\\n2",
+  "ru": "Код версии: 0\\nИдентифицированная версия: 1\\n\\n2",
+  "resourceable": true
+ },
+ "s0082": {
+  "zh": "说明",
+  "masked": "说明",
+  "exprs": [],
+  "en": "illustrate",
+  "ru": "иллюстрировать",
+  "resourceable": true
+ },
+ "s0083": {
+  "zh": "文件",
+  "masked": "文件",
+  "exprs": [],
+  "en": "File",
+  "ru": "Файл",
+  "resourceable": true
+ },
+ "s0084": {
+  "zh": "收藏文件",
+  "masked": "收藏文件",
+  "exprs": [],
+  "en": "Collection files",
+  "ru": "Файлы коллекции",
+  "resourceable": true
+ },
+ "s0085": {
+  "zh": "还没有收藏文件。打开图纸后可在详情中收藏当前文件。",
+  "masked": "还没有收藏文件。打开图纸后可在详情中收藏当前文件。",
+  "exprs": [],
+  "en": "There are no favorite files yet. After opening the drawing, you can save the current file in the details.",
+  "ru": "Избранных файлов пока нет. Открыв чертеж, вы можете сохранить текущий файл в деталях.",
+  "resourceable": true
+ },
+ "s0086": {
+  "zh": "导入文件",
+  "masked": "导入文件",
+  "exprs": [],
+  "en": "Import file",
+  "ru": "Импортировать файл",
+  "resourceable": true
+ },
+ "s0087": {
+  "zh": "导入会先复制到应用专用分类目录，再从副本打开；历史删除默认只移除记录，避免误删原始图纸。",
+  "masked": "导入会先复制到应用专用分类目录，再从副本打开；历史删除默认只移除记录，避免误删原始图纸。",
+  "exprs": [],
+  "en": "The import will first be copied to the application-specific category directory and then opened from the copy; history deletion will only remove records by default to avoid accidentally deleting the original drawings.",
+  "ru": "Импорт сначала будет скопирован в каталог категорий конкретного приложения, а затем открыт из копии; при удалении истории по умолчанию удаляются только записи, чтобы избежать случайного удаления исходных рисунков.",
+  "resourceable": true
+ },
+ "s0088": {
+  "zh": "专用目录",
+  "masked": "专用目录",
+  "exprs": [],
+  "en": "dedicated directory",
+  "ru": "выделенный каталог",
+  "resourceable": true
+ },
+ "s0089": {
+  "zh": "＋ 新建 CAD 图形",
+  "masked": "＋ 新建 CAD 图形",
+  "exprs": [],
+  "en": "+ Create a new CAD drawing",
+  "ru": "+ Создать новый чертеж САПР",
+  "resourceable": true
+ },
+ "s0090": {
+  "zh": "＋ 导入本地图纸",
+  "masked": "＋ 导入本地图纸",
+  "exprs": [],
+  "en": "+ Import local maps",
+  "ru": "+ Импортировать местные карты",
+  "resourceable": true
+ },
+ "s0091": {
+  "zh": "保存 DXF（保留原图结构）",
+  "masked": "保存 DXF（保留原图结构）",
+  "exprs": [],
+  "en": "Save DXF (retain original image structure)",
+  "ru": "Сохранить DXF (сохранить исходную структуру изображения)",
+  "resourceable": true
+ },
+ "s0092": {
+  "zh": "选择文件库根目录",
+  "masked": "选择文件库根目录",
+  "exprs": [],
+  "en": "Select the file vault root directory",
+  "ru": "Выберите корневой каталог хранилища файлов.",
+  "resourceable": true
+ },
+ "s0093": {
+  "zh": "当前文件",
+  "masked": "当前文件",
+  "exprs": [],
+  "en": "current file",
+  "ru": "текущий файл",
+  "resourceable": true
+ },
+ "s0094": {
+  "zh": "取消收藏当前文件",
+  "masked": "取消收藏当前文件",
+  "exprs": [],
+  "en": "Cancel favorites of current file",
+  "ru": "Отменить избранное текущего файла",
+  "resourceable": true
+ },
+ "s0095": {
+  "zh": "收藏当前文件",
+  "masked": "收藏当前文件",
+  "exprs": [],
+  "en": "Save current file",
+  "ru": "Сохранить текущий файл",
+  "resourceable": true
+ },
+ "s0096": {
+  "zh": "已收藏 $fileName",
+  "masked": "已收藏 0",
+  "exprs": [
+   "fileName"
+  ],
+  "en": "Collected 0",
+  "ru": "Собрано 0",
+  "resourceable": true
+ },
+ "s0097": {
+  "zh": "已取消收藏 $fileName",
+  "masked": "已取消收藏 0",
+  "exprs": [
+   "fileName"
+  ],
+  "en": "Canceled collection 0",
+  "ru": "Отменена коллекция 0",
+  "resourceable": true
+ },
+ "s0098": {
+  "zh": "历史文件",
+  "masked": "历史文件",
+  "exprs": [],
+  "en": "historical documents",
+  "ru": "исторические документы",
+  "resourceable": true
+ },
+ "s0099": {
+  "zh": "状态",
+  "masked": "状态",
+  "exprs": [],
+  "en": "state",
+  "ru": "состояние",
+  "resourceable": true
+ },
+ "s0100": {
+  "zh": "暂无历史记录",
+  "masked": "暂无历史记录",
+  "exprs": [],
+  "en": "No history yet",
+  "ru": "Пока нет истории",
+  "resourceable": true
+ },
+ "s0101": {
+  "zh": "置顶 · ",
+  "masked": "置顶 · ",
+  "exprs": [],
+  "en": "Pin to the top ·",
+  "ru": "Закрепить вверху ·",
+  "resourceable": true
+ },
+ "s0102": {
+  "zh": "已删除历史记录",
+  "masked": "已删除历史记录",
+  "exprs": [],
+  "en": "History deleted",
+  "ru": "История удалена",
+  "resourceable": true
+ },
+ "s0103": {
+  "zh": "查看全部历史",
+  "masked": "查看全部历史",
+  "exprs": [],
+  "en": "View full history",
+  "ru": "Посмотреть полную историю",
+  "resourceable": true
+ },
+ "s0104": {
+  "zh": "分组预览",
+  "masked": "分组预览",
+  "exprs": [],
+  "en": "Group preview",
+  "ru": "Групповой предварительный просмотр",
+  "resourceable": true
+ },
+ "s0105": {
+  "zh": "分组",
+  "masked": "分组",
+  "exprs": [],
+  "en": "Group",
+  "ru": "Группа",
+  "resourceable": true
+ },
+ "s0106": {
+  "zh": "导入或打开图纸后，将按 DXF / DWG / PDF / NC 等类型自动分组。",
+  "masked": "导入或打开图纸后，将按 DXF / DWG / PDF / NC 等类型自动分组。",
+  "exprs": [],
+  "en": "After importing or opening drawings, they will be automatically grouped by type such as DXF / DWG / PDF / NC.",
+  "ru": "После импорта или открытия чертежей они будут автоматически сгруппированы по типу, например DXF/DWG/PDF/NC.",
+  "resourceable": true
+ },
+ "s0107": {
+  "zh": "清空历史文件",
+  "masked": "清空历史文件",
+  "exprs": [],
+  "en": "Clear history files",
+  "ru": "Очистить файлы истории",
+  "resourceable": true
+ },
+ "s0108": {
+  "zh": "已清空历史文件",
+  "masked": "已清空历史文件",
+  "exprs": [],
+  "en": "History files cleared",
+  "ru": "Файлы истории удалены",
+  "resourceable": true
+ },
+ "s0109": {
+  "zh": "$type · ${files.size} 个",
+  "masked": "0 · 1 个",
+  "exprs": [
+   "type",
+   "files.size"
+  ],
+  "en": "0 · 1",
+  "ru": "0 · 1",
+  "resourceable": true
+ },
+ "s0110": {
+  "zh": "已删除托管副本",
+  "masked": "已删除托管副本",
+  "exprs": [],
+  "en": "Managed copy deleted",
+  "ru": "Управляемая копия удалена.",
+  "resourceable": true
+ },
+ "s0111": {
+  "zh": "删除失败：文件不可写或不存在",
+  "masked": "删除失败：文件不可写或不存在",
+  "exprs": [],
+  "en": "Delete failed: file is not writable or does not exist",
+  "ru": "Удаление не удалось: файл недоступен для записи или не существует.",
+  "resourceable": true
+ },
+ "s0112": {
+  "zh": "暂无记录",
+  "masked": "暂无记录",
+  "exprs": [],
+  "en": "No record yet",
+  "ru": "Пока нет записей",
+  "resourceable": true
+ },
+ "s0113": {
+  "zh": "NC 自动生成",
+  "masked": "NC 自动生成",
+  "exprs": [],
+  "en": "NC automatically generated",
+  "ru": "NC генерируется автоматически",
+  "resourceable": true
+ },
+ "s0114": {
+  "zh": "外轮廓",
+  "masked": "外轮廓",
+  "exprs": [],
+  "en": "Outer bounds",
+  "ru": "Внешние границы",
+  "resourceable": true
+ },
+ "s0115": {
+  "zh": "厚度(毫米)",
+  "masked": "厚度(毫米)",
+  "exprs": [],
+  "en": "Thickness(mm)",
+  "ru": "Толщина (мм)",
+  "resourceable": true
+ },
+ "s0116": {
+  "zh": "材质",
+  "masked": "材质",
+  "exprs": [],
+  "en": "Material",
+  "ru": "Материал",
+  "resourceable": true
+ },
+ "s0117": {
+  "zh": "板材长度",
+  "masked": "板材长度",
+  "exprs": [],
+  "en": "Board length",
+  "ru": "Длина доски",
+  "resourceable": true
+ },
+ "s0118": {
+  "zh": "板材宽度",
+  "masked": "板材宽度",
+  "exprs": [],
+  "en": "Board width",
+  "ru": "Ширина доски",
+  "resourceable": true
+ },
+ "s0119": {
+  "zh": "程序名/导出名",
+  "masked": "程序名/导出名",
+  "exprs": [],
+  "en": "Program name/export name",
+  "ru": "Имя программы/имя экспорта",
+  "resourceable": true
+ },
+ "s0120": {
+  "zh": "程序名",
+  "masked": "程序名",
+  "exprs": [],
+  "en": "Program name",
+  "ru": "Название программы",
+  "resourceable": true
+ },
+ "s0121": {
+  "zh": "生成并导出 NC",
+  "masked": "生成并导出 NC",
+  "exprs": [],
+  "en": "Generate and export NC",
+  "ru": "Создание и экспорт ЧПУ",
+  "resourceable": true
+ },
+ "s0122": {
+  "zh": "已生成 NC，请选择保存位置",
+  "masked": "已生成 NC，请选择保存位置",
+  "exprs": [],
+  "en": "NC has been generated, please select the save location",
+  "ru": "NC создан, выберите место сохранения.",
+  "resourceable": true
+ },
+ "s0123": {
+  "zh": "当前 DXF 没有 сохранённого исходного потока",
+  "masked": "当前 DXF 没有 сохранённого исходного потока",
+  "exprs": [],
+  "en": "There is currently no DXF for сохранённого исходного потока",
+  "ru": "Для сохранённого исходного потока в настоящее время нет DXF.",
+  "resourceable": true
+ },
+ "s0124": {
+  "zh": "无法 подготовить DXF",
+  "masked": "无法 подготовить DXF",
+  "exprs": [],
+  "en": "Unable подготовить DXF",
+  "ru": "Невозможно обработать DXF",
+  "resourceable": true
+ },
+ "s0125": {
+  "zh": "当前识别尺寸: W ${\"%.3f\".format(bounds.width)} / H ${\"%.3f\".format(bounds.height)} mm",
+  "masked": "当前识别尺寸: W 0 / H 1 mm",
+  "exprs": [
+   "\"%.3f\".format(bounds.width)",
+   "\"%.3f\".format(bounds.height)"
+  ],
+  "en": "Current recognition size: W 0 / H 1 mm",
+  "ru": "Текущий размер распознавания: Ш 0 / В 1 мм.",
+  "resourceable": true
+ },
+ "s0126": {
+  "zh": "原始PDF尺寸: W ${\"%.3f\".format(baseBounds.width)} / H ${\"%.3f\".format(baseBounds.height)} mm",
+  "masked": "原始PDF尺寸: W 0 / H 1 mm",
+  "exprs": [
+   "\"%.3f\".format(baseBounds.width)",
+   "\"%.3f\".format(baseBounds.height)"
+  ],
+  "en": "Original PDF size: W 0 / H 1 mm",
+  "ru": "Исходный размер PDF: Ш 0 / В 1 мм.",
+  "resourceable": true
+ },
+ "s0127": {
+  "zh": "自动识别比例: 1:${\"%.3f\".format(it)}，当前套用 ${\"%.4f\".format(currentScale)}x",
+  "masked": "自动识别比例: 1:0，当前套用 1x",
+  "exprs": [
+   "\"%.3f\".format(it)",
+   "\"%.4f\".format(currentScale)"
+  ],
+  "en": "Automatic recognition ratio: 1:0, currently applied 1x",
+  "ru": "Коэффициент автоматического распознавания: 1:0, в настоящее время применяется 1x",
+  "resourceable": true
+ },
+ "s0128": {
+  "zh": "自动识别比例: 未识别",
+  "masked": "自动识别比例: 未识别",
+  "exprs": [],
+  "en": "Automatic recognition ratio: not recognized",
+  "ru": "Коэффициент автоматического распознавания: не распознан",
+  "resourceable": true
+ },
+ "s0129": {
+  "zh": "目标宽度(mm)，优先使用",
+  "masked": "目标宽度(mm)，优先使用",
+  "exprs": [],
+  "en": "Target width (mm), preferred",
+  "ru": "Целевая ширина (мм), предпочтительная",
+  "resourceable": true
+ },
+ "s0130": {
+  "zh": "目标高度(mm)，留空则按宽度等比",
+  "masked": "目标高度(mm)，留空则按宽度等比",
+  "exprs": [],
+  "en": "Target height (mm), if left blank, it will be proportional to the width.",
+  "ru": "Высота цели (мм), если оставить пустым, она будет пропорциональна ширине.",
+  "resourceable": true
+ },
+ "s0131": {
+  "zh": "PDF 尺寸校准",
+  "masked": "PDF 尺寸校准",
+  "exprs": [],
+  "en": "PDF size calibration",
+  "ru": "Калибровка размера PDF",
+  "resourceable": true
+ },
+ "s0132": {
+  "zh": "套用识别比例",
+  "masked": "套用识别比例",
+  "exprs": [],
+  "en": "Apply recognition ratio",
+  "ru": "Применить коэффициент распознавания",
+  "resourceable": true
+ },
+ "s0133": {
+  "zh": "没有识别到图纸比例",
+  "masked": "没有识别到图纸比例",
+  "exprs": [],
+  "en": "Drawing scale not recognized",
+  "ru": "Масштаб чертежа не распознан",
+  "resourceable": true
+ },
+ "s0134": {
+  "zh": "取消",
+  "masked": "取消",
+  "exprs": [],
+  "en": "Cancel",
+  "ru": "Отмена",
+  "resourceable": true
+ },
+ "s0135": {
+  "zh": "应用",
+  "masked": "应用",
+  "exprs": [],
+  "en": "application",
+  "ru": "приложение",
+  "resourceable": true
+ },
+ "s0136": {
+  "zh": "请输入有效的目标尺寸",
+  "masked": "请输入有效的目标尺寸",
+  "exprs": [],
+  "en": "Please enter a valid target size",
+  "ru": "Введите действительный целевой размер",
+  "resourceable": true
+ },
+ "s0137": {
+  "zh": "PDF尺寸校准",
+  "masked": "PDF尺寸校准",
+  "exprs": [],
+  "en": "PDF size calibration",
+  "ru": "Калибровка размера PDF",
+  "resourceable": true
+ },
+ "s0138": {
+  "zh": "已按比例校准 PDF 尺寸",
+  "masked": "已按比例校准 PDF 尺寸",
+  "exprs": [],
+  "en": "PDF dimensions calibrated to scale",
+  "ru": "Размеры PDF, откалиброванные по масштабу",
+  "resourceable": true
+ },
+ "s0139": {
+  "zh": "文件库",
+  "masked": "文件库",
+  "exprs": [],
+  "en": "File library",
+  "ru": "Библиотека файлов",
+  "resourceable": true
+ },
+ "s0140": {
+  "zh": "还没有选择目录。点击上面的“选择文件库根目录”后，就可以像原应用一样浏览所有文件。",
+  "masked": "还没有选择目录。点击上面的“选择文件库根目录”后，就可以像原应用一样浏览所有文件。",
+  "exprs": [],
+  "en": "No directory has been selected yet. After clicking \"Select file library root directory\" above, you can browse all files just like the original application.",
+  "ru": "Ни один каталог еще не выбран. Нажав выше «Выбрать корневой каталог библиотеки файлов», вы сможете просматривать все файлы так же, как в исходном приложении.",
+  "resourceable": true
+ },
+ "s0141": {
+  "zh": "当前目录",
+  "masked": "当前目录",
+  "exprs": [],
+  "en": "current directory",
+  "ru": "текущий каталог",
+  "resourceable": true
+ },
+ "s0142": {
+  "zh": "返回上一级",
+  "masked": "返回上一级",
+  "exprs": [],
+  "en": "Return to previous level",
+  "ru": "Вернуться на предыдущий уровень",
+  "resourceable": true
+ },
+ "s0143": {
+  "zh": "目录",
+  "masked": "目录",
+  "exprs": [],
+  "en": "Table of contents",
+  "ru": "Оглавление",
+  "resourceable": true
+ },
+ "s0144": {
+  "zh": "当前目录没有可显示的文件",
+  "masked": "当前目录没有可显示的文件",
+  "exprs": [],
+  "en": "There are no files to display in the current directory",
+  "ru": "В текущем каталоге нет файлов для отображения",
+  "resourceable": true
+ },
+ "s0145": {
+  "zh": "[目录] ${child.name}",
+  "masked": "[目录] 0",
+  "exprs": [
+   "child.name"
+  ],
+  "en": "[Contents] 0",
+  "ru": "[Содержание] 0",
+  "resourceable": true
+ },
+ "s0146": {
+  "zh": "搜索文件",
+  "masked": "搜索文件",
+  "exprs": [],
+  "en": "Search files",
+  "ru": "Поиск файлов",
+  "resourceable": true
+ },
+ "s0147": {
+  "zh": "输入文件名关键字",
+  "masked": "输入文件名关键字",
+  "exprs": [],
+  "en": "Enter the file name keyword",
+  "ru": "Введите ключевое слово имени файла",
+  "resourceable": true
+ },
+ "s0148": {
+  "zh": "搜索",
+  "masked": "搜索",
+  "exprs": [],
+  "en": "search",
+  "ru": "поиск",
+  "resourceable": true
+ },
+ "s0149": {
+  "zh": "提示",
+  "masked": "提示",
+  "exprs": [],
+  "en": "hint",
+  "ru": "намекать",
+  "resourceable": true
+ },
+ "s0150": {
+  "zh": "搜索会在你选择的文件库根目录内递归查找 .dxf / .dwg / .gen 文件。",
+  "masked": "搜索会在你选择的文件库根目录内递归查找 .dxf / .dwg / .gen 文件。",
+  "exprs": [],
+  "en": "The search will recursively look for .dxf / .dwg / .gen files within the library root of your choice.",
+  "ru": "Поиск будет рекурсивно искать файлы .dxf/.dwg/.gen в выбранном вами корне библиотеки.",
+  "resourceable": true
+ },
+ "s0151": {
+  "zh": "请先选择文件库根目录",
+  "masked": "请先选择文件库根目录",
+  "exprs": [],
+  "en": "Please select the file library root directory first",
+  "ru": "Сначала выберите корневой каталог библиотеки файлов.",
+  "resourceable": true
+ },
+ "s0152": {
+  "zh": "请输入搜索关键字",
+  "masked": "请输入搜索关键字",
+  "exprs": [],
+  "en": "Please enter search keywords",
+  "ru": "Пожалуйста, введите ключевые слова для поиска",
+  "resourceable": true
+ },
+ "s0153": {
+  "zh": "正在搜索 $query",
+  "masked": "正在搜索 0",
+  "exprs": [
+   "query"
+  ],
+  "en": "Searching 0",
+  "ru": "Поиск 0",
+  "resourceable": true
+ },
+ "s0154": {
+  "zh": "搜索结果",
+  "masked": "搜索结果",
+  "exprs": [],
+  "en": "Search results",
+  "ru": "Результаты поиска",
+  "resourceable": true
+ },
+ "s0155": {
+  "zh": "结果",
+  "masked": "结果",
+  "exprs": [],
+  "en": "result",
+  "ru": "результат",
+  "resourceable": true
+ },
+ "s0156": {
+  "zh": "没有找到匹配文件",
+  "masked": "没有找到匹配文件",
+  "exprs": [],
+  "en": "No matching file found",
+  "ru": "Соответствующий файл не найден",
+  "resourceable": true
+ },
+ "s0157": {
+  "zh": "搜索完成：${results.size} 个结果",
+  "masked": "搜索完成：0 个结果",
+  "exprs": [
+   "results.size"
+  ],
+  "en": "Search completed: 0 results",
+  "ru": "Поиск завершен: 0 результатов",
+  "resourceable": true
+ },
+ "s0158": {
+  "zh": "已切换为横屏",
+  "masked": "已切换为横屏",
+  "exprs": [],
+  "en": "Switched to landscape screen",
+  "ru": "Переключен на альбомный экран",
+  "resourceable": true
+ },
+ "s0159": {
+  "zh": "已切换为竖屏",
+  "masked": "已切换为竖屏",
+  "exprs": [],
+  "en": "Switched to portrait screen",
+  "ru": "Переключен на портретный экран",
+  "resourceable": true
+ },
+ "s0160": {
+  "zh": "板材边框",
+  "masked": "板材边框",
+  "exprs": [],
+  "en": "board border",
+  "ru": "граница доски",
+  "resourceable": true
+ },
+ "s0161": {
+  "zh": "空走",
+  "masked": "空走",
+  "exprs": [],
+  "en": "Walk on empty",
+  "ru": "Идти по пустому",
+  "resourceable": true
+ },
+ "s0162": {
+  "zh": "直切",
+  "masked": "直切",
+  "exprs": [],
+  "en": "Straight cut",
+  "ru": "Прямой крой",
+  "resourceable": true
+ },
+ "s0163": {
+  "zh": "坡口 A+",
+  "masked": "坡口 A+",
+  "exprs": [],
+  "en": "Bevel A+",
+  "ru": "Фаска А+",
+  "resourceable": true
+ },
+ "s0164": {
+  "zh": "坡口 A-",
+  "masked": "坡口 A-",
+  "exprs": [],
+  "en": "Bevel A-",
+  "ru": "Фаска А-",
+  "resourceable": true
+ },
+ "s0165": {
+  "zh": "坡口 B+",
+  "masked": "坡口 B+",
+  "exprs": [],
+  "en": "Bevel B+",
+  "ru": "Фаска B+",
+  "resourceable": true
+ },
+ "s0166": {
+  "zh": "坡口 B-",
+  "masked": "坡口 B-",
+  "exprs": [],
+  "en": "Bevel B-",
+  "ru": "Фаска Б-",
+  "resourceable": true
+ },
+ "s0167": {
+  "zh": "图层控制",
+  "masked": "图层控制",
+  "exprs": [],
+  "en": "Layer controls",
+  "ru": "Элементы управления слоями",
+  "resourceable": true
+ },
+ "s0168": {
+  "zh": "当前文件不是 DXF，暂时没有可切换图层。",
+  "masked": "当前文件不是 DXF，暂时没有可切换图层。",
+  "exprs": [],
+  "en": "The current file is not a DXF and there are currently no switchable layers.",
+  "ru": "Текущий файл не является DXF, и в настоящее время нет переключаемых слоев.",
+  "resourceable": true
+ },
+ "s0169": {
+  "zh": "显示 PDF 文字",
+  "masked": "显示 PDF 文字",
+  "exprs": [],
+  "en": "Show PDF text",
+  "ru": "Показать текст PDF",
+  "resourceable": true
+ },
+ "s0170": {
+  "zh": "已显示 PDF 文字",
+  "masked": "已显示 PDF 文字",
+  "exprs": [],
+  "en": "PDF text shown",
+  "ru": "Показан PDF-текст",
+  "resourceable": true
+ },
+ "s0171": {
+  "zh": "已隐藏 PDF 文字",
+  "masked": "已隐藏 PDF 文字",
+  "exprs": [],
+  "en": "PDF text hidden",
+  "ru": "Текст PDF скрыт",
+  "resourceable": true
+ },
+ "s0172": {
+  "zh": "全部显示",
+  "masked": "全部显示",
+  "exprs": [],
+  "en": "Show all",
+  "ru": "Показать все",
+  "resourceable": true
+ },
+ "s0173": {
+  "zh": "全部隐藏",
+  "masked": "全部隐藏",
+  "exprs": [],
+  "en": "Hide all",
+  "ru": "Скрыть все",
+  "resourceable": true
+ },
+ "s0174": {
+  "zh": " 个实体",
+  "masked": " 个实体",
+  "exprs": [],
+  "en": "entities",
+  "ru": "сущности",
+  "resourceable": true
+ },
+ "s0175": {
+  "zh": "  ·  原文件关闭",
+  "masked": "  ·  原文件关闭",
+  "exprs": [],
+  "en": "· The original file is closed",
+  "ru": "· Исходный файл закрыт",
+  "resourceable": true
+ },
+ "s0176": {
+  "zh": "  ·  原文件冻结",
+  "masked": "  ·  原文件冻结",
+  "exprs": [],
+  "en": "· Original file frozen",
+  "ru": "· Исходный файл заморожен",
+  "resourceable": true
+ },
+ "s0177": {
+  "zh": "当前为 GEN 文件，请在预演面板查看走刀",
+  "masked": "当前为 GEN 文件，请在预演面板查看走刀",
+  "exprs": [],
+  "en": "It is currently a GEN file, please view the cut in the preview panel.",
+  "ru": "В настоящее время это файл GEN, просмотрите его на панели предварительного просмотра.",
+  "resourceable": true
+ },
+ "s0178": {
+  "zh": "当前图形不支持测量",
+  "masked": "当前图形不支持测量",
+  "exprs": [],
+  "en": "The current drawing does not support measurement",
+  "ru": "Текущий чертеж не поддерживает измерения",
+  "resourceable": true
+ },
+ "s0179": {
+  "zh": "测量 / 标注",
+  "masked": "测量 / 标注",
+  "exprs": [],
+  "en": "Measure/Annotate",
+  "ru": "Измерить/аннотировать",
+  "resourceable": true
+ },
+ "s0180": {
+  "zh": "自动标注",
+  "masked": "自动标注",
+  "exprs": [],
+  "en": "Automatic labeling",
+  "ru": "Автоматическая маркировка",
+  "resourceable": true
+ },
+ "s0181": {
+  "zh": "一键标注图纸宽高",
+  "masked": "一键标注图纸宽高",
+  "exprs": [],
+  "en": "Mark the width and height of drawings with one click",
+  "ru": "Отмечайте ширину и высоту рисунков одним щелчком мыши",
+  "resourceable": true
+ },
+ "s0182": {
+  "zh": "边界尺寸",
+  "masked": "边界尺寸",
+  "exprs": [],
+  "en": "border size",
+  "ru": "размер границы",
+  "resourceable": true
+ },
+ "s0183": {
+  "zh": "手动测量",
+  "masked": "手动测量",
+  "exprs": [],
+  "en": "Manual measurement",
+  "ru": "Ручное измерение",
+  "resourceable": true
+ },
+ "s0184": {
+  "zh": "距离测量",
+  "masked": "距离测量",
+  "exprs": [],
+  "en": "distance measurement",
+  "ru": "измерение расстояния",
+  "resourceable": true
+ },
+ "s0185": {
+  "zh": "距离测量已开启",
+  "masked": "距离测量已开启",
+  "exprs": [],
+  "en": "Distance measurement is on",
+  "ru": "Измерение расстояния включено",
+  "resourceable": true
+ },
+ "s0186": {
+  "zh": "角度测量",
+  "masked": "角度测量",
+  "exprs": [],
+  "en": "angle measurement",
+  "ru": "измерение угла",
+  "resourceable": true
+ },
+ "s0187": {
+  "zh": "角度测量已开启",
+  "masked": "角度测量已开启",
+  "exprs": [],
+  "en": "Angle measurement is on",
+  "ru": "Измерение угла включено",
+  "resourceable": true
+ },
+ "s0188": {
+  "zh": "面积测量",
+  "masked": "面积测量",
+  "exprs": [],
+  "en": "area measurement",
+  "ru": "измерение площади",
+  "resourceable": true
+ },
+ "s0189": {
+  "zh": "面积测量已开启",
+  "masked": "面积测量已开启",
+  "exprs": [],
+  "en": "Area measurement is enabled",
+  "ru": "Измерение площади включено",
+  "resourceable": true
+ },
+ "s0190": {
+  "zh": "关闭测量",
+  "masked": "关闭测量",
+  "exprs": [],
+  "en": "Close measurement",
+  "ru": "Близкое измерение",
+  "resourceable": true
+ },
+ "s0191": {
+  "zh": "测量已关闭",
+  "masked": "测量已关闭",
+  "exprs": [],
+  "en": "Measurement is off",
+  "ru": "Измерение выключено",
+  "resourceable": true
+ },
+ "s0192": {
+  "zh": "自动闭合：开",
+  "masked": "自动闭合：开",
+  "exprs": [],
+  "en": "Automatic closing: open",
+  "ru": "Автоматическое закрытие: открыто",
+  "resourceable": true
+ },
+ "s0193": {
+  "zh": "自动闭合：关",
+  "masked": "自动闭合：关",
+  "exprs": [],
+  "en": "Automatic closing: off",
+  "ru": "Автоматическое закрытие: выключено",
+  "resourceable": true
+ },
+ "s0194": {
+  "zh": "完成面积",
+  "masked": "完成面积",
+  "exprs": [],
+  "en": "Completed area",
+  "ru": "Завершенная площадь",
+  "resourceable": true
+ },
+ "s0195": {
+  "zh": "回退一步",
+  "masked": "回退一步",
+  "exprs": [],
+  "en": "take a step back",
+  "ru": "сделай шаг назад",
+  "resourceable": true
+ },
+ "s0196": {
+  "zh": "清空测量",
+  "masked": "清空测量",
+  "exprs": [],
+  "en": "Clear measurements",
+  "ru": "Четкие измерения",
+  "resourceable": true
+ },
+ "s0197": {
+  "zh": "CAD 编辑",
+  "masked": "CAD 编辑",
+  "exprs": [],
+  "en": "CAD editor",
+  "ru": "Редактор САПР",
+  "resourceable": true
+ },
+ "s0198": {
+  "zh": "打开专业绘图工具",
+  "masked": "打开专业绘图工具",
+  "exprs": [],
+  "en": "Open professional drawing tools",
+  "ru": "Открытые профессиональные инструменты рисования",
+  "resourceable": true
+ },
+ "s0199": {
+  "zh": "点击画布选择线段后可修剪、复制、删除；也可直接创建矩形/圆/文本。",
+  "masked": "点击画布选择线段后可修剪、复制、删除；也可直接创建矩形/圆/文本。",
+  "exprs": [],
+  "en": "Click on the canvas to select a line segment and then trim, copy, or delete it; you can also directly create a rectangle/circle/text.",
+  "ru": "Нажмите на холст, чтобы выбрать сегмент линии, а затем обрезать, скопировать или удалить его; вы также можете напрямую создать прямоугольник/круг/текст.",
+  "resourceable": true
+ },
+ "s0200": {
+  "zh": "当前模式",
+  "masked": "当前模式",
+  "exprs": [],
+  "en": "Current mode",
+  "ru": "Текущий режим",
+  "resourceable": true
+ },
+ "s0201": {
+  "zh": "未开启",
+  "masked": "未开启",
+  "exprs": [],
+  "en": "Not turned on",
+  "ru": "Не включено",
+  "resourceable": true
+ },
+ "s0202": {
+  "zh": "距离",
+  "masked": "距离",
+  "exprs": [],
+  "en": "distance",
+  "ru": "расстояние",
+  "resourceable": true
+ },
+ "s0203": {
+  "zh": "角度",
+  "masked": "角度",
+  "exprs": [],
+  "en": "angle",
+  "ru": "угол",
+  "resourceable": true
+ },
+ "s0204": {
+  "zh": "面积",
+  "masked": "面积",
+  "exprs": [],
+  "en": "area",
+  "ru": "область",
+  "resourceable": true
+ },
+ "s0205": {
+  "zh": "图层数",
+  "masked": "图层数",
+  "exprs": [],
+  "en": "Number of layers",
+  "ru": "Количество слоев",
+  "resourceable": true
+ },
+ "s0206": {
+  "zh": "当前图形无可预演的数据",
+  "masked": "当前图形无可预演的数据",
+  "exprs": [],
+  "en": "There is no preview data for the current graph",
+  "ru": "Для текущего графика нет данных предварительного просмотра.",
+  "resourceable": true
+ },
+ "s0207": {
+  "zh": "走刀预演",
+  "masked": "走刀预演",
+  "exprs": [],
+  "en": "Rehearsal of the knife move",
+  "ru": "Репетиция удара ножом",
+  "resourceable": true
+ },
+ "s0208": {
+  "zh": "轨迹",
+  "masked": "轨迹",
+  "exprs": [],
+  "en": "trajectory",
+  "ru": "траектория",
+  "resourceable": true
+ },
+ "s0209": {
+  "zh": "空走线",
+  "masked": "空走线",
+  "exprs": [],
+  "en": "empty trace",
+  "ru": "пустой след",
+  "resourceable": true
+ },
+ "s0210": {
+  "zh": "划线",
+  "masked": "划线",
+  "exprs": [],
+  "en": "Underline",
+  "ru": "Подчеркнуть",
+  "resourceable": true
+ },
+ "s0211": {
+  "zh": "切割",
+  "masked": "切割",
+  "exprs": [],
+  "en": "cutting",
+  "ru": "резка",
+  "resourceable": true
+ },
+ "s0212": {
+  "zh": "线段编辑",
+  "masked": "线段编辑",
+  "exprs": [],
+  "en": "Line segment editing",
+  "ru": "Редактирование сегмента линии",
+  "resourceable": true
+ },
+ "s0213": {
+  "zh": "类型",
+  "masked": "类型",
+  "exprs": [],
+  "en": "Type",
+  "ru": "Тип",
+  "resourceable": true
+ },
+ "s0214": {
+  "zh": "图层",
+  "masked": "图层",
+  "exprs": [],
+  "en": "Layers",
+  "ru": "Слои",
+  "resourceable": true
+ },
+ "s0215": {
+  "zh": "默认",
+  "masked": "默认",
+  "exprs": [],
+  "en": "default",
+  "ru": "по умолчанию",
+  "resourceable": true
+ },
+ "s0216": {
+  "zh": "实际长度",
+  "masked": "实际长度",
+  "exprs": [],
+  "en": "actual length",
+  "ru": "фактическая длина",
+  "resourceable": true
+ },
+ "s0217": {
+  "zh": "坐标差",
+  "masked": "坐标差",
+  "exprs": [],
+  "en": "coordinate difference",
+  "ru": "разность координат",
+  "resourceable": true
+ },
+ "s0218": {
+  "zh": "修改长度",
+  "masked": "修改长度",
+  "exprs": [],
+  "en": "Modify length",
+  "ru": "Изменить длину",
+  "resourceable": true
+ },
+ "s0219": {
+  "zh": "保存修改",
+  "masked": "保存修改",
+  "exprs": [],
+  "en": "Save changes",
+  "ru": "Сохранить изменения",
+  "resourceable": true
+ },
+ "s0220": {
+  "zh": "请输入有效坐标",
+  "masked": "请输入有效坐标",
+  "exprs": [],
+  "en": "Please enter valid coordinates",
+  "ru": "Пожалуйста, введите действительные координаты",
+  "resourceable": true
+ },
+ "s0221": {
+  "zh": "取消选中",
+  "masked": "取消选中",
+  "exprs": [],
+  "en": "Uncheck",
+  "ru": "Снимите флажок",
+  "resourceable": true
+ },
+ "s0222": {
+  "zh": "历史记录",
+  "masked": "历史记录",
+  "exprs": [],
+  "en": "History",
+  "ru": "История",
+  "resourceable": true
+ },
+ "s0223": {
+  "zh": "起点 X",
+  "masked": "起点 X",
+  "exprs": [],
+  "en": "Starting point",
+  "ru": "Начальная точка",
+  "resourceable": true
+ },
+ "s0224": {
+  "zh": "起点 Y",
+  "masked": "起点 Y",
+  "exprs": [],
+  "en": "Starting point Y",
+  "ru": "Начальная точка Y",
+  "resourceable": true
+ },
+ "s0225": {
+  "zh": "终点 X",
+  "masked": "终点 X",
+  "exprs": [],
+  "en": "end point",
+  "ru": "конечная точка",
+  "resourceable": true
+ },
+ "s0226": {
+  "zh": "终点 Y",
+  "masked": "终点 Y",
+  "exprs": [],
+  "en": "End point Y",
+  "ru": "Конечная точка Y",
+  "resourceable": true
+ },
+ "s0227": {
+  "zh": "修改线段",
+  "masked": "修改线段",
+  "exprs": [],
+  "en": "Modify line segment",
+  "ru": "Изменить сегмент линии",
+  "resourceable": true
+ },
+ "s0228": {
+  "zh": "线段已更新",
+  "masked": "线段已更新",
+  "exprs": [],
+  "en": "Line segment updated",
+  "ru": "Сегмент линии обновлен.",
+  "resourceable": true
+ },
+ "s0229": {
+  "zh": "当前没有可编辑图形",
+  "masked": "当前没有可编辑图形",
+  "exprs": [],
+  "en": "There are currently no editable graphics",
+  "ru": "В настоящее время нет редактируемой графики",
+  "resourceable": true
+ },
+ "s0230": {
+  "zh": "CAD 绘图 / 编辑",
+  "masked": "CAD 绘图 / 编辑",
+  "exprs": [],
+  "en": "CAD drawing/editing",
+  "ru": "Чертеж/редактирование САПР",
+  "resourceable": true
+ },
+ "s0231": {
+  "zh": "创建图形",
+  "masked": "创建图形",
+  "exprs": [],
+  "en": "Create graphics",
+  "ru": "Создание графики",
+  "resourceable": true
+ },
+ "s0232": {
+  "zh": "新建空白图形 / 画布",
+  "masked": "新建空白图形 / 画布",
+  "exprs": [],
+  "en": "Create a new blank graphic/canvas",
+  "ru": "Создайте новый пустой рисунок/холст.",
+  "resourceable": true
+ },
+ "s0233": {
+  "zh": "创建直线",
+  "masked": "创建直线",
+  "exprs": [],
+  "en": "Create a straight line",
+  "ru": "Создайте прямую линию",
+  "resourceable": true
+ },
+ "s0234": {
+  "zh": "创建矩形",
+  "masked": "创建矩形",
+  "exprs": [],
+  "en": "Create rectangle",
+  "ru": "Создать прямоугольник",
+  "resourceable": true
+ },
+ "s0235": {
+  "zh": "创建圆",
+  "masked": "创建圆",
+  "exprs": [],
+  "en": "Create circle",
+  "ru": "Создать круг",
+  "resourceable": true
+ },
+ "s0236": {
+  "zh": "创建圆弧",
+  "masked": "创建圆弧",
+  "exprs": [],
+  "en": "Create arc",
+  "ru": "Создать дугу",
+  "resourceable": true
+ },
+ "s0237": {
+  "zh": "创建多段线",
+  "masked": "创建多段线",
+  "exprs": [],
+  "en": "Create polyline",
+  "ru": "Создать полилинию",
+  "resourceable": true
+ },
+ "s0238": {
+  "zh": "添加文字",
+  "masked": "添加文字",
+  "exprs": [],
+  "en": "Add text",
+  "ru": "Добавить текст",
+  "resourceable": true
+ },
+ "s0239": {
+  "zh": "常用图库 / 标准件",
+  "masked": "常用图库 / 标准件",
+  "exprs": [],
+  "en": "Commonly used libraries/standard parts",
+  "ru": "Часто используемые библиотеки/стандартные детали",
+  "resourceable": true
+ },
+ "s0240": {
+  "zh": "L 型角钢 / 支架",
+  "masked": "L 型角钢 / 支架",
+  "exprs": [],
+  "en": "L-shaped angle steel/bracket",
+  "ru": "Г-образный уголок стальной/кронштейн",
+  "resourceable": true
+ },
+ "s0241": {
+  "zh": "L 型角钢",
+  "masked": "L 型角钢",
+  "exprs": [],
+  "en": "L shaped angle steel",
+  "ru": "Г-образный уголок стальной",
+  "resourceable": true
+ },
+ "s0242": {
+  "zh": "槽钢 / U 型截面",
+  "masked": "槽钢 / U 型截面",
+  "exprs": [],
+  "en": "Channel steel / U-shaped section",
+  "ru": "Швеллер стальной/П-образного сечения",
+  "resourceable": true
+ },
+ "s0243": {
+  "zh": "槽钢",
+  "masked": "槽钢",
+  "exprs": [],
+  "en": "Channel steel",
+  "ru": "Швеллер стальной",
+  "resourceable": true
+ },
+ "s0244": {
+  "zh": "工字钢 / H 型截面",
+  "masked": "工字钢 / H 型截面",
+  "exprs": [],
+  "en": "I-beam / H-section",
+  "ru": "двутавр / двутавровое сечение",
+  "resourceable": true
+ },
+ "s0245": {
+  "zh": "工字钢",
+  "masked": "工字钢",
+  "exprs": [],
+  "en": "I-beam",
+  "ru": "двутавр",
+  "resourceable": true
+ },
+ "s0246": {
+  "zh": "法兰盘 / 螺栓孔阵列",
+  "masked": "法兰盘 / 螺栓孔阵列",
+  "exprs": [],
+  "en": "Flange/bolt hole array",
+  "ru": "Набор отверстий для фланцев/болтов",
+  "resourceable": true
+ },
+ "s0247": {
+  "zh": "法兰盘",
+  "masked": "法兰盘",
+  "exprs": [],
+  "en": "Flange",
+  "ru": "Фланец",
+  "resourceable": true
+ },
+ "s0248": {
+  "zh": "长圆孔板",
+  "masked": "长圆孔板",
+  "exprs": [],
+  "en": "Long round hole plate",
+  "ru": "Длинная пластина с круглыми отверстиями",
+  "resourceable": true
+ },
+ "s0249": {
+  "zh": "编辑操作",
+  "masked": "编辑操作",
+  "exprs": [],
+  "en": "Edit operations",
+  "ru": "Редактировать операции",
+  "resourceable": true
+ },
+ "s0250": {
+  "zh": "编辑选中对象属性",
+  "masked": "编辑选中对象属性",
+  "exprs": [],
+  "en": "Edit selected object properties",
+  "ru": "Редактировать свойства выбранного объекта",
+  "resourceable": true
+ },
+ "s0251": {
+  "zh": "复制选中实体",
+  "masked": "复制选中实体",
+  "exprs": [],
+  "en": "Copy selected entities",
+  "ru": "Копировать выбранные объекты",
+  "resourceable": true
+ },
+ "s0252": {
+  "zh": "粘贴副本（偏移 25mm）",
+  "masked": "粘贴副本（偏移 25mm）",
+  "exprs": [],
+  "en": "Paste copy (offset 25mm)",
+  "ru": "Вставить копию (смещение 25 мм)",
+  "resourceable": true
+ },
+ "s0253": {
+  "zh": "修剪线段 10%",
+  "masked": "修剪线段 10%",
+  "exprs": [],
+  "en": "Trim line segment 10%",
+  "ru": "Отрезок линии обрезки 10%",
+  "resourceable": true
+ },
+ "s0254": {
+  "zh": "删除选中实体",
+  "masked": "删除选中实体",
+  "exprs": [],
+  "en": "Delete selected entities",
+  "ru": "Удалить выбранные объекты",
+  "resourceable": true
+ },
+ "s0255": {
+  "zh": "历史",
+  "masked": "历史",
+  "exprs": [],
+  "en": "history",
+  "ru": "история",
+  "resourceable": true
+ },
+ "s0256": {
+  "zh": "撤销",
+  "masked": "撤销",
+  "exprs": [],
+  "en": "Cancel",
+  "ru": "Отмена",
+  "resourceable": true
+ },
+ "s0257": {
+  "zh": "重做",
+  "masked": "重做",
+  "exprs": [],
+  "en": "Redo",
+  "ru": "Повторить",
+  "resourceable": true
+ },
+ "s0258": {
+  "zh": "当前选择",
+  "masked": "当前选择",
+  "exprs": [],
+  "en": "Current selection",
+  "ru": "Текущий выбор",
+  "resourceable": true
+ },
+ "s0259": {
+  "zh": "未选择",
+  "masked": "未选择",
+  "exprs": [],
+  "en": "Not selected",
+  "ru": "Не выбрано",
+  "resourceable": true
+ },
+ "s0260": {
+  "zh": "剪贴板",
+  "masked": "剪贴板",
+  "exprs": [],
+  "en": "clipboard",
+  "ru": "буфер обмена",
+  "resourceable": true
+ },
+ "s0261": {
+  "zh": "已有实体，可粘贴",
+  "masked": "已有实体，可粘贴",
+  "exprs": [],
+  "en": "Entity already exists and can be pasted",
+  "ru": "Объект уже существует и может быть вставлен",
+  "resourceable": true
+ },
+ "s0262": {
+  "zh": "空",
+  "masked": "空",
+  "exprs": [],
+  "en": "null",
+  "ru": "нулевой",
+  "resourceable": true
+ },
+ "s0263": {
+  "zh": "实体数",
+  "masked": "实体数",
+  "exprs": [],
+  "en": "Number of entities",
+  "ru": "Количество объектов",
+  "resourceable": true
+ },
+ "s0264": {
+  "zh": "新建图形",
+  "masked": "新建图形",
+  "exprs": [],
+  "en": "New graphic",
+  "ru": "Новая графика",
+  "resourceable": true
+ },
+ "s0265": {
+  "zh": "图层 ${document.layers.size} · ${document.units ?: \"mm\"}",
+  "masked": "图层 0 · 1",
+  "exprs": [
+   "document.layers.size",
+   "document.units ?: \"mm\""
+  ],
+  "en": "Layer 0 · 1",
+  "ru": "Слой 0 · 1",
+  "resourceable": true
+ },
+ "s0266": {
+  "zh": "文件名",
+  "masked": "文件名",
+  "exprs": [],
+  "en": "file name",
+  "ru": "имя файла",
+  "resourceable": true
+ },
+ "s0267": {
+  "zh": "新建图形.dxf",
+  "masked": "新建图形.dxf",
+  "exprs": [],
+  "en": "Create new graphic.dxf",
+  "ru": "Создайте новый файл Graphic.dxf.",
+  "resourceable": true
+ },
+ "s0268": {
+  "zh": "宽度",
+  "masked": "宽度",
+  "exprs": [],
+  "en": "width",
+  "ru": "ширина",
+  "resourceable": true
+ },
+ "s0269": {
+  "zh": "高度",
+  "masked": "高度",
+  "exprs": [],
+  "en": "high",
+  "ru": "высокий",
+  "resourceable": true
+ },
+ "s0270": {
+  "zh": "新建 CAD 图形",
+  "masked": "新建 CAD 图形",
+  "exprs": [],
+  "en": "Create a new CAD drawing",
+  "ru": "Создайте новый чертеж САПР.",
+  "resourceable": true
+ },
+ "s0271": {
+  "zh": "空白画布",
+  "masked": "空白画布",
+  "exprs": [],
+  "en": "blank canvas",
+  "ru": "пустой холст",
+  "resourceable": true
+ },
+ "s0272": {
+  "zh": "已新建空白图形：$name",
+  "masked": "已新建空白图形：0",
+  "exprs": [
+   "name"
+  ],
+  "en": "A new blank graphic has been created: 0",
+  "ru": "Создано новое пустое изображение: 0",
+  "resourceable": true
+ },
+ "s0273": {
+  "zh": "带边框模板",
+  "masked": "带边框模板",
+  "exprs": [],
+  "en": "Template with border",
+  "ru": "Шаблон с рамкой",
+  "resourceable": true
+ },
+ "s0274": {
+  "zh": "已新建带边框图形：$name",
+  "masked": "已新建带边框图形：0",
+  "exprs": [
+   "name"
+  ],
+  "en": "New bordered graphic: 0",
+  "ru": "Новое изображение с рамкой: 0",
+  "resourceable": true
+ },
+ "s0275": {
+  "zh": "起点X",
+  "masked": "起点X",
+  "exprs": [],
+  "en": "Starting pointX",
+  "ru": "Начальная точкаX",
+  "resourceable": true
+ },
+ "s0276": {
+  "zh": "起点Y",
+  "masked": "起点Y",
+  "exprs": [],
+  "en": "Starting point Y",
+  "ru": "Начальная точка Y",
+  "resourceable": true
+ },
+ "s0277": {
+  "zh": "终点X",
+  "masked": "终点X",
+  "exprs": [],
+  "en": "End pointX",
+  "ru": "Конечная точкаX",
+  "resourceable": true
+ },
+ "s0278": {
+  "zh": "终点Y",
+  "masked": "终点Y",
+  "exprs": [],
+  "en": "End point Y",
+  "ru": "Конечная точка Y",
+  "resourceable": true
+ },
+ "s0279": {
+  "zh": "创建",
+  "masked": "创建",
+  "exprs": [],
+  "en": "create",
+  "ru": "создавать",
+  "resourceable": true
+ },
+ "s0280": {
+  "zh": "中心X",
+  "masked": "中心X",
+  "exprs": [],
+  "en": "CenterX",
+  "ru": "ЦентрX",
+  "resourceable": true
+ },
+ "s0281": {
+  "zh": "中心Y",
+  "masked": "中心Y",
+  "exprs": [],
+  "en": "Center Y",
+  "ru": "Центр Y",
+  "resourceable": true
+ },
+ "s0282": {
+  "zh": "半径",
+  "masked": "半径",
+  "exprs": [],
+  "en": "radius",
+  "ru": "радиус",
+  "resourceable": true
+ },
+ "s0283": {
+  "zh": "起始角",
+  "masked": "起始角",
+  "exprs": [],
+  "en": "starting angle",
+  "ru": "начальный угол",
+  "resourceable": true
+ },
+ "s0284": {
+  "zh": "终止角",
+  "masked": "终止角",
+  "exprs": [],
+  "en": "end angle",
+  "ru": "конечный угол",
+  "resourceable": true
+ },
+ "s0285": {
+  "zh": "点列 x,y;x,y",
+  "masked": "点列 x,y;x,y",
+  "exprs": [],
+  "en": "Point sequence x,y;x,y",
+  "ru": "Последовательность точек x,y;x,y",
+  "resourceable": true
+ },
+ "s0286": {
+  "zh": "闭合(1/0)",
+  "masked": "闭合(1/0)",
+  "exprs": [],
+  "en": "Closed(1/0)",
+  "ru": "Закрыто(1/0)",
+  "resourceable": true
+ },
+ "s0287": {
+  "zh": "多段线至少需要 2 个点",
+  "masked": "多段线至少需要 2 个点",
+  "exprs": [],
+  "en": "Polylines require at least 2 points",
+  "ru": "Полилинии требуют минимум 2 точки.",
+  "resourceable": true
+ },
+ "s0288": {
+  "zh": "插入X",
+  "masked": "插入X",
+  "exprs": [],
+  "en": "Insert X",
+  "ru": "Вставить Х",
+  "resourceable": true
+ },
+ "s0289": {
+  "zh": "插入Y",
+  "masked": "插入Y",
+  "exprs": [],
+  "en": "Insert Y",
+  "ru": "Вставить Y",
+  "resourceable": true
+ },
+ "s0290": {
+  "zh": "板厚/孔径",
+  "masked": "板厚/孔径",
+  "exprs": [],
+  "en": "Plate thickness/hole diameter",
+  "ru": "Толщина пластины/диаметр отверстия",
+  "resourceable": true
+ },
+ "s0291": {
+  "zh": "插入$template",
+  "masked": "插入0",
+  "exprs": [
+   "template"
+  ],
+  "en": "Insert0",
+  "ru": "Вставить0",
+  "resourceable": true
+ },
+ "s0292": {
+  "zh": "插入",
+  "masked": "插入",
+  "exprs": [],
+  "en": "insert",
+  "ru": "вставлять",
+  "resourceable": true
+ },
+ "s0293": {
+  "zh": "内容",
+  "masked": "内容",
+  "exprs": [],
+  "en": "content",
+  "ru": "содержание",
+  "resourceable": true
+ },
+ "s0294": {
+  "zh": "添加",
+  "masked": "添加",
+  "exprs": [],
+  "en": "Add to",
+  "ru": "добавить в",
+  "resourceable": true
+ },
+ "s0295": {
+  "zh": "请先选择要编辑的实体",
+  "masked": "请先选择要编辑的实体",
+  "exprs": [],
+  "en": "Please select the entity to edit first",
+  "ru": "Сначала выберите объект для редактирования",
+  "resourceable": true
+ },
+ "s0296": {
+  "zh": "编辑对象属性",
+  "masked": "编辑对象属性",
+  "exprs": [],
+  "en": "Edit object properties",
+  "ru": "Редактировать свойства объекта",
+  "resourceable": true
+ },
+ "s0297": {
+  "zh": "已更新选中对象属性",
+  "masked": "已更新选中对象属性",
+  "exprs": [],
+  "en": "Selected object properties updated",
+  "ru": "Свойства выбранного объекта обновлены.",
+  "resourceable": true
+ },
+ "s0298": {
+  "zh": "请先在画布中选择实体",
+  "masked": "请先在画布中选择实体",
+  "exprs": [],
+  "en": "Please select the entity in the canvas first",
+  "ru": "Пожалуйста, сначала выберите объект на холсте",
+  "resourceable": true
+ },
+ "s0299": {
+  "zh": "已复制选中实体",
+  "masked": "已复制选中实体",
+  "exprs": [],
+  "en": "Selected entities copied",
+  "ru": "Выбранные объекты скопированы",
+  "resourceable": true
+ },
+ "s0300": {
+  "zh": "剪贴板为空",
+  "masked": "剪贴板为空",
+  "exprs": [],
+  "en": "Clipboard is empty",
+  "ru": "Буфер обмена пуст",
+  "resourceable": true
+ },
+ "s0301": {
+  "zh": "粘贴实体",
+  "masked": "粘贴实体",
+  "exprs": [],
+  "en": "Paste entities",
+  "ru": "Вставить объекты",
+  "resourceable": true
+ },
+ "s0302": {
+  "zh": "已粘贴实体副本",
+  "masked": "已粘贴实体副本",
+  "exprs": [],
+  "en": "Entity copy pasted",
+  "ru": "Копия объекта вставлена.",
+  "resourceable": true
+ },
+ "s0303": {
+  "zh": "请先选择要删除的实体",
+  "masked": "请先选择要删除的实体",
+  "exprs": [],
+  "en": "Please select the entity to delete first",
+  "ru": "Пожалуйста, сначала выберите объект, который нужно удалить",
+  "resourceable": true
+ },
+ "s0304": {
+  "zh": "删除实体",
+  "masked": "删除实体",
+  "exprs": [],
+  "en": "Delete entity",
+  "ru": "Удалить объект",
+  "resourceable": true
+ },
+ "s0305": {
+  "zh": "已删除选中实体",
+  "masked": "已删除选中实体",
+  "exprs": [],
+  "en": "Selected entity deleted",
+  "ru": "Выбранный объект удален.",
+  "resourceable": true
+ },
+ "s0306": {
+  "zh": "请先选择要修剪的线段",
+  "masked": "请先选择要修剪的线段",
+  "exprs": [],
+  "en": "Please select the line segment you want to trim first",
+  "ru": "Сначала выберите сегмент линии, который вы хотите обрезать.",
+  "resourceable": true
+ },
+ "s0307": {
+  "zh": "已按比例修剪线段",
+  "masked": "已按比例修剪线段",
+  "exprs": [],
+  "en": "Line segment trimmed proportionally",
+  "ru": "Сегмент линии обрезается пропорционально",
+  "resourceable": true
+ },
+ "s0308": {
+  "zh": "没有可撤销的历史",
+  "masked": "没有可撤销的历史",
+  "exprs": [],
+  "en": "No undoable history",
+  "ru": "Нет необратимой истории",
+  "resourceable": true
+ },
+ "s0309": {
+  "zh": "已撤销：${historyLabels.getOrNull(historyIndex).orEmpty()}",
+  "masked": "已撤销：0",
+  "exprs": [
+   "historyLabels.getOrNull(historyIndex).orEmpty()"
+  ],
+  "en": "Canceled: 0",
+  "ru": "Отменено: 0",
+  "resourceable": true
+ },
+ "s0310": {
+  "zh": "没有可重做的历史",
+  "masked": "没有可重做的历史",
+  "exprs": [],
+  "en": "No history to redo",
+  "ru": "Нет истории, которую нужно переделывать",
+  "resourceable": true
+ },
+ "s0311": {
+  "zh": "已重做：${historyLabels.getOrNull(historyIndex).orEmpty()}",
+  "masked": "已重做：0",
+  "exprs": [
+   "historyLabels.getOrNull(historyIndex).orEmpty()"
+  ],
+  "en": "Redone: 0",
+  "ru": "Переделано: 0",
+  "resourceable": true
+ },
+ "s0312": {
+  "zh": "步骤",
+  "masked": "步骤",
+  "exprs": [],
+  "en": "step",
+  "ru": "шаг",
+  "resourceable": true
+ },
+ "s0313": {
+  "zh": "暂无历史",
+  "masked": "暂无历史",
+  "exprs": [],
+  "en": "No history yet",
+  "ru": "Пока нет истории",
+  "resourceable": true
+ },
+ "s0314": {
+  "zh": "当前步骤 ${index + 1}",
+  "masked": "当前步骤 0",
+  "exprs": [
+   "index + 1"
+  ],
+  "en": "Current step 0",
+  "ru": "Текущий шаг 0",
+  "resourceable": true
+ },
+ "s0315": {
+  "zh": "步骤 ${index + 1}",
+  "masked": "步骤 0",
+  "exprs": [
+   "index + 1"
+  ],
+  "en": "Step 0",
+  "ru": "Шаг 0",
+  "resourceable": true
+ },
+ "s0316": {
+  "zh": "走刀模拟",
+  "masked": "走刀模拟",
+  "exprs": [],
+  "en": "Tool path simulation",
+  "ru": "Моделирование траектории инструмента",
+  "resourceable": true
+ },
+ "s0317": {
+  "zh": "坡口段",
+  "masked": "坡口段",
+  "exprs": [],
+  "en": "slope section",
+  "ru": "участок склона",
+  "resourceable": true
+ },
+ "s0318": {
+  "zh": "预演控制",
+  "masked": "预演控制",
+  "exprs": [],
+  "en": "preview control",
+  "ru": "контроль предварительного просмотра",
+  "resourceable": true
+ },
+ "s0319": {
+  "zh": "速度",
+  "masked": "速度",
+  "exprs": [],
+  "en": "speed",
+  "ru": "скорость",
+  "resourceable": true
+ },
+ "s0320": {
+  "zh": "进度",
+  "masked": "进度",
+  "exprs": [],
+  "en": "schedule",
+  "ru": "расписание",
+  "resourceable": true
+ },
+ "s0321": {
+  "zh": "停止",
+  "masked": "停止",
+  "exprs": [],
+  "en": "stop",
+  "ru": "останавливаться",
+  "resourceable": true
+ },
+ "s0322": {
+  "zh": "$labelPrefix 预演已停止",
+  "masked": "0 预演已停止",
+  "exprs": [
+   "labelPrefix"
+  ],
+  "en": "0 Preview has stopped",
+  "ru": "0 Предварительный просмотр остановлен",
+  "resourceable": true
+ },
+ "s0323": {
+  "zh": "暂停",
+  "masked": "暂停",
+  "exprs": [],
+  "en": "pause",
+  "ru": "пауза",
+  "resourceable": true
+ },
+ "s0324": {
+  "zh": "继续",
+  "masked": "继续",
+  "exprs": [],
+  "en": "continue",
+  "ru": "продолжать",
+  "resourceable": true
+ },
+ "s0325": {
+  "zh": "开始",
+  "masked": "开始",
+  "exprs": [],
+  "en": "start",
+  "ru": "начинать",
+  "resourceable": true
+ },
+ "s0326": {
+  "zh": "$labelPrefix 预演已暂停",
+  "masked": "0 预演已暂停",
+  "exprs": [
+   "labelPrefix"
+  ],
+  "en": "0 Preview has been suspended",
+  "ru": "0 Предварительный просмотр приостановлен",
+  "resourceable": true
+ },
+ "s0327": {
+  "zh": "$labelPrefix 预演进行中",
+  "masked": "0 预演进行中",
+  "exprs": [
+   "labelPrefix"
+  ],
+  "en": "0 Preview in progress",
+  "ru": "0 Выполняется предварительный просмотр",
+  "resourceable": true
+ },
+ "s0328": {
+  "zh": "运行中",
+  "masked": "运行中",
+  "exprs": [],
+  "en": "Running",
+  "ru": "Бег",
+  "resourceable": true
+ },
+ "s0329": {
+  "zh": "已暂停",
+  "masked": "已暂停",
+  "exprs": [],
+  "en": "Suspended",
+  "ru": "Приостановленный",
+  "resourceable": true
+ },
+ "s0330": {
+  "zh": "范围",
+  "masked": "范围",
+  "exprs": [],
+  "en": "scope",
+  "ru": "объем",
+  "resourceable": true
+ },
+ "s0331": {
+  "zh": "单位",
+  "masked": "单位",
+  "exprs": [],
+  "en": "unit",
+  "ru": "единица",
+  "resourceable": true
+ },
+ "s0332": {
+  "zh": "未指定",
+  "masked": "未指定",
+  "exprs": [],
+  "en": "Unspecified",
+  "ru": "Не указано",
+  "resourceable": true
+ },
+ "s0333": {
+  "zh": "PDF比例",
+  "masked": "PDF比例",
+  "exprs": [],
+  "en": "PDF ratio",
+  "ru": "соотношение PDF",
+  "resourceable": true
+ },
+ "s0334": {
+  "zh": "当前缩放",
+  "masked": "当前缩放",
+  "exprs": [],
+  "en": "Current zoom",
+  "ru": "Текущий масштаб",
+  "resourceable": true
+ },
+ "s0335": {
+  "zh": "板厚",
+  "masked": "板厚",
+  "exprs": [],
+  "en": "Plate thickness",
+  "ru": "Толщина пластины",
+  "resourceable": true
+ },
+ "s0336": {
+  "zh": "排版策略",
+  "masked": "排版策略",
+  "exprs": [],
+  "en": "Typography strategy",
+  "ru": "Стратегия типографики",
+  "resourceable": true
+ },
+ "s0337": {
+  "zh": "边界",
+  "masked": "边界",
+  "exprs": [],
+  "en": "boundary",
+  "ru": "граница",
+  "resourceable": true
+ },
+ "s0338": {
+  "zh": "PDF文字",
+  "masked": "PDF文字",
+  "exprs": [],
+  "en": "PDF text",
+  "ru": "PDF-текст",
+  "resourceable": true
+ },
+ "s0339": {
+  "zh": "显示中",
+  "masked": "显示中",
+  "exprs": [],
+  "en": "Showing",
+  "ru": "Показаны",
+  "resourceable": true
+ },
+ "s0340": {
+  "zh": "已隐藏",
+  "masked": "已隐藏",
+  "exprs": [],
+  "en": "Hidden",
+  "ru": "Скрытый",
+  "resourceable": true
+ },
+ "s0341": {
+  "zh": "区段数",
+  "masked": "区段数",
+  "exprs": [],
+  "en": "Number of segments",
+  "ru": "Количество сегментов",
+  "resourceable": true
+ },
+ "s0342": {
+  "zh": "工艺段",
+  "masked": "工艺段",
+  "exprs": [],
+  "en": "Process section",
+  "ru": "Раздел процесса",
+  "resourceable": true
+ },
+ "s0343": {
+  "zh": "零件数",
+  "masked": "零件数",
+  "exprs": [],
+  "en": "Number of parts",
+  "ru": "Количество деталей",
+  "resourceable": true
+ },
+ "s0344": {
+  "zh": "板材",
+  "masked": "板材",
+  "exprs": [],
+  "en": "plate",
+  "ru": "тарелка",
+  "resourceable": true
+ },
+ "s0345": {
+  "zh": "轨迹段",
+  "masked": "轨迹段",
+  "exprs": [],
+  "en": "trajectory segment",
+  "ru": "сегмент траектории",
+  "resourceable": true
+ },
+ "s0346": {
+  "zh": "厚度",
+  "masked": "厚度",
+  "exprs": [],
+  "en": "thickness",
+  "ru": "толщина",
+  "resourceable": true
+ },
+ "s0347": {
+  "zh": "坡口摘要",
+  "masked": "坡口摘要",
+  "exprs": [],
+  "en": "Bevel summary",
+  "ru": "Краткое описание скоса",
+  "resourceable": true
+ },
+ "s0348": {
+  "zh": "A 角",
+  "masked": "A 角",
+  "exprs": [],
+  "en": "A corner",
+  "ru": "Уголок",
+  "resourceable": true
+ },
+ "s0349": {
+  "zh": "B 角",
+  "masked": "B 角",
+  "exprs": [],
+  "en": "B corner",
+  "ru": "Угол Б",
+  "resourceable": true
+ },
+ "s0350": {
+  "zh": "版本",
+  "masked": "版本",
+  "exprs": [],
+  "en": "Version",
+  "ru": "Версия",
+  "resourceable": true
+ },
+ "s0351": {
+  "zh": "版本码",
+  "masked": "版本码",
+  "exprs": [],
+  "en": "version code",
+  "ru": "код версии",
+  "resourceable": true
+ },
+ "s0352": {
+  "zh": "未打开文件",
+  "masked": "未打开文件",
+  "exprs": [],
+  "en": "File not opened",
+  "ru": "Файл не открыт",
+  "resourceable": true
+ },
+ "s0353": {
+  "zh": "导入",
+  "masked": "导入",
+  "exprs": [],
+  "en": "import",
+  "ru": "импортировать",
+  "resourceable": true
+ },
+ "s0354": {
+  "zh": "收藏",
+  "masked": "收藏",
+  "exprs": [],
+  "en": "collect",
+  "ru": "собирать",
+  "resourceable": true
+ },
+ "s0355": {
+  "zh": "所有",
+  "masked": "所有",
+  "exprs": [],
+  "en": "all",
+  "ru": "все",
+  "resourceable": true
+ },
+ "s0356": {
+  "zh": "无预览信息",
+  "masked": "无预览信息",
+  "exprs": [],
+  "en": "No preview information",
+  "ru": "Нет информации о предварительном просмотре",
+  "resourceable": true
+ },
+ "s0357": {
+  "zh": "打开",
+  "masked": "打开",
+  "exprs": [],
+  "en": "Open",
+  "ru": "Открыть",
+  "resourceable": true
+ },
+ "s0358": {
+  "zh": "详情",
+  "masked": "详情",
+  "exprs": [],
+  "en": "Details",
+  "ru": "Подробности",
+  "resourceable": true
+ },
+ "s0359": {
+  "zh": "删除",
+  "masked": "删除",
+  "exprs": [],
+  "en": "delete",
+  "ru": "удалить",
+  "resourceable": true
+ },
+ "s0360": {
+  "zh": "$count 个文件  ›",
+  "masked": "0 个文件  ›",
+  "exprs": [
+   "count"
+  ],
+  "en": "0 files ›",
+  "ru": "0 файлы ›",
+  "resourceable": true
+ },
+ "s0361": {
+  "zh": "文件详情",
+  "masked": "文件详情",
+  "exprs": [],
+  "en": "Document details",
+  "ru": "Детали документа",
+  "resourceable": true
+ },
+ "s0362": {
+  "zh": "返回文件面板",
+  "masked": "返回文件面板",
+  "exprs": [],
+  "en": "Return to file panel",
+  "ru": "Вернуться на панель файлов",
+  "resourceable": true
+ },
+ "s0363": {
+  "zh": "记录时间",
+  "masked": "记录时间",
+  "exprs": [],
+  "en": "Record time",
+  "ru": "Рекордное время",
+  "resourceable": true
+ },
+ "s0364": {
+  "zh": "已置顶",
+  "masked": "已置顶",
+  "exprs": [],
+  "en": "Pinned",
+  "ru": "Закреплено",
+  "resourceable": true
+ },
+ "s0365": {
+  "zh": "普通",
+  "masked": "普通",
+  "exprs": [],
+  "en": "ordinary",
+  "ru": "обычный",
+  "resourceable": true
+ },
+ "s0366": {
+  "zh": "管理模式",
+  "masked": "管理模式",
+  "exprs": [],
+  "en": "management mode",
+  "ru": "режим управления",
+  "resourceable": true
+ },
+ "s0367": {
+  "zh": "托管副本，可安全删除",
+  "masked": "托管副本，可安全删除",
+  "exprs": [],
+  "en": "Escrow copy, safe for deletion",
+  "ru": "Эскроу-копия, безопасна для удаления",
+  "resourceable": true
+ },
+ "s0368": {
+  "zh": "外部引用，只移除记录",
+  "masked": "外部引用，只移除记录",
+  "exprs": [],
+  "en": "External reference, only remove records",
+  "ru": "Внешняя ссылка, удалять только записи",
+  "resourceable": true
+ },
+ "s0369": {
+  "zh": "本地路径",
+  "masked": "本地路径",
+  "exprs": [],
+  "en": "local path",
+  "ru": "локальный путь",
+  "resourceable": true
+ },
+ "s0370": {
+  "zh": "来源",
+  "masked": "来源",
+  "exprs": [],
+  "en": "source",
+  "ru": "источник",
+  "resourceable": true
+ },
+ "s0371": {
+  "zh": "显示名称",
+  "masked": "显示名称",
+  "exprs": [],
+  "en": "display name",
+  "ru": "отображаемое имя",
+  "resourceable": true
+ },
+ "s0372": {
+  "zh": "大小",
+  "masked": "大小",
+  "exprs": [],
+  "en": "size",
+  "ru": "размер",
+  "resourceable": true
+ },
+ "s0373": {
+  "zh": "修改时间",
+  "masked": "修改时间",
+  "exprs": [],
+  "en": "modification time",
+  "ru": "время модификации",
+  "resourceable": true
+ },
+ "s0374": {
+  "zh": "打开文件",
+  "masked": "打开文件",
+  "exprs": [],
+  "en": "open file",
+  "ru": "открыть файл",
+  "resourceable": true
+ },
+ "s0375": {
+  "zh": "取消置顶",
+  "masked": "取消置顶",
+  "exprs": [],
+  "en": "Unpin",
+  "ru": "Открепить",
+  "resourceable": true
+ },
+ "s0376": {
+  "zh": "置顶历史记录",
+  "masked": "置顶历史记录",
+  "exprs": [],
+  "en": "Pin history",
+  "ru": "История контактов",
+  "resourceable": true
+ },
+ "s0377": {
+  "zh": "已更新历史记录",
+  "masked": "已更新历史记录",
+  "exprs": [],
+  "en": "History updated",
+  "ru": "История обновлена",
+  "resourceable": true
+ },
+ "s0378": {
+  "zh": "从历史中移除",
+  "masked": "从历史中移除",
+  "exprs": [],
+  "en": "Remove from history",
+  "ru": "Удалить из истории",
+  "resourceable": true
+ },
+ "s0379": {
+  "zh": "删除托管副本",
+  "masked": "删除托管副本",
+  "exprs": [],
+  "en": "Delete a managed copy",
+  "ru": "Удаление управляемой копии",
+  "resourceable": true
+ },
+ "s0380": {
+  "zh": "当前文件详情",
+  "masked": "当前文件详情",
+  "exprs": [],
+  "en": "Current file details",
+  "ru": "Текущие сведения о файле",
+  "resourceable": true
+ },
+ "s0381": {
+  "zh": "返回导入页",
+  "masked": "返回导入页",
+  "exprs": [],
+  "en": "Return to import page",
+  "ru": "Вернуться на страницу импорта",
+  "resourceable": true
+ },
+ "s0382": {
+  "zh": "预览",
+  "masked": "预览",
+  "exprs": [],
+  "en": "Preview",
+  "ru": "Предварительный просмотр",
+  "resourceable": true
+ },
+ "s0383": {
+  "zh": "取消收藏",
+  "masked": "取消收藏",
+  "exprs": [],
+  "en": "Cancel favorites",
+  "ru": "Отменить избранное",
+  "resourceable": true
+ },
+ "s0384": {
+  "zh": "重新导入文件",
+  "masked": "重新导入文件",
+  "exprs": [],
+  "en": "Reimport the file",
+  "ru": "Повторно импортируйте файл",
+  "resourceable": true
+ },
+ "s0385": {
+  "zh": "PDF 转换预览",
+  "masked": "PDF 转换预览",
+  "exprs": [],
+  "en": "PDF conversion preview",
+  "ru": "Предварительный просмотр преобразования PDF",
+  "resourceable": true
+ },
+ "s0386": {
+  "zh": "DXF 图纸",
+  "masked": "DXF 图纸",
+  "exprs": [],
+  "en": "DXF drawing",
+  "ru": "DXF-чертеж",
+  "resourceable": true
+ },
+ "s0387": {
+  "zh": "$type · ${document.entities.size} 个实体 · ${document.layers.size} 个图层 · W ${\"%.2f\".format(document.bounds.width)} / H ${\"%.2f\".format(document.bounds.height)}",
+  "masked": "0 · 1 个实体 · 2 个图层 · W 3 / H 4",
+  "exprs": [
+   "type",
+   "document.entities.size",
+   "document.layers.size",
+   "\"%.2f\".format(document.bounds.width)",
+   "\"%.2f\".format(document.bounds.height)"
+  ],
+  "en": "0 · 1 entities · 2 layers · W 3 / H 4",
+  "ru": "0 · 1 объекты · 2 слои · W 3 / H 4",
+  "resourceable": true
+ },
+ "s0388": {
+  "zh": "GEN 工艺文件 · ${parsed.document.sections.size} 个区段 · ${parsed.document.operations.size} 个工艺段",
+  "masked": "GEN 工艺文件 · 0 个区段 · 1 个工艺段",
+  "exprs": [
+   "parsed.document.sections.size",
+   "parsed.document.operations.size"
+  ],
+  "en": "GEN process file · 0 sections · 1 process sections",
+  "ru": "Файл процесса GEN · 0 разделов · 1 разделов процесса",
+  "resourceable": true
+ },
+ "s0389": {
+  "zh": "NC 程序 · ${parsed.program.moves.size} 条轨迹 · ${ncBevelSummary(parsed.program)}",
+  "masked": "NC 程序 · 0 条轨迹 · 1",
+  "exprs": [
+   "parsed.program.moves.size",
+   "ncBevelSummary(parsed.program)"
+  ],
+  "en": "NC program · 0 trajectories · 1",
+  "ru": "Программа ЧПУ · 0 траектории · 1",
+  "resourceable": true
+ },
+ "s0390": {
+  "zh": "DWG 图纸 · ${parsed.preview.readableVersion} · ${parsed.preview.versionCode}",
+  "masked": "DWG 图纸 · 0 · 1",
+  "exprs": [
+   "parsed.preview.readableVersion",
+   "parsed.preview.versionCode"
+  ],
+  "en": "DWG drawings · 0 · 1",
+  "ru": "Чертежи DWG · 0 · 1",
+  "resourceable": true
+ },
+ "s0391": {
+  "zh": "已选择文件，尚未生成预览",
+  "masked": "已选择文件，尚未生成预览",
+  "exprs": [],
+  "en": "File selected, preview not generated yet",
+  "ru": "Файл выбран, предварительный просмотр еще не создан",
+  "resourceable": true
+ },
+ "s0392": {
+  "zh": "置顶",
+  "masked": "置顶",
+  "exprs": [],
+  "en": "pin to top",
+  "ru": "прикрепить сверху",
+  "resourceable": true
+ },
+ "s0393": {
+  "zh": "零件 $parts · 板材 ${rawLength.toInt()} x ${rawWidth.toInt()} · 工艺 ${document.operations.size}",
+  "masked": "零件 0 · 板材 1 x 2 · 工艺 3",
+  "exprs": [
+   "parts",
+   "rawLength.toInt()",
+   "rawWidth.toInt()",
+   "document.operations.size"
+  ],
+  "en": "Part 0 · Plate 1 x 2 · Process 3",
+  "ru": "Деталь 0 · Пластина 1 x 2 · Процесс 3",
+  "resourceable": true
+ },
+ "s0394": {
+  "zh": "区段 ${document.sections.size} · 零件 $parts",
+  "masked": "区段 0 · 零件 1",
+  "exprs": [
+   "document.sections.size",
+   "parts"
+  ],
+  "en": "Section 0 · Part 1",
+  "ru": "Раздел 0 · Часть 1",
+  "resourceable": true
+ },
+ "s0395": {
+  "zh": "轨迹 ${program.moves.size} · $summary · 板材 $sx x $sy",
+  "masked": "轨迹 0 · 1 · 板材 2 x 3",
+  "exprs": [
+   "program.moves.size",
+   "summary",
+   "sx",
+   "sy"
+  ],
+  "en": "Trajectory 0 · 1 · Plate 2 x 3",
+  "ru": "Траектория 0 · 1 · Пластина 2 x 3",
+  "resourceable": true
+ },
+ "s0396": {
+  "zh": "轨迹 ${program.moves.size} · 板材 $sx x $sy",
+  "masked": "轨迹 0 · 板材 1 x 2",
+  "exprs": [
+   "program.moves.size",
+   "sx",
+   "sy"
+  ],
+  "en": "Trajectory 0 · Plate 1 x 2",
+  "ru": "Траектория 0 · Пластина 1 x 2",
+  "resourceable": true
+ },
+ "s0397": {
+  "zh": "轨迹 ${program.moves.size}",
+  "masked": "轨迹 0",
+  "exprs": [
+   "program.moves.size"
+  ],
+  "en": "Trajectory 0",
+  "ru": "Траектория 0",
+  "resourceable": true
+ },
+ "s0398": {
+  "zh": "对称坡口 ±${\"%.0f\".format(kotlin.math.abs(aValues.last()))}",
+  "masked": "对称坡口 ±0",
+  "exprs": [
+   "\"%.0f\".format(kotlin.math.abs(aValues.last()))"
+  ],
+  "en": "Symmetrical groove ±0",
+  "ru": "Симметричная канавка ±0",
+  "resourceable": true
+ },
+ "s0399": {
+  "zh": "A 对称坡口 ±${\"%.0f\".format(kotlin.math.abs(aValues.last()))}",
+  "masked": "A 对称坡口 ±0",
+  "exprs": [
+   "\"%.0f\".format(kotlin.math.abs(aValues.last()))"
+  ],
+  "en": "A symmetrical groove ±0",
+  "ru": "Симметричная канавка ±0",
+  "resourceable": true
+ },
+ "s0400": {
+  "zh": "B 对称坡口 ±${\"%.0f\".format(kotlin.math.abs(bValues.last()))}",
+  "masked": "B 对称坡口 ±0",
+  "exprs": [
+   "\"%.0f\".format(kotlin.math.abs(bValues.last()))"
+  ],
+  "en": "B Symmetrical groove ±0",
+  "ru": "B Симметричная канавка ±0",
+  "resourceable": true
+ },
+ "s0401": {
+  "zh": "坡口 ${aValues.plus(bValues).joinToString(\"/\") { \"%.0f\".format(it) }}",
+  "masked": "坡口 0",
+  "exprs": [
+   "aValues.plus(bValues).joinToString(\"/\") { \"%.0f\".format(it) }"
+  ],
+  "en": "Bevel 0",
+  "ru": "Фаска 0",
+  "resourceable": true
+ },
+ "s0402": {
+  "zh": "无坡口",
+  "masked": "无坡口",
+  "exprs": [],
+  "en": "No bevel",
+  "ru": "Нет фаски",
+  "resourceable": true
+ },
+ "s0403": {
+  "zh": "暂无零件",
+  "masked": "暂无零件",
+  "exprs": [],
+  "en": "No parts yet",
+  "ru": "Деталей пока нет",
+  "resourceable": true
+ },
+ "s0404": {
+  "zh": "镜像 X",
+  "masked": "镜像 X",
+  "exprs": [],
+  "en": "Mirror X",
+  "ru": "Зеркало Х",
+  "resourceable": true
+ },
+ "s0405": {
+  "zh": "编辑零件",
+  "masked": "编辑零件",
+  "exprs": [],
+  "en": "Edit part",
+  "ru": "Редактировать часть",
+  "resourceable": true
+ },
+ "s0406": {
+  "zh": "数量",
+  "masked": "数量",
+  "exprs": [],
+  "en": "quantity",
+  "ru": "количество",
+  "resourceable": true
+ },
+ "s0407": {
+  "zh": "旋转(度)",
+  "masked": "旋转(度)",
+  "exprs": [],
+  "en": "Rotation (degrees)",
+  "ru": "Вращение (градусы)",
+  "resourceable": true
+ },
+ "s0408": {
+  "zh": "保存",
+  "masked": "保存",
+  "exprs": [],
+  "en": "save",
+  "ru": "сохранять",
+  "resourceable": true
+ },
+ "s0409": {
+  "zh": "执行",
+  "masked": "执行",
+  "exprs": [],
+  "en": "implement",
+  "ru": "осуществлять",
+  "resourceable": true
+ },
+ "s0410": {
+  "zh": "矩形参数",
+  "masked": "矩形参数",
+  "exprs": [],
+  "en": "Rectangle parameters",
+  "ru": "Параметры прямоугольника",
+  "resourceable": true
+ },
+ "s0411": {
+  "zh": "矩形${nestingParts.size + 1}",
+  "masked": "矩形0",
+  "exprs": [
+   "nestingParts.size + 1"
+  ],
+  "en": "Rectangle0",
+  "ru": "Прямоугольник0",
+  "resourceable": true
+ },
+ "s0412": {
+  "zh": "圆形参数",
+  "masked": "圆形参数",
+  "exprs": [],
+  "en": "Circular parameters",
+  "ru": "Круговые параметры",
+  "resourceable": true
+ },
+ "s0413": {
+  "zh": "圆形${nestingParts.size + 1}",
+  "masked": "圆形0",
+  "exprs": [
+   "nestingParts.size + 1"
+  ],
+  "en": "Round0",
+  "ru": "Раунд0",
+  "resourceable": true
+ },
+ "s0414": {
+  "zh": "没有零件可排版",
+  "masked": "没有零件可排版",
+  "exprs": [],
+  "en": "No parts to typeset",
+  "ru": "Нет частей для набора текста",
+  "resourceable": true
+ },
+ "s0415": {
+  "zh": "排版结果",
+  "masked": "排版结果",
+  "exprs": [],
+  "en": "Typesetting results",
+  "ru": "Результаты верстки",
+  "resourceable": true
+ },
+ "s0416": {
+  "zh": "利用率",
+  "masked": "利用率",
+  "exprs": [],
+  "en": "Utilization",
+  "ru": "Использование",
+  "resourceable": true
+ },
+ "s0417": {
+  "zh": "已放置",
+  "masked": "已放置",
+  "exprs": [],
+  "en": "Placed",
+  "ru": "Размещено",
+  "resourceable": true
+ },
+ "s0418": {
+  "zh": "浪费面积",
+  "masked": "浪费面积",
+  "exprs": [],
+  "en": "Wasted area",
+  "ru": "Потраченная площадь",
+  "resourceable": true
+ },
+ "s0419": {
+  "zh": "无法放置的零件：",
+  "masked": "无法放置的零件：",
+  "exprs": [],
+  "en": "Parts that cannot be placed:",
+  "ru": "Части, которые нельзя разместить:",
+  "resourceable": true
+ },
+ "s0420": {
+  "zh": "优化建议",
+  "masked": "优化建议",
+  "exprs": [],
+  "en": "Optimization suggestions",
+  "ru": "Предложения по оптимизации",
+  "resourceable": true
+ },
+ "s0421": {
+  "zh": "建议",
+  "masked": "建议",
+  "exprs": [],
+  "en": "suggestion",
+  "ru": "предположение",
+  "resourceable": true
+ },
+ "s0422": {
+  "zh": "排版完成: ${result.placedCount}/${nestingParts.sumOf { it.quantity }} 零件, 利用率 ${\"%.1f\".format(result.utilization)}%",
+  "masked": "排版完成: 0/1 零件, 利用率 2%",
+  "exprs": [
+   "result.placedCount",
+   "nestingParts.sumOf { it.quantity }",
+   "\"%.1f\".format(result.utilization)"
+  ],
+  "en": "Typesetting completed: 0/1 ​​parts, utilization rate 2%",
+  "ru": "Набор текста завершен: 0/1 ​​частей, коэффициент использования 2%",
+  "resourceable": true
+ },
+ "s0423": {
+  "zh": "排版方案对比：",
+  "masked": "排版方案对比：",
+  "exprs": [],
+  "en": "Comparison of layout plans:",
+  "ru": "Сравнение планировок:",
+  "resourceable": true
+ },
+ "s0424": {
+  "zh": "   利用率: ${\"%.1f\".format(result.utilization)}%",
+  "masked": "   利用率: 0%",
+  "exprs": [
+   "\"%.1f\".format(result.utilization)"
+  ],
+  "en": "Utilization rate: 0%",
+  "ru": "Коэффициент использования: 0%",
+  "resourceable": true
+ },
+ "s0425": {
+  "zh": "   已放置: ${result.placedCount}/${nestingParts.sumOf { it.quantity }}",
+  "masked": "   已放置: 0/1",
+  "exprs": [
+   "result.placedCount",
+   "nestingParts.sumOf { it.quantity }"
+  ],
+  "en": "Placed: 0/1",
+  "ru": "Размещено: 0/1",
+  "resourceable": true
+ },
+ "s0426": {
+  "zh": "   浪费面积: ${\"%.0f\".format(result.wastedArea)}",
+  "masked": "   浪费面积: 0",
+  "exprs": [
+   "\"%.0f\".format(result.wastedArea)"
+  ],
+  "en": "Wasted area: 0",
+  "ru": "Ненужная площадь: 0",
+  "resourceable": true
+ },
+ "s0427": {
+  "zh": "推荐使用: ${bestResult?.first?.name}",
+  "masked": "推荐使用: 0",
+  "exprs": [
+   "bestResult?.first?.name"
+  ],
+  "en": "Recommended use: 0",
+  "ru": "Рекомендуемое использование: 0",
+  "resourceable": true
+ },
+ "s0428": {
+  "zh": "排版方案对比",
+  "masked": "排版方案对比",
+  "exprs": [],
+  "en": "Comparison of layout plans",
+  "ru": "Сравнение планов планировки",
+  "resourceable": true
+ },
+ "s0429": {
+  "zh": "应用最优方案",
+  "masked": "应用最优方案",
+  "exprs": [],
+  "en": "Apply best practices",
+  "ru": "Применяйте лучшие практики",
+  "resourceable": true
+ },
+ "s0430": {
+  "zh": "已应用最优方案: ${strategy.name}",
+  "masked": "已应用最优方案: 0",
+  "exprs": [
+   "strategy.name"
+  ],
+  "en": "Best solution applied: 0",
+  "ru": "Лучшее примененное решение: 0",
+  "resourceable": true
+ },
+ "s0431": {
+  "zh": "无法进行分板排版",
+  "masked": "无法进行分板排版",
+  "exprs": [],
+  "en": "Unable to perform board typesetting",
+  "ru": "Невозможно выполнить верстку доски",
+  "resourceable": true
+ },
+ "s0432": {
+  "zh": "自动分板完成",
+  "masked": "自动分板完成",
+  "exprs": [],
+  "en": "Automatic board splitting is completed",
+  "ru": "Автоматическое разделение досок завершено",
+  "resourceable": true
+ },
+ "s0433": {
+  "zh": "总板数: ${results.size}",
+  "masked": "总板数: 0",
+  "exprs": [
+   "results.size"
+  ],
+  "en": "Total number of boards: 0",
+  "ru": "Общее количество досок: 0",
+  "resourceable": true
+ },
+ "s0434": {
+  "zh": "板材 ${index + 1}:",
+  "masked": "板材 0:",
+  "exprs": [
+   "index + 1"
+  ],
+  "en": "Plate 0:",
+  "ru": "Табличка 0:",
+  "resourceable": true
+ },
+ "s0435": {
+  "zh": "  已放置: ${result.placedCount}",
+  "masked": "  已放置: 0",
+  "exprs": [
+   "result.placedCount"
+  ],
+  "en": "Placed: 0",
+  "ru": "Размещено: 0",
+  "resourceable": true
+ },
+ "s0436": {
+  "zh": "  利用率: ${\"%.1f\".format(result.utilization)}%",
+  "masked": "  利用率: 0%",
+  "exprs": [
+   "\"%.1f\".format(result.utilization)"
+  ],
+  "en": "Utilization rate: 0%",
+  "ru": "Коэффициент использования: 0%",
+  "resourceable": true
+ },
+ "s0437": {
+  "zh": "总放置: ${results.sumOf { it.placedCount }}/$totalRequested",
+  "masked": "总放置: 0/1",
+  "exprs": [
+   "results.sumOf { it.placedCount }",
+   "totalRequested"
+  ],
+  "en": "Total placement: 0/1",
+  "ru": "Общее размещение: 0/1",
+  "resourceable": true
+ },
+ "s0438": {
+  "zh": "分板排版结果",
+  "masked": "分板排版结果",
+  "exprs": [],
+  "en": "Split board typesetting results",
+  "ru": "Результаты верстки разделенной доски",
+  "resourceable": true
+ },
+ "s0439": {
+  "zh": "已应用分板排版: ${results.size} 张板材",
+  "masked": "已应用分板排版: 0 张板材",
+  "exprs": [
+   "results.size"
+  ],
+  "en": "Applied board layout: 0 sheets",
+  "ru": "Применяемая раскладка платы: 0 листов.",
+  "resourceable": true
+ },
+ "s0440": {
+  "zh": "已应用排版",
+  "masked": "已应用排版",
+  "exprs": [],
+  "en": "Typography applied",
+  "ru": "Типографика применена",
+  "resourceable": true
+ },
+ "s0441": {
+  "zh": "没有可应用的排版结果",
+  "masked": "没有可应用的排版结果",
+  "exprs": [],
+  "en": "No layout results available to apply",
+  "ru": "Нет результатов макета, доступных для применения.",
+  "resourceable": true
+ },
+ "s0442": {
+  "zh": "排版导入",
+  "masked": "排版导入",
+  "exprs": [],
+  "en": "Typesetting import",
+  "ru": "Импорт верстки",
+  "resourceable": true
+ },
+ "s0443": {
+  "zh": "图层 ${nested.layers.size} · 实体 ${nested.entities.size}",
+  "masked": "图层 0 · 实体 1",
+  "exprs": [
+   "nested.layers.size",
+   "nested.entities.size"
+  ],
+  "en": "Layer 0 · Entity 1",
+  "ru": "Слой 0 · Объект 1",
+  "resourceable": true
+ },
+ "s0444": {
+  "zh": "已选中线段，可修改坐标",
+  "masked": "已选中线段，可修改坐标",
+  "exprs": [],
+  "en": "The line segment has been selected and the coordinates can be modified",
+  "ru": "Сегмент линии выбран, и координаты можно изменить.",
+  "resourceable": true
+ },
+ "s0445": {
+  "zh": "已完成",
+  "masked": "已完成",
+  "exprs": [],
+  "en": "Completed",
+  "ru": "Завершенный",
+  "resourceable": true
+ },
+ "s0446": {
+  "zh": "预演完成",
+  "masked": "预演完成",
+  "exprs": [],
+  "en": "Rehearsal completed",
+  "ru": "Репетиция завершена",
+  "resourceable": true
+ },
+ "s0447": {
+  "zh": "智能排版（独立）",
+  "masked": "智能排版（独立）",
+  "exprs": [],
+  "en": "Intelligent typesetting (standalone)",
+  "ru": "Интеллектуальная верстка (автономно)",
+  "resourceable": true
+ },
+ "s0448": {
+  "zh": "板材参数",
+  "masked": "板材参数",
+  "exprs": [],
+  "en": "Board parameters",
+  "ru": "Параметры платы",
+  "resourceable": true
+ },
+ "s0449": {
+  "zh": "长度",
+  "masked": "长度",
+  "exprs": [],
+  "en": "length",
+  "ru": "длина",
+  "resourceable": true
+ },
+ "s0450": {
+  "zh": "推荐板材",
+  "masked": "推荐板材",
+  "exprs": [],
+  "en": "Recommended boards",
+  "ru": "Рекомендуемые доски",
+  "resourceable": true
+ },
+ "s0451": {
+  "zh": "套用推荐尺寸",
+  "masked": "套用推荐尺寸",
+  "exprs": [],
+  "en": "Apply recommended sizes",
+  "ru": "Применить рекомендуемые размеры",
+  "resourceable": true
+ },
+ "s0452": {
+  "zh": "板材 ${\"%.0f\".format(wVal)} x ${\"%.0f\".format(hVal)}",
+  "masked": "板材 0 x 1",
+  "exprs": [
+   "\"%.0f\".format(wVal)",
+   "\"%.0f\".format(hVal)"
+  ],
+  "en": "Plate 0 x 1",
+  "ru": "Пластина 0 x 1",
+  "resourceable": true
+ },
+ "s0453": {
+  "zh": "导入/图库",
+  "masked": "导入/图库",
+  "exprs": [],
+  "en": "import/gallery",
+  "ru": "импорт/галерея",
+  "resourceable": true
+ },
+ "s0454": {
+  "zh": "导入零件文件",
+  "masked": "导入零件文件",
+  "exprs": [],
+  "en": "Import part files",
+  "ru": "Импортировать файлы деталей",
+  "resourceable": true
+ },
+ "s0455": {
+  "zh": "添加矩形",
+  "masked": "添加矩形",
+  "exprs": [],
+  "en": "Add rectangle",
+  "ru": "Добавить прямоугольник",
+  "resourceable": true
+ },
+ "s0456": {
+  "zh": "添加圆形",
+  "masked": "添加圆形",
+  "exprs": [],
+  "en": "Add circle",
+  "ru": "Добавить круг",
+  "resourceable": true
+ },
+ "s0457": {
+  "zh": "零件列表",
+  "masked": "零件列表",
+  "exprs": [],
+  "en": "Parts list",
+  "ru": "Список запчастей",
+  "resourceable": true
+ },
+ "s0458": {
+  "zh": "排版参数",
+  "masked": "排版参数",
+  "exprs": [],
+  "en": "Typesetting parameters",
+  "ru": "Параметры набора",
+  "resourceable": true
+ },
+ "s0459": {
+  "zh": "间距",
+  "masked": "间距",
+  "exprs": [],
+  "en": "spacing",
+  "ru": "расстояние",
+  "resourceable": true
+ },
+ "s0460": {
+  "zh": "自动排样",
+  "masked": "自动排样",
+  "exprs": [],
+  "en": "Automatic nesting",
+  "ru": "Автоматический раскрой",
+  "resourceable": true
+ },
+ "s0461": {
+  "zh": "对比方案",
+  "masked": "对比方案",
+  "exprs": [],
+  "en": "Comparison plan",
+  "ru": "План сравнения",
+  "resourceable": true
+ },
+ "s0462": {
+  "zh": "自动分板",
+  "masked": "自动分板",
+  "exprs": [],
+  "en": "Automatic board splitting",
+  "ru": "Автоматическое разделение досок",
+  "resourceable": true
+ },
+ "s0463": {
+  "zh": "应用到视图",
+  "masked": "应用到视图",
+  "exprs": [],
+  "en": "Apply to view",
+  "ru": "Подать заявку на просмотр",
+  "resourceable": true
+ },
+ "s0464": {
+  "zh": "⚠ 利用率较低 (${String.format(\"%.1f\", result.utilization)}%)，建议调整零件排列或板材尺寸",
+  "masked": "⚠ 利用率较低 (0%)，建议调整零件排列或板材尺寸",
+  "exprs": [
+   "String.format(\"%.1f\", result.utilization)"
+  ],
+  "en": "⚠ The utilization rate is low (0%), it is recommended to adjust the part arrangement or plate size",
+  "ru": "⚠ Коэффициент использования низкий (0%), рекомендуется скорректировать расположение деталей или размер пластины.",
+  "resourceable": true
+ },
+ "s0465": {
+  "zh": "⚠ 有 ${result.failedParts.size} 个零件无法放置，建议增加板材尺寸或减少间距",
+  "masked": "⚠ 有 0 个零件无法放置，建议增加板材尺寸或减少间距",
+  "exprs": [
+   "result.failedParts.size"
+  ],
+  "en": "⚠ There are 0 parts that cannot be placed. It is recommended to increase the plate size or reduce the spacing.",
+  "ru": "⚠ Есть 0 деталей, которые невозможно разместить. Рекомендуется увеличить размер пластины или уменьшить расстояние.",
+  "resourceable": true
+ },
+ "s0466": {
+  "zh": "💡 间距较大 (${minGap}mm)，可尝试减小间距以提高利用率",
+  "masked": "💡 间距较大 (0mm)，可尝试减小间距以提高利用率",
+  "exprs": [
+   "minGap"
+  ],
+  "en": "💡 The spacing is large (0mm), you can try to reduce the spacing to improve utilization",
+  "ru": "💡 Расстояние большое (0мм), вы можете попытаться уменьшить его, чтобы улучшить использование.",
+  "resourceable": true
+ },
+ "s0467": {
+  "zh": "💡 板材利用率很高，考虑使用更大的板材或分成多张板",
+  "masked": "💡 板材利用率很高，考虑使用更大的板材或分成多张板",
+  "exprs": [],
+  "en": "💡 The board utilization rate is very high, consider using larger boards or dividing them into multiple boards",
+  "ru": "💡 Коэффициент использования доски очень высок, рассмотрите возможность использования досок большего размера или разделения их на несколько досок.",
+  "resourceable": true
+ },
+ "s0468": {
+  "zh": "FFD (首次适配递减)",
+  "masked": "FFD (首次适配递减)",
+  "exprs": [],
+  "en": "FFD (First Fit Decreasing)",
+  "ru": "FFD (первый подходящий, по убыванию)",
+  "resourceable": true
+ },
+ "s0469": {
+  "zh": "按零件面积从大到小排列，对每个零件尝试4个旋转角度",
+  "masked": "按零件面积从大到小排列，对每个零件尝试4个旋转角度",
+  "exprs": [],
+  "en": "Sort parts by area (largest first); try 4 rotation angles for each part",
+  "ru": "Сортировка деталей по площади (от больших к меньшим); 4 угла поворота на деталь",
+  "resourceable": true
+ },
+ "s0470": {
+  "zh": "${part.name} (第 ${it + 1} 个)",
+  "masked": "0 (第 1 个)",
+  "exprs": [
+   "part.name",
+   "it + 1"
+  ],
+  "en": "0 (No. 1)",
+  "ru": "0 (№ 1)",
+  "resourceable": true
+ },
+ "s0471": {
+  "zh": "BestFit (最优适配)",
+  "masked": "BestFit (最优适配)",
+  "exprs": [],
+  "en": "Best Fit",
+  "ru": "Наилучшее заполнение",
+  "resourceable": true
+ },
+ "s0472": {
+  "zh": "对每个零件选择浪费空间最少的放置位置",
+  "masked": "对每个零件选择浪费空间最少的放置位置",
+  "exprs": [],
+  "en": "Choose the placement with the least wasted space for each part",
+  "ru": "Выбор позиции с наименьшими потерями места для каждой детали",
+  "resourceable": true
+ },
+ "s0473": {
+  "zh": "条纹排列",
+  "masked": "条纹排列",
+  "exprs": [],
+  "en": "Stripe",
+  "ru": "Полосами",
+  "resourceable": true
+ },
+ "s0474": {
+  "zh": "按行排列，每行尽可能紧凑，适合长条形零件",
+  "masked": "按行排列，每行尽可能紧凑，适合长条形零件",
+  "exprs": [],
+  "en": "Pack row by row as compactly as possible; good for long parts",
+  "ru": "Укладка рядами, каждый ряд как можно плотнее; подходит для длинных деталей",
+  "resourceable": true
+ },
+ "s0475": {
+  "zh": "未知错误",
+  "en": "Unknown error",
+  "ru": "Неизвестная ошибка",
+  "masked": "未知错误",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0476": {
+  "zh": "无法读取 DXF 文件",
+  "en": "Unable to read DXF file",
+  "ru": "Не удалось прочитать файл DXF",
+  "masked": "无法读取 DXF 文件",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0477": {
+  "zh": "无法读取文件",
+  "en": "Unable to read file",
+  "ru": "Не удалось прочитать файл",
+  "masked": "无法读取文件",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0478": {
+  "zh": "未指定",
+  "en": "Unspecified",
+  "ru": "Не указано",
+  "masked": "未指定",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0479": {
+  "zh": "英寸",
+  "en": "Inches",
+  "ru": "Дюймы",
+  "masked": "英寸",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0480": {
+  "zh": "英尺",
+  "en": "Feet",
+  "ru": "Футы",
+  "masked": "英尺",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0481": {
+  "zh": "英里",
+  "en": "Miles",
+  "ru": "Мили",
+  "masked": "英里",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0482": {
+  "zh": "毫米",
+  "en": "Millimeters",
+  "ru": "Миллиметры",
+  "masked": "毫米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0483": {
+  "zh": "厘米",
+  "en": "Centimeters",
+  "ru": "Сантиметры",
+  "masked": "厘米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0484": {
+  "zh": "米",
+  "en": "Meters",
+  "ru": "Метры",
+  "masked": "米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0485": {
+  "zh": "千米",
+  "en": "Kilometers",
+  "ru": "Километры",
+  "masked": "千米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0486": {
+  "zh": "微英寸",
+  "en": "Microinches",
+  "ru": "Микродюймы",
+  "masked": "微英寸",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0487": {
+  "zh": "密耳",
+  "en": "Mils",
+  "ru": "Милы",
+  "masked": "密耳",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0488": {
+  "zh": "码",
+  "en": "Yards",
+  "ru": "Ярды",
+  "masked": "码",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0489": {
+  "zh": "埃",
+  "en": "Angstroms",
+  "ru": "Ангстремы",
+  "masked": "埃",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0490": {
+  "zh": "纳米",
+  "en": "Nanometers",
+  "ru": "Нанометры",
+  "masked": "纳米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0491": {
+  "zh": "微米",
+  "en": "Microns",
+  "ru": "Микроны",
+  "masked": "微米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0492": {
+  "zh": "分米",
+  "en": "Decimeters",
+  "ru": "Дециметры",
+  "masked": "分米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0493": {
+  "zh": "分米",
+  "en": "Decimeters",
+  "ru": "Дециметры",
+  "masked": "分米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0494": {
+  "zh": "十米",
+  "en": "Decameters",
+  "ru": "Декаметры",
+  "masked": "十米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0495": {
+  "zh": "百米",
+  "en": "Hectometers",
+  "ru": "Гектометры",
+  "masked": "百米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0496": {
+  "zh": "吉米",
+  "en": "Gigameters",
+  "ru": "Гигаметры",
+  "masked": "吉米",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0497": {
+  "zh": "天文单位",
+  "en": "Astronomical units",
+  "ru": "Астрономические единицы",
+  "masked": "天文单位",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0498": {
+  "zh": "光年",
+  "en": "Light years",
+  "ru": "Световые годы",
+  "masked": "光年",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0499": {
+  "zh": "秒差距",
+  "en": "Parsecs",
+  "ru": "Парсеки",
+  "masked": "秒差距",
+  "exprs": [],
+  "resourceable": true
+ },
+ "s0500": {
+  "zh": "单位代码 %1$s",
+  "en": "Unit code %1$s",
+  "ru": "Код единицы %1$s",
+  "masked": "单位代码 0",
+  "exprs": [
+   "code"
+  ],
+  "resourceable": true
+ }
+}

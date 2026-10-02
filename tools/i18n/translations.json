@@ -1,0 +1,2074 @@
+{
+"lit": {
+"s0001": {
+"en": "Unable to read PDF file",
+"ru": "Невозможно прочитать PDF-файл"
+},
+"s0002": {
+"en": "There are no convertible vector paths in PDF",
+"ru": "В PDF нет конвертируемых векторных путей."
+},
+"s0003": {
+"en": "mm",
+"ru": "мм"
+},
+"s0004": {
+"en": "(?i) Ratio\\s*[::]?\\s*1\\s*[::]\\s*(\\d+(?:\\.\\d+)?)",
+"ru": "(?i) Отношение\\s*[::]?\\s*1\\s*[::]\\s*(\\d+(?:\\.\\d+)?)"
+},
+"s0005": {
+"en": "Unknown version",
+"ru": "Неизвестная версия"
+},
+"s0006": {
+"en": "Unknown",
+"ru": "Неизвестно"
+},
+"s0007": {
+"en": "The current project has created a DWG viewing entrance, but complete rendering requires access to the C/C++ parsing library.",
+"ru": "В текущем проекте создан вход для просмотра DWG, но для полной визуализации требуется доступ к библиотеке синтаксического анализа C/C++."
+},
+"s0008": {
+"en": "Width 0 · Height 1",
+"ru": "Ширина 0 · Высота 1"
+},
+"s0009": {
+"en": "Selected starting point: %.2f, %.2f",
+"ru": "Выбранная начальная точка: %.2f, %.2f."
+},
+"s0010": {
+"en": "Selected starting point: %.2f, %.2f, you can drag/zoom the view and click the second point",
+"ru": "Выбранная начальная точка: %.2f, %.2f, вы можете перетащить/масштабировать вид и щелкнуть вторую точку."
+},
+"s0011": {
+"en": "Width 0",
+"ru": "Ширина 0"
+},
+"s0012": {
+"en": "High 0",
+"ru": "Высокий 0"
+},
+"s0013": {
+"en": "R 0 / arc 1",
+"ru": "R 0 / дуга 1"
+},
+"s0014": {
+"en": "long 0",
+"ru": "длинный 0"
+},
+"s0015": {
+"en": "long 0",
+"ru": "длинный 0"
+},
+"s0016": {
+"en": "R 0 Arc length 1",
+"ru": "R 0 Длина дуги 1"
+},
+"s0017": {
+"en": "free point",
+"ru": "свободная точка"
+},
+"s0018": {
+"en": "endpoint",
+"ru": "конечная точка"
+},
+"s0019": {
+"en": "midpoint",
+"ru": "середина"
+},
+"s0020": {
+"en": "closest",
+"ru": "ближайший"
+},
+"s0021": {
+"en": "Measuring distance: %.2f",
+"ru": "Расстояние измерения: %.2f"
+},
+"s0022": {
+"en": "Angle point 1/3: %.2f, %.2f",
+"ru": "Угловая точка 1/3: %.2f, %.2f"
+},
+"s0023": {
+"en": "Angle point 2/3: Continue to select the third point",
+"ru": "Угловая точка 2/3: Продолжайте выбирать третью точку."
+},
+"s0024": {
+"en": "Angle: %.2f°",
+"ru": "Угол: %.2f°"
+},
+"s0025": {
+"en": "Area point 0/3: continue to select points",
+"ru": "Точка площади 0/3: продолжить выбор точек"
+},
+"s0026": {
+"en": "Area point 0: Continue to select points or click \"Complete Area\"",
+"ru": "Точка площади 0: продолжайте выбирать точки или нажмите «Завершить площадь»."
+},
+"s0027": {
+"en": "Area: %.2f Perimeter: %.2f",
+"ru": "Площадь: %.2f Периметр: %.2f"
+},
+"s0028": {
+"en": "Distance measurement: click twice to take a point",
+"ru": "Измерение расстояния: нажмите дважды, чтобы определить точку."
+},
+"s0029": {
+"en": "Angle measurement: click three points in sequence",
+"ru": "Измерение угла: нажмите последовательно три точки."
+},
+"s0030": {
+"en": "Area measurement: continuously click on the contour points",
+"ru": "Измерение площади: непрерывно нажимайте на точки контура."
+},
+"s0031": {
+"en": "No supported drawing files were found in the compressed package.",
+"ru": "В сжатом пакете не обнаружено поддерживаемых файлов чертежей."
+},
+"s0032": {
+"en": "Unable to read file path",
+"ru": "Невозможно прочитать путь к файлу"
+},
+"s0033": {
+"en": "Untitled file",
+"ru": "Файл без имени"
+},
+"s0034": {
+"en": "Unable to read import file",
+"ru": "Невозможно прочитать файл импорта"
+},
+"s0035": {
+"en": "Unable to read compressed package",
+"ru": "Невозможно прочитать сжатый пакет"
+},
+"s0036": {
+"en": "0\\nManaged 1 files · 2",
+"ru": "0\\nУправляемые 1 файлы · 2"
+},
+"s0037": {
+"en": "Not started",
+"ru": "Не запущено"
+},
+"s0038": {
+"en": "Unable to write to target file",
+"ru": "Невозможно записать в целевой файл"
+},
+"s0039": {
+"en": "Export completed",
+"ru": "Экспорт завершен"
+},
+"s0040": {
+"en": "Export failed: 0",
+"ru": "Экспорт не удался: 0"
+},
+"s0041": {
+"en": "Unable to read current file",
+"ru": "Невозможно прочитать текущий файл"
+},
+"s0042": {
+"en": "Typesetting import.dxf",
+"ru": "Верстка import.dxf"
+},
+"s0043": {
+"en": "Imported layout file: 0",
+"ru": "Импортированный файл макета: 0"
+},
+"s0044": {
+"en": "Typesetting import failed: 0",
+"ru": "Не удалось импортировать набор текста: 0"
+},
+"s0045": {
+"en": "Please open the drawing first",
+"ru": "Пожалуйста, сначала откройте рисунок"
+},
+"s0046": {
+"en": "Automatic labeling is on: 0",
+"ru": "Автоматическая маркировка включена: 0"
+},
+"s0047": {
+"en": "Automatic labeling is turned off",
+"ru": "Автоматическая маркировка отключена."
+},
+"s0048": {
+"en": "Switched to 2D view",
+"ru": "Переключен на 2D-вид."
+},
+"s0049": {
+"en": "Switched to 3D view, drag and rotate",
+"ru": "Переключился на 3D-вид, перетащите и поверните"
+},
+"s0050": {
+"en": "The bevel display is turned on",
+"ru": "Отображение наклона включено"
+},
+"s0051": {
+"en": "The bevel display is turned off, press Straight Cut to display",
+"ru": "Индикация наклона отключена. Чтобы отобразить изображение, нажмите «Прямой рез»."
+},
+"s0052": {
+"en": "The empty shift line is shown",
+"ru": "Отображается пустая строка смещения"
+},
+"s0053": {
+"en": "The empty shift line is hidden",
+"ru": "Пустая строка смены скрыта"
+},
+"s0054": {
+"en": "No graphics available for export",
+"ru": "Нет графики, доступной для экспорта"
+},
+"s0055": {
+"en": "Untitled",
+"ru": "Без имени"
+},
+"s0056": {
+"en": "Unlabel",
+"ru": "Снять метку"
+},
+"s0057": {
+"en": "One-click annotation",
+"ru": "Аннотация в один клик"
+},
+"s0060": {
+"en": "Import failed: No supported drawing file found in the compressed package",
+"ru": "Ошибка импорта: в сжатом пакете не найден поддерживаемый файл чертежа."
+},
+"s0061": {
+"en": ", a total of 0 drawings were imported",
+"ru": ", всего было импортировано 0 рисунков"
+},
+"s0063": {
+"en": "Imported into dedicated directory: 0",
+"ru": "Импортировано в специальный каталог: 0"
+},
+"s0064": {
+"en": "Import failed: 0, try to open directly",
+"ru": "Не удалось импортировать: 0, попробуйте открыть напрямую."
+},
+"s0066": {
+"en": "Parse failed: 0",
+"ru": "Не удалось выполнить анализ: 0"
+},
+"s0067": {
+"en": "Unable to open file",
+"ru": "Невозможно открыть файл"
+},
+"s0068": {
+"en": "Please confirm that the file is readable and in .dxf, .dwg, .gen, .nc, or .pdf format.",
+"ru": "Убедитесь, что файл доступен для чтения и имеет формат .dxf, .dwg, .gen, .nc или .pdf."
+},
+"s0069": {
+"en": "Sample loading failed: 0",
+"ru": "Не удалось загрузить образец: 0"
+},
+"s0071": {
+"en": "Number of DXF entities: 0",
+"ru": "Количество объектов DXF: 0"
+},
+"s0073": {
+"en": "Layer 0",
+"ru": "Слой 0"
+},
+"s0074": {
+"en": "Open DXF",
+"ru": "Открыть DXF"
+},
+"s0075": {
+"en": "GEN process section:0",
+"ru": "Раздел процесса GEN:0"
+},
+"s0076": {
+"en": "Open GEN",
+"ru": "Открыть ОБЩ"
+},
+"s0077": {
+"en": "NC trajectory segment: 0",
+"ru": "Сегмент траектории NC: 0"
+},
+"s0078": {
+"en": "Open NC",
+"ru": "Открытый НЗ"
+},
+"s0079": {
+"en": "DWG file recognized: 0",
+"ru": "Распознан файл DWG: 0"
+},
+"s0080": {
+"en": "DWG preview information",
+"ru": "Информация о предварительном просмотре DWG"
+},
+"s0081": {
+"en": "Version code: 0\\nIdentified version: 1\\n\\n2",
+"ru": "Код версии: 0\\nИдентифицированная версия: 1\\n\\n2"
+},
+"s0082": {
+"en": "illustrate",
+"ru": "иллюстрировать"
+},
+"s0083": {
+"en": "File",
+"ru": "Файл"
+},
+"s0084": {
+"en": "Collection files",
+"ru": "Файлы коллекции"
+},
+"s0085": {
+"en": "There are no favorite files yet. After opening the drawing, you can save the current file in the details.",
+"ru": "Избранных файлов пока нет. Открыв чертеж, вы можете сохранить текущий файл в деталях."
+},
+"s0086": {
+"en": "Import file",
+"ru": "Импортировать файл"
+},
+"s0087": {
+"en": "The import will first be copied to the application-specific category directory and then opened from the copy; history deletion will only remove records by default to avoid accidentally deleting the original drawings.",
+"ru": "Импорт сначала будет скопирован в каталог категорий конкретного приложения, а затем открыт из копии; при удалении истории по умолчанию удаляются только записи, чтобы избежать случайного удаления исходных рисунков."
+},
+"s0088": {
+"en": "dedicated directory",
+"ru": "выделенный каталог"
+},
+"s0089": {
+"en": "+ Create a new CAD drawing",
+"ru": "+ Создать новый чертеж САПР"
+},
+"s0090": {
+"en": "+ Import local maps",
+"ru": "+ Импортировать местные карты"
+},
+"s0091": {
+"en": "Save DXF (retain original image structure)",
+"ru": "Сохранить DXF (сохранить исходную структуру изображения)"
+},
+"s0092": {
+"en": "Select the file vault root directory",
+"ru": "Выберите корневой каталог хранилища файлов."
+},
+"s0093": {
+"en": "current file",
+"ru": "текущий файл"
+},
+"s0094": {
+"en": "Cancel favorites of current file",
+"ru": "Отменить избранное текущего файла"
+},
+"s0095": {
+"en": "Save current file",
+"ru": "Сохранить текущий файл"
+},
+"s0098": {
+"en": "historical documents",
+"ru": "исторические документы"
+},
+"s0099": {
+"en": "state",
+"ru": "состояние"
+},
+"s0100": {
+"en": "No history yet",
+"ru": "Пока нет истории"
+},
+"s0101": {
+"en": "Pin to the top ·",
+"ru": "Закрепить вверху ·"
+},
+"s0102": {
+"en": "History deleted",
+"ru": "История удалена"
+},
+"s0103": {
+"en": "View full history",
+"ru": "Посмотреть полную историю"
+},
+"s0104": {
+"en": "Group preview",
+"ru": "Групповой предварительный просмотр"
+},
+"s0105": {
+"en": "Group",
+"ru": "Группа"
+},
+"s0106": {
+"en": "After importing or opening drawings, they will be automatically grouped by type such as DXF / DWG / PDF / NC.",
+"ru": "После импорта или открытия чертежей они будут автоматически сгруппированы по типу, например DXF/DWG/PDF/NC."
+},
+"s0107": {
+"en": "Clear history files",
+"ru": "Очистить файлы истории"
+},
+"s0108": {
+"en": "History files cleared",
+"ru": "Файлы истории удалены"
+},
+"s0110": {
+"en": "Managed copy deleted",
+"ru": "Управляемая копия удалена."
+},
+"s0111": {
+"en": "Delete failed: file is not writable or does not exist",
+"ru": "Удаление не удалось: файл недоступен для записи или не существует."
+},
+"s0112": {
+"en": "No record yet",
+"ru": "Пока нет записей"
+},
+"s0113": {
+"en": "NC automatically generated",
+"ru": "NC генерируется автоматически"
+},
+"s0114": {
+"en": "Outer bounds",
+"ru": "Внешние границы"
+},
+"s0115": {
+"en": "Thickness(mm)",
+"ru": "Толщина (мм)"
+},
+"s0116": {
+"en": "Material",
+"ru": "Материал"
+},
+"s0117": {
+"en": "Board length",
+"ru": "Длина доски"
+},
+"s0118": {
+"en": "Board width",
+"ru": "Ширина доски"
+},
+"s0119": {
+"en": "Program name/export name",
+"ru": "Имя программы/имя экспорта"
+},
+"s0120": {
+"en": "Program name",
+"ru": "Название программы"
+},
+"s0121": {
+"en": "Generate and export NC",
+"ru": "Создание и экспорт ЧПУ"
+},
+"s0122": {
+"en": "NC has been generated, please select the save location",
+"ru": "NC создан, выберите место сохранения."
+},
+"s0123": {
+"en": "There is currently no DXF for сохранённого исходного потока",
+"ru": "Для сохранённого исходного потока в настоящее время нет DXF."
+},
+"s0124": {
+"en": "Unable подготовить DXF",
+"ru": "Невозможно обработать DXF"
+},
+"s0125": {
+"en": "Current recognition size: W 0 / H 1 mm",
+"ru": "Текущий размер распознавания: Ш 0 / В 1 мм."
+},
+"s0126": {
+"en": "Original PDF size: W 0 / H 1 mm",
+"ru": "Исходный размер PDF: Ш 0 / В 1 мм."
+},
+"s0127": {
+"en": "Automatic recognition ratio: 1:0, currently applied 1x",
+"ru": "Коэффициент автоматического распознавания: 1:0, в настоящее время применяется 1x"
+},
+"s0128": {
+"en": "Automatic recognition ratio: not recognized",
+"ru": "Коэффициент автоматического распознавания: не распознан"
+},
+"s0129": {
+"en": "Target width (mm), preferred",
+"ru": "Целевая ширина (мм), предпочтительная"
+},
+"s0130": {
+"en": "Target height (mm), if left blank, it will be proportional to the width.",
+"ru": "Высота цели (мм), если оставить пустым, она будет пропорциональна ширине."
+},
+"s0131": {
+"en": "PDF size calibration",
+"ru": "Калибровка размера PDF"
+},
+"s0132": {
+"en": "Apply recognition ratio",
+"ru": "Применить коэффициент распознавания"
+},
+"s0133": {
+"en": "Drawing scale not recognized",
+"ru": "Масштаб чертежа не распознан"
+},
+"s0134": {
+"en": "Cancel",
+"ru": "Отмена"
+},
+"s0135": {
+"en": "application",
+"ru": "приложение"
+},
+"s0136": {
+"en": "Please enter a valid target size",
+"ru": "Введите действительный целевой размер"
+},
+"s0137": {
+"en": "PDF size calibration",
+"ru": "Калибровка размера PDF"
+},
+"s0138": {
+"en": "PDF dimensions calibrated to scale",
+"ru": "Размеры PDF, откалиброванные по масштабу"
+},
+"s0139": {
+"en": "File library",
+"ru": "Библиотека файлов"
+},
+"s0140": {
+"en": "No directory has been selected yet. After clicking \"Select file library root directory\" above, you can browse all files just like the original application.",
+"ru": "Ни один каталог еще не выбран. Нажав выше «Выбрать корневой каталог библиотеки файлов», вы сможете просматривать все файлы так же, как в исходном приложении."
+},
+"s0141": {
+"en": "current directory",
+"ru": "текущий каталог"
+},
+"s0142": {
+"en": "Return to previous level",
+"ru": "Вернуться на предыдущий уровень"
+},
+"s0143": {
+"en": "Table of contents",
+"ru": "Оглавление"
+},
+"s0144": {
+"en": "There are no files to display in the current directory",
+"ru": "В текущем каталоге нет файлов для отображения"
+},
+"s0145": {
+"en": "[Contents] 0",
+"ru": "[Содержание] 0"
+},
+"s0146": {
+"en": "Search files",
+"ru": "Поиск файлов"
+},
+"s0147": {
+"en": "Enter the file name keyword",
+"ru": "Введите ключевое слово имени файла"
+},
+"s0148": {
+"en": "search",
+"ru": "поиск"
+},
+"s0149": {
+"en": "hint",
+"ru": "намекать"
+},
+"s0150": {
+"en": "The search will recursively look for .dxf / .dwg / .gen files within the library root of your choice.",
+"ru": "Поиск будет рекурсивно искать файлы .dxf/.dwg/.gen в выбранном вами корне библиотеки."
+},
+"s0151": {
+"en": "Please select the file library root directory first",
+"ru": "Сначала выберите корневой каталог библиотеки файлов."
+},
+"s0152": {
+"en": "Please enter search keywords",
+"ru": "Пожалуйста, введите ключевые слова для поиска"
+},
+"s0154": {
+"en": "Search results",
+"ru": "Результаты поиска"
+},
+"s0155": {
+"en": "result",
+"ru": "результат"
+},
+"s0156": {
+"en": "No matching file found",
+"ru": "Соответствующий файл не найден"
+},
+"s0157": {
+"en": "Search completed: 0 results",
+"ru": "Поиск завершен: 0 результатов"
+},
+"s0158": {
+"en": "Switched to landscape screen",
+"ru": "Переключен на альбомный экран"
+},
+"s0159": {
+"en": "Switched to portrait screen",
+"ru": "Переключен на портретный экран"
+},
+"s0160": {
+"en": "board border",
+"ru": "граница доски"
+},
+"s0161": {
+"en": "Walk on empty",
+"ru": "Идти по пустому"
+},
+"s0162": {
+"en": "Straight cut",
+"ru": "Прямой крой"
+},
+"s0163": {
+"en": "Bevel A+",
+"ru": "Фаска А+"
+},
+"s0164": {
+"en": "Bevel A-",
+"ru": "Фаска А-"
+},
+"s0165": {
+"en": "Bevel B+",
+"ru": "Фаска B+"
+},
+"s0166": {
+"en": "Bevel B-",
+"ru": "Фаска Б-"
+},
+"s0167": {
+"en": "Layer controls",
+"ru": "Элементы управления слоями"
+},
+"s0168": {
+"en": "The current file is not a DXF and there are currently no switchable layers.",
+"ru": "Текущий файл не является DXF, и в настоящее время нет переключаемых слоев."
+},
+"s0169": {
+"en": "Show PDF text",
+"ru": "Показать текст PDF"
+},
+"s0170": {
+"en": "PDF text shown",
+"ru": "Показан PDF-текст"
+},
+"s0171": {
+"en": "PDF text hidden",
+"ru": "Текст PDF скрыт"
+},
+"s0172": {
+"en": "Show all",
+"ru": "Показать все"
+},
+"s0173": {
+"en": "Hide all",
+"ru": "Скрыть все"
+},
+"s0174": {
+"en": "entities",
+"ru": "сущности"
+},
+"s0175": {
+"en": "· The original file is closed",
+"ru": "· Исходный файл закрыт"
+},
+"s0176": {
+"en": "· Original file frozen",
+"ru": "· Исходный файл заморожен"
+},
+"s0177": {
+"en": "It is currently a GEN file, please view the cut in the preview panel.",
+"ru": "В настоящее время это файл GEN, просмотрите его на панели предварительного просмотра."
+},
+"s0178": {
+"en": "The current drawing does not support measurement",
+"ru": "Текущий чертеж не поддерживает измерения"
+},
+"s0179": {
+"en": "Measure/Annotate",
+"ru": "Измерить/аннотировать"
+},
+"s0180": {
+"en": "Automatic labeling",
+"ru": "Автоматическая маркировка"
+},
+"s0181": {
+"en": "Mark the width and height of drawings with one click",
+"ru": "Отмечайте ширину и высоту рисунков одним щелчком мыши"
+},
+"s0182": {
+"en": "border size",
+"ru": "размер границы"
+},
+"s0183": {
+"en": "Manual measurement",
+"ru": "Ручное измерение"
+},
+"s0184": {
+"en": "distance measurement",
+"ru": "измерение расстояния"
+},
+"s0185": {
+"en": "Distance measurement is on",
+"ru": "Измерение расстояния включено"
+},
+"s0186": {
+"en": "angle measurement",
+"ru": "измерение угла"
+},
+"s0187": {
+"en": "Angle measurement is on",
+"ru": "Измерение угла включено"
+},
+"s0188": {
+"en": "area measurement",
+"ru": "измерение площади"
+},
+"s0189": {
+"en": "Area measurement is enabled",
+"ru": "Измерение площади включено"
+},
+"s0190": {
+"en": "Close measurement",
+"ru": "Близкое измерение"
+},
+"s0191": {
+"en": "Measurement is off",
+"ru": "Измерение выключено"
+},
+"s0192": {
+"en": "Automatic closing: open",
+"ru": "Автоматическое закрытие: открыто"
+},
+"s0193": {
+"en": "Automatic closing: off",
+"ru": "Автоматическое закрытие: выключено"
+},
+"s0194": {
+"en": "Completed area",
+"ru": "Завершенная площадь"
+},
+"s0195": {
+"en": "take a step back",
+"ru": "сделай шаг назад"
+},
+"s0196": {
+"en": "Clear measurements",
+"ru": "Четкие измерения"
+},
+"s0197": {
+"en": "CAD editor",
+"ru": "Редактор САПР"
+},
+"s0198": {
+"en": "Open professional drawing tools",
+"ru": "Открытые профессиональные инструменты рисования"
+},
+"s0199": {
+"en": "Click on the canvas to select a line segment and then trim, copy, or delete it; you can also directly create a rectangle/circle/text.",
+"ru": "Нажмите на холст, чтобы выбрать сегмент линии, а затем обрезать, скопировать или удалить его; вы также можете напрямую создать прямоугольник/круг/текст."
+},
+"s0200": {
+"en": "Current mode",
+"ru": "Текущий режим"
+},
+"s0201": {
+"en": "Not turned on",
+"ru": "Не включено"
+},
+"s0202": {
+"en": "distance",
+"ru": "расстояние"
+},
+"s0203": {
+"en": "angle",
+"ru": "угол"
+},
+"s0204": {
+"en": "area",
+"ru": "область"
+},
+"s0205": {
+"en": "Number of layers",
+"ru": "Количество слоев"
+},
+"s0206": {
+"en": "There is no preview data for the current graph",
+"ru": "Для текущего графика нет данных предварительного просмотра."
+},
+"s0207": {
+"en": "Rehearsal of the knife move",
+"ru": "Репетиция удара ножом"
+},
+"s0208": {
+"en": "trajectory",
+"ru": "траектория"
+},
+"s0209": {
+"en": "empty trace",
+"ru": "пустой след"
+},
+"s0210": {
+"en": "Underline",
+"ru": "Подчеркнуть"
+},
+"s0211": {
+"en": "cutting",
+"ru": "резка"
+},
+"s0212": {
+"en": "Line segment editing",
+"ru": "Редактирование сегмента линии"
+},
+"s0213": {
+"en": "Type",
+"ru": "Тип"
+},
+"s0214": {
+"en": "Layers",
+"ru": "Слои"
+},
+"s0215": {
+"en": "default",
+"ru": "по умолчанию"
+},
+"s0216": {
+"en": "actual length",
+"ru": "фактическая длина"
+},
+"s0217": {
+"en": "coordinate difference",
+"ru": "разность координат"
+},
+"s0218": {
+"en": "Modify length",
+"ru": "Изменить длину"
+},
+"s0219": {
+"en": "Save changes",
+"ru": "Сохранить изменения"
+},
+"s0220": {
+"en": "Please enter valid coordinates",
+"ru": "Пожалуйста, введите действительные координаты"
+},
+"s0221": {
+"en": "Uncheck",
+"ru": "Снимите флажок"
+},
+"s0222": {
+"en": "History",
+"ru": "История"
+},
+"s0223": {
+"en": "Starting point",
+"ru": "Начальная точка"
+},
+"s0224": {
+"en": "Starting point Y",
+"ru": "Начальная точка Y"
+},
+"s0225": {
+"en": "end point",
+"ru": "конечная точка"
+},
+"s0226": {
+"en": "End point Y",
+"ru": "Конечная точка Y"
+},
+"s0227": {
+"en": "Modify line segment",
+"ru": "Изменить сегмент линии"
+},
+"s0228": {
+"en": "Line segment updated",
+"ru": "Сегмент линии обновлен."
+},
+"s0229": {
+"en": "There are currently no editable graphics",
+"ru": "В настоящее время нет редактируемой графики"
+},
+"s0230": {
+"en": "CAD drawing/editing",
+"ru": "Чертеж/редактирование САПР"
+},
+"s0231": {
+"en": "Create graphics",
+"ru": "Создание графики"
+},
+"s0232": {
+"en": "Create a new blank graphic/canvas",
+"ru": "Создайте новый пустой рисунок/холст."
+},
+"s0233": {
+"en": "Create a straight line",
+"ru": "Создайте прямую линию"
+},
+"s0234": {
+"en": "Create rectangle",
+"ru": "Создать прямоугольник"
+},
+"s0235": {
+"en": "Create circle",
+"ru": "Создать круг"
+},
+"s0236": {
+"en": "Create arc",
+"ru": "Создать дугу"
+},
+"s0237": {
+"en": "Create polyline",
+"ru": "Создать полилинию"
+},
+"s0238": {
+"en": "Add text",
+"ru": "Добавить текст"
+},
+"s0239": {
+"en": "Commonly used libraries/standard parts",
+"ru": "Часто используемые библиотеки/стандартные детали"
+},
+"s0240": {
+"en": "L-shaped angle steel/bracket",
+"ru": "Г-образный уголок стальной/кронштейн"
+},
+"s0241": {
+"en": "L shaped angle steel",
+"ru": "Г-образный уголок стальной"
+},
+"s0242": {
+"en": "Channel steel / U-shaped section",
+"ru": "Швеллер стальной/П-образного сечения"
+},
+"s0243": {
+"en": "Channel steel",
+"ru": "Швеллер стальной"
+},
+"s0244": {
+"en": "I-beam / H-section",
+"ru": "двутавр / двутавровое сечение"
+},
+"s0245": {
+"en": "I-beam",
+"ru": "двутавр"
+},
+"s0246": {
+"en": "Flange/bolt hole array",
+"ru": "Набор отверстий для фланцев/болтов"
+},
+"s0247": {
+"en": "Flange",
+"ru": "Фланец"
+},
+"s0248": {
+"en": "Long round hole plate",
+"ru": "Длинная пластина с круглыми отверстиями"
+},
+"s0249": {
+"en": "Edit operations",
+"ru": "Редактировать операции"
+},
+"s0250": {
+"en": "Edit selected object properties",
+"ru": "Редактировать свойства выбранного объекта"
+},
+"s0251": {
+"en": "Copy selected entities",
+"ru": "Копировать выбранные объекты"
+},
+"s0252": {
+"en": "Paste copy (offset 25mm)",
+"ru": "Вставить копию (смещение 25 мм)"
+},
+"s0253": {
+"en": "Trim line segment 10%",
+"ru": "Отрезок линии обрезки 10%"
+},
+"s0254": {
+"en": "Delete selected entities",
+"ru": "Удалить выбранные объекты"
+},
+"s0255": {
+"en": "history",
+"ru": "история"
+},
+"s0256": {
+"en": "Cancel",
+"ru": "Отмена"
+},
+"s0257": {
+"en": "Redo",
+"ru": "Повторить"
+},
+"s0258": {
+"en": "Current selection",
+"ru": "Текущий выбор"
+},
+"s0259": {
+"en": "Not selected",
+"ru": "Не выбрано"
+},
+"s0260": {
+"en": "clipboard",
+"ru": "буфер обмена"
+},
+"s0261": {
+"en": "Entity already exists and can be pasted",
+"ru": "Объект уже существует и может быть вставлен"
+},
+"s0262": {
+"en": "null",
+"ru": "нулевой"
+},
+"s0263": {
+"en": "Number of entities",
+"ru": "Количество объектов"
+},
+"s0264": {
+"en": "New graphic",
+"ru": "Новая графика"
+},
+"s0265": {
+"en": "Layer 0 · 1",
+"ru": "Слой 0 · 1"
+},
+"s0266": {
+"en": "file name",
+"ru": "имя файла"
+},
+"s0267": {
+"en": "Create new graphic.dxf",
+"ru": "Создайте новый файл Graphic.dxf."
+},
+"s0268": {
+"en": "width",
+"ru": "ширина"
+},
+"s0269": {
+"en": "high",
+"ru": "высокий"
+},
+"s0270": {
+"en": "Create a new CAD drawing",
+"ru": "Создайте новый чертеж САПР."
+},
+"s0271": {
+"en": "blank canvas",
+"ru": "пустой холст"
+},
+"s0273": {
+"en": "Template with border",
+"ru": "Шаблон с рамкой"
+},
+"s0275": {
+"en": "Starting pointX",
+"ru": "Начальная точкаX"
+},
+"s0276": {
+"en": "Starting point Y",
+"ru": "Начальная точка Y"
+},
+"s0277": {
+"en": "End pointX",
+"ru": "Конечная точкаX"
+},
+"s0278": {
+"en": "End point Y",
+"ru": "Конечная точка Y"
+},
+"s0279": {
+"en": "create",
+"ru": "создавать"
+},
+"s0280": {
+"en": "CenterX",
+"ru": "ЦентрX"
+},
+"s0281": {
+"en": "Center Y",
+"ru": "Центр Y"
+},
+"s0282": {
+"en": "radius",
+"ru": "радиус"
+},
+"s0283": {
+"en": "starting angle",
+"ru": "начальный угол"
+},
+"s0284": {
+"en": "end angle",
+"ru": "конечный угол"
+},
+"s0285": {
+"en": "Point sequence x,y;x,y",
+"ru": "Последовательность точек x,y;x,y"
+},
+"s0286": {
+"en": "Closed(1/0)",
+"ru": "Закрыто(1/0)"
+},
+"s0287": {
+"en": "Polylines require at least 2 points",
+"ru": "Полилинии требуют минимум 2 точки."
+},
+"s0288": {
+"en": "Insert X",
+"ru": "Вставить Х"
+},
+"s0289": {
+"en": "Insert Y",
+"ru": "Вставить Y"
+},
+"s0290": {
+"en": "Plate thickness/hole diameter",
+"ru": "Толщина пластины/диаметр отверстия"
+},
+"s0292": {
+"en": "insert",
+"ru": "вставлять"
+},
+"s0293": {
+"en": "content",
+"ru": "содержание"
+},
+"s0294": {
+"en": "Add to",
+"ru": "добавить в"
+},
+"s0295": {
+"en": "Please select the entity to edit first",
+"ru": "Сначала выберите объект для редактирования"
+},
+"s0296": {
+"en": "Edit object properties",
+"ru": "Редактировать свойства объекта"
+},
+"s0297": {
+"en": "Selected object properties updated",
+"ru": "Свойства выбранного объекта обновлены."
+},
+"s0298": {
+"en": "Please select the entity in the canvas first",
+"ru": "Пожалуйста, сначала выберите объект на холсте"
+},
+"s0299": {
+"en": "Selected entities copied",
+"ru": "Выбранные объекты скопированы"
+},
+"s0300": {
+"en": "Clipboard is empty",
+"ru": "Буфер обмена пуст"
+},
+"s0301": {
+"en": "Paste entities",
+"ru": "Вставить объекты"
+},
+"s0302": {
+"en": "Entity copy pasted",
+"ru": "Копия объекта вставлена."
+},
+"s0303": {
+"en": "Please select the entity to delete first",
+"ru": "Пожалуйста, сначала выберите объект, который нужно удалить"
+},
+"s0304": {
+"en": "Delete entity",
+"ru": "Удалить объект"
+},
+"s0305": {
+"en": "Selected entity deleted",
+"ru": "Выбранный объект удален."
+},
+"s0306": {
+"en": "Please select the line segment you want to trim first",
+"ru": "Сначала выберите сегмент линии, который вы хотите обрезать."
+},
+"s0307": {
+"en": "Line segment trimmed proportionally",
+"ru": "Сегмент линии обрезается пропорционально"
+},
+"s0308": {
+"en": "No undoable history",
+"ru": "Нет необратимой истории"
+},
+"s0309": {
+"en": "Canceled: 0",
+"ru": "Отменено: 0"
+},
+"s0310": {
+"en": "No history to redo",
+"ru": "Нет истории, которую нужно переделывать"
+},
+"s0311": {
+"en": "Redone: 0",
+"ru": "Переделано: 0"
+},
+"s0312": {
+"en": "step",
+"ru": "шаг"
+},
+"s0313": {
+"en": "No history yet",
+"ru": "Пока нет истории"
+},
+"s0314": {
+"en": "Current step 0",
+"ru": "Текущий шаг 0"
+},
+"s0315": {
+"en": "Step 0",
+"ru": "Шаг 0"
+},
+"s0316": {
+"en": "Tool path simulation",
+"ru": "Моделирование траектории инструмента"
+},
+"s0317": {
+"en": "slope section",
+"ru": "участок склона"
+},
+"s0318": {
+"en": "preview control",
+"ru": "контроль предварительного просмотра"
+},
+"s0319": {
+"en": "speed",
+"ru": "скорость"
+},
+"s0320": {
+"en": "schedule",
+"ru": "расписание"
+},
+"s0321": {
+"en": "stop",
+"ru": "останавливаться"
+},
+"s0323": {
+"en": "pause",
+"ru": "пауза"
+},
+"s0324": {
+"en": "continue",
+"ru": "продолжать"
+},
+"s0325": {
+"en": "start",
+"ru": "начинать"
+},
+"s0328": {
+"en": "Running",
+"ru": "Бег"
+},
+"s0329": {
+"en": "Suspended",
+"ru": "Приостановленный"
+},
+"s0330": {
+"en": "scope",
+"ru": "объем"
+},
+"s0331": {
+"en": "unit",
+"ru": "единица"
+},
+"s0332": {
+"en": "Unspecified",
+"ru": "Не указано"
+},
+"s0333": {
+"en": "PDF ratio",
+"ru": "соотношение PDF"
+},
+"s0334": {
+"en": "Current zoom",
+"ru": "Текущий масштаб"
+},
+"s0335": {
+"en": "Plate thickness",
+"ru": "Толщина пластины"
+},
+"s0336": {
+"en": "Typography strategy",
+"ru": "Стратегия типографики"
+},
+"s0337": {
+"en": "boundary",
+"ru": "граница"
+},
+"s0338": {
+"en": "PDF text",
+"ru": "PDF-текст"
+},
+"s0339": {
+"en": "Showing",
+"ru": "Показаны"
+},
+"s0340": {
+"en": "Hidden",
+"ru": "Скрытый"
+},
+"s0341": {
+"en": "Number of segments",
+"ru": "Количество сегментов"
+},
+"s0342": {
+"en": "Process section",
+"ru": "Раздел процесса"
+},
+"s0343": {
+"en": "Number of parts",
+"ru": "Количество деталей"
+},
+"s0344": {
+"en": "plate",
+"ru": "тарелка"
+},
+"s0345": {
+"en": "trajectory segment",
+"ru": "сегмент траектории"
+},
+"s0346": {
+"en": "thickness",
+"ru": "толщина"
+},
+"s0347": {
+"en": "Bevel summary",
+"ru": "Краткое описание скоса"
+},
+"s0348": {
+"en": "A corner",
+"ru": "Уголок"
+},
+"s0349": {
+"en": "B corner",
+"ru": "Угол Б"
+},
+"s0350": {
+"en": "Version",
+"ru": "Версия"
+},
+"s0351": {
+"en": "version code",
+"ru": "код версии"
+},
+"s0352": {
+"en": "File not opened",
+"ru": "Файл не открыт"
+},
+"s0353": {
+"en": "import",
+"ru": "импортировать"
+},
+"s0354": {
+"en": "collect",
+"ru": "собирать"
+},
+"s0355": {
+"en": "all",
+"ru": "все"
+},
+"s0356": {
+"en": "No preview information",
+"ru": "Нет информации о предварительном просмотре"
+},
+"s0357": {
+"en": "Open",
+"ru": "Открыть"
+},
+"s0358": {
+"en": "Details",
+"ru": "Подробности"
+},
+"s0359": {
+"en": "delete",
+"ru": "удалить"
+},
+"s0361": {
+"en": "Document details",
+"ru": "Детали документа"
+},
+"s0362": {
+"en": "Return to file panel",
+"ru": "Вернуться на панель файлов"
+},
+"s0363": {
+"en": "Record time",
+"ru": "Рекордное время"
+},
+"s0364": {
+"en": "Pinned",
+"ru": "Закреплено"
+},
+"s0365": {
+"en": "ordinary",
+"ru": "обычный"
+},
+"s0366": {
+"en": "management mode",
+"ru": "режим управления"
+},
+"s0367": {
+"en": "Escrow copy, safe for deletion",
+"ru": "Эскроу-копия, безопасна для удаления"
+},
+"s0368": {
+"en": "External reference, only remove records",
+"ru": "Внешняя ссылка, удалять только записи"
+},
+"s0369": {
+"en": "local path",
+"ru": "локальный путь"
+},
+"s0370": {
+"en": "source",
+"ru": "источник"
+},
+"s0371": {
+"en": "display name",
+"ru": "отображаемое имя"
+},
+"s0372": {
+"en": "size",
+"ru": "размер"
+},
+"s0373": {
+"en": "modification time",
+"ru": "время модификации"
+},
+"s0374": {
+"en": "open file",
+"ru": "открыть файл"
+},
+"s0375": {
+"en": "Unpin",
+"ru": "Открепить"
+},
+"s0376": {
+"en": "Pin history",
+"ru": "История контактов"
+},
+"s0377": {
+"en": "History updated",
+"ru": "История обновлена"
+},
+"s0378": {
+"en": "Remove from history",
+"ru": "Удалить из истории"
+},
+"s0379": {
+"en": "Delete a managed copy",
+"ru": "Удаление управляемой копии"
+},
+"s0380": {
+"en": "Current file details",
+"ru": "Текущие сведения о файле"
+},
+"s0381": {
+"en": "Return to import page",
+"ru": "Вернуться на страницу импорта"
+},
+"s0382": {
+"en": "Preview",
+"ru": "Предварительный просмотр"
+},
+"s0383": {
+"en": "Cancel favorites",
+"ru": "Отменить избранное"
+},
+"s0384": {
+"en": "Reimport the file",
+"ru": "Повторно импортируйте файл"
+},
+"s0385": {
+"en": "PDF conversion preview",
+"ru": "Предварительный просмотр преобразования PDF"
+},
+"s0386": {
+"en": "DXF drawing",
+"ru": "DXF-чертеж"
+},
+"s0388": {
+"en": "GEN process file · 0 sections · 1 process sections",
+"ru": "Файл процесса GEN · 0 разделов · 1 разделов процесса"
+},
+"s0389": {
+"en": "NC program · 0 trajectories · 1",
+"ru": "Программа ЧПУ · 0 траектории · 1"
+},
+"s0390": {
+"en": "DWG drawings · 0 · 1",
+"ru": "Чертежи DWG · 0 · 1"
+},
+"s0391": {
+"en": "File selected, preview not generated yet",
+"ru": "Файл выбран, предварительный просмотр еще не создан"
+},
+"s0392": {
+"en": "pin to top",
+"ru": "прикрепить сверху"
+},
+"s0397": {
+"en": "Trajectory 0",
+"ru": "Траектория 0"
+},
+"s0398": {
+"en": "Symmetrical groove ±0",
+"ru": "Симметричная канавка ±0"
+},
+"s0399": {
+"en": "A symmetrical groove ±0",
+"ru": "Симметричная канавка ±0"
+},
+"s0400": {
+"en": "B Symmetrical groove ±0",
+"ru": "B Симметричная канавка ±0"
+},
+"s0401": {
+"en": "Bevel 0",
+"ru": "Фаска 0"
+},
+"s0402": {
+"en": "No bevel",
+"ru": "Нет фаски"
+},
+"s0403": {
+"en": "No parts yet",
+"ru": "Деталей пока нет"
+},
+"s0404": {
+"en": "Mirror X",
+"ru": "Зеркало Х"
+},
+"s0405": {
+"en": "Edit part",
+"ru": "Редактировать часть"
+},
+"s0406": {
+"en": "quantity",
+"ru": "количество"
+},
+"s0407": {
+"en": "Rotation (degrees)",
+"ru": "Вращение (градусы)"
+},
+"s0408": {
+"en": "save",
+"ru": "сохранять"
+},
+"s0409": {
+"en": "implement",
+"ru": "осуществлять"
+},
+"s0410": {
+"en": "Rectangle parameters",
+"ru": "Параметры прямоугольника"
+},
+"s0411": {
+"en": "Rectangle0",
+"ru": "Прямоугольник0"
+},
+"s0412": {
+"en": "Circular parameters",
+"ru": "Круговые параметры"
+},
+"s0413": {
+"en": "Round0",
+"ru": "Раунд0"
+},
+"s0414": {
+"en": "No parts to typeset",
+"ru": "Нет частей для набора текста"
+},
+"s0415": {
+"en": "Typesetting results",
+"ru": "Результаты верстки"
+},
+"s0416": {
+"en": "Utilization",
+"ru": "Использование"
+},
+"s0417": {
+"en": "Placed",
+"ru": "Размещено"
+},
+"s0418": {
+"en": "Wasted area",
+"ru": "Потраченная площадь"
+},
+"s0419": {
+"en": "Parts that cannot be placed:",
+"ru": "Части, которые нельзя разместить:"
+},
+"s0420": {
+"en": "Optimization suggestions",
+"ru": "Предложения по оптимизации"
+},
+"s0421": {
+"en": "suggestion",
+"ru": "предположение"
+},
+"s0422": {
+"en": "Typesetting completed: 0/1 ​​parts, utilization rate 2%",
+"ru": "Набор текста завершен: 0/1 ​​частей, коэффициент использования 2%"
+},
+"s0423": {
+"en": "Comparison of layout plans:",
+"ru": "Сравнение планировок:"
+},
+"s0424": {
+"en": "Utilization rate: 0%",
+"ru": "Коэффициент использования: 0%"
+},
+"s0425": {
+"en": "Placed: 0/1",
+"ru": "Размещено: 0/1"
+},
+"s0426": {
+"en": "Wasted area: 0",
+"ru": "Ненужная площадь: 0"
+},
+"s0427": {
+"en": "Recommended use: 0",
+"ru": "Рекомендуемое использование: 0"
+},
+"s0428": {
+"en": "Comparison of layout plans",
+"ru": "Сравнение планов планировки"
+},
+"s0429": {
+"en": "Apply best practices",
+"ru": "Применяйте лучшие практики"
+},
+"s0430": {
+"en": "Best solution applied: 0",
+"ru": "Лучшее примененное решение: 0"
+},
+"s0431": {
+"en": "Unable to perform board typesetting",
+"ru": "Невозможно выполнить верстку доски"
+},
+"s0432": {
+"en": "Automatic board splitting is completed",
+"ru": "Автоматическое разделение досок завершено"
+},
+"s0433": {
+"en": "Total number of boards: 0",
+"ru": "Общее количество досок: 0"
+},
+"s0434": {
+"en": "Plate 0:",
+"ru": "Табличка 0:"
+},
+"s0435": {
+"en": "Placed: 0",
+"ru": "Размещено: 0"
+},
+"s0436": {
+"en": "Utilization rate: 0%",
+"ru": "Коэффициент использования: 0%"
+},
+"s0438": {
+"en": "Split board typesetting results",
+"ru": "Результаты верстки разделенной доски"
+},
+"s0439": {
+"en": "Applied board layout: 0 sheets",
+"ru": "Применяемая раскладка платы: 0 листов."
+},
+"s0440": {
+"en": "Typography applied",
+"ru": "Типографика применена"
+},
+"s0441": {
+"en": "No layout results available to apply",
+"ru": "Нет результатов макета, доступных для применения."
+},
+"s0442": {
+"en": "Typesetting import",
+"ru": "Импорт верстки"
+},
+"s0443": {
+"en": "Layer 0 · Entity 1",
+"ru": "Слой 0 · Объект 1"
+},
+"s0444": {
+"en": "The line segment has been selected and the coordinates can be modified",
+"ru": "Сегмент линии выбран, и координаты можно изменить."
+},
+"s0445": {
+"en": "Completed",
+"ru": "Завершенный"
+},
+"s0446": {
+"en": "Rehearsal completed",
+"ru": "Репетиция завершена"
+},
+"s0447": {
+"en": "Intelligent typesetting (standalone)",
+"ru": "Интеллектуальная верстка (автономно)"
+},
+"s0448": {
+"en": "Board parameters",
+"ru": "Параметры платы"
+},
+"s0449": {
+"en": "length",
+"ru": "длина"
+},
+"s0450": {
+"en": "Recommended boards",
+"ru": "Рекомендуемые доски"
+},
+"s0451": {
+"en": "Apply recommended sizes",
+"ru": "Применить рекомендуемые размеры"
+},
+"s0452": {
+"en": "Plate 0 x 1",
+"ru": "Пластина 0 x 1"
+},
+"s0453": {
+"en": "import/gallery",
+"ru": "импорт/галерея"
+},
+"s0454": {
+"en": "Import part files",
+"ru": "Импортировать файлы деталей"
+},
+"s0455": {
+"en": "Add rectangle",
+"ru": "Добавить прямоугольник"
+},
+"s0456": {
+"en": "Add circle",
+"ru": "Добавить круг"
+},
+"s0457": {
+"en": "Parts list",
+"ru": "Список запчастей"
+},
+"s0458": {
+"en": "Typesetting parameters",
+"ru": "Параметры набора"
+},
+"s0459": {
+"en": "spacing",
+"ru": "расстояние"
+},
+"s0460": {
+"en": "Automatic nesting",
+"ru": "Автоматический раскрой"
+},
+"s0461": {
+"en": "Comparison plan",
+"ru": "План сравнения"
+},
+"s0462": {
+"en": "Automatic board splitting",
+"ru": "Автоматическое разделение досок"
+},
+"s0463": {
+"en": "Apply to view",
+"ru": "Подать заявку на просмотр"
+},
+"s0464": {
+"en": "⚠ The utilization rate is low (0%), it is recommended to adjust the part arrangement or plate size",
+"ru": "⚠ Коэффициент использования низкий (0%), рекомендуется скорректировать расположение деталей или размер пластины."
+},
+"s0465": {
+"en": "⚠ There are 0 parts that cannot be placed. It is recommended to increase the plate size or reduce the spacing.",
+"ru": "⚠ Есть 0 деталей, которые невозможно разместить. Рекомендуется увеличить размер пластины или уменьшить расстояние."
+},
+"s0466": {
+"en": "💡 The spacing is large (0mm), you can try to reduce the spacing to improve utilization",
+"ru": "💡 Расстояние большое (0мм), вы можете попытаться уменьшить его, чтобы улучшить использование."
+},
+"s0467": {
+"en": "💡 The board utilization rate is very high, consider using larger boards or dividing them into multiple boards",
+"ru": "💡 Коэффициент использования доски очень высок, рассмотрите возможность использования досок большего размера или разделения их на несколько досок."
+},
+"s0468": {
+"en": "FFD (First Fit Decreasing)",
+"ru": "FFD (первый подходящий, по убыванию)"
+},
+"s0469": {
+"en": "Sort parts by area (largest first); try 4 rotation angles for each part",
+"ru": "Сортировка деталей по площади (от больших к меньшим); 4 угла поворота на деталь"
+},
+"s0470": {
+"en": "0 (No. 1)",
+"ru": "0 (№ 1)"
+},
+"s0471": {
+"en": "Best Fit",
+"ru": "Наилучшее заполнение"
+},
+"s0472": {
+"en": "Choose the placement with the least wasted space for each part",
+"ru": "Выбор позиции с наименьшими потерями места для каждой детали"
+},
+"s0473": {
+"en": "Stripe",
+"ru": "Полосами"
+},
+"s0474": {
+"en": "Pack row by row as compactly as possible; good for long parts",
+"ru": "Укладка рядами, каждый ряд как можно плотнее; подходит для длинных деталей"
+},
+"s0058": {
+"en": "Unzipping 0",
+"ru": "Разархивирование 0"
+},
+"s0059": {
+"en": "Importing 0",
+"ru": "Импорт 0"
+},
+"s0062": {
+"en": "Unzipped to a dedicated directory: 01",
+"ru": "Разархивирован в выделенный каталог: 01"
+},
+"s0065": {
+"en": "Parsing 0",
+"ru": "Разбор 0"
+},
+"s0070": {
+"en": "Regenerating to 0",
+"ru": "Регенерация до 0"
+},
+"s0072": {
+"en": "Layer 0 · 1",
+"ru": "Слой 0 · 1"
+},
+"s0096": {
+"en": "Collected 0",
+"ru": "Собрано 0"
+},
+"s0097": {
+"en": "Canceled collection 0",
+"ru": "Отменена коллекция 0"
+},
+"s0109": {
+"en": "0 · 1",
+"ru": "0 · 1"
+},
+"s0153": {
+"en": "Searching 0",
+"ru": "Поиск 0"
+},
+"s0272": {
+"en": "A new blank graphic has been created: 0",
+"ru": "Создано новое пустое изображение: 0"
+},
+"s0274": {
+"en": "New bordered graphic: 0",
+"ru": "Новое изображение с рамкой: 0"
+},
+"s0291": {
+"en": "Insert0",
+"ru": "Вставить0"
+},
+"s0322": {
+"en": "0 Preview has stopped",
+"ru": "0 Предварительный просмотр остановлен"
+},
+"s0326": {
+"en": "0 Preview has been suspended",
+"ru": "0 Предварительный просмотр приостановлен"
+},
+"s0327": {
+"en": "0 Preview in progress",
+"ru": "0 Выполняется предварительный просмотр"
+},
+"s0360": {
+"en": "0 files ›",
+"ru": "0 файлы ›"
+},
+"s0387": {
+"en": "0 · 1 entities · 2 layers · W 3 / H 4",
+"ru": "0 · 1 объекты · 2 слои · W 3 / H 4"
+},
+"s0393": {
+"en": "Part 0 · Plate 1 x 2 · Process 3",
+"ru": "Деталь 0 · Пластина 1 x 2 · Процесс 3"
+},
+"s0394": {
+"en": "Section 0 · Part 1",
+"ru": "Раздел 0 · Часть 1"
+},
+"s0395": {
+"en": "Trajectory 0 · 1 · Plate 2 x 3",
+"ru": "Траектория 0 · 1 · Пластина 2 x 3"
+},
+"s0396": {
+"en": "Trajectory 0 · Plate 1 x 2",
+"ru": "Траектория 0 · Пластина 1 x 2"
+},
+"s0437": {
+"en": "Total placement: 0/1",
+"ru": "Общее размещение: 0/1"
+}
+},
+"cmt": {
+"c001": {
+"en": "Switch to zoom/move priority immediately when a multi-finger gesture starts, to avoid measurement adsorption and single-finger panning states from interfering with the zoom focus.",
+"ru": "Переключитесь на приоритет масштабирования/перемещения сразу после начала жеста несколькими пальцами, чтобы избежать помех при измерении и состояниях панорамирования одним пальцем при фокусировке масштабирования."
+},
+"c002": {
+"en": "Scaling is handled exclusively by ScaleGestureDetector; the current position is synchronized to prevent the next single-finger movement after scaling ends from using old coordinates and causing jitter.",
+"ru": "Масштабированием занимается исключительно ScaleGestureDetector; текущая позиция синхронизируется, чтобы предотвратить использование старых координат при следующем движении одним пальцем после завершения масштабирования и возникновение дрожания."
+},
+"c003": {
+"en": "Record the position of the remaining fingers to avoid sudden changes in displacement when zooming from two fingers back to one finger.",
+"ru": "Запишите положение остальных пальцев, чтобы избежать резких изменений смещения при масштабировании с двух пальцев обратно на один палец."
+},
+"c004": {
+"en": "Make sure GEN operations are fed into the canvas emulation engine",
+"ru": "Убедитесь, что операции GEN передаются в механизм эмуляции холста."
+},
+"c005": {
+"en": "Make sure preview data is in sync with the current document",
+"ru": "Убедитесь, что данные предварительного просмотра синхронизированы с текущим документом."
+},
+"c006": {
+"en": "Execute typesetting algorithm",
+"ru": "Выполнить алгоритм верстки"
+},
+"c007": {
+"en": "Update workspace",
+"ru": "Обновить рабочую область"
+},
+"c008": {
+"en": "Update results display",
+"ru": "Обновить отображение результатов"
+},
+"c009": {
+"en": "Find the optimal solution",
+"ru": "Найдите оптимальное решение"
+},
+"c010": {
+"en": "Merge layout results for all panels",
+"ru": "Объединить результаты макета для всех панелей"
+},
+"c011": {
+"en": "Translate all entities of this sheet",
+"ru": "Перевести все объекты этого листа"
+},
+"c012": {
+"en": "Board size and thickness",
+"ru": "Размер и толщина доски"
+},
+"c013": {
+"en": "Typesetting strategy selection",
+"ru": "Выбор стратегии верстки"
+},
+"c014": {
+"en": "Typesetting result display",
+"ru": "Отображение результатов верстки"
+},
+"c015": {
+"en": "Place position X",
+"ru": "Разместите позицию X"
+},
+"c016": {
+"en": "Place position Y",
+"ru": "Разместить позицию Y"
+},
+"c017": {
+"en": "Utilization rate 0-100%",
+"ru": "Коэффициент использования 0-100%"
+},
+"c018": {
+"en": "Wasted area",
+"ru": "Потраченная площадь"
+},
+"c019": {
+"en": "Number of successfully placed parts",
+"ru": "Количество успешно размещенных деталей"
+},
+"c020": {
+"en": "Parts that cannot be placed",
+"ru": "Части, которые нельзя разместить"
+},
+"c021": {
+"en": "Placed parts list",
+"ru": "Размещенный список деталей"
+},
+"c022": {
+"en": "Check if plate boundary is exceeded",
+"ru": "Проверьте, не превышена ли граница пластины"
+},
+"c023": {
+"en": "Check for collisions",
+"ru": "Проверьте наличие столкновений"
+},
+"c024": {
+"en": "Check utilization",
+"ru": "Проверить использование"
+},
+"c025": {
+"en": "Check for parts that cannot be placed",
+"ru": "Проверьте детали, которые невозможно разместить."
+},
+"c026": {
+"en": "Check spacing",
+"ru": "Проверьте расстояние"
+},
+"c027": {
+"en": "Check whether splitting is required",
+"ru": "Проверьте, требуется ли разделение"
+},
+"c028": {
+"en": "Unable to place any part, maybe the part is too big",
+"ru": "Невозможно разместить какую-либо деталь, возможно, она слишком большая."
+},
+"c029": {
+"en": "Deduct quantity by name to avoid accidentally deleting parts with the same name from the entire group",
+"ru": "Вычитайте количество по наименованию, чтобы случайно не удалить одноимённые детали из всей группы."
+},
+"c030": {
+"en": "Prevent infinite loop",
+"ru": "Предотвратить бесконечный цикл"
+},
+"c031": {
+"en": "Consider spacing",
+"ru": "Учитывайте расстояние"
+},
+"c032": {
+"en": "Add 20% spacing",
+"ru": "Добавьте 20% интервала"
+},
+"c033": {
+"en": "Try to find the closest plate size",
+"ru": "Попробуйте найти ближайший размер тарелки."
+},
+"c034": {
+"en": "Remove history after current location",
+"ru": "Удалить историю после текущего местоположения"
+},
+"c035": {
+"en": "Sort by area from largest to smallest",
+"ru": "Сортировать по площади от большего к меньшему"
+},
+"c036": {
+"en": "Arrange each part type",
+"ru": "Расположите каждый тип детали"
+},
+"c037": {
+"en": "Try 4 rotation angles",
+"ru": "Попробуйте 4 угла поворота"
+},
+"c038": {
+"en": "Scan from left to right, top to bottom",
+"ru": "Сканирование слева направо, сверху вниз"
+},
+"c039": {
+"en": "step by step",
+"ru": "шаг за шагом"
+},
+"c040": {
+"en": "Try placement on the grid",
+"ru": "Попробуйте разместить на сетке"
+},
+"c041": {
+"en": "Calculate wasted area (simplified: use bottom right space)",
+"ru": "Подсчитайте площадь, потраченную впустую (упрощенно: используйте нижнее правое пространство)"
+},
+"c042": {
+"en": "Try placing at the current line",
+"ru": "Попробуйте разместить на текущей строке"
+},
+"c043": {
+"en": "If the current row does not fit, try a new row",
+"ru": "Если текущая строка не подходит, попробуйте новую строку"
+}
+}
+}
