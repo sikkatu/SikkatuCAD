@@ -66,7 +66,7 @@
     <string name="s0065" formatted="true">Parsing %1$s</string>
     <string name="s0066" formatted="true">Parse failed: %1$s</string>
     <string name="s0067">Unable to open file</string>
-    <string name="s0068">Please confirm that the file is readable and in .dxf, .dwg, .gen, .nc, or .pdf format.</string>
+    <string name="s0068">Please confirm that the file is readable and in .dxf or .dwg format.</string>
     <string name="s0069" formatted="true">Sample loading failed: %1$s</string>
     <string name="s0070" formatted="true">Regenerating to %1$s</string>
     <string name="s0071" formatted="true">Objects: %1$s</string>
@@ -104,7 +104,7 @@
     <string name="s0103">View full history</string>
     <string name="s0104">Group preview</string>
     <string name="s0105">Group</string>
-    <string name="s0106">After importing or opening drawings, they will be automatically grouped by type such as DXF / DWG / PDF / NC.</string>
+    <string name="s0106">After importing or opening drawings, they will be automatically grouped by type (DXF / DWG).</string>
     <string name="s0107">Clear history files</string>
     <string name="s0108">History files cleared</string>
     <string name="s0109" formatted="true">%1$s · %2$s</string>
@@ -501,4 +501,40 @@
     <string name="s0500" formatted="true">Unit code %1$s</string>
     <string name="s0502">This file is a binary DXF, which is not supported yet. Please export the drawing as an ASCII (text) DXF and open it again.</string>
     <string name="s0503">This file contains no displayable drawing entities. If it was exported from AutoCAD as DWG and only renamed to .dxf, please save it as a real DXF file.</string>
+    <string name="ui_render_check">Render check</string>
+    <string name="ui_save_png">Save drawing view as PNG</string>
+    <string name="ui_png_purpose">PNG is saved to Downloads — use it to verify the drawing display</string>
+    <string name="ui_about">About</string>
+    <string name="ui_editor">Editor</string>
+    <string name="ui_formats">Formats</string>
+    <string name="ui_translation_panel">Text translation (EN / TH)</string>
+    <string name="ui_save_with">Save with translation</string>
+    <string name="ui_drawing_texts">Drawing texts</string>
+    <string name="ui_file">File</string>
+    <string name="ui_extract">Extract texts from drawing</string>
+    <string name="ui_load_json">Load translation JSON</string>
+    <string name="ui_export_json">Export translation JSON</string>
+    <string name="ui_save_dxf_en">Save DXF (EN)</string>
+    <string name="ui_save_dxf_th">Save DXF (TH)</string>
+    <string name="ui_save_dwg_en">Save DWG (experimental) EN</string>
+    <string name="ui_save_dwg_th">Save DWG (experimental) TH</string>
+    <string name="ui_dwg_warn">⚠ DWG writing is experimental — always verify the result in AutoCAD. The reliable format is DXF.
+Only visible labels are translated (TEXT/MTEXT/ATTRIB); layer and block names are not translated.</string>
+    <string name="ui_texts">Texts</string>
+    <string name="ui_extract_first">Extract texts first.</string>
+    <string name="ui_no_translation">— no translation —</string>
+    <string name="ui_extracting">Extracting texts…</string>
+    <string name="ui_extraction_failed">Extraction failed: %1$s</string>
+    <string name="ui_preparing">Preparing file (%1$s, %2$s)…</string>
+    <string name="ui_save_failed">Save failed: %1$s</string>
+    <string name="ui_png_ready">PNG ready — choose a folder to save</string>
+    <string name="ui_dxf_ready">DXF ready — only text changes are saved</string>
+    <string name="ui_dxf_export_failed">DXF export failed: %1$s</string>
+    <string name="ui_translation_loaded">Translation loaded: %1$d EN / %2$d TH</string>
+    <string name="ui_json_error">JSON error: %1$s</string>
+    <string name="ui_no_file">No file open</string>
+    <string name="ui_cannot_read">Cannot read file</string>
+    <string name="ui_pick_point">Tap the drawing to pick a point</string>
+    <string name="ui_tap_edit">Tap a text or line to edit it</string>
+    <string name="ui_pick_first">Pick a point on the drawing first.</string>
 </resources>

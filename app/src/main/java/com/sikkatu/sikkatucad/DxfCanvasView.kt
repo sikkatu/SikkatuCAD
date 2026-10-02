@@ -39,6 +39,8 @@ class DxfCanvasView @JvmOverloads constructor(
         fun onSimulationStateChanged(running: Boolean, paused: Boolean)
         fun onSimulationCompleted()
         fun onSimulationCursorChanged(segmentIndex: Int)
+        /** Called on a tap on empty drawing area with model coordinates. */
+        fun onCanvasTap(x: Double, y: Double) {}
     }
 
     private val backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -2793,11 +2795,15 @@ class DxfCanvasView @JvmOverloads constructor(
                 commitMeasurementPoint(snapped.point)
                 return true
             }
-            val selection = findNearestSelection(screenToModel(e.x, e.y))
+            val model = screenToModel(e.x, e.y)
+            val selection = findNearestSelection(model)
             selectedGeometry = selection
             listener?.onSelectionChanged(selection)
+            if (selection == null) {
+                listener?.onCanvasTap(model.x, model.y)
+            }
             invalidate()
-            return selection != null
+            return true
         }
 
         override fun onDoubleTap(e: MotionEvent): Boolean {

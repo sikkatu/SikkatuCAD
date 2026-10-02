@@ -937,7 +937,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 runOnUiThread {
                     val baseName = (currentFileName ?: document.fileName).substringBeforeLast('.')
                     exportDocument.launch("${baseName}_edited.dxf")
-                    binding.statusText.text = "DXF ready - only text changes are saved"
+                    binding.statusText.text = getString(R.string.ui_dxf_ready)
                 }
             }.onFailure { error ->
                 runOnUiThread {
@@ -960,14 +960,14 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         worker.execute {
             runCatching {
                 val body = contentResolver.openInputStream(uri)?.use { it.readBytes() }
-                    ?: error("Cannot read file")
+                    ?: error(getString(R.string.ui_cannot_read))
                 CadBridge.parseTranslationJson(String(body, Charsets.UTF_8))
             }.onSuccess { (en, th) ->
                 runOnUiThread {
                     translationEn.putAll(en)
                     translationTh.putAll(th)
                     renderTranslationRows()
-                    binding.statusText.text = "Translation loaded: ${en.size} EN / ${th.size} TH"
+                    binding.statusText.text = getString(R.string.ui_translation_loaded, en.size, th.size)
                 }
             }.onFailure { error ->
                 runOnUiThread {
@@ -980,20 +980,20 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     /** Copy current file to a temp file and open a bridge session. */
     private fun openTranslationSession(): Long {
         translationSession?.let { return it }
-        val uri = currentUri ?: error("No file open")
+        val uri = currentUri ?: error(getString(R.string.ui_no_file))
         val name = currentFileName ?: "drawing.dwg"
         val ext = name.substringAfterLast('.', "dwg")
         val tmp = File(cacheDir, "cad_translate_src.$ext")
         contentResolver.openInputStream(uri)?.use { input ->
             tmp.outputStream().use { output -> input.copyTo(output) }
-        } ?: error("Cannot read file")
+        } ?: error(getString(R.string.ui_cannot_read))
         val sid = CadBridge.open(tmp.absolutePath).getOrThrow()
         translationSession = sid
         return sid
     }
 
     private fun extractTranslationTexts() {
-        binding.statusText.text = "Extracting texts…"
+        binding.statusText.text = getString(R.string.ui_extracting)
         worker.execute {
             runCatching {
                 val sid = openTranslationSession()
@@ -1022,7 +1022,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         translationRowsContainer.removeAllViews()
         if (translationItems.isEmpty()) {
             translationRowsContainer.addView(
-                entryView("Texts", "Tap Extract texts or load a translation JSON.")
+                entryView(getString(R.string.ui_texts), getString(R.string.ui_extract))
             )
             return
         }
@@ -1073,7 +1073,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     private fun translationField(item: CadBridge.TextItem, store: MutableMap<String, String>): EditText {
         return EditText(this).apply {
             setText(store[item.id].orEmpty())
-            hint = "— no translation —"
+            hint = getString(R.string.ui_no_translation)
             textSize = 13f
             setTextColor(getColor(R.color.panelTextPrimary))
             setHintTextColor(getColor(R.color.panelTextSecondary))
@@ -1085,7 +1085,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
 
     private fun exportTranslationJson() {
         if (translationItems.isEmpty()) {
-            binding.statusText.text = "Extract texts first."
+            binding.statusText.text = getString(R.string.ui_extract_first)
             return
         }
         val rows = translationItems.map {
@@ -1104,14 +1104,14 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
      */
     private fun saveTranslated(format: String, lang: String) {
         if (translationItems.isEmpty()) {
-            binding.statusText.text = "Extract texts first."
+            binding.statusText.text = getString(R.string.ui_extract_first)
             return
         }
         val edits = translationItems.associate { item ->
             val value = if (lang == "en") translationEn[item.id].orEmpty() else translationTh[item.id].orEmpty()
             item.id to value.ifBlank { item.text }
         }
-        binding.statusText.text = "Preparing file ($format, ${lang.uppercase()})…"
+        binding.statusText.text = getString(R.string.ui_preparing, format, lang.uppercase())
         worker.execute {
             runCatching {
                 val sid = openTranslationSession()
@@ -1169,14 +1169,14 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         val ts = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
         pendingExportBytes = bytes
         exportDocument.launch("cad_preview_${safeName}_${ts}.png")
-        binding.statusText.text = "PNG ready — choose a folder to save"
+        binding.statusText.text = getString(R.string.ui_png_ready)
     }
     private fun showSettingsPanel() {
         showSidePanel(binding.actionSettings, getString(R.string.action_settings))
         binding.sideContent.removeAllViews()
         binding.sideContent.addView(sectionTitle(getString(R.string.language_picker)))
         val langLabels = arrayOf("English", "Русский", "中文", "System")
-        val langCodes = arrayOf("ru", "en", "zh", "")
+        val langCodes = arrayOf("en", "ru", "zh", "")
         val current = savedLanguage(this)
         val currentIndex = langCodes.indexOf(current).coerceAtLeast(0)
         langLabels.forEachIndexed { index, label ->
@@ -1191,30 +1191,30 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             }
             binding.sideContent.addView(row)
         }
-        binding.sideContent.addView(sectionTitle("Render check"))
-        binding.sideContent.addView(actionRow("📸 Save drawing view as PNG") { exportCanvasPng() })
-        binding.sideContent.addView(infoCard("Purpose" to "PNG is saved to Downloads — use it to verify the drawing display"))
-        binding.sideContent.addView(sectionTitle("About"))
+        binding.sideContent.addView(sectionTitle(getString(R.string.ui_render_check)))
+        binding.sideContent.addView(actionRow("📸 " + getString(R.string.ui_save_png)) { exportCanvasPng() })
+        binding.sideContent.addView(infoCard(getString(R.string.ui_render_check) to getString(R.string.ui_png_purpose)))
+        binding.sideContent.addView(sectionTitle(getString(R.string.ui_about)))
         binding.sideContent.addView(infoCard(
-            "Editor" to "SikkatuCAD — DXF/DWG drawings + text translation",
-            "Formats" to "DXF, DWG — open and save"
+            getString(R.string.ui_editor) to "SikkatuCAD — DXF/DWG",
+            getString(R.string.ui_formats) to "DXF, DWG"
         ))
     }
     private fun showTranslationPanel() {
-        showSidePanel(null, "Text translation")
+        showSidePanel(null, getString(R.string.ui_translation_panel))
         binding.sideContent.removeAllViews()
-        binding.sideContent.addView(sectionTitle("Text translation (EN / TH)"))
-        binding.sideContent.addView(entryView("File", currentFileName ?: "-"))
-        binding.sideContent.addView(actionRow("Extract texts from drawing") { extractTranslationTexts() })
-        binding.sideContent.addView(actionRow("Load translation JSON") {
+        binding.sideContent.addView(sectionTitle(getString(R.string.ui_translation_panel)))
+        binding.sideContent.addView(entryView(getString(R.string.ui_file), currentFileName ?: "-"))
+        binding.sideContent.addView(actionRow(getString(R.string.ui_extract)) { extractTranslationTexts() })
+        binding.sideContent.addView(actionRow(getString(R.string.ui_load_json)) {
             translationImport.launch(arrayOf("application/json", "text/plain", "*/*"))
         })
-        binding.sideContent.addView(actionRow("Export translation JSON") { exportTranslationJson() })
-        binding.sideContent.addView(sectionTitle("Save with translation"))
-        binding.sideContent.addView(primaryActionRow("Save DXF (EN)") { saveTranslated("dxf", "en") })
-        binding.sideContent.addView(actionRow("Save DXF (TH)") { saveTranslated("dxf", "th") })
-        binding.sideContent.addView(actionRow("Save DWG (experimental) EN") { saveTranslated("dwg", "en") })
-        binding.sideContent.addView(actionRow("Save DWG (experimental) TH") { saveTranslated("dwg", "th") })
+        binding.sideContent.addView(actionRow(getString(R.string.ui_export_json)) { exportTranslationJson() })
+        binding.sideContent.addView(sectionTitle(getString(R.string.ui_save_with)))
+        binding.sideContent.addView(primaryActionRow(getString(R.string.ui_save_dxf_en)) { saveTranslated("dxf", "en") })
+        binding.sideContent.addView(actionRow(getString(R.string.ui_save_dxf_th)) { saveTranslated("dxf", "th") })
+        binding.sideContent.addView(actionRow(getString(R.string.ui_save_dwg_en)) { saveTranslated("dwg", "en") })
+        binding.sideContent.addView(actionRow(getString(R.string.ui_save_dwg_th)) { saveTranslated("dwg", "th") })
         binding.sideContent.addView(
             TextView(this).apply {
                 text = "⚠ DWG writing is experimental — always verify the result in AutoCAD. " +
@@ -1225,7 +1225,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 setPadding(12.dp, 6.dp, 12.dp, 10.dp)
             }
         )
-        binding.sideContent.addView(sectionTitle("Drawing texts"))
+        binding.sideContent.addView(sectionTitle(getString(R.string.ui_drawing_texts)))
         translationRowsContainer = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             layoutParams = LinearLayout.LayoutParams(
@@ -1500,6 +1500,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         }
     }
 
+    private var lastPickedPoint: Point2? = null
     private var lastOpenedUri: android.net.Uri? = null
     private var lastOpenedFileName: String? = null
     private fun returnToHome() {
@@ -1721,6 +1722,12 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
 
     private fun showSelectionEditor(selection: GeometrySelection) {
         applySelectionBaseView(selection)
+        // Tap on a text -> open its edit dialog right away
+        val picked = currentPreviewDocument?.entities?.getOrNull(selection.entityIndex)
+        if (picked is DxfText) {
+            showEditSelectedEntityDialog()
+            return
+        }
         showSidePanel(null, getString(R.string.s0212))
         binding.sideContent.removeAllViews()
         binding.sideContent.addView(infoLine(getString(R.string.s0213), selection.kind))
@@ -1920,7 +1927,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     }
 
     private fun showCreateLineDialog(document: DxfDocument) {
-        val form = editForm(getString(R.string.s0275) to "0", getString(R.string.s0276) to "0", getString(R.string.s0277) to "100", getString(R.string.s0278) to "0", getString(R.string.s0214) to "CAD_EDIT")
+        val form = editForm(getString(R.string.s0275) to (lastPickedPoint?.x ?: 0.0).toString(), getString(R.string.s0276) to (lastPickedPoint?.y ?: 0.0).toString(), getString(R.string.s0277) to ((lastPickedPoint?.x ?: 0.0) + 100).toString(), getString(R.string.s0278) to (lastPickedPoint?.y ?: 0.0).toString(), getString(R.string.s0214) to "CAD_EDIT")
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.s0233))
             .setView(form)
@@ -1938,7 +1945,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     }
 private fun showCreateRectangleDialog(document: DxfDocument) {
         val form = editForm(
-            "X" to "0", "Y" to "0", getString(R.string.s0268) to "100", getString(R.string.s0269) to "60", getString(R.string.s0214) to "CAD_EDIT"
+            "X" to (lastPickedPoint?.x ?: 0.0).toString(), "Y" to (lastPickedPoint?.y ?: 0.0).toString(), getString(R.string.s0268) to "100", getString(R.string.s0269) to "60", getString(R.string.s0214) to "CAD_EDIT"
         )
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.s0234))
@@ -1958,7 +1965,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
     }
 
     private fun showCreateCircleDialog(document: DxfDocument) {
-        val form = editForm(getString(R.string.s0280) to "0", getString(R.string.s0281) to "0", getString(R.string.s0282) to "50", getString(R.string.s0214) to "CAD_EDIT")
+        val form = editForm(getString(R.string.s0280) to (lastPickedPoint?.x ?: 0.0).toString(), getString(R.string.s0281) to (lastPickedPoint?.y ?: 0.0).toString(), getString(R.string.s0282) to "50", getString(R.string.s0214) to "CAD_EDIT")
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.s0235))
             .setView(form)
@@ -1975,7 +1982,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
     }
 
     private fun showCreateArcDialog(document: DxfDocument) {
-        val form = editForm(getString(R.string.s0280) to "0", getString(R.string.s0281) to "0", getString(R.string.s0282) to "50", getString(R.string.s0283) to "0", getString(R.string.s0284) to "90", getString(R.string.s0214) to "CAD_EDIT")
+        val form = editForm(getString(R.string.s0280) to (lastPickedPoint?.x ?: 0.0).toString(), getString(R.string.s0281) to (lastPickedPoint?.y ?: 0.0).toString(), getString(R.string.s0282) to "50", getString(R.string.s0283) to "0", getString(R.string.s0284) to "90", getString(R.string.s0214) to "CAD_EDIT")
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.s0236))
             .setView(form)
@@ -2084,7 +2091,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
     }
 
     private fun showCreateTextDialog(document: DxfDocument) {
-        val form = editForm("X" to "0", "Y" to "0", getString(R.string.s0293) to "TEXT", getString(R.string.s0269) to "30", getString(R.string.s0214) to "CAD_TEXT")
+        val form = editForm("X" to (lastPickedPoint?.x ?: 0.0).toString(), "Y" to (lastPickedPoint?.y ?: 0.0).toString(), getString(R.string.s0293) to "TEXT", getString(R.string.s0269) to "30", getString(R.string.s0214) to "CAD_TEXT")
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.s0238))
             .setView(form)
@@ -4196,6 +4203,10 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         }
     }
 
+    override fun onCanvasTap(x: Double, y: Double) {
+        lastPickedPoint = Point2(x, y)
+        binding.statusText.text = getString(R.string.ui_pick_point) + "  X=%.1f  Y=%.1f".format(x, y)
+    }
     override fun onSelectionChanged(selection: GeometrySelection?) {
         currentSelection = selection
         if (selection != null) {

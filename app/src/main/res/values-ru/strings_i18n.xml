@@ -66,7 +66,7 @@
     <string name="s0065" formatted="true">Разбор %1$s</string>
     <string name="s0066" formatted="true">Не удалось выполнить анализ: %1$s</string>
     <string name="s0067">Невозможно открыть файл</string>
-    <string name="s0068">Убедитесь, что файл доступен для чтения и имеет формат .dxf, .dwg, .gen, .nc или .pdf.</string>
+    <string name="s0068">Проверьте, что файл читается и имеет формат .dxf или .dwg.</string>
     <string name="s0069" formatted="true">Не удалось загрузить образец: %1$s</string>
     <string name="s0070" formatted="true">Регенерация до %1$s</string>
     <string name="s0071" formatted="true">Количество объектов: %1$s</string>
@@ -104,7 +104,7 @@
     <string name="s0103">Посмотреть полную историю</string>
     <string name="s0104">Групповой предварительный просмотр</string>
     <string name="s0105">Группа</string>
-    <string name="s0106">После импорта или открытия чертежей они будут автоматически сгруппированы по типу, например DXF/DWG/PDF/NC.</string>
+    <string name="s0106">После импорта или открытия чертежи группируются по типу (DXF / DWG).</string>
     <string name="s0107">Очистить файлы истории</string>
     <string name="s0108">Файлы истории удалены</string>
     <string name="s0109" formatted="true">%1$s · %2$s</string>
@@ -501,4 +501,40 @@
     <string name="s0500" formatted="true">Код единицы %1$s</string>
     <string name="s0502">Это бинарный DXF, который пока не поддерживается. Экспортируйте чертеж в ASCII (текстовый) DXF и откройте его снова.</string>
     <string name="s0503">Файл не содержит отображаемых объектов чертежа. Если он был сохранён в AutoCAD как DWG и просто переименован в .dxf, сохраните его как настоящий DXF-файл.</string>
+    <string name="ui_render_check">Проверка рендера</string>
+    <string name="ui_save_png">Сохранить вид чертежа в PNG</string>
+    <string name="ui_png_purpose">PNG сохраняется в Загрузки — по нему можно проверить отображение чертежа</string>
+    <string name="ui_about">О программе</string>
+    <string name="ui_editor">Редактор</string>
+    <string name="ui_formats">Форматы</string>
+    <string name="ui_translation_panel">Перевод надписей (EN / TH)</string>
+    <string name="ui_save_with">Сохранить с переводом</string>
+    <string name="ui_drawing_texts">Тексты чертежа</string>
+    <string name="ui_file">Файл</string>
+    <string name="ui_extract">Извлечь тексты из чертежа</string>
+    <string name="ui_load_json">Загрузить JSON перевода</string>
+    <string name="ui_export_json">Экспорт JSON перевода</string>
+    <string name="ui_save_dxf_en">Сохранить DXF (EN)</string>
+    <string name="ui_save_dxf_th">Сохранить DXF (TH)</string>
+    <string name="ui_save_dwg_en">Сохранить DWG (эксперим.) EN</string>
+    <string name="ui_save_dwg_th">Сохранить DWG (эксперим.) TH</string>
+    <string name="ui_dwg_warn">⚠ Запись DWG экспериментальная — обязательно проверьте результат в AutoCAD. Надёжный формат — DXF.
+Переводятся только видимые надписи (TEXT/MTEXT/ATTRIB); имена слоёв и блоков не переводятся.</string>
+    <string name="ui_texts">Тексты</string>
+    <string name="ui_extract_first">Сначала извлеките тексты.</string>
+    <string name="ui_no_translation">— без перевода —</string>
+    <string name="ui_extracting">Извлечение текстов…</string>
+    <string name="ui_extraction_failed">Извлечение не удалось: %1$s</string>
+    <string name="ui_preparing">Подготовка файла (%1$s, %2$s)…</string>
+    <string name="ui_save_failed">Сохранение не удалось: %1$s</string>
+    <string name="ui_png_ready">PNG готов — выберите папку для сохранения</string>
+    <string name="ui_dxf_ready">DXF подготовлен — сохраняется только изменение текста</string>
+    <string name="ui_dxf_export_failed">Экспорт DXF не удался: %1$s</string>
+    <string name="ui_translation_loaded">Перевод загружен: %1$d EN / %2$d TH</string>
+    <string name="ui_json_error">Ошибка JSON: %1$s</string>
+    <string name="ui_no_file">Файл не открыт</string>
+    <string name="ui_cannot_read">Не удалось прочитать файл</string>
+    <string name="ui_pick_point">Тапните по чертежу чтобы выбрать точку</string>
+    <string name="ui_tap_edit">Тапните по тексту или линии для редактирования</string>
+    <string name="ui_pick_first">Сначала выберите точку на чертеже.</string>
 </resources>

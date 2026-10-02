@@ -66,7 +66,7 @@
     <string name="s0065" formatted="true">正在解析 %1$s</string>
     <string name="s0066" formatted="true">解析失败：%1$s</string>
     <string name="s0067">无法打开文件</string>
-    <string name="s0068">请确认文件可读，并且格式是 .dxf、.dwg、.gen、.nc 或 .pdf。</string>
+    <string name="s0068">请确认文件可读且为 .dxf 或 .dwg 格式。</string>
     <string name="s0069" formatted="true">示例加载失败：%1$s</string>
     <string name="s0070" formatted="true">正在重生成 %1$s</string>
     <string name="s0071" formatted="true">对象数量：%1$s</string>
@@ -104,7 +104,7 @@
     <string name="s0103">查看全部历史</string>
     <string name="s0104">分组预览</string>
     <string name="s0105">分组</string>
-    <string name="s0106">导入或打开图纸后，将按 DXF / DWG / PDF / NC 等类型自动分组。</string>
+    <string name="s0106">导入或打开图纸后，将按类型自动分组（DXF / DWG）。</string>
     <string name="s0107">清空历史文件</string>
     <string name="s0108">已清空历史文件</string>
     <string name="s0109" formatted="true">%1$s · %2$s 个</string>
@@ -501,4 +501,40 @@
     <string name="s0500" formatted="true">单位代码 %1$s</string>
     <string name="s0502">该文件是二进制 DXF，暂不支持。请将图纸导出为 ASCII（文本）DXF 后重新打开。</string>
     <string name="s0503">该文件不包含可显示的图形实体。如果它是从 AutoCAD 导出为 DWG 后仅改名为 .dxf，请另存为真正的 DXF 文件。</string>
+    <string name="ui_render_check">渲染检查</string>
+    <string name="ui_save_png">保存图纸视图为 PNG</string>
+    <string name="ui_png_purpose">PNG 保存到下载目录，可用于检查图纸显示</string>
+    <string name="ui_about">关于</string>
+    <string name="ui_editor">编辑器</string>
+    <string name="ui_formats">格式</string>
+    <string name="ui_translation_panel">文字翻译 (EN / TH)</string>
+    <string name="ui_save_with">带翻译保存</string>
+    <string name="ui_drawing_texts">图纸文本</string>
+    <string name="ui_file">文件</string>
+    <string name="ui_extract">从图纸提取文本</string>
+    <string name="ui_load_json">加载翻译 JSON</string>
+    <string name="ui_export_json">导出翻译 JSON</string>
+    <string name="ui_save_dxf_en">保存 DXF (EN)</string>
+    <string name="ui_save_dxf_th">保存 DXF (TH)</string>
+    <string name="ui_save_dwg_en">保存 DWG (实验) EN</string>
+    <string name="ui_save_dwg_th">保存 DWG (实验) TH</string>
+    <string name="ui_dwg_warn">⚠ DWG 写入为实验性功能 — 请务必在 AutoCAD 中验证结果。可靠格式为 DXF。
+仅翻译可见标注（TEXT/MTEXT/ATTRIB）；不翻译图层和块名。</string>
+    <string name="ui_texts">文本</string>
+    <string name="ui_extract_first">请先提取文本。</string>
+    <string name="ui_no_translation">— 无翻译 —</string>
+    <string name="ui_extracting">正在提取文本…</string>
+    <string name="ui_extraction_failed">提取失败：%1$s</string>
+    <string name="ui_preparing">正在准备文件 (%1$s, %2$s)…</string>
+    <string name="ui_save_failed">保存失败：%1$s</string>
+    <string name="ui_png_ready">PNG 已就绪 — 请选择保存文件夹</string>
+    <string name="ui_dxf_ready">DXF 已就绪 — 仅保存文本更改</string>
+    <string name="ui_dxf_export_failed">DXF 导出失败：%1$s</string>
+    <string name="ui_translation_loaded">翻译已加载：%1$d EN / %2$d TH</string>
+    <string name="ui_json_error">JSON 错误：%1$s</string>
+    <string name="ui_no_file">未打开文件</string>
+    <string name="ui_cannot_read">无法读取文件</string>
+    <string name="ui_pick_point">点击图纸选择一个点</string>
+    <string name="ui_tap_edit">点击文本或线条进行编辑</string>
+    <string name="ui_pick_first">请先在图纸上选一个点。</string>
 </resources>
