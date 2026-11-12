@@ -507,17 +507,20 @@
     <string name="ui_about">About</string>
     <string name="ui_editor">Editor</string>
     <string name="ui_formats">Formats</string>
-    <string name="ui_translation_panel">Text translation (EN / TH)</string>
+    <string name="ui_translation_panel">Text translation</string>
     <string name="ui_save_with">Save with translation</string>
     <string name="ui_drawing_texts">Drawing texts</string>
     <string name="ui_file">File</string>
     <string name="ui_extract">Extract texts from drawing</string>
     <string name="ui_load_json">Load translation JSON</string>
     <string name="ui_export_json">Export translation JSON</string>
-    <string name="ui_save_dxf_en">Save DXF (EN)</string>
-    <string name="ui_save_dxf_th">Save DXF (TH)</string>
-    <string name="ui_save_dwg_en">Save DWG (experimental) EN</string>
-    <string name="ui_save_dwg_th">Save DWG (experimental) TH</string>
+    <string name="ui_add_lang">Add target language</string>
+    <string name="ui_lang_code_hint">Language code, e.g. en, th, de, ja, zh, fr…</string>
+    <string name="ui_lang_code_empty">Enter a language code.</string>
+    <string name="ui_lang_already">Language %1$s already added.</string>
+    <string name="ui_lang_added">Language %1$s added.</string>
+    <string name="ui_save_dxf_lang">Save DXF (%1$s)</string>
+    <string name="ui_save_dwg_lang">Save DWG (experimental) %1$s</string>
     <string name="ui_dwg_warn">⚠ DWG writing is experimental — always verify the result in AutoCAD. The reliable format is DXF.
 Only visible labels are translated (TEXT/MTEXT/ATTRIB); layer and block names are not translated.</string>
     <string name="ui_texts">Texts</string>
@@ -530,7 +533,7 @@ Only visible labels are translated (TEXT/MTEXT/ATTRIB); layer and block names ar
     <string name="ui_png_ready">PNG ready — choose a folder to save</string>
     <string name="ui_dxf_ready">DXF ready — only text changes are saved</string>
     <string name="ui_dxf_export_failed">DXF export failed: %1$s</string>
-    <string name="ui_translation_loaded">Translation loaded: %1$d EN / %2$d TH</string>
+    <string name="ui_translation_loaded">Translation loaded: %1$d entries</string>
     <string name="ui_json_error">JSON error: %1$s</string>
     <string name="ui_no_file">No file open</string>
     <string name="ui_cannot_read">Cannot read file</string>
@@ -544,7 +547,7 @@ Only visible labels are translated (TEXT/MTEXT/ATTRIB); layer and block names ar
     <string name="ui_hint_undo">Remove last point</string>
     <string name="ui_hint_reset">Reset current measurement</string>
     <string name="ui_about_title">SikkatuCAD</string>
-    <string name="ui_about_text">Drawing text editor and translator. Open and view DXF/DWG, translate labels EN/TH, save drawings. Everything runs locally - no internet access.</string>
+    <string name="ui_about_text">Drawing text editor and translator. Open and view DXF/DWG, translate labels between any languages, save drawings. Everything runs locally - no internet access.</string>
     <string name="ui_links_title">Links</string>
     <string name="ui_link_github">GitHub (source code)</string>
     <string name="ui_link_tg_channel">Telegram channel</string>
@@ -556,7 +559,7 @@ Only visible labels are translated (TEXT/MTEXT/ATTRIB); layer and block names ar
 
 FEATURES
 - Open and view DXF / DWG construction drawings (facades, plans, sections);
-- Translate text labels (TEXT / MTEXT / ATTRIB) from Russian into English and Thai: export texts to JSON, translate, import back into the drawing;
+- Translate text labels (TEXT / MTEXT / ATTRIB) between any languages: export texts to JSON, translate, import back into the drawing;
 - Save edited drawings as DXF (reliable) or DWG (experimental);
 - Measurements: distance, angle, area; auto-dimensioning;
 - Geometry editing: line, rectangle, circle, arc, polyline, text;

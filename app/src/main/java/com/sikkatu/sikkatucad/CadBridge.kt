@@ -96,36 +96,36 @@ object CadBridge {
         r
     }
 
-    /** Parse a translation JSON file: [{"id","en","th",...}] -> (id -> en, id -> th). */
-    fun parseTranslationJson(json: String): Pair<Map<String, String>, Map<String, String>> {
-        val en = linkedMapOf<String, String>()
-        val th = linkedMapOf<String, String>()
+    /** Parse a translation JSON file: [{"id", "<lang>", ...}] -> (id -> lang -> translated text). */
+    fun parseTranslationJson(json: String): Map<String, Map<String, String>> {
+        val out = linkedMapOf<String, MutableMap<String, String>>()
         val arr = JSONArray(json)
         for (i in 0 until arr.length()) {
             val o = arr.getJSONObject(i)
             val id = o.optString("id")
             if (id.isBlank()) continue
-            val e = o.optString("en")
-            val t = o.optString("th")
-            if (e.isNotBlank()) en[id] = e
-            if (t.isNotBlank()) th[id] = t
+            val keys = o.keys()
+            while (keys.hasNext()) {
+                val key = keys.next()
+                if (key == "id" || key == "text" || key == "type" || key == "layer") continue
+                val v = o.optString(key)
+                if (v.isNotBlank()) out.getOrPut(id) { linkedMapOf() }[key] = v
+            }
         }
-        return en to th
+        return out
     }
 
-    /** Serialize rows to a translation JSON file body. */
+    /** Serialize rows to a translation JSON file body ([lang] -> translated text). */
     fun buildTranslationJson(rows: List<TranslationRowJson>): String {
         val arr = JSONArray()
         rows.forEach { r ->
-            arr.put(
-                JSONObject()
-                    .put("id", r.id)
-                    .put("type", r.type)
-                    .put("text", r.text)
-                    .put("layer", r.layer)
-                    .put("en", r.en)
-                    .put("th", r.th)
-            )
+            val o = JSONObject()
+                .put("id", r.id)
+                .put("type", r.type)
+                .put("text", r.text)
+                .put("layer", r.layer)
+            r.tr.forEach { (lang, value) -> o.put(lang, value) }
+            arr.put(o)
         }
         return arr.toString(2)
     }
@@ -135,7 +135,6 @@ object CadBridge {
         val type: String,
         val text: String,
         val layer: String,
-        val en: String,
-        val th: String
+        val tr: Map<String, String>
     )
 }

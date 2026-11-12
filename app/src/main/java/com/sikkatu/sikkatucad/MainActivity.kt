@@ -722,7 +722,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             })
         }
         if (currentUri != null) {
-            binding.sideContent.addView(actionRow("Text translation (EN / TH)") { showTranslationPanel() })
+            binding.sideContent.addView(actionRow(getString(R.string.ui_translation_panel)) { showTranslationPanel() })
         }
         binding.sideContent.addView(actionRow(getString(R.string.s0092)) { openDocumentTree.launch(null) })
 
@@ -951,8 +951,11 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
 
     private var translationSession: Long? = null
     private var translationItems: List<CadBridge.TextItem> = emptyList()
-    private val translationEn = linkedMapOf<String, String>()
-    private val translationTh = linkedMapOf<String, String>()
+    /** id -> lang -> translated text */
+    private val translations = linkedMapOf<String, MutableMap<String, String>>()
+    /** Language tags shown as columns; user-chosen, editable. */
+    private val translationLangs = linkedSetOf("en", "th")
+    private var translationSourceLang: String = "auto"
     private lateinit var translationRowsContainer: LinearLayout
 
     private val translationImport = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
@@ -962,12 +965,19 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 val body = contentResolver.openInputStream(uri)?.use { it.readBytes() }
                     ?: error(getString(R.string.ui_cannot_read))
                 CadBridge.parseTranslationJson(String(body, Charsets.UTF_8))
-            }.onSuccess { (en, th) ->
+            }.onSuccess { rows ->
                 runOnUiThread {
-                    translationEn.putAll(en)
-                    translationTh.putAll(th)
+                    var count = 0
+                    rows.forEach { (id, byLang) ->
+                        val store = translations.getOrPut(id) { linkedMapOf() }
+                        byLang.forEach { (lang, value) ->
+                            store[lang] = value
+                            translationLangs.add(lang)
+                            count++
+                        }
+                    }
                     renderTranslationRows()
-                    binding.statusText.text = getString(R.string.ui_translation_loaded, en.size, th.size)
+                    binding.statusText.text = getString(R.string.ui_translation_loaded, count)
                 }
             }.onFailure { error ->
                 runOnUiThread {
@@ -1054,12 +1064,11 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         }
         row.addView(header)
         row.addView(original)
-        row.addView(fieldLabel("EN"))
-        val enField = translationField(item, translationEn)
-        row.addView(enField)
-        row.addView(fieldLabel("TH"))
-        val thField = translationField(item, translationTh)
-        row.addView(thField)
+        val store = translations.getOrPut(item.id) { linkedMapOf() }
+        translationLangs.forEach { lang ->
+            row.addView(fieldLabel(lang.uppercase()))
+            row.addView(translationField(store, lang))
+        }
         return row
     }
 
@@ -1070,16 +1079,19 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         setPadding(0, 4.dp, 0, 1.dp)
     }
 
-    private fun translationField(item: CadBridge.TextItem, store: MutableMap<String, String>): EditText {
+    private fun translationField(
+        store: MutableMap<String, String>,
+        lang: String
+    ): EditText {
         return EditText(this).apply {
-            setText(store[item.id].orEmpty())
+            setText(store[lang].orEmpty())
             hint = getString(R.string.ui_no_translation)
             textSize = 13f
             setTextColor(getColor(R.color.textPrimary))
             setHintTextColor(getColor(R.color.textSecondary))
             background = getDrawable(R.drawable.bg_panel)
             setPadding(12.dp, 8.dp, 12.dp, 8.dp)
-            addTextChangedListener { store[item.id] = it?.toString().orEmpty() }
+            addTextChangedListener { store[lang] = it?.toString().orEmpty() }
         }
     }
 
@@ -1091,7 +1103,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         val rows = translationItems.map {
             CadBridge.TranslationRowJson(
                 id = it.id, type = it.type, text = it.text, layer = it.layer,
-                en = translationEn[it.id].orEmpty(), th = translationTh[it.id].orEmpty()
+                tr = translations[it.id].orEmpty().toMap()
             )
         }
         pendingExportBytes = CadBridge.buildTranslationJson(rows).toByteArray(Charsets.UTF_8)
@@ -1099,7 +1111,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     }
 
     /**
-     * Save drawing with translation: [format] = "dxf" | "dwg", [lang] = "en" | "th".
+     * Save drawing with translation: [format] = "dxf" | "dwg", [lang] = any language tag.
      * Empty translation field means "keep original".
      */
     private fun saveTranslated(format: String, lang: String) {
@@ -1108,7 +1120,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             return
         }
         val edits = translationItems.associate { item ->
-            val value = if (lang == "en") translationEn[item.id].orEmpty() else translationTh[item.id].orEmpty()
+            val value = translations[item.id]?.get(lang).orEmpty()
             item.id to value.ifBlank { item.text }
         }
         binding.statusText.text = getString(R.string.ui_preparing, format, lang.uppercase())
@@ -1141,7 +1153,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         }
     }
 
-    /** Text translation panel: extract texts, JSON, save EN/TH. */
+    /** Text translation panel: extract texts, JSON, save in any target languages. */
     /** Settings panel: interface language picker and brief info. */
     /**
      * Save current drawing view as PNG (for render self-check).
@@ -1229,6 +1241,36 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             binding.statusText.text = "Cannot open link: " + url
         }
     }
+    /** Dialog to add a target translation language code (any language). */
+    private fun showAddLanguageDialog() {
+        val input = EditText(this).apply {
+            hint = getString(R.string.ui_lang_code_hint)
+            textSize = 14f
+            setTextColor(getColor(R.color.textPrimary))
+            setHintTextColor(getColor(R.color.textSecondary))
+            background = getDrawable(R.drawable.bg_panel)
+            setPadding(12.dp, 8.dp, 12.dp, 8.dp)
+            inputType = android.text.InputType.TYPE_CLASS_TEXT
+        }
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.ui_add_lang))
+            .setView(input)
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                val code = input.text.toString().trim().lowercase().replace("_", "-")
+                when {
+                    code.isEmpty() -> binding.statusText.text = getString(R.string.ui_lang_code_empty)
+                    translationLangs.contains(code) ->
+                        binding.statusText.text = getString(R.string.ui_lang_already, code.uppercase())
+                    else -> {
+                        translationLangs.add(code)
+                        showTranslationPanel()
+                        binding.statusText.text = getString(R.string.ui_lang_added, code.uppercase())
+                    }
+                }
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
+    }
     private fun showTranslationPanel() {
         showSidePanel(null, getString(R.string.ui_translation_panel))
         binding.sideContent.removeAllViews()
@@ -1239,16 +1281,22 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             translationImport.launch(arrayOf("application/json", "text/plain", "*/*"))
         })
         binding.sideContent.addView(actionRow(getString(R.string.ui_export_json)) { exportTranslationJson() })
+        binding.sideContent.addView(actionRow("\u2795 " + getString(R.string.ui_add_lang)) { showAddLanguageDialog() })
         binding.sideContent.addView(sectionTitle(getString(R.string.ui_save_with)))
-        binding.sideContent.addView(primaryActionRow(getString(R.string.ui_save_dxf_en)) { saveTranslated("dxf", "en") })
-        binding.sideContent.addView(actionRow(getString(R.string.ui_save_dxf_th)) { saveTranslated("dxf", "th") })
-        binding.sideContent.addView(actionRow(getString(R.string.ui_save_dwg_en)) { saveTranslated("dwg", "en") })
-        binding.sideContent.addView(actionRow(getString(R.string.ui_save_dwg_th)) { saveTranslated("dwg", "th") })
+        val saveLangs = translationLangs.toList()
+        saveLangs.forEachIndexed { index, lang ->
+            val dxfLabel = getString(R.string.ui_save_dxf_lang, lang.uppercase())
+            val dwgLabel = getString(R.string.ui_save_dwg_lang, lang.uppercase())
+            if (index == 0) {
+                binding.sideContent.addView(primaryActionRow(dxfLabel) { saveTranslated("dxf", lang) })
+            } else {
+                binding.sideContent.addView(actionRow(dxfLabel) { saveTranslated("dxf", lang) })
+            }
+            binding.sideContent.addView(actionRow(dwgLabel) { saveTranslated("dwg", lang) })
+        }
         binding.sideContent.addView(
             TextView(this).apply {
-                text = "⚠ DWG writing is experimental — always verify the result in AutoCAD. " +
-                    "The reliable format is DXF.\nOnly visible labels are translated (TEXT/MTEXT/ATTRIB); " +
-                    "layer and block names are not translated — they are invisible on screen and in print."
+                text = getString(R.string.ui_dwg_warn)
                 textSize = 11f
                 setTextColor(getColor(R.color.panelTextSecondary))
                 setPadding(12.dp, 6.dp, 12.dp, 10.dp)

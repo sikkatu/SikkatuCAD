@@ -507,17 +507,20 @@
     <string name="ui_about">О программе</string>
     <string name="ui_editor">Редактор</string>
     <string name="ui_formats">Форматы</string>
-    <string name="ui_translation_panel">Перевод надписей (EN / TH)</string>
+    <string name="ui_translation_panel">Перевод надписей</string>
     <string name="ui_save_with">Сохранить с переводом</string>
     <string name="ui_drawing_texts">Тексты чертежа</string>
     <string name="ui_file">Файл</string>
     <string name="ui_extract">Извлечь тексты из чертежа</string>
     <string name="ui_load_json">Загрузить JSON перевода</string>
     <string name="ui_export_json">Экспорт JSON перевода</string>
-    <string name="ui_save_dxf_en">Сохранить DXF (EN)</string>
-    <string name="ui_save_dxf_th">Сохранить DXF (TH)</string>
-    <string name="ui_save_dwg_en">Сохранить DWG (эксперим.) EN</string>
-    <string name="ui_save_dwg_th">Сохранить DWG (эксперим.) TH</string>
+    <string name="ui_add_lang">Добавить язык перевода</string>
+    <string name="ui_lang_code_hint">Код языка, напр. en, th, de, ja, zh, fr…</string>
+    <string name="ui_lang_code_empty">Введите код языка.</string>
+    <string name="ui_lang_already">Язык %1$s уже добавлен.</string>
+    <string name="ui_lang_added">Язык %1$s добавлен.</string>
+    <string name="ui_save_dxf_lang">Сохранить DXF (%1$s)</string>
+    <string name="ui_save_dwg_lang">Сохранить DWG (эксперим.) %1$s</string>
     <string name="ui_dwg_warn">⚠ Запись DWG экспериментальная — обязательно проверьте результат в AutoCAD. Надёжный формат — DXF.
 Переводятся только видимые надписи (TEXT/MTEXT/ATTRIB); имена слоёв и блоков не переводятся.</string>
     <string name="ui_texts">Тексты</string>
@@ -530,7 +533,7 @@
     <string name="ui_png_ready">PNG готов — выберите папку для сохранения</string>
     <string name="ui_dxf_ready">DXF подготовлен — сохраняется только изменение текста</string>
     <string name="ui_dxf_export_failed">Экспорт DXF не удался: %1$s</string>
-    <string name="ui_translation_loaded">Перевод загружен: %1$d EN / %2$d TH</string>
+    <string name="ui_translation_loaded">Перевод загружен: %1$d записей</string>
     <string name="ui_json_error">Ошибка JSON: %1$s</string>
     <string name="ui_no_file">Файл не открыт</string>
     <string name="ui_cannot_read">Не удалось прочитать файл</string>
@@ -544,7 +547,7 @@
     <string name="ui_hint_undo">Убрать последнюю точку</string>
     <string name="ui_hint_reset">Сбросить текущий замер</string>
     <string name="ui_about_title">SikkatuCAD</string>
-    <string name="ui_about_text">Редактор и переводчик надписей чертежей. Открытие и просмотр DXF/DWG, перевод надписей EN/TH, сохранение чертежей. Всё работает локально - без доступа в интернет.</string>
+    <string name="ui_about_text">Редактор и переводчик надписей чертежей. Открытие и просмотр DXF/DWG, перевод надписей между любыми языками, сохранение чертежей. Всё работает локально - без доступа в интернет.</string>
     <string name="ui_links_title">Ссылки</string>
     <string name="ui_link_github">GitHub (исходный код)</string>
     <string name="ui_link_tg_channel">Телеграм-канал</string>
@@ -556,7 +559,7 @@
 
 ВОЗМОЖНОСТИ
 - Открытие и просмотр чертежей DXF / DWG (фасады, планы, разрезы);
-- Перевод надписей (TEXT / MTEXT / ATTRIB) с русского на английский и тайский: экспорт текстов в JSON, перевод, импорт обратно в чертёж;
+- Перевод надписей (TEXT / MTEXT / ATTRIB) между любыми языками: экспорт текстов в JSON, перевод, импорт обратно в чертёж;
 - Сохранение изменённых чертежей в DXF (надёжно) или DWG (экспериментально);
 - Замеры: расстояние, угол, площадь; авто-размеры;
 - Редактирование геометрии: линия, прямоугольник, окружность, дуга, полилиния, текст;

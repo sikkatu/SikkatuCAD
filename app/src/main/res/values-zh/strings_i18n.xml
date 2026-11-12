@@ -507,17 +507,20 @@
     <string name="ui_about">关于</string>
     <string name="ui_editor">编辑器</string>
     <string name="ui_formats">格式</string>
-    <string name="ui_translation_panel">文字翻译 (EN / TH)</string>
+    <string name="ui_translation_panel">文字翻译</string>
     <string name="ui_save_with">带翻译保存</string>
     <string name="ui_drawing_texts">图纸文本</string>
     <string name="ui_file">文件</string>
     <string name="ui_extract">从图纸提取文本</string>
     <string name="ui_load_json">加载翻译 JSON</string>
     <string name="ui_export_json">导出翻译 JSON</string>
-    <string name="ui_save_dxf_en">保存 DXF (EN)</string>
-    <string name="ui_save_dxf_th">保存 DXF (TH)</string>
-    <string name="ui_save_dwg_en">保存 DWG (实验) EN</string>
-    <string name="ui_save_dwg_th">保存 DWG (实验) TH</string>
+    <string name="ui_add_lang">添加目标语言</string>
+    <string name="ui_lang_code_hint">语言代码，如 en、th、de、ja、zh、fr…</string>
+    <string name="ui_lang_code_empty">请输入语言代码。</string>
+    <string name="ui_lang_already">语言 %1$s 已添加。</string>
+    <string name="ui_lang_added">已添加语言 %1$s。</string>
+    <string name="ui_save_dxf_lang">保存 DXF (%1$s)</string>
+    <string name="ui_save_dwg_lang">保存 DWG (实验) %1$s</string>
     <string name="ui_dwg_warn">⚠ DWG 写入为实验性功能 — 请务必在 AutoCAD 中验证结果。可靠格式为 DXF。
 仅翻译可见标注（TEXT/MTEXT/ATTRIB）；不翻译图层和块名。</string>
     <string name="ui_texts">文本</string>
@@ -530,7 +533,7 @@
     <string name="ui_png_ready">PNG 已就绪 — 请选择保存文件夹</string>
     <string name="ui_dxf_ready">DXF 已就绪 — 仅保存文本更改</string>
     <string name="ui_dxf_export_failed">DXF 导出失败：%1$s</string>
-    <string name="ui_translation_loaded">翻译已加载：%1$d EN / %2$d TH</string>
+    <string name="ui_translation_loaded">翻译已加载：%1$d 条</string>
     <string name="ui_json_error">JSON 错误：%1$s</string>
     <string name="ui_no_file">未打开文件</string>
     <string name="ui_cannot_read">无法读取文件</string>
@@ -544,7 +547,7 @@
     <string name="ui_hint_undo">移除最后一个点</string>
     <string name="ui_hint_reset">重置当前测量</string>
     <string name="ui_about_title">SikkatuCAD</string>
-    <string name="ui_about_text">图纸文字编辑翻译器。打开查看 DXF/DWG，翻译标注 EN/TH，保存图纸。完全本地运行 — 无需联网。</string>
+    <string name="ui_about_text">图纸文字编辑翻译器。打开查看 DXF/DWG，在任意语言之间翻译标注，保存图纸。完全本地运行 — 无需联网。</string>
     <string name="ui_links_title">链接</string>
     <string name="ui_link_github">GitHub（源代码）</string>
     <string name="ui_link_tg_channel">Telegram 频道</string>
@@ -556,7 +559,7 @@
 
 功能
 - 打开和查看 DXF / DWG 建筑图纸（立面图、平面图、剖面图）；
-- 翻译文字标注（TEXT / MTEXT / ATTRIB）：俄语 → 英语 / 泰语，导出 JSON 翻译后导入回图纸；
+- 翻译文字标注（TEXT / MTEXT / ATTRIB）：任意语言互译，导出 JSON 翻译后导入回图纸；
 - 保存为 DXF（可靠）或 DWG（实验性）；
 - 测量：距离、角度、面积；自动标注；
 - 几何编辑：直线、矩形、圆、弧、多段线、文字；

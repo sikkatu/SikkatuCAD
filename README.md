@@ -2,7 +2,7 @@
 
 [Русский](README.ru.md) | [中文](README.zh.md)
 
-![SikkatuCAD](app/src/main/res/drawable/ic_sikkatu_logo.png)
+![SikkatuCAD](docs/readme-image.jpg)
 
 Mobile CAD drawing text editor and viewer for Android. Works with **DXF** and **DWG** drawings.
 Interface: English / Russian / Chinese.
@@ -10,7 +10,7 @@ Interface: English / Russian / Chinese.
 ## Features
 
 - **Open and view** DXF / DWG construction drawings (facades, plans, sections);
-- **Translate text labels** (TEXT / MTEXT / ATTRIB) from Russian into English and Thai:
+- **Translate text labels** (TEXT / MTEXT / ATTRIB) between **any languages** (add any target languages in the panel):
   export texts to JSON → translate → import back into the drawing;
 - **Save** edited drawings as DXF (reliable) or DWG (experimental);
 - Measurements: distance, angle, area; auto-dimensioning;
