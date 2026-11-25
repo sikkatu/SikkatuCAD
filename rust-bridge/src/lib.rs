@@ -1,6 +1,7 @@
 //! C-ABI bridge between Kotlin (Android) and the acadrust CAD library.
 //! Session-based: open once, extract texts, apply edits, save as DXF or DWG.
 mod jni_api;
+mod scene_build;
 use std::collections::HashMap;
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
