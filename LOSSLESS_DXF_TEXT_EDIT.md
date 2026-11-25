@@ -10,4 +10,4 @@ For existing TEXT/MTEXT entities, the save path:
 - replaces only the text payload (group 1 / group 3);
 - preserves block-defined text by editing the source entity in the BLOCKS section.
 
-The new "保存 DXF（保留原图结构）" action is shown for an opened DXF.
+The new "Save DXF (retain original image structure)" action is shown for an opened DXF.
