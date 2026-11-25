@@ -2,6 +2,11 @@
 name = "cadbridge"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.99"
+# examples/ holds one-shot development probes that no longer compile against
+# acadrust 0.5.5; they are removed in phase 1A. Autodiscovery is disabled so
+# `cargo test --release` runs the library and integration tests only.
+autoexamples = false
 
 [lib]
 name = "cadbridge"
