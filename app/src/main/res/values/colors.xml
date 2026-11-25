@@ -49,4 +49,8 @@
     <!-- Status -->
     <color name="warning">#D97706</color>
     <color name="warningSoft">#FFF7E6</color>
+
+    <!-- Launcher / splash -->
+    <color name="ic_launcher_background">#758193</color>
+    <color name="splash_background">#758193</color>
 </resources>

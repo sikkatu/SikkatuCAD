@@ -12,7 +12,8 @@
             android:name="com.sikkatu.sikkatucad.MainActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:screenOrientation="unspecified">
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.SikkatuCAD.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
