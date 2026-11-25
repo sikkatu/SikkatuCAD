@@ -17,3 +17,5 @@ capture/
 .externalNativeBuild/
 .gradle-home/
 testdata/
+# Native bridge library is built by CI only
+app/src/main/jniLibs/
