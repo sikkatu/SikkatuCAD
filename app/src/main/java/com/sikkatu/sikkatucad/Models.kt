@@ -1,84 +1,5 @@
 package com.sikkatu.sikkatucad
 
-data class GenSection(
-    val title: String,
-    val entries: List<Pair<String, String>>
-)
-
-data class GenDocument(
-    val fileName: String,
-    val sections: List<GenSection>,
-    val generalData: Map<String, String> = emptyMap(),
-    val partSummaries: List<GenPartSummary> = emptyList(),
-    val operations: List<GenOperation> = emptyList()
-)
-
-data class GenPartSummary(
-    val name: String,
-    val mirrored: Boolean,
-    val extensionU: Double?,
-    val extensionV: Double?,
-    val cogU: Double?,
-    val cogV: Double?
-)
-
-enum class GenOperationType {
-    IDLE,
-    MARKING,
-    BURNING
-}
-
-data class GenBevel(
-    val bevel: String = "NONE",
-    val bevelCode: Double? = null,
-    val bevelType: Int? = null,
-    val bevelVariant: Int? = null,
-    val chamferWidthTs: Double? = null,
-    val chamferWidthOs: Double? = null,
-    val chamferHeightTs: Double? = null,
-    val chamferHeightOs: Double? = null
-)
-
-data class GenContourSegment(
-    val end: Point2,
-    val amp: Point2? = null,
-    val radius: Double = 0.0,
-    val sweepRadians: Double = 0.0,
-    val origin: Point2? = null
-)
-
-data class GenContour(
-    val start: Point2,
-    val segments: List<GenContourSegment>,
-    val bevel: GenBevel? = null
-)
-
-data class GenOperation(
-    val type: GenOperationType,
-    val partName: String? = null,
-    val shape: String? = null,
-    val label: String? = null,
-    val contours: List<GenContour> = emptyList(),
-    val bevel: GenBevel? = null
-)
-
-data class NcMove(
-    val start: Point2,
-    val end: Point2,
-    val rapid: Boolean,
-    val centerOffset: Point2? = null,
-    val clockwise: Boolean = false,
-    val bevelA: Double? = null,
-    val bevelB: Double? = null,
-    val cutting: Boolean = false
-)
-
-data class NcProgram(
-    val fileName: String,
-    val header: Map<String, String> = emptyMap(),
-    val moves: List<NcMove> = emptyList()
-)
-
 data class GeometrySelection(
     val entityIndex: Int,
     val segmentIndex: Int,
@@ -228,17 +149,8 @@ data class DwgPreview(
 )
 
 sealed interface ParsedCadFile {
-    data class Gen(val document: GenDocument) : ParsedCadFile
     data class Dxf(val document: DxfDocument) : ParsedCadFile
-    data class Nc(val program: NcProgram, val document: DxfDocument) : ParsedCadFile
     data class Dwg(val preview: DwgPreview, val document: DxfDocument? = null) : ParsedCadFile
 }
 
-data class NestPart(
-    val name: String,
-    val entities: List<DxfEntity>,
-    var quantity: Int = 1,
-    var rotationDeg: Double = 0.0,
-    var mirrorX: Boolean = false
-)
 

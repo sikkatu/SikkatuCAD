@@ -307,7 +307,7 @@ class FileLibraryStore(context: Context) {
 
     private fun isSupportedCadFile(name: String): Boolean {
         val ext = name.substringAfterLast('.', "").lowercase(Locale.getDefault())
-        return ext in setOf("dxf", "dwg", "gen", "nc", "tap", "cnc", "mpf", "pdf")
+        return ext in setOf("dxf", "dwg", "pdf")
     }
 
     private fun managedTypeFor(name: String): String {
@@ -315,12 +315,10 @@ class FileLibraryStore(context: Context) {
             "dxf" -> "DXF"
             "dwg" -> "DWG"
             "pdf" -> "PDF"
-            "gen" -> "GEN"
-            "nc", "tap", "cnc", "mpf" -> "NC"
             "zip" -> "ARCHIVE"
             else -> "OTHER"
         }
-    }
+}
 
     private fun uniqueDirectory(directory: File, name: String): File {
         directory.mkdirs()

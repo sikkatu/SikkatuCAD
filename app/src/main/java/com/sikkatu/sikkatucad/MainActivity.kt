@@ -55,25 +55,10 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     private var clipboardEntity: DxfEntity? = null
     private var expandedHistoryContent: View? = null
     private val selectionHiddenLayers = linkedSetOf<String>()
-    private var simulationProgressText = "0%"
-    private var simulationSpeedText = "0.35x"
-    private var simulationStateText = ""
-    private var simulationProgressValueView: TextView? = null
-    private var simulationSpeedValueView: TextView? = null
-    private var simulationStateValueView: TextView? = null
-    private var simulationSpeedSeekBar: SeekBar? = null
-    private var simulationToggleButtonView: TextView? = null
-    private var suppressSpeedSeekCallback = false
     private val historyDocuments = mutableListOf<DxfDocument>()
     private val historyLabels = mutableListOf<String>()
     private var historyIndex = -1
     private val hiddenLayers = linkedSetOf<String>()
-    private var ncBevelEnabled = true
-    private var ncConsoleLines: List<String> = emptyList()
-    private var nestingWorkspace: DxfDocument? = null
-    private val nestingParts = mutableListOf<NestPart>()
-    private var nestingSheetThickness = 10.0
-
     private val openDocument = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri?.let { importAndOpenUri(it, persistPermission = true) }
     }
@@ -138,34 +123,6 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         }
     }
 
-    private val importNestingDocument = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-        uri ?: return@registerForActivityResult
-        worker.execute {
-            runCatching {
-                val fileName = queryFileName(uri) ?: getString(R.string.s0042)
-                parser.parse(uri, fileName)
-            }.onSuccess { parsed ->
-                val doc = when (parsed) {
-                    is ParsedCadFile.Dxf -> parsed.document
-                    is ParsedCadFile.Nc -> parsed.document
-                    is ParsedCadFile.Gen -> buildGenPreview(parsed.document)
-                    else -> null
-                }
-                doc?.let {
-                    nestingWorkspace = it.copy(fileName = it.fileName)
-                    nestingParts.clear()
-                    nestingParts += NestPart(it.fileName, it.entities)
-                    runOnUiThread {
-                        binding.statusText.text = getString(R.string.s0043, it.fileName)
-                        showNestingPanel()
-                    }
-                }
-            }.onFailure { error ->
-                runOnUiThread { binding.statusText.text = getString(R.string.s0044, error.message) }
-            }
-        }
-    }
-
     companion object {
         private const val PREFS_NAME = "cad_prefs"
         private const val KEY_LANGUAGE = "app_language"
@@ -217,8 +174,6 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppRes.init(this)
-        simulationStateText = getString(R.string.s0037)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         libraryStore.pruneMissingManagedFiles()
@@ -245,44 +200,12 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             }
             val enabled = !binding.dxfCanvasView.isAutoDimensionEnabled()
             binding.dxfCanvasView.setAutoDimensionEnabled(enabled)
-            updateViewModeChips()
+            updateChips()
             binding.statusText.text = if (enabled) {
                 getString(R.string.s0046, binding.dxfCanvasView.autoDimensionSummary().orEmpty())
             } else {
                 getString(R.string.s0047)
             }
-        }
-        binding.view2dChip.setOnClickListener {
-            binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-            binding.dxfCanvasView.resetToBounds()
-            binding.dxfCanvasView.clearSelection(notify = false)
-            updateViewModeChips()
-            binding.statusText.text = getString(R.string.s0048)
-        }
-        binding.view3dChip.setOnClickListener {
-            binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.THREE_D)
-            updateViewModeChips()
-            binding.statusText.text = getString(R.string.s0049)
-        }
-        binding.bevelChip.setOnClickListener {
-            if (currentParsed !is ParsedCadFile.Nc) return@setOnClickListener
-            ncBevelEnabled = !ncBevelEnabled
-            binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-            updateViewModeChips()
-            binding.statusText.text = if (ncBevelEnabled) getString(R.string.s0050) else getString(R.string.s0051)
-        }
-        binding.rapidChip.setOnClickListener {
-            if (currentParsed !is ParsedCadFile.Nc) return@setOnClickListener
-            val layer = "NC_RAPID"
-            if (hiddenLayers.contains(layer)) {
-                hiddenLayers.remove(layer)
-                binding.statusText.text = getString(R.string.s0052)
-            } else {
-                hiddenLayers.add(layer)
-                binding.statusText.text = getString(R.string.s0053)
-            }
-            binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-            updateViewModeChips()
         }
         binding.actionFile.setOnClickListener {
             currentPanelTab = FilePanelTab.IMPORT
@@ -301,12 +224,6 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         }
         binding.actionSettings.setOnClickListener { showSettingsPanel() }
         updateBottomNavState(binding.actionFile)
-        binding.btnGenNcPreview.setOnClickListener {
-            currentPreviewDocument?.let {
-                pendingExportBytes = serializeAsNc(it).toByteArray(Charsets.UTF_8)
-                exportDocument.launch("preview.nc")
-            }
-        }
         onBackPressedDispatcher.addCallback(this) {
             when {
                 binding.sidePanel.visibility == View.VISIBLE -> {
@@ -318,7 +235,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         }
 
         handleIntent(intent)
-        updateViewModeChips()
+        updateChips()
         // Reopen file after language change (recreate): the drawing must not be lost.
         pendingReopenUri?.let { uri ->
             pendingReopenUri = null
@@ -400,18 +317,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         }
     }
 
-    private fun updateViewModeChips() {
-        val is3d = binding.dxfCanvasView.viewMode() == DxfCanvasView.ViewMode.THREE_D
-        val isNc = currentParsed is ParsedCadFile.Nc
-        binding.view2dChip.alpha = if (is3d) 0.65f else 1f
-        binding.view3dChip.visibility = View.GONE
-        binding.view3dChip.visibility = View.GONE
-        binding.bevelChip.visibility = View.GONE
-        binding.bevelChip.isEnabled = isNc
-        binding.bevelChip.alpha = if (ncBevelEnabled) 1f else 0.65f
-        binding.rapidChip.visibility = View.GONE
-        binding.rapidChip.isEnabled = isNc
-        binding.rapidChip.alpha = if (hiddenLayers.contains("NC_RAPID")) 0.65f else 1f
+    private fun updateChips() {
         val hasDocument = currentPreviewDocument != null
         binding.autoDimensionChip.isEnabled = hasDocument
         binding.autoDimensionChip.alpha = when {
@@ -527,10 +433,9 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                         body = getString(R.string.s0503),
                         resetDrawingState = false
                     )
-                    updateViewModeChips()
+                    updateChips()
                     return
                 }
-                ncBevelEnabled = true
                 binding.statusText.text = getString(R.string.s0071, parsed.document.entities.size)
                 binding.fileTypeChip.text = "DXF"
                 binding.metaChip.text = parsed.document.units?.let { getString(R.string.s0072, parsed.document.layers.size, it) }
@@ -542,68 +447,13 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 hiddenLayers.addAll(parsed.document.layerInfos.filter { it.isOff || it.isFrozen }.map { it.name })
                 measureMode = MeasureMode.NONE
                 binding.dxfCanvasView.setMeasureMode(MeasureMode.NONE)
-                binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
                 currentPreviewDocument = parsed.document
                 pushHistorySnapshot(parsed.document, getString(R.string.s0074))
                 binding.dxfCanvasView.setDocument(parsed.document)
-                binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-                binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-                binding.dxfCanvasView.setSimulationOperations(buildSimulationOperationsForDocument(parsed.document))
-                binding.dxfCanvasView.setSimulationNcProgram(null)
-                binding.dxfCanvasView.setNc3DSource(null)
-                setNcConsole(null)
             }
 
-            is ParsedCadFile.Gen -> {
-                ncBevelEnabled = true
-                binding.statusText.text = getString(R.string.s0075, parsed.document.operations.size)
-                binding.fileTypeChip.text = "GEN"
-                binding.metaChip.text = formatGenMeta(parsed.document)
-                binding.emptyPanel.visibility = View.GONE
-                binding.infoScrollView.visibility = View.GONE
-                binding.dxfCanvasView.visibility = View.VISIBLE
-                measureMode = MeasureMode.NONE
-                hiddenLayers.clear()
-                binding.dxfCanvasView.setMeasureMode(MeasureMode.NONE)
-                binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-                currentPreviewDocument = buildGenPreview(parsed.document)
-                pushHistorySnapshot(requireNotNull(currentPreviewDocument), getString(R.string.s0076))
-                binding.dxfCanvasView.setDocument(requireNotNull(currentPreviewDocument))
-                binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-                binding.dxfCanvasView.setHiddenLayers(emptySet())
-            binding.dxfCanvasView.setSimulationOperations(parsed.document.operations)
-            binding.dxfCanvasView.setSimulationNcProgram(null)
-            binding.dxfCanvasView.setNc3DSource(null)
-                setNcConsole(null)
-        }
-
-            is ParsedCadFile.Nc -> {
-                ncBevelEnabled = true
-                binding.statusText.text = getString(R.string.s0077, parsed.program.moves.size)
-                binding.fileTypeChip.text = "NC"
-                binding.metaChip.text = formatNcMeta(parsed.program)
-                binding.emptyPanel.visibility = View.GONE
-                binding.infoScrollView.visibility = View.GONE
-                binding.dxfCanvasView.visibility = View.VISIBLE
-                measureMode = MeasureMode.NONE
-                hiddenLayers.clear()
-                hiddenLayers.add("NC_RAPID")
-                binding.dxfCanvasView.setMeasureMode(MeasureMode.NONE)
-                binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-                currentPreviewDocument = parsed.document
-                pushHistorySnapshot(parsed.document, getString(R.string.s0078))
-                binding.dxfCanvasView.setDocument(parsed.document)
-                binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-                binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-        binding.dxfCanvasView.setSimulationOperations(emptyList())
-        binding.dxfCanvasView.setSimulationNcProgram(parsed.program)
-        binding.dxfCanvasView.setNc3DSource(parsed.program)
-        setNcConsole(parsed.program)
-    }
-
             is ParsedCadFile.Dwg -> {
-                ncBevelEnabled = true
-                val doc = parsed.document
+                        val doc = parsed.document
                 if (doc != null) {
                     // DWG was converted to DXF via the Rust bridge - render the full drawing.
                     binding.statusText.text = getString(R.string.s0071, doc.entities.size)
@@ -616,26 +466,14 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                     hiddenLayers.addAll(doc.layerInfos.filter { it.isOff || it.isFrozen }.map { it.name })
                     measureMode = MeasureMode.NONE
                     binding.dxfCanvasView.setMeasureMode(MeasureMode.NONE)
-                    binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
                     currentPreviewDocument = doc
                     pushHistorySnapshot(doc, getString(R.string.s0074))
                     binding.dxfCanvasView.setDocument(doc)
-                    binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-                    binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-                    binding.dxfCanvasView.setSimulationOperations(buildSimulationOperationsForDocument(doc))
-                    binding.dxfCanvasView.setSimulationNcProgram(null)
-                    binding.dxfCanvasView.setNc3DSource(null)
-                    setNcConsole(null)
                 } else {
                     currentPreviewDocument = null
                     binding.statusText.text = getString(R.string.s0079, parsed.preview.readableVersion)
                     binding.fileTypeChip.text = "DWG"
                     binding.metaChip.text = parsed.preview.readableVersion
-                    binding.dxfCanvasView.setSimulationOperations(emptyList())
-                    binding.dxfCanvasView.setSimulationNcProgram(null)
-                    binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-                    binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-                    binding.dxfCanvasView.setNc3DSource(null)
                     renderMessageCard(
                         title = getString(R.string.s0080),
                         body = getString(R.string.s0081, parsed.preview.versionCode, parsed.preview.readableVersion, parsed.preview.note)
@@ -643,7 +481,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 }
             }
         }
-        updateViewModeChips()
+        updateChips()
     }
 
     private fun renderMessageCard(title: String, body: String, resetDrawingState: Boolean = false) {
@@ -653,13 +491,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             currentSelection = null
             clearSelectionBaseView()
             resetHistory()
-            binding.dxfCanvasView.stopSimulation()
-            binding.dxfCanvasView.setSimulationOperations(emptyList())
-            binding.dxfCanvasView.setSimulationNcProgram(null)
-            binding.dxfCanvasView.setNc3DSource(null)
         }
-        binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-        binding.dxfCanvasView.setNcBevelEnabled(true)
         binding.dxfCanvasView.visibility = View.GONE
         binding.emptyPanel.visibility = View.GONE
         binding.infoScrollView.visibility = View.VISIBLE
@@ -674,12 +506,6 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         currentSelection = null
         clearSelectionBaseView()
         resetHistory()
-        binding.dxfCanvasView.stopSimulation()
-        binding.dxfCanvasView.setSimulationOperations(emptyList())
-        binding.dxfCanvasView.setSimulationNcProgram(null)
-        binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-        binding.dxfCanvasView.setNcBevelEnabled(true)
-        binding.dxfCanvasView.setNc3DSource(null)
         binding.dxfCanvasView.visibility = View.GONE
         binding.infoScrollView.visibility = View.GONE
         binding.emptyPanel.visibility = View.VISIBLE
@@ -687,8 +513,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         updateBottomNavState(null)
         binding.fileTypeChip.text = "-"
         binding.metaChip.text = "-"
-        ncBevelEnabled = true
-        updateViewModeChips()
+        updateChips()
         // Button to return to the last drawing
         val reopen = lastOpenedUri
         binding.reopenFileButton.visibility = if (reopen != null) View.VISIBLE else View.GONE
@@ -844,82 +669,6 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
                 ))
             }
         }
-    }
-
-    private fun showNcExportPanel(document: DxfDocument, fileName: String) {
-        showSidePanel(null, getString(R.string.s0113))
-        binding.sideContent.removeAllViews()
-        val bounds = document.bounds
-        binding.sideContent.addView(infoLine(getString(R.string.s0114), "%.2f x %.2f".format(bounds.width, bounds.height)))
-        val thicknessInput = EditText(this).apply {
-            hint = getString(R.string.s0115)
-            val defaultThickness = document.metadata["sheet_thickness"]?.toDoubleOrNull()
-                ?: (currentParsed as? ParsedCadFile.Nc)?.program?.header?.get("Thickness")?.toDoubleOrNull()
-                ?: 10.0
-            setText("%.2f".format(defaultThickness).trimEnd('0').trimEnd('.'))
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            background = getDrawable(R.drawable.bg_panel)
-            setPadding(14.dp, 14.dp, 14.dp, 14.dp)
-        }
-        val materialInput = EditText(this).apply {
-            hint = getString(R.string.s0116)
-            setText("Q235B")
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            background = getDrawable(R.drawable.bg_panel)
-            setPadding(14.dp, 14.dp, 14.dp, 14.dp)
-        }
-        val sheetWInput = EditText(this).apply {
-            hint = getString(R.string.s0117)
-            setText("%.0f".format(document.bounds.width))
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            background = getDrawable(R.drawable.bg_panel)
-            setPadding(14.dp, 14.dp, 14.dp, 14.dp)
-        }
-        val sheetHInput = EditText(this).apply {
-            hint = getString(R.string.s0118)
-            setText("%.0f".format(document.bounds.height))
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            background = getDrawable(R.drawable.bg_panel)
-            setPadding(14.dp, 14.dp, 14.dp, 14.dp)
-        }
-        val nameInput = EditText(this).apply {
-            hint = getString(R.string.s0119)
-            setText(fileName.substringBeforeLast('.', fileName) + "_auto")
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            background = getDrawable(R.drawable.bg_panel)
-            setPadding(14.dp, 14.dp, 14.dp, 14.dp)
-        }
-        listOf(
-            getString(R.string.s0115) to thicknessInput,
-            getString(R.string.s0116) to materialInput,
-            getString(R.string.s0117) to sheetWInput,
-            getString(R.string.s0118) to sheetHInput,
-            getString(R.string.s0120) to nameInput
-        ).forEach { (label, input) ->
-            binding.sideContent.addView(TextView(this).apply {
-                text = label
-                textSize = 12f
-                setTextColor(getColor(R.color.panelTextSecondary))
-                setPadding(4.dp, 12.dp, 4.dp, 6.dp)
-            })
-            binding.sideContent.addView(input)
-        }
-        binding.sideContent.addView(actionRow(getString(R.string.s0121)) {
-            val thick = thicknessInput.text.toString().toDoubleOrNull()
-            val mat = materialInput.text.toString().trim()
-            val w = sheetWInput.text.toString().toDoubleOrNull()
-            val h = sheetHInput.text.toString().toDoubleOrNull()
-            val program = nameInput.text.toString().trim().ifBlank { fileName.substringBeforeLast('.', fileName) }
-            val ncText = serializeAsNc(document, thick, mat, w, h, program)
-            pendingExportBytes = ncText.toByteArray(Charsets.UTF_8)
-            exportDocument.launch("$program.nc")
-            binding.statusText.text = getString(R.string.s0122)
-        })
     }
 
     private fun exportEditedDxf(document: DxfDocument) {
@@ -1397,14 +1146,11 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         currentPreviewDocument = scaled
         currentParsed = when (val parsed = currentParsed) {
             is ParsedCadFile.Dxf -> ParsedCadFile.Dxf(scaled)
-            is ParsedCadFile.Nc -> parsed.copy(document = scaled)
             else -> parsed
         }
         pushHistorySnapshot(scaled, getString(R.string.s0137))
         binding.dxfCanvasView.setDocument(scaled)
         binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-        binding.dxfCanvasView.setSimulationOperations(buildSimulationOperationsForDocument(scaled))
-        binding.dxfCanvasView.setSimulationNcProgram((currentParsed as? ParsedCadFile.Nc)?.program)
         binding.statusText.text = getString(R.string.s0138)
         showInfoPanel()
     }
@@ -1594,46 +1340,11 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         binding.fileNameText.text = getString(R.string.no_file)
         binding.statusText.text = getString(R.string.status_idle)
         binding.dxfCanvasView.clearSelection(notify = false)
-        binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-        binding.dxfCanvasView.setSimulationNcProgram(null)
-        binding.dxfCanvasView.setNc3DSource(null)
-        updateViewModeChips()
+        updateChips()
         showEmpty()
     }
 
     private fun showLayerPanel() {
-        val nc = currentParsed as? ParsedCadFile.Nc
-        if (nc != null) {
-            showSidePanel(binding.actionLayers, getString(R.string.panel_layers))
-            binding.sideContent.removeAllViews()
-            listOf(
-                "NC_SHEET" to getString(R.string.s0160),
-                "NC_RAPID" to getString(R.string.s0161),
-                "NC_CUT" to getString(R.string.s0162),
-                "NC_BEVEL_A_POS" to getString(R.string.s0163),
-                "NC_BEVEL_A_NEG" to getString(R.string.s0164),
-                "NC_BEVEL_B_POS" to getString(R.string.s0165),
-                "NC_BEVEL_B_NEG" to getString(R.string.s0166)
-            ).forEach { (layer, label) ->
-                val check = CheckBox(this).apply {
-            setTextColor(getColor(R.color.panelTextPrimary))
-                    text = label
-                    setTextColor(getColor(R.color.panelTextPrimary))
-                    isChecked = !hiddenLayers.contains(layer)
-                    setOnCheckedChangeListener { _, checked ->
-                        if (checked) hiddenLayers.remove(layer) else hiddenLayers.add(layer)
-                        val bevelLayers = setOf("NC_BEVEL_A_POS", "NC_BEVEL_A_NEG", "NC_BEVEL_B_POS", "NC_BEVEL_B_NEG")
-                        if (layer in bevelLayers) {
-                            val anyBevelVisible = bevelLayers.any { it !in hiddenLayers }
-                            if (anyBevelVisible) hiddenLayers.remove("NC_BEVEL_LABEL") else hiddenLayers.add("NC_BEVEL_LABEL")
-                        }
-                        binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-                    }
-                }
-                binding.sideContent.addView(check)
-            }
-            return
-        }
         val document = currentPreviewDocument ?: run {
             binding.statusText.text = getString(R.string.s0178)
             return
@@ -1676,11 +1387,7 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
 
     private fun showMeasurePanel() {
         val parsed = currentPreviewDocument ?: run {
-            if (currentParsed is ParsedCadFile.Gen) {
-                binding.statusText.text = getString(R.string.s0177)
-            } else {
-                binding.statusText.text = getString(R.string.s0178)
-            }
+            binding.statusText.text = getString(R.string.s0178)
             return
         }
         showSidePanel(binding.actionMeasure, getString(R.string.s0179))
@@ -1754,47 +1461,6 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
             MeasureMode.AREA -> getString(R.string.s0204)
         }))
         binding.sideContent.addView(infoLine(getString(R.string.s0205), parsed.layers.size.toString()))
-    }
-
-    private fun showSimulationPanel() {
-        val gen = currentParsed as? ParsedCadFile.Gen
-        if (gen != null) {
-            // Make sure GEN operations are fed into the canvas emulation engine
-            binding.dxfCanvasView.stopSimulation()
-            simulationProgressText = "0%"
-            simulationStateText = getString(R.string.s0037)
-            binding.dxfCanvasView.setSimulationNcProgram(null)
-            binding.dxfCanvasView.setSimulationOperations(gen.document.operations)
-            showGenSimulationPanel(gen.document)
-            return
-        }
-        val parsed = currentPreviewDocument ?: run {
-            binding.statusText.text = getString(R.string.s0206)
-            return
-        }
-        showSidePanel(null, getString(R.string.s0207))
-        binding.sideContent.removeAllViews()
-        val label = when (currentParsed) {
-            is ParsedCadFile.Nc -> "NC"
-            else -> getString(R.string.s0208)
-        }
-        // Make sure preview data is in sync with the current document
-        binding.dxfCanvasView.stopSimulation()
-        simulationProgressText = "0%"
-        simulationStateText = getString(R.string.s0037)
-        if (currentParsed is ParsedCadFile.Nc) {
-            binding.dxfCanvasView.setSimulationOperations(emptyList())
-            binding.dxfCanvasView.setSimulationNcProgram((currentParsed as ParsedCadFile.Nc).program)
-        } else {
-            val ops = buildSimulationOperationsForDocument(parsed)
-            binding.dxfCanvasView.setSimulationNcProgram(null)
-            binding.dxfCanvasView.setSimulationOperations(ops)
-        }
-        binding.sideContent.addView(simulationControlsCard(label))
-        val ops = buildSimulationOperationsForDocument(parsed)
-        binding.sideContent.addView(infoLine(getString(R.string.s0209), ops.count { it.type == GenOperationType.IDLE }.toString()))
-        binding.sideContent.addView(infoLine(getString(R.string.s0210), ops.count { it.type == GenOperationType.MARKING }.toString()))
-        binding.sideContent.addView(infoLine(getString(R.string.s0211), ops.count { it.type == GenOperationType.BURNING }.toString()))
     }
 
     private fun showSelectionEditor(selection: GeometrySelection) {
@@ -1966,14 +1632,9 @@ class MainActivity : AppCompatActivity(), DxfCanvasView.Listener {
         binding.dxfCanvasView.visibility = View.VISIBLE
         binding.fileTypeChip.text = "DXF"
         binding.metaChip.text = getString(R.string.s0265, document.layers.size, document.units ?: "mm")
-        binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
         binding.dxfCanvasView.setMeasureMode(MeasureMode.NONE)
         binding.dxfCanvasView.setDocument(document)
         binding.dxfCanvasView.setHiddenLayers(emptySet())
-        binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-        binding.dxfCanvasView.setSimulationOperations(buildSimulationOperationsForDocument(document))
-        binding.dxfCanvasView.setSimulationNcProgram(null)
-        binding.dxfCanvasView.setNc3DSource(null)
         binding.statusText.text = status
     }
 
@@ -2299,16 +1960,11 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         currentPreviewDocument = updated
         currentParsed = when (val parsed = currentParsed) {
             is ParsedCadFile.Dxf -> ParsedCadFile.Dxf(updated)
-            is ParsedCadFile.Nc -> parsed.copy(document = updated)
             else -> parsed
         }
         pushHistorySnapshot(updated, label)
         binding.dxfCanvasView.setDocument(updated)
-        binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
         binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-        binding.dxfCanvasView.setSimulationOperations(buildSimulationOperationsForDocument(updated))
-        binding.dxfCanvasView.setSimulationNcProgram((currentParsed as? ParsedCadFile.Nc)?.program)
-        binding.dxfCanvasView.setNc3DSource((currentParsed as? ParsedCadFile.Nc)?.program)
     }
 
     private fun offsetEntity(entity: DxfEntity, dx: Double, dy: Double): DxfEntity {
@@ -2379,17 +2035,13 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         currentPreviewDocument = document
         currentParsed = when (val parsed = currentParsed) {
             is ParsedCadFile.Dxf -> ParsedCadFile.Dxf(document)
-            is ParsedCadFile.Nc -> parsed.copy(document = document)
             else -> parsed
         }
         currentSelection = null
         clearSelectionBaseView()
         binding.dxfCanvasView.setDocument(document)
-        binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
         binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
         binding.dxfCanvasView.clearSelection(notify = false)
-        binding.dxfCanvasView.setSimulationNcProgram((currentParsed as? ParsedCadFile.Nc)?.program)
-        binding.dxfCanvasView.setNc3DSource((currentParsed as? ParsedCadFile.Nc)?.program)
         binding.statusText.text = status
         showInfoPanel()
     }
@@ -2400,11 +2052,6 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
 
     private fun applySelectionBaseView(selection: GeometrySelection) {
         clearSelectionBaseView()
-        val isNcBase = currentParsed is ParsedCadFile.Nc && selection.layer.orEmpty().uppercase().startsWith("NC_CUT")
-        if (!isNcBase) return
-        selectionHiddenLayers += setOf("NC_BEVEL_A_POS", "NC_BEVEL_A_NEG", "NC_BEVEL_B_POS", "NC_BEVEL_B_NEG", "NC_BEVEL_LABEL")
-        hiddenLayers.addAll(selectionHiddenLayers)
-        binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
     }
 
     private fun clearSelectionBaseView() {
@@ -2432,174 +2079,6 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         }
     }
 
-    private fun showGenSimulationPanel(document: GenDocument) {
-        showSidePanel(null, getString(R.string.s0316))
-        binding.sideContent.removeAllViews()
-        binding.sideContent.addView(simulationControlsCard("GEN"))
-        binding.sideContent.addView(infoLine(getString(R.string.s0209), document.operations.count { it.type == GenOperationType.IDLE }.toString()))
-        binding.sideContent.addView(infoLine(getString(R.string.s0210), document.operations.count { it.type == GenOperationType.MARKING }.toString()))
-        binding.sideContent.addView(infoLine(getString(R.string.s0211), document.operations.count { it.type == GenOperationType.BURNING }.toString()))
-        binding.sideContent.addView(
-            infoLine(
-                getString(R.string.s0317),
-                document.operations.count {
-                    it.type == GenOperationType.BURNING && it.bevel?.bevel?.uppercase() !in setOf("", "NONE")
-                }.toString()
-            )
-        )
-    }
-
-    private fun simulationControlsCard(labelPrefix: String): LinearLayout {
-        return LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            background = getDrawable(R.drawable.bg_panel)
-            setPadding(18.dp, 16.dp, 18.dp, 16.dp)
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply {
-                bottomMargin = 10.dp
-            }
-            addView(TextView(context).apply {
-                text = getString(R.string.s0318)
-                textSize = 16f
-                setTextColor(getColor(R.color.panelTextPrimary))
-            })
-            addView(TextView(context).apply {
-                text = getString(R.string.s0319)
-                textSize = 12f
-                setTextColor(getColor(R.color.panelTextSecondary))
-                setPadding(0, 10.dp, 0, 6.dp)
-            })
-            val speedLabel = TextView(context).apply {
-                text = simulationSpeedText
-                textSize = 14f
-                setTextColor(getColor(R.color.panelTextPrimary))
-                gravity = Gravity.END
-            }
-            simulationSpeedValueView = speedLabel
-            addView(speedLabel)
-            val seekBar = SeekBar(context).apply {
-                max = 240
-                progress = speedToSeekProgress(binding.dxfCanvasView.simulationSpeedMultiplier())
-                setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                        if (!fromUser || suppressSpeedSeekCallback) return
-                        binding.dxfCanvasView.setSimulationSpeedMultiplier(seekProgressToSpeed(progress))
-                    }
-                    override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
-                    override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
-                })
-            }
-            simulationSpeedSeekBar = seekBar
-            addView(seekBar)
-            addView(simulationButtonRow(labelPrefix))
-            val stateRow = simulationInfoRow(getString(R.string.s0099), simulationStateText)
-            val progressRow = simulationInfoRow(getString(R.string.s0320), simulationProgressText)
-            simulationStateValueView = stateRow.second
-            simulationProgressValueView = progressRow.second
-            addView(stateRow.first)
-            addView(progressRow.first)
-            refreshSimulationViews()
-        }
-    }
-
-    private fun simulationButtonRow(labelPrefix: String): LinearLayout {
-        return LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            setPadding(0, 12.dp, 0, 6.dp)
-            addView(simulationToggleButton(labelPrefix))
-            addView(simulationMiniButton(getString(R.string.s0321), {
-                binding.dxfCanvasView.stopSimulation()
-                binding.statusText.text = getString(R.string.s0322, labelPrefix)
-                refreshSimulationViews()
-            }, false))
-        }
-    }
-
-    private fun simulationToggleButton(labelPrefix: String): TextView {
-        return simulationMiniButton(
-            label = when {
-                binding.dxfCanvasView.isSimulationRunning() -> getString(R.string.s0323)
-                binding.dxfCanvasView.isSimulationPaused() -> getString(R.string.s0324)
-                else -> getString(R.string.s0325)
-            },
-            action = {
-            if (binding.dxfCanvasView.isSimulationRunning()) {
-                binding.dxfCanvasView.pauseSimulation()
-                binding.statusText.text = getString(R.string.s0326, labelPrefix)
-            } else {
-                binding.dxfCanvasView.startSimulation()
-                binding.statusText.text = getString(R.string.s0327, labelPrefix)
-            }
-            refreshSimulationViews()
-        }).also {
-            simulationToggleButtonView = it
-        }
-    }
-
-    private fun simulationMiniButton(label: String, action: () -> Unit, withEndMargin: Boolean = true): TextView {
-        return TextView(this).apply {
-            text = label
-            gravity = Gravity.CENTER
-            textSize = 14f
-            setPadding(0, 12.dp, 0, 12.dp)
-            setTextColor(getColor(R.color.panelTextPrimary))
-            background = getDrawable(R.drawable.bg_chip)
-            layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).apply {
-                marginEnd = if (withEndMargin) 8.dp else 0
-            }
-            setOnClickListener { action() }
-        }
-    }
-
-    private fun simulationInfoRow(label: String, value: String): Pair<LinearLayout, TextView> {
-        val valueView = TextView(this).apply {
-            text = value
-            textSize = 14f
-            setTextColor(getColor(R.color.panelTextPrimary))
-            gravity = Gravity.END
-        }
-        val row = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            setPadding(0, 8.dp, 0, 0)
-            addView(TextView(context).apply {
-                text = label
-                textSize = 12f
-                setTextColor(getColor(R.color.panelTextSecondary))
-                layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-            })
-            addView(valueView)
-        }
-        return row to valueView
-    }
-
-    private fun refreshSimulationViews() {
-        simulationStateText = when {
-            binding.dxfCanvasView.isSimulationRunning() -> getString(R.string.s0328)
-            binding.dxfCanvasView.isSimulationPaused() -> getString(R.string.s0329)
-            else -> getString(R.string.s0037)
-        }
-        simulationStateValueView?.text = simulationStateText
-        simulationProgressValueView?.text = simulationProgressText
-        simulationSpeedValueView?.text = simulationSpeedText
-        simulationToggleButtonView?.text = when {
-            binding.dxfCanvasView.isSimulationRunning() -> getString(R.string.s0323)
-            binding.dxfCanvasView.isSimulationPaused() -> getString(R.string.s0324)
-            else -> getString(R.string.s0325)
-        }
-        val targetProgress = speedToSeekProgress(binding.dxfCanvasView.simulationSpeedMultiplier())
-        if (simulationSpeedSeekBar?.progress != targetProgress) {
-            suppressSpeedSeekCallback = true
-            simulationSpeedSeekBar?.progress = targetProgress
-            suppressSpeedSeekCallback = false
-        }
-    }
-
-    private fun speedToSeekProgress(speed: Float): Int = ((speed - 0.1f) * 100f).roundToInt().coerceIn(0, 240)
-
-    private fun seekProgressToSpeed(progress: Int): Float = (0.1f + progress / 100f).coerceIn(0.1f, 2.5f)
-
     private fun showInfoPanel() {
         showSidePanel(null, getString(R.string.panel_info))
         binding.sideContent.removeAllViews()
@@ -2616,48 +2095,13 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
                 parsed.document.metadata["pdf_applied_scale"]?.let {
                     binding.sideContent.addView(infoLine(getString(R.string.s0334), "${"%.4f".format(it.toDoubleOrNull() ?: 1.0)}x"))
                 }
-                parsed.document.metadata["sheet_thickness"]?.let {
-                    binding.sideContent.addView(infoLine(getString(R.string.s0335), "${"%.2f".format(it.toDoubleOrNull() ?: 0.0)} mm"))
-                }
-                parsed.document.metadata["nest_strategy"]?.let {
-                    binding.sideContent.addView(infoLine(getString(R.string.s0336), it))
-                }
                 binding.sideContent.addView(
                     infoLine(
                         getString(R.string.s0337),
                         "X ${"%.2f".format(parsed.document.bounds.minX)} ~ ${"%.2f".format(parsed.document.bounds.maxX)}\nY ${"%.2f".format(parsed.document.bounds.minY)} ~ ${"%.2f".format(parsed.document.bounds.maxY)}"
                     )
                 )
-                currentUri?.let { binding.sideContent.addView(infoLine("URI", it.toString())) }
-            }
-
-            is ParsedCadFile.Gen -> {
-                binding.sideContent.addView(infoLine(getString(R.string.s0213), "GEN"))
-                binding.sideContent.addView(infoLine(getString(R.string.s0341), parsed.document.sections.size.toString()))
-                binding.sideContent.addView(infoLine(getString(R.string.s0342), parsed.document.operations.size.toString()))
-                binding.sideContent.addView(infoLine(getString(R.string.s0343), parsed.document.partSummaries.size.toString()))
-                parsed.document.generalData["RAW_LENGTH"]?.let { rawLength ->
-                    binding.sideContent.addView(infoLine(getString(R.string.s0344), "$rawLength x ${parsed.document.generalData["RAW_WIDTH"].orEmpty()}"))
-                }
-            }
-
-            is ParsedCadFile.Nc -> {
-                binding.sideContent.addView(infoLine(getString(R.string.s0213), "NC"))
-                binding.sideContent.addView(infoLine(getString(R.string.s0345), parsed.program.moves.size.toString()))
-                parsed.program.header["Material"]?.let { binding.sideContent.addView(infoLine(getString(R.string.s0116), it)) }
-                parsed.program.header["Thickness"]?.let { binding.sideContent.addView(infoLine(getString(R.string.s0346), it)) }
-                val bevelMoves = parsed.program.moves.filter { (it.bevelA ?: 0.0) != 0.0 || (it.bevelB ?: 0.0) != 0.0 }
-                if (bevelMoves.isNotEmpty()) {
-                    val aValues = bevelMoves.mapNotNull { it.bevelA }.distinct().sorted()
-                    val bValues = bevelMoves.mapNotNull { it.bevelB }.distinct().sorted()
-                    binding.sideContent.addView(infoLine(getString(R.string.s0347), ncBevelSummary(parsed.program)))
-                    binding.sideContent.addView(infoLine(getString(R.string.s0317), bevelMoves.size.toString()))
-                    binding.sideContent.addView(infoLine(getString(R.string.s0348), aValues.joinToString(", ") { "%.1f".format(it) }))
-                    binding.sideContent.addView(infoLine(getString(R.string.s0349), bValues.joinToString(", ") { "%.1f".format(it) }))
-                }
-                parsed.program.header["SheetX"]?.let { sx ->
-                    binding.sideContent.addView(infoLine(getString(R.string.s0344), "$sx x ${parsed.program.header["SheetY"].orEmpty()}"))
-                }
+currentUri?.let { binding.sideContent.addView(infoLine("URI", it.toString())) }
             }
 
             is ParsedCadFile.Dwg -> {
@@ -2721,7 +2165,7 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
 
     private fun isSupportedCadFile(name: String?): Boolean {
         val ext = name?.substringAfterLast('.', "")?.lowercase(Locale.getDefault()).orEmpty()
-        return ext in setOf("dxf", "dwg", "gen", "nc", "tap", "cnc", "mpf", "pdf")
+        return ext in setOf("dxf", "dwg", "pdf")
     }
 
     private fun actionRow(label: String, block: () -> Unit): TextView {
@@ -2977,8 +2421,6 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             "dxf" -> "DXF"
             "dwg" -> "DWG"
             "pdf" -> "PDF"
-            "gen" -> "GEN"
-            "nc", "tap", "cnc", "mpf" -> "NC"
             else -> getString(R.string.s0083)
         }
     }
@@ -2990,8 +2432,6 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
                 val type = getString(R.string.s0386)
                 getString(R.string.s0387, type, document.entities.size, document.layers.size, "%.2f".format(document.bounds.width), "%.2f".format(document.bounds.height))
             }
-            is ParsedCadFile.Gen -> getString(R.string.s0388, parsed.document.sections.size, parsed.document.operations.size)
-            is ParsedCadFile.Nc -> getString(R.string.s0389, parsed.program.moves.size, ncBevelSummary(parsed.program))
             is ParsedCadFile.Dwg -> getString(R.string.s0390, parsed.preview.readableVersion, parsed.preview.versionCode)
             null -> getString(R.string.s0391)
         }
@@ -3254,250 +2694,6 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         return null
     }
 
-    private fun formatGenMeta(document: GenDocument): String {
-        val parts = document.partSummaries.size
-        val rawLength = document.generalData["RAW_LENGTH"]?.toDoubleOrNull()
-        val rawWidth = document.generalData["RAW_WIDTH"]?.toDoubleOrNull()
-        return if (rawLength != null && rawWidth != null) {
-            getString(R.string.s0393, parts, rawLength.toInt(), rawWidth.toInt(), document.operations.size)
-        } else {
-            getString(R.string.s0394, document.sections.size, parts)
-        }
-    }
-
-    private fun formatNcMeta(program: NcProgram): String {
-        val sx = program.header["SheetX"]
-        val sy = program.header["SheetY"]
-        val bevelCount = program.moves.count { (it.bevelA ?: 0.0) != 0.0 || (it.bevelB ?: 0.0) != 0.0 }
-        val summary = ncBevelSummary(program)
-        return if (!sx.isNullOrBlank() && !sy.isNullOrBlank()) {
-            if (bevelCount > 0) {
-                getString(R.string.s0395, program.moves.size, summary, sx, sy)
-            } else {
-                getString(R.string.s0396, program.moves.size, sx, sy)
-            }
-        } else {
-            getString(R.string.s0397, program.moves.size)
-        }
-    }
-
-    private fun ncBevelSummary(program: NcProgram): String {
-        val aValues = program.moves.mapNotNull { it.bevelA }.filter { it != 0.0 }.distinct().sorted()
-        val bValues = program.moves.mapNotNull { it.bevelB }.filter { it != 0.0 }.distinct().sorted()
-        val symmetricA = aValues.size == 2 && kotlin.math.abs(aValues.first() + aValues.last()) < 0.01
-        val symmetricB = bValues.size == 2 && kotlin.math.abs(bValues.first() + bValues.last()) < 0.01
-        return when {
-            symmetricA && symmetricB -> getString(R.string.s0398, "%.0f".format(kotlin.math.abs(aValues.last())))
-            symmetricA -> getString(R.string.s0399, "%.0f".format(kotlin.math.abs(aValues.last())))
-            symmetricB -> getString(R.string.s0400, "%.0f".format(kotlin.math.abs(bValues.last())))
-            (aValues.isNotEmpty() || bValues.isNotEmpty()) -> getString(R.string.s0401, aValues.plus(bValues).joinToString("/") { "%.0f".format(it) })
-            else -> getString(R.string.s0402)
-        }
-    }
-
-    private fun buildGenPreview(document: GenDocument): DxfDocument {
-        val rawLength = document.generalData["RAW_LENGTH"]?.toDoubleOrNull()?.takeIf { it > 0.0 } ?: 6000.0
-        val rawWidth = document.generalData["RAW_WIDTH"]?.toDoubleOrNull()?.takeIf { it > 0.0 } ?: 2400.0
-        val entities = mutableListOf<DxfEntity>()
-        entities += rectPolyline(0.0, 0.0, rawLength, rawWidth, "GEN_RAW")
-        entities += DxfText(
-            position = Point2(rawLength * 0.03, rawWidth * 0.95),
-            text = document.generalData["NEST_NAME"] ?: document.fileName,
-            height = maxOf(rawWidth * 0.035, 42.0),
-            layer = "GEN_RAW"
-        )
-        document.operations.forEach { operation ->
-            operation.contours.forEach { contour ->
-                entities += contourToEntities(contour, layerForOperation(operation.type))
-                if (operation.type == GenOperationType.BURNING && contour.bevel?.bevel?.uppercase() !in setOf("", "NONE")) {
-                    entities += contourToEntities(contour, "GEN_BEVEL")
-                }
-            }
-        }
-
-        return DxfDocument(
-            fileName = document.fileName,
-            entities = entities,
-            units = getString(R.string.s0003)
-        )
-    }
-
-    private fun contourToEntities(contour: GenContour, layer: String): List<DxfEntity> {
-        val entities = mutableListOf<DxfEntity>()
-        var cursor = contour.start
-        contour.segments.forEach { segment ->
-            if (segment.amp != null && (segment.amp.x != 0.0 || segment.amp.y != 0.0)) {
-                entities += DxfPolyline(
-                    points = approximateAmpCurvePoints(
-                        start = cursor,
-                        end = segment.end,
-                        amp = segment.amp
-                    ),
-                    closed = false,
-                    layer = layer
-                )
-            } else if (segment.radius != 0.0 && segment.origin != null && segment.sweepRadians != 0.0) {
-                entities += DxfPolyline(
-                    points = approximateArcPoints(
-                        start = cursor,
-                        end = segment.end,
-                        origin = segment.origin,
-                        sweepRadians = segment.sweepRadians,
-                        radius = segment.radius
-                    ),
-                    closed = false,
-                    layer = layer
-                )
-            } else {
-                entities += DxfLine(cursor, segment.end, layer)
-            }
-            cursor = segment.end
-        }
-        return entities
-    }
-
-    private fun layerForOperation(type: GenOperationType): String {
-        return when (type) {
-            GenOperationType.IDLE -> "GEN_IDLE"
-            GenOperationType.MARKING -> "GEN_MARK"
-            GenOperationType.BURNING -> "GEN_BURN"
-        }
-    }
-
-    private fun approximateAmpCurvePoints(start: Point2, end: Point2, amp: Point2): List<Point2> {
-        val midpoint = Point2((start.x + end.x) / 2.0, (start.y + end.y) / 2.0)
-        val control = Point2(midpoint.x + amp.x * 2.0, midpoint.y + amp.y * 2.0)
-        val steps = 16
-        val points = mutableListOf<Point2>()
-        for (index in 0..steps) {
-            val t = index.toDouble() / steps.toDouble()
-            val oneMinusT = 1.0 - t
-            points += Point2(
-                oneMinusT * oneMinusT * start.x + 2.0 * oneMinusT * t * control.x + t * t * end.x,
-                oneMinusT * oneMinusT * start.y + 2.0 * oneMinusT * t * control.y + t * t * end.y
-            )
-        }
-        return points
-    }
-
-    private fun approximateArcPoints(
-        start: Point2,
-        end: Point2,
-        origin: Point2,
-        sweepRadians: Double,
-        radius: Double
-    ): List<Point2> {
-        val startAngle = atan2(start.y - origin.y, start.x - origin.x)
-        val steps = maxOf(8, (kotlin.math.abs(sweepRadians) / (Math.PI / 18.0)).toInt())
-        val points = mutableListOf<Point2>()
-        points += start
-        for (index in 1 until steps) {
-            val t = index.toDouble() / steps.toDouble()
-            val angle = startAngle + sweepRadians * t
-            points += Point2(
-                origin.x + radius * kotlin.math.cos(angle),
-                origin.y + radius * kotlin.math.sin(angle)
-            )
-        }
-        points += end
-        return points
-    }
-
-    private fun buildSimulationOperationsForDocument(document: DxfDocument): List<GenOperation> {
-        return document.entities.mapIndexedNotNull { index, entity ->
-            if (isVisualOnlyLayer(entity.layer)) return@mapIndexedNotNull null
-            when (entity) {
-                is DxfLine -> GenOperation(
-                    type = simulationTypeForLayer(entity.layer),
-                    label = entity.layer,
-                    contours = listOf(
-                        GenContour(
-                            start = entity.start,
-                            segments = listOf(GenContourSegment(end = entity.end))
-                        )
-                    )
-                )
-                is DxfPolyline -> {
-                    if (entity.points.size < 2) return@mapIndexedNotNull null
-                    val segments = mutableListOf<GenContourSegment>()
-                    for (i in 1 until entity.points.size) {
-                        segments += GenContourSegment(end = entity.points[i])
-                    }
-                    if (entity.closed) {
-                        segments += GenContourSegment(end = entity.points.first())
-                    }
-                    GenOperation(
-                        type = simulationTypeForLayer(entity.layer),
-                        label = entity.layer ?: "polyline-$index",
-                        contours = listOf(GenContour(start = entity.points.first(), segments = segments))
-                    )
-                }
-                is DxfArc -> {
-                    val start = Point2(
-                        entity.center.x + entity.radius * kotlin.math.cos(Math.toRadians(entity.startAngle)),
-                        entity.center.y + entity.radius * kotlin.math.sin(Math.toRadians(entity.startAngle))
-                    )
-                    val end = Point2(
-                        entity.center.x + entity.radius * kotlin.math.cos(Math.toRadians(entity.endAngle)),
-                        entity.center.y + entity.radius * kotlin.math.sin(Math.toRadians(entity.endAngle))
-                    )
-                    val sweepDegrees = if (entity.endAngle >= entity.startAngle) {
-                        entity.endAngle - entity.startAngle
-                    } else {
-                        entity.endAngle + 360.0 - entity.startAngle
-                    }
-                    GenOperation(
-                        type = simulationTypeForLayer(entity.layer),
-                        label = entity.layer,
-                        contours = listOf(
-                            GenContour(
-                                start = start,
-                                segments = listOf(
-                                    GenContourSegment(
-                                        end = end,
-                                        radius = entity.radius,
-                                        sweepRadians = Math.toRadians(sweepDegrees),
-                                        origin = entity.center
-                                    )
-                                )
-                            )
-                        )
-                    )
-                }
-                is DxfCircle -> {
-                    val start = Point2(entity.center.x + entity.radius, entity.center.y)
-                    GenOperation(
-                        type = simulationTypeForLayer(entity.layer),
-                        label = entity.layer,
-                        contours = listOf(
-                            GenContour(
-                                start = start,
-                                segments = listOf(
-                                    GenContourSegment(
-                                        end = start,
-                                        radius = entity.radius,
-                                        sweepRadians = Math.PI * 2.0,
-                                        origin = entity.center
-                                    )
-                                )
-                            )
-                        )
-                    )
-                }
-                is DxfText -> null
-            }
-        }
-    }
-
-    private fun simulationTypeForLayer(layer: String?): GenOperationType {
-        val value = layer.orEmpty().uppercase()
-        return when {
-            value.contains("RAPID") || value.contains("IDLE") -> GenOperationType.IDLE
-            value.contains("MARK") -> GenOperationType.MARKING
-            else -> GenOperationType.BURNING
-        }
-    }
-
     private fun rectPolyline(minX: Double, minY: Double, maxX: Double, maxY: Double, layer: String): DxfPolyline {
         return DxfPolyline(
             points = listOf(
@@ -3510,737 +2706,6 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             layer = layer
         )
     }
-
-    private fun exportRouteEntities(document: DxfDocument): List<DxfEntity> {
-        val ordered = mutableListOf<DxfEntity>()
-        buildSimulationOperationsForDocument(document).forEach { operation ->
-            operation.contours.forEach { contour ->
-                var cursor = contour.start
-                contour.segments.forEach { segment ->
-                    val layer = operation.label
-                    ordered += if (segment.origin != null && segment.radius > 0.0 && segment.sweepRadians != 0.0) {
-                        val startAngle = Math.toDegrees(atan2(cursor.y - segment.origin.y, cursor.x - segment.origin.x))
-                        DxfArc(
-                            center = segment.origin,
-                            radius = segment.radius,
-                            startAngle = startAngle,
-                            endAngle = normalizeExportEndAngle(startAngle, segment.sweepRadians),
-                            layer = layer
-                        )
-                    } else {
-                        DxfLine(cursor, segment.end, layer)
-                    }
-                    cursor = segment.end
-                }
-            }
-        }
-        return ordered
-    }
-
-    private fun normalizeExportEndAngle(startAngle: Double, sweepRadians: Double): Double {
-        val sweepDegrees = Math.toDegrees(sweepRadians)
-        return startAngle + sweepDegrees
-    }
-
-    private fun serializeAsDxf(document: DxfDocument): String {
-        val orderedEntities = exportRouteEntities(document)
-        val body = buildString {
-            appendLine("0")
-            appendLine("SECTION")
-            appendLine("2")
-            appendLine("HEADER")
-            appendLine("9")
-            appendLine("\$INSUNITS")
-            appendLine("70")
-            appendLine("4")
-            appendLine("0")
-            appendLine("ENDSEC")
-            appendLine("0")
-            appendLine("SECTION")
-            appendLine("2")
-            appendLine("ENTITIES")
-            orderedEntities.forEach { entity ->
-                when (entity) {
-                    is DxfLine -> {
-                        appendLine("0"); appendLine("LINE")
-                        appendLine("8"); appendLine(entity.layer ?: "0")
-                        appendLine("10"); appendLine(entity.start.x.toString())
-                        appendLine("20"); appendLine(entity.start.y.toString())
-                        appendLine("11"); appendLine(entity.end.x.toString())
-                        appendLine("21"); appendLine(entity.end.y.toString())
-                    }
-                    is DxfPolyline -> {
-                        appendLine("0"); appendLine("LWPOLYLINE")
-                        appendLine("8"); appendLine(entity.layer ?: "0")
-                        appendLine("90"); appendLine(entity.points.size.toString())
-                        appendLine("70"); appendLine(if (entity.closed) "1" else "0")
-                        entity.points.forEach {
-                            appendLine("10"); appendLine(it.x.toString())
-                            appendLine("20"); appendLine(it.y.toString())
-                        }
-                    }
-                    is DxfCircle -> {
-                        appendLine("0"); appendLine("CIRCLE")
-                        appendLine("8"); appendLine(entity.layer ?: "0")
-                        appendLine("10"); appendLine(entity.center.x.toString())
-                        appendLine("20"); appendLine(entity.center.y.toString())
-                        appendLine("40"); appendLine(entity.radius.toString())
-                    }
-                    is DxfArc -> {
-                        appendLine("0"); appendLine("ARC")
-                        appendLine("8"); appendLine(entity.layer ?: "0")
-                        appendLine("10"); appendLine(entity.center.x.toString())
-                        appendLine("20"); appendLine(entity.center.y.toString())
-                        appendLine("40"); appendLine(entity.radius.toString())
-                        appendLine("50"); appendLine(entity.startAngle.toString())
-                        appendLine("51"); appendLine(entity.endAngle.toString())
-                    }
-                    is DxfText -> {
-                        appendLine("0"); appendLine("TEXT")
-                        appendLine("8"); appendLine(entity.layer ?: "0")
-                        appendLine("10"); appendLine(entity.position.x.toString())
-                        appendLine("20"); appendLine(entity.position.y.toString())
-                        appendLine("40"); appendLine(entity.height.toString())
-                        appendLine("1"); appendLine(entity.text)
-                    }
-                }
-            }
-            appendLine("0")
-            appendLine("ENDSEC")
-            appendLine("0")
-            appendLine("EOF")
-        }
-        return body
-    }
-
-    private fun serializeAsNc(
-        document: DxfDocument,
-        thickness: Double? = null,
-        material: String? = null,
-        sheetWidth: Double? = null,
-        sheetHeight: Double? = null,
-        programName: String? = null
-    ): String {
-        val orderedEntities = exportRouteEntities(document)
-        return buildString {
-            appendLine(";Generated by SikkatuCAD")
-            thickness?.let { appendLine(";THICKNESS=${it.formatNc()}") }
-            material?.takeIf { it.isNotBlank() }?.let { appendLine(";MATERIAL=$it") }
-            if (sheetWidth != null && sheetHeight != null) {
-                appendLine(";SHEET=${sheetWidth.formatNc()}x${sheetHeight.formatNc()}")
-            }
-            programName?.takeIf { it.isNotBlank() }?.let { appendLine(";PROGRAM=$it") }
-            appendLine("G90")
-            appendLine("G21")
-            var index = 10
-            orderedEntities.forEach { entity ->
-                if (isVisualOnlyLayer(entity.layer)) return@forEach
-                when (entity) {
-                    is DxfLine -> {
-                        appendLine("N$index G00 X${entity.start.x.formatNc()} Y${entity.start.y.formatNc()}")
-                        index += 10
-                        appendLine("N$index G01 X${entity.end.x.formatNc()} Y${entity.end.y.formatNc()}")
-                        index += 10
-                    }
-                    is DxfPolyline -> {
-                        val points = if (entity.closed) entity.points + entity.points.first() else entity.points
-                        if (points.size >= 2) {
-                            appendLine("N$index G00 X${points.first().x.formatNc()} Y${points.first().y.formatNc()}")
-                            index += 10
-                            points.drop(1).forEach { point ->
-                                appendLine("N$index G01 X${point.x.formatNc()} Y${point.y.formatNc()}")
-                                index += 10
-                            }
-                        }
-                    }
-                    is DxfArc -> {
-                        val start = Point2(
-                            entity.center.x + entity.radius * kotlin.math.cos(Math.toRadians(entity.startAngle)),
-                            entity.center.y + entity.radius * kotlin.math.sin(Math.toRadians(entity.startAngle))
-                        )
-                        val end = Point2(
-                            entity.center.x + entity.radius * kotlin.math.cos(Math.toRadians(entity.endAngle)),
-                            entity.center.y + entity.radius * kotlin.math.sin(Math.toRadians(entity.endAngle))
-                        )
-                        appendLine("N$index G00 X${start.x.formatNc()} Y${start.y.formatNc()}")
-                        index += 10
-                        val i = entity.center.x - start.x
-                        val j = entity.center.y - start.y
-                        val clockwise = entity.endAngle < entity.startAngle
-                        appendLine("N$index ${if (clockwise) "G02" else "G03"} X${end.x.formatNc()} Y${end.y.formatNc()} I${i.formatNc()} J${j.formatNc()}")
-                        index += 10
-                    }
-                    else -> Unit
-                }
-            }
-            appendLine("M30")
-        }
-    }
-
-    private fun setNcConsole(program: NcProgram?) {
-        if (program == null || (!binding.dxfCanvasView.isSimulationRunning() && currentParsed !is ParsedCadFile.Nc)) {
-            ncConsoleLines = emptyList()
-            binding.ncConsole.visibility = View.GONE
-            return
-        }
-        ncConsoleLines = buildNcConsoleLines(program)
-        binding.ncConsole.visibility = View.VISIBLE
-        refreshNcConsole(-1)
-    }
-
-    private fun buildNcConsoleLines(program: NcProgram): List<String> {
-        val lines = mutableListOf<String>()
-        lines += ";THICKNESS=${program.header["Thickness"] ?: "-"}"
-        lines += ";MATERIAL=${program.header["Material"] ?: "-"}"
-        program.moves.forEachIndexed { idx, move ->
-            val num = (idx + 1) * 10
-            val g = if (move.rapid) "G00" else if (move.centerOffset != null) "G02/03" else "G01"
-            val bevel = listOfNotNull(
-                move.bevelA?.let { "A${"%.0f".format(it)}" },
-                move.bevelB?.let { "B${"%.0f".format(it)}" }
-            ).joinToString(" ")
-            lines += "N${"%04d".format(num)} $g X${move.end.x.formatNc()} Y${move.end.y.formatNc()}" +
-                (move.centerOffset?.let { " I${it.x.formatNc()} J${it.y.formatNc()}" } ?: "") +
-                if (bevel.isNotBlank()) "  $bevel" else ""
-        }
-        return lines
-    }
-
-    private fun refreshNcConsole(cursorIndex: Int) {
-        if (ncConsoleLines.isEmpty()) {
-            binding.ncConsole.visibility = View.GONE
-            return
-        }
-        binding.ncConsole.visibility = View.VISIBLE
-        val text = buildString {
-            ncConsoleLines.forEachIndexed { index, line ->
-                if (index == cursorIndex) append("> ") else append("  ")
-                append(line)
-                if (index == cursorIndex) append("  ◀")
-                append('\n')
-            }
-        }
-        binding.ncConsoleText.text = text
-        binding.ncConsoleText.post {
-            val layout = binding.ncConsoleText.layout ?: return@post
-            val targetLine = cursorIndex.coerceAtLeast(0).coerceAtMost(layout.lineCount - 1)
-            val y = layout.getLineTop(targetLine)
-            binding.ncConsoleScroll.smoothScrollTo(0, y)
-        }
-    }
-
-    private fun renderNestPartList(): LinearLayout {
-        return LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            if (nestingParts.isEmpty()) {
-                addView(entryView(getString(R.string.s0099), getString(R.string.s0403)))
-                return@apply
-            }
-            nestingParts.forEachIndexed { index, part ->
-                addView(compactRow("${part.name} x${part.quantity}") {
-                    showEditPartDialog(index, part)
-                })
-            }
-        }
-    }
-
-    private fun showEditPartDialog(idx: Int, part: NestPart) {
-        val qtyInput = EditText(this).apply {
-            setText(part.quantity.toString())
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-        }
-        val rotInput = EditText(this).apply {
-            setText(part.rotationDeg.toString())
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_SIGNED
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-        }
-        val mirrorBox = CheckBox(this).apply {
-            setTextColor(getColor(R.color.textPrimary))
-            text = getString(R.string.s0404)
-            isChecked = part.mirrorX
-            setTextColor(getColor(R.color.textPrimary))
-        }
-        AlertDialog.Builder(this)
-            .setTitle(getString(R.string.s0405))
-            .setView(LinearLayout(this).apply {
-                orientation = LinearLayout.VERTICAL
-                setPadding(24, 12, 24, 0)
-                addView(TextView(context).apply { text = getString(R.string.s0406) })
-                addView(qtyInput)
-                addView(TextView(context).apply { text = getString(R.string.s0407) })
-                addView(rotInput)
-                addView(mirrorBox)
-            })
-            .setPositiveButton(getString(R.string.s0408)) { _, _ ->
-                part.quantity = qtyInput.text.toString().toIntOrNull()?.coerceIn(1, 500) ?: part.quantity
-                part.rotationDeg = rotInput.text.toString().toDoubleOrNull() ?: part.rotationDeg
-                part.mirrorX = mirrorBox.isChecked
-                showNestingPanel()
-            }
-            .setNegativeButton(getString(R.string.s0359)) { _, _ ->
-                nestingParts.removeAt(idx)
-                showNestingPanel()
-            }
-            .setNeutralButton(getString(R.string.s0134), null)
-            .show()
-    }
-
-    private fun compactRow(text: String, action: () -> Unit): LinearLayout {
-        return LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            setPadding(0, 6.dp, 0, 6.dp)
-            addView(TextView(context).apply {
-                this.text = text
-                textSize = 12f
-                setTextColor(getColor(R.color.panelTextPrimary))
-                layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-            })
-            addView(TextView(context).apply {
-                this.text = getString(R.string.s0409)
-                textSize = 12f
-                setTextColor(getColor(R.color.entityAccent))
-                setPadding(12.dp, 8.dp, 12.dp, 8.dp)
-                background = getDrawable(R.drawable.bg_chip)
-                setOnClickListener { action() }
-            })
-        }
-    }
-
-    private fun addLibraryShapeRect() {
-        val widthInput = EditText(this).apply {
-            hint = getString(R.string.s0268)
-            setText("200")
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
-        }
-        val heightInput = EditText(this).apply {
-            hint = getString(R.string.s0269)
-            setText("100")
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
-        }
-        AlertDialog.Builder(this)
-            .setTitle(getString(R.string.s0410))
-            .setView(LinearLayout(this).apply {
-                orientation = LinearLayout.VERTICAL
-                setPadding(24, 12, 24, 0)
-                addView(widthInput)
-                addView(heightInput)
-            })
-            .setPositiveButton(getString(R.string.s0294)) { _, _ ->
-                val w = widthInput.text.toString().toDoubleOrNull() ?: return@setPositiveButton
-                val h = heightInput.text.toString().toDoubleOrNull() ?: return@setPositiveButton
-                val rect = rectPolyline(0.0, 0.0, w, h, "LIB_RECT")
-                nestingParts += NestPart(getString(R.string.s0411, nestingParts.size + 1), listOf(rect))
-                showNestingPanel()
-            }
-            .setNegativeButton(getString(R.string.s0134), null)
-            .show()
-    }
-
-    private fun addLibraryShapeCircle() {
-        val radiusInput = EditText(this).apply {
-            hint = getString(R.string.s0282)
-            setText("50")
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
-        }
-        AlertDialog.Builder(this)
-            .setTitle(getString(R.string.s0412))
-            .setView(LinearLayout(this).apply {
-                orientation = LinearLayout.VERTICAL
-                setPadding(24, 12, 24, 0)
-                addView(radiusInput)
-            })
-            .setPositiveButton(getString(R.string.s0294)) { _, _ ->
-                val r = radiusInput.text.toString().toDoubleOrNull() ?: return@setPositiveButton
-                val circle = DxfCircle(Point2(0.0, 0.0), r, "LIB_CIRCLE")
-                nestingParts += NestPart(getString(R.string.s0413, nestingParts.size + 1), listOf(circle))
-                showNestingPanel()
-            }
-            .setNegativeButton(getString(R.string.s0134), null)
-            .show()
-    }
-
-    private fun updateSheetOutline(existing: List<DxfEntity>, width: Double, height: Double): List<DxfEntity> {
-        val others = existing.filterNot { it.layer.orEmpty() == "NC_SHEET" }
-        val sheet = rectPolyline(0.0, 0.0, width, height, "NC_SHEET")
-        return others + sheet
-    }
-
-    private fun applyAutoNest(
-        sheetW: Double,
-        sheetH: Double,
-        gap: Double,
-        sheetThickness: Double,
-        strategy: NestingStrategy = FirstFitDecreasingStrategy(),
-        resultView: LinearLayout? = null
-    ) {
-        if (nestingParts.isEmpty()) {
-            binding.statusText.text = getString(R.string.s0414)
-            return
-        }
-
-        // Execute typesetting algorithm
-        val result = strategy.nest(nestingParts, sheetW, sheetH, gap)
-
-        // Update workspace
-        val sheetOutline = rectPolyline(0.0, 0.0, sheetW, sheetH, "NC_SHEET")
-        nestingWorkspace = DxfDocument(
-            "NESTING.dxf",
-            listOf(sheetOutline) + result.entities,
-            metadata = mapOf(
-                "sheet_width" to sheetW.toString(),
-                "sheet_height" to sheetH.toString(),
-                "sheet_thickness" to sheetThickness.toString(),
-                "nest_strategy" to strategy.name
-            )
-        )
-
-        // Update results display
-        val suggestions = NestingOptimizer.analyzeAndSuggest(result, sheetW, sheetH, gap)
-        resultView?.removeAllViews()
-        resultView?.apply {
-            addView(sectionTitle(getString(R.string.s0415)))
-            addView(entryView(getString(R.string.s0416), "${"%.1f".format(result.utilization)}%"))
-            addView(entryView(getString(R.string.s0417), "${result.placedCount}/${nestingParts.sumOf { it.quantity }}"))
-            addView(entryView(getString(R.string.s0418), "${"%.0f".format(result.wastedArea)}"))
-
-            if (result.failedParts.isNotEmpty()) {
-                addView(TextView(this@MainActivity).apply {
-                    text = getString(R.string.s0419)
-                    textSize = 11f
-                    setTextColor(getColor(R.color.panelTextSecondary))
-                    setPadding(0, 8.dp, 0, 4.dp)
-                })
-                result.failedParts.forEach { part ->
-                    addView(TextView(this@MainActivity).apply {
-                        text = "• $part"
-                        textSize = 10f
-                        setTextColor(getColor(R.color.entityAccent))
-                        setPadding(8.dp, 2.dp, 0, 2.dp)
-                    })
-                }
-            }
-            if (suggestions.isNotEmpty()) {
-                addView(sectionTitle(getString(R.string.s0420)))
-                suggestions.forEach { suggestion ->
-                    addView(entryView(getString(R.string.s0421), suggestion))
-                }
-            }
-        }
-
-        binding.statusText.text = getString(R.string.s0422, result.placedCount, nestingParts.sumOf { it.quantity }, "%.1f".format(result.utilization))
-    }
-
-    private fun compareNestingStrategies(sheetW: Double, sheetH: Double, gap: Double) {
-        if (nestingParts.isEmpty()) {
-            binding.statusText.text = getString(R.string.s0414)
-            return
-        }
-
-        val strategies = listOf(
-            FirstFitDecreasingStrategy(),
-            BestFitStrategy(),
-            StripeStrategy()
-        )
-
-        val results = strategies.map { strategy ->
-            strategy to strategy.nest(nestingParts, sheetW, sheetH, gap)
-        }
-
-        // Find the optimal solution
-        val bestResult = results.maxByOrNull { it.second.utilization }
-
-        val message = buildString {
-            appendLine(getString(R.string.s0423))
-            appendLine()
-            results.forEach { (strategy, result) ->
-                val isBest = result == bestResult?.second
-                val marker = if (isBest) "✓ " else "  "
-                appendLine("$marker${strategy.name}")
-                appendLine(getString(R.string.s0424, "%.1f".format(result.utilization)))
-                appendLine(getString(R.string.s0425, result.placedCount, nestingParts.sumOf { it.quantity }))
-                appendLine(getString(R.string.s0426, "%.0f".format(result.wastedArea)))
-                appendLine()
-            }
-            appendLine(getString(R.string.s0427, bestResult?.first?.name))
-        }
-
-        AlertDialog.Builder(this)
-            .setTitle(getString(R.string.s0428))
-            .setMessage(message)
-            .setPositiveButton(getString(R.string.s0429)) { _, _ ->
-                bestResult?.let { (strategy, result) ->
-                    val sheetOutline = rectPolyline(0.0, 0.0, sheetW, sheetH, "NC_SHEET")
-                    nestingWorkspace = DxfDocument(
-                        "NESTING.dxf",
-                        listOf(sheetOutline) + result.entities,
-                        metadata = mapOf(
-                            "sheet_width" to sheetW.toString(),
-                            "sheet_height" to sheetH.toString(),
-                            "sheet_thickness" to nestingSheetThickness.toString(),
-                            "nest_strategy" to strategy.name
-                        )
-                    )
-                    applyNestingWorkspaceToView(getString(R.string.s0430, strategy.name))
-                }
-            }
-            .setNegativeButton(getString(R.string.s0134), null)
-            .show()
-    }
-
-    private fun autoSplitNesting(
-        sheetW: Double,
-        sheetH: Double,
-        gap: Double,
-        sheetThickness: Double,
-        strategy: NestingStrategy
-    ) {
-        if (nestingParts.isEmpty()) {
-            binding.statusText.text = getString(R.string.s0414)
-            return
-        }
-
-        val results = NestingOptimizer.autoSplitToMultipleSheets(
-            nestingParts, sheetW, sheetH, gap, strategy
-        )
-
-        if (results.isEmpty()) {
-            binding.statusText.text = getString(R.string.s0431)
-            return
-        }
-
-        // Merge layout results for all panels
-        val allEntities = mutableListOf<DxfEntity>()
-        var currentY = 0.0
-
-        results.forEachIndexed { index, result ->
-            val sheetOutline = rectPolyline(0.0, currentY, sheetW, currentY + sheetH, "NC_SHEET_${index + 1}")
-            allEntities.add(sheetOutline)
-
-            // Translate all entities of this sheet
-            result.entities.forEach { entity ->
-                val translated = when (entity) {
-                    is DxfLine -> entity.copy(
-                        start = entity.start.copy(y = entity.start.y + currentY),
-                        end = entity.end.copy(y = entity.end.y + currentY)
-                    )
-                    is DxfPolyline -> entity.copy(
-                        points = entity.points.map { it.copy(y = it.y + currentY) }
-                    )
-                    is DxfCircle -> entity.copy(
-                        center = entity.center.copy(y = entity.center.y + currentY)
-                    )
-                    is DxfArc -> entity.copy(
-                        center = entity.center.copy(y = entity.center.y + currentY)
-                    )
-                    is DxfText -> entity.copy(
-                        position = entity.position.copy(y = entity.position.y + currentY)
-                    )
-                }
-                allEntities.add(translated)
-            }
-
-            currentY += sheetH + gap
-        }
-
-        nestingWorkspace = DxfDocument(
-            "NESTING_MULTI.dxf",
-            allEntities,
-            metadata = mapOf(
-                "sheet_width" to sheetW.toString(),
-                "sheet_height" to sheetH.toString(),
-                "sheet_thickness" to sheetThickness.toString(),
-                "nest_strategy" to strategy.name
-            )
-        )
-
-        val totalRequested = nestingParts.sumOf { it.quantity }
-        val message = buildString {
-            appendLine(getString(R.string.s0432))
-            appendLine(getString(R.string.s0433, results.size))
-            appendLine()
-            results.forEachIndexed { index, result ->
-                appendLine(getString(R.string.s0434, index + 1))
-                appendLine(getString(R.string.s0435, result.placedCount))
-                appendLine(getString(R.string.s0436, "%.1f".format(result.utilization)))
-                appendLine()
-            }
-            appendLine(getString(R.string.s0437, results.sumOf { it.placedCount }, totalRequested))
-        }
-
-        AlertDialog.Builder(this)
-            .setTitle(getString(R.string.s0438))
-            .setMessage(message)
-            .setPositiveButton(getString(R.string.s0135)) { _, _ ->
-                applyNestingWorkspaceToView(getString(R.string.s0439, results.size))
-            }
-            .setNegativeButton(getString(R.string.s0134), null)
-            .show()
-    }
-
-    private fun applyNestingWorkspaceToView(status: String = getString(R.string.s0440)) {
-        val nested = nestingWorkspace ?: run {
-            binding.statusText.text = getString(R.string.s0441)
-            return
-        }
-        pushHistorySnapshot(nested, getString(R.string.s0442))
-        currentPreviewDocument = nested
-        currentParsed = ParsedCadFile.Dxf(nested)
-        binding.emptyPanel.visibility = View.GONE
-        binding.infoScrollView.visibility = View.GONE
-        binding.dxfCanvasView.visibility = View.VISIBLE
-        binding.dxfCanvasView.setViewMode(DxfCanvasView.ViewMode.TWO_D)
-        binding.dxfCanvasView.setDocument(nested)
-        binding.dxfCanvasView.setHiddenLayers(hiddenLayers)
-        binding.dxfCanvasView.setNcBevelEnabled(ncBevelEnabled)
-        binding.dxfCanvasView.setSimulationOperations(buildSimulationOperationsForDocument(nested))
-        binding.dxfCanvasView.setSimulationNcProgram(null)
-        binding.dxfCanvasView.setNc3DSource(null)
-        setNcConsole(null)
-        binding.fileTypeChip.text = "DXF"
-        binding.metaChip.text = getString(R.string.s0443, nested.layers.size, nested.entities.size)
-        binding.statusText.text = status
-        updateViewModeChips()
-    }
-
-    private fun transformNestEntity(
-        entity: DxfEntity,
-        angleDeg: Double,
-        mirrorX: Boolean,
-        offsetX: Double,
-        offsetY: Double,
-        baseMinX: Double,
-        baseMinY: Double
-    ): DxfEntity {
-        val angleRad = Math.toRadians(angleDeg)
-        fun tx(p: Point2): Point2 {
-            var x = p.x - baseMinX
-            var y = p.y - baseMinY
-            if (mirrorX) x = -x
-            val rx = x * kotlin.math.cos(angleRad) - y * kotlin.math.sin(angleRad) + offsetX
-            val ry = x * kotlin.math.sin(angleRad) + y * kotlin.math.cos(angleRad) + offsetY
-            return Point2(rx, ry)
-        }
-        return when (entity) {
-            is DxfLine -> entity.copy(start = tx(entity.start), end = tx(entity.end))
-            is DxfPolyline -> entity.copy(points = entity.points.map(::tx))
-            is DxfCircle -> entity.copy(center = tx(entity.center))
-            is DxfArc -> entity.copy(center = tx(entity.center), startAngle = entity.startAngle + angleDeg, endAngle = entity.endAngle + angleDeg)
-            is DxfText -> entity.copy(position = tx(entity.position))
-        }
-    }
-
-    private fun serializeAsGen(document: DxfDocument): String {
-        val bounds = document.bounds
-        val orderedEntities = exportRouteEntities(document)
-        return buildString {
-            appendLine("GENERAL_DATA")
-            appendLine("TYPE_OF_GENERIC_FILE=PLATE_PART")
-            appendLine("TYPE_OF_MANUFACT=2AXIS")
-            appendLine("NEST_NAME=${document.fileName.substringBeforeLast('.')}")
-            appendLine("RAW_LENGTH=${"%.2f".format(bounds.width)}")
-            appendLine("RAW_WIDTH=${"%.2f".format(bounds.height)}")
-            appendLine("RAW_THICKNESS=0.00")
-            appendLine("NO_OF_PARTS=1")
-            appendLine("END_OF_GENERAL_DATA")
-            appendLine("PART_DATA")
-            appendLine("NAME=${document.fileName.substringBeforeLast('.')}")
-            appendLine("POSNO=1")
-            appendLine("EXTENSION_U=${"%.2f".format(bounds.width)}")
-            appendLine("EXTENSION_V=${"%.2f".format(bounds.height)}")
-            appendLine("PART_COG_U=${"%.2f".format((bounds.minX + bounds.maxX) / 2.0)}")
-            appendLine("PART_COG_V=${"%.2f".format((bounds.minY + bounds.maxY) / 2.0)}")
-            appendLine("END_OF_PART_DATA")
-            orderedEntities.forEach { entity ->
-                if (isVisualOnlyLayer(entity.layer)) return@forEach
-                when (entity) {
-                    is DxfLine -> {
-                        appendLine("BURNING_DATA")
-                        appendLine("SHAPE=OUTER_CONTOUR")
-                        appendLine("START_OF_CONTOUR")
-                        appendLine("NO_OF_SEG=1")
-                        appendLine("START_U=${"%.5f".format(entity.start.x)}")
-                        appendLine("START_V=${"%.5f".format(entity.start.y)}")
-                        appendLine("AMP_U=0.00000")
-                        appendLine("AMP_V=0.00000")
-                        appendLine("AMP=0.00000")
-                        appendLine("RADIUS=0.00000")
-                        appendLine("SWEEP=0.00000")
-                        appendLine("ORIGIN_U=0.00000")
-                        appendLine("ORIGIN_V=0.00000")
-                        appendLine("U=${"%.5f".format(entity.end.x)}")
-                        appendLine("V=${"%.5f".format(entity.end.y)}")
-                        appendLine("END_OF_CONTOUR")
-                        appendLine("END_OF_BURNING_DATA")
-                    }
-                    is DxfPolyline -> {
-                        val pts = if (entity.closed && entity.points.isNotEmpty()) entity.points + entity.points.first() else entity.points
-                        for (index in 0 until pts.lastIndex) {
-                            val start = pts[index]
-                            val end = pts[index + 1]
-                            appendLine("BURNING_DATA")
-                            appendLine("SHAPE=OUTER_CONTOUR")
-                            appendLine("START_OF_CONTOUR")
-                            appendLine("NO_OF_SEG=1")
-                            appendLine("START_U=${"%.5f".format(start.x)}")
-                            appendLine("START_V=${"%.5f".format(start.y)}")
-                            appendLine("AMP_U=0.00000")
-                            appendLine("AMP_V=0.00000")
-                            appendLine("AMP=0.00000")
-                            appendLine("RADIUS=0.00000")
-                            appendLine("SWEEP=0.00000")
-                            appendLine("ORIGIN_U=0.00000")
-                            appendLine("ORIGIN_V=0.00000")
-                            appendLine("U=${"%.5f".format(end.x)}")
-                            appendLine("V=${"%.5f".format(end.y)}")
-                            appendLine("END_OF_CONTOUR")
-                            appendLine("END_OF_BURNING_DATA")
-                        }
-                    }
-                    is DxfArc -> {
-                        val start = Point2(
-                            entity.center.x + entity.radius * kotlin.math.cos(Math.toRadians(entity.startAngle)),
-                            entity.center.y + entity.radius * kotlin.math.sin(Math.toRadians(entity.startAngle))
-                        )
-                        val end = Point2(
-                            entity.center.x + entity.radius * kotlin.math.cos(Math.toRadians(entity.endAngle)),
-                            entity.center.y + entity.radius * kotlin.math.sin(Math.toRadians(entity.endAngle))
-                        )
-                        val sweep = Math.toRadians(entity.endAngle - entity.startAngle)
-                        appendLine("BURNING_DATA")
-                        appendLine("SHAPE=OUTER_CONTOUR")
-                        appendLine("START_OF_CONTOUR")
-                        appendLine("NO_OF_SEG=1")
-                        appendLine("START_U=${"%.5f".format(start.x)}")
-                        appendLine("START_V=${"%.5f".format(start.y)}")
-                        appendLine("AMP_U=0.00000")
-                        appendLine("AMP_V=0.00000")
-                        appendLine("AMP=0.00000")
-                        appendLine("RADIUS=${"%.5f".format(entity.radius)}")
-                        appendLine("SWEEP=${"%.5f".format(sweep)}")
-                        appendLine("ORIGIN_U=${"%.5f".format(entity.center.x)}")
-                        appendLine("ORIGIN_V=${"%.5f".format(entity.center.y)}")
-                        appendLine("U=${"%.5f".format(end.x)}")
-                        appendLine("V=${"%.5f".format(end.y)}")
-                        appendLine("END_OF_CONTOUR")
-                        appendLine("END_OF_BURNING_DATA")
-                    }
-                    else -> Unit
-                }
-            }
-        }
-    }
-
-    private fun isVisualOnlyLayer(layer: String?): Boolean {
-        val value = layer.orEmpty().uppercase()
-        return value.startsWith("NC_BEVEL") ||
-            value.startsWith("NC_BEVEL_LABEL") ||
-            value.startsWith("NC_SHEET")
-    }
-
-    private fun Double.formatNc(): String = "%.3f".format(this)
 
     private fun segmentLength(start: Point2, end: Point2): Double {
         val dx = end.x - start.x
@@ -4273,8 +2738,6 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
             binding.metaChip.text = when (parsed) {
                 is ParsedCadFile.Dxf -> parsed.document.units?.let { getString(R.string.s0072, parsed.document.layers.size, it) }
                     ?: getString(R.string.s0073, parsed.document.layers.size)
-                is ParsedCadFile.Gen -> formatGenMeta(parsed.document)
-                is ParsedCadFile.Nc -> formatNcMeta(parsed.program)
                 is ParsedCadFile.Dwg -> parsed.preview.readableVersion
                 null -> "-"
             }
@@ -4295,266 +2758,4 @@ private fun showCreateRectangleDialog(document: DxfDocument) {
         }
     }
 
-    override fun onSimulationUpdated(progress: Double, total: Double, speedMultiplier: Float) {
-        simulationProgressText = if (total > 0.0) "${"%.0f".format((progress / total * 100.0).coerceIn(0.0, 100.0))}%" else "0%"
-        simulationSpeedText = "%.2fx".format(speedMultiplier)
-        refreshSimulationViews()
-    }
-
-    override fun onSimulationStateChanged(running: Boolean, paused: Boolean) {
-        simulationStateText = when {
-            running -> getString(R.string.s0328)
-            paused -> getString(R.string.s0329)
-            else -> getString(R.string.s0037)
-        }
-        refreshSimulationViews()
-    }
-
-    override fun onSimulationCompleted() {
-        simulationProgressText = "100%"
-        simulationProgressValueView?.text = simulationProgressText
-        simulationToggleButtonView?.text = getString(R.string.s0325)
-        simulationStateText = getString(R.string.s0445)
-        binding.statusText.text = getString(R.string.s0446)
-        refreshSimulationViews()
-    }
-
-    override fun onSimulationCursorChanged(segmentIndex: Int) {
-        refreshNcConsole(segmentIndex)
-    }
-
-    private fun showNestingPanel() {
-        showSidePanel(null, getString(R.string.s0447))
-        if (nestingWorkspace == null) {
-            nestingWorkspace = DxfDocument("NESTING.dxf", emptyList())
-        }
-        binding.sideContent.removeAllViews()
-
-        // Board size and thickness
-        binding.sideContent.addView(sectionTitle(getString(R.string.s0448)))
-        val workspaceMetadata = nestingWorkspace?.metadata.orEmpty()
-        val sheetW = EditText(this).apply {
-            hint = getString(R.string.s0449)
-            setText(workspaceMetadata["sheet_width"]?.toDoubleOrNull()?.let { "%.0f".format(it) } ?: "3000")
-            textSize = 12f
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            setPadding(10.dp, 8.dp, 10.dp, 8.dp)
-            background = getDrawable(R.drawable.bg_panel)
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
-        }
-        val sheetH = EditText(this).apply {
-            hint = getString(R.string.s0268)
-            setText(workspaceMetadata["sheet_height"]?.toDoubleOrNull()?.let { "%.0f".format(it) } ?: "1500")
-            textSize = 12f
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            setPadding(10.dp, 8.dp, 10.dp, 8.dp)
-            background = getDrawable(R.drawable.bg_panel)
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
-        }
-        val sheetT = EditText(this).apply {
-            hint = getString(R.string.s0346)
-            setText(workspaceMetadata["sheet_thickness"]?.toDoubleOrNull()?.let { "%.0f".format(it) } ?: "10")
-            textSize = 12f
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            setPadding(10.dp, 8.dp, 10.dp, 8.dp)
-            background = getDrawable(R.drawable.bg_panel)
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
-        }
-        listOf(sheetW to getString(R.string.s0449), sheetH to getString(R.string.s0268), sheetT to getString(R.string.s0346)).forEach { (view, label) ->
-            binding.sideContent.addView(TextView(this).apply {
-                text = label
-                textSize = 11f
-                setTextColor(getColor(R.color.panelTextSecondary))
-            })
-            binding.sideContent.addView(view)
-        }
-        if (nestingParts.isNotEmpty()) {
-            val (suggestedW, suggestedH) = NestingOptimizer.suggestOptimalSheetSize(nestingParts, minGap = 10.0)
-            binding.sideContent.addView(infoLine(getString(R.string.s0450), "${"%.0f".format(suggestedW)} x ${"%.0f".format(suggestedH)}"))
-            binding.sideContent.addView(compactRow(getString(R.string.s0451)) {
-                sheetW.setText("%.0f".format(suggestedW))
-                sheetH.setText("%.0f".format(suggestedH))
-            })
-        }
-        val refreshSheet: () -> Unit = {
-            val wVal = sheetW.text.toString().toDoubleOrNull()
-            val hVal = sheetH.text.toString().toDoubleOrNull()
-            val tVal = sheetT.text.toString().toDoubleOrNull() ?: nestingSheetThickness
-            if (wVal != null && hVal != null) {
-                nestingSheetThickness = tVal
-                nestingWorkspace = (nestingWorkspace ?: DxfDocument("NESTING.dxf", emptyList()))
-                    .copy(
-                        entities = updateSheetOutline(nestingWorkspace?.entities.orEmpty(), wVal, hVal),
-                        metadata = nestingWorkspace?.metadata.orEmpty() + mapOf(
-                            "sheet_width" to wVal.toString(),
-                            "sheet_height" to hVal.toString(),
-                            "sheet_thickness" to nestingSheetThickness.toString()
-                        )
-                    )
-                binding.statusText.text = getString(R.string.s0452, "%.0f".format(wVal), "%.0f".format(hVal))
-            }
-        }
-        sheetW.addTextChangedListener { refreshSheet.invoke() }
-        sheetH.addTextChangedListener { refreshSheet.invoke() }
-        sheetT.addTextChangedListener { refreshSheet.invoke() }
-
-        binding.sideContent.addView(sectionTitle(getString(R.string.s0453)))
-        binding.sideContent.addView(compactRow(getString(R.string.s0454)) { importNestingDocument.launch(arrayOf("*/*")) })
-        binding.sideContent.addView(compactRow(getString(R.string.s0455)) { addLibraryShapeRect() })
-        binding.sideContent.addView(compactRow(getString(R.string.s0456)) { addLibraryShapeCircle() })
-
-        binding.sideContent.addView(sectionTitle(getString(R.string.s0457)))
-        binding.sideContent.addView(renderNestPartList())
-
-        binding.sideContent.addView(sectionTitle(getString(R.string.s0458)))
-        val gapInput = EditText(this).apply {
-            hint = getString(R.string.s0459)
-            setText("10")
-            textSize = 12f
-            setTextColor(getColor(R.color.textPrimary))
-            setHintTextColor(getColor(R.color.textSecondary))
-            setPadding(10.dp, 8.dp, 10.dp, 8.dp)
-            background = getDrawable(R.drawable.bg_panel)
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
-        }
-        binding.sideContent.addView(TextView(this).apply {
-            text = getString(R.string.s0459)
-            textSize = 11f
-            setTextColor(getColor(R.color.panelTextSecondary))
-        })
-        binding.sideContent.addView(gapInput)
-
-        // Typesetting strategy selection
-        binding.sideContent.addView(TextView(this).apply {
-            text = getString(R.string.s0336)
-            textSize = 11f
-            setTextColor(getColor(R.color.panelTextSecondary))
-            setPadding(0, 8.dp, 0, 4.dp)
-        })
-        val strategies = listOf(
-            FirstFitDecreasingStrategy(),
-            BestFitStrategy(),
-            StripeStrategy()
-        )
-        var selectedStrategy: NestingStrategy = strategies[0]
-        val strategyButtons = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-        }
-        strategies.forEachIndexed { idx, strategy ->
-            strategyButtons.addView(TextView(this).apply {
-                text = strategy.name.split("(")[0].trim()
-                textSize = 10f
-                setTextColor(if (idx == 0) getColor(R.color.textOnDark) else getColor(R.color.panelTextSecondary))
-                setPadding(8.dp, 6.dp, 8.dp, 6.dp)
-                background = getDrawable(R.drawable.bg_chip)
-                layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).apply {
-                    marginEnd = if (idx < strategies.size - 1) 4.dp else 0
-                }
-                setOnClickListener {
-                    selectedStrategy = strategy
-                    for (i in 0 until strategyButtons.childCount) {
-                        val view = strategyButtons.getChildAt(i)
-                        if (view is TextView) {
-                            view.setTextColor(if (i == idx) getColor(R.color.textOnDark) else getColor(R.color.panelTextSecondary))
-                        }
-                    }
-                }
-            })
-        }
-        binding.sideContent.addView(strategyButtons)
-
-        // Typesetting result display
-        val resultView = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-            setPadding(0, 8.dp, 0, 0)
-        }
-        binding.sideContent.addView(resultView)
-
-        binding.sideContent.addView(compactRow(getString(R.string.s0460)) {
-            val gap = gapInput.text.toString().toDoubleOrNull() ?: 0.0
-            val sheetWVal = sheetW.text.toString().toDoubleOrNull() ?: return@compactRow
-            val sheetHVal = sheetH.text.toString().toDoubleOrNull() ?: return@compactRow
-            val sheetTVal = sheetT.text.toString().toDoubleOrNull() ?: nestingSheetThickness
-            applyAutoNest(sheetWVal, sheetHVal, gap, sheetTVal, selectedStrategy, resultView)
-        })
-        binding.sideContent.addView(compactRow(getString(R.string.s0461)) {
-            val gap = gapInput.text.toString().toDoubleOrNull() ?: 0.0
-            val sheetWVal = sheetW.text.toString().toDoubleOrNull() ?: return@compactRow
-            val sheetHVal = sheetH.text.toString().toDoubleOrNull() ?: return@compactRow
-            compareNestingStrategies(sheetWVal, sheetHVal, gap)
-        })
-        binding.sideContent.addView(compactRow(getString(R.string.s0462)) {
-            val gap = gapInput.text.toString().toDoubleOrNull() ?: 0.0
-            val sheetWVal = sheetW.text.toString().toDoubleOrNull() ?: return@compactRow
-            val sheetHVal = sheetH.text.toString().toDoubleOrNull() ?: return@compactRow
-            val sheetTVal = sheetT.text.toString().toDoubleOrNull() ?: nestingSheetThickness
-            autoSplitNesting(sheetWVal, sheetHVal, gap, sheetTVal, selectedStrategy)
-        })
-        binding.sideContent.addView(compactRow(getString(R.string.s0463)) {
-            applyNestingWorkspaceToView()
-        })
-    }
-
-    private fun nestDocument(
-        base: DxfDocument,
-        count: Int,
-        angleDeg: Double,
-        mirrorX: Boolean,
-        gap: Double
-    ): DxfDocument {
-        val entities = mutableListOf<DxfEntity>()
-        val baseBounds = base.bounds
-        val w = baseBounds.width + gap
-        val h = baseBounds.height + gap
-        val angleRad = Math.toRadians(angleDeg)
-        val cols = kotlin.math.ceil(kotlin.math.sqrt(count.toDouble())).toInt().coerceAtLeast(1)
-        fun transformPoint(p: Point2, offsetIndex: Int): Point2 {
-            var x = p.x - baseBounds.minX
-            var y = p.y - baseBounds.minY
-            if (mirrorX) x = -x
-            val rx = x * kotlin.math.cos(angleRad) - y * kotlin.math.sin(angleRad)
-            val ry = x * kotlin.math.sin(angleRad) + y * kotlin.math.cos(angleRad)
-            val row = offsetIndex / cols
-            val col = offsetIndex % cols
-            val ox = baseBounds.minX + col * w
-            val oy = baseBounds.minY + row * h
-            return Point2(rx + ox, ry + oy)
-        }
-        repeat(count) { idx ->
-            base.entities.forEach { entity ->
-                when (entity) {
-                    is DxfLine -> {
-                        val a = transformPoint(entity.start, idx)
-                        val b = transformPoint(entity.end, idx)
-                        entities += entity.copy(start = a, end = b)
-                    }
-                    is DxfPolyline -> {
-                        val pts = entity.points.map { transformPoint(it, idx) }
-                        entities += entity.copy(points = pts)
-                    }
-                    is DxfCircle -> {
-                        val c = transformPoint(entity.center, idx)
-                        entities += entity.copy(center = c)
-                    }
-                    is DxfArc -> {
-                        val c = transformPoint(entity.center, idx)
-                        entities += entity.copy(center = c)
-                    }
-                    is DxfText -> {
-                        val p = transformPoint(entity.position, idx)
-                        entities += entity.copy(position = p)
-                    }
-                }
-            }
-        }
-        return base.copy(
-            fileName = base.fileName,
-            entities = entities
-        )
-    }
 }

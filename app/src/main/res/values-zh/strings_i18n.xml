@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="s0001">无法读取 PDF 文件</string>
-    <string name="s0002">PDF 中没有可转换的矢量路径</string>
-    <string name="s0003">毫米</string>
     <string name="s0005">未知版本</string>
     <string name="s0006">未知</string>
     <string name="s0007">当前工程已把 DWG 查看入口做出来，但完整渲染需要再接入 C/C++ 解析库。</string>
@@ -35,25 +32,13 @@
     <string name="s0034">无法读取导入文件</string>
     <string name="s0035">无法读取压缩包</string>
     <string name="s0036" formatted="true">%1$s\n已管理 %2$s 个文件 · %3$s</string>
-    <string name="s0037">未开始</string>
     <string name="s0038">无法写入目标文件</string>
     <string name="s0039">导出完成</string>
     <string name="s0040" formatted="true">导出失败：%1$s</string>
     <string name="s0041">无法读取当前文件</string>
-    <string name="s0042">排版导入.dxf</string>
-    <string name="s0043" formatted="true">已导入排版文件：%1$s</string>
-    <string name="s0044" formatted="true">排版导入失败：%1$s</string>
     <string name="s0045">请先打开图纸</string>
     <string name="s0046" formatted="true">自动标注已开启：%1$s</string>
     <string name="s0047">自动标注已关闭</string>
-    <string name="s0048">已切换到 2D 视图</string>
-    <string name="s0049">已切换到 3D 视图，可拖动旋转</string>
-    <string name="s0050">坡口显示已开启</string>
-    <string name="s0051">坡口显示已关闭，按直切显示</string>
-    <string name="s0052">空移线已显示</string>
-    <string name="s0053">空移线已隐藏</string>
-    <string name="s0054">没有可导出的图形</string>
-    <string name="s0055">未命名</string>
     <string name="s0056">取消标注</string>
     <string name="s0057">一键标注</string>
     <string name="s0058" formatted="true">正在解压 %1$s</string>
@@ -67,16 +52,11 @@
     <string name="s0066" formatted="true">解析失败：%1$s</string>
     <string name="s0067">无法打开文件</string>
     <string name="s0068">请确认文件可读且为 .dxf 或 .dwg 格式。</string>
-    <string name="s0069" formatted="true">示例加载失败：%1$s</string>
     <string name="s0070" formatted="true">正在重生成 %1$s</string>
     <string name="s0071" formatted="true">对象数量：%1$s</string>
     <string name="s0072" formatted="true">图层 %1$s · %2$s</string>
     <string name="s0073" formatted="true">图层 %1$s</string>
     <string name="s0074">打开 DXF</string>
-    <string name="s0075" formatted="true">GEN 工艺段：%1$s</string>
-    <string name="s0076">打开 GEN</string>
-    <string name="s0077" formatted="true">NC 轨迹段：%1$s</string>
-    <string name="s0078">打开 NC</string>
     <string name="s0079" formatted="true">DWG 文件已识别：%1$s</string>
     <string name="s0080">DWG 预览信息</string>
     <string name="s0081" formatted="true">版本码：%1$s\n识别版本：%2$s\n\n%3$s</string>
@@ -111,16 +91,6 @@
     <string name="s0110">已删除托管副本</string>
     <string name="s0111">删除失败：文件不可写或不存在</string>
     <string name="s0112">暂无记录</string>
-    <string name="s0113">NC 自动生成</string>
-    <string name="s0114">外轮廓</string>
-    <string name="s0115">厚度(毫米)</string>
-    <string name="s0116">材质</string>
-    <string name="s0117">板材长度</string>
-    <string name="s0118">板材宽度</string>
-    <string name="s0119">程序名/导出名</string>
-    <string name="s0120">程序名</string>
-    <string name="s0121">生成并导出 NC</string>
-    <string name="s0122">已生成 NC，请选择保存位置</string>
     <string name="s0123">当前 DXF 没有 сохранённого исходного потока</string>
     <string name="s0124">无法 подготовить DXF</string>
     <string name="s0125" formatted="true">当前识别尺寸: W %1$s / H %2$s mm</string>
@@ -148,7 +118,7 @@
     <string name="s0147">输入文件名关键字</string>
     <string name="s0148">搜索</string>
     <string name="s0149">提示</string>
-    <string name="s0150">搜索会在你选择的文件库根目录内递归查找 .dxf / .dwg / .gen 文件。</string>
+    <string name="s0150">搜索会在你选择的文件库根目录内递归查找 .dxf / .dwg 文件。</string>
     <string name="s0151">请先选择文件库根目录</string>
     <string name="s0152">请输入搜索关键字</string>
     <string name="s0153" formatted="true">正在搜索 %1$s</string>
@@ -158,24 +128,11 @@
     <string name="s0157" formatted="true">搜索完成：%1$s 个结果</string>
     <string name="s0158">已切换为横屏</string>
     <string name="s0159">已切换为竖屏</string>
-    <string name="s0160">板材边框</string>
-    <string name="s0161">空走</string>
-    <string name="s0162">直切</string>
-    <string name="s0163">坡口 A+</string>
-    <string name="s0164">坡口 A-</string>
-    <string name="s0165">坡口 B+</string>
-    <string name="s0166">坡口 B-</string>
-    <string name="s0167">图层控制</string>
-    <string name="s0168">当前文件不是 DXF，暂时没有可切换图层。</string>
-    <string name="s0169">显示 PDF 文字</string>
-    <string name="s0170">已显示 PDF 文字</string>
-    <string name="s0171">已隐藏 PDF 文字</string>
     <string name="s0172">全部显示</string>
     <string name="s0173">全部隐藏</string>
     <string name="s0174"> 个实体</string>
     <string name="s0175">  ·  原文件关闭</string>
     <string name="s0176">  ·  原文件冻结</string>
-    <string name="s0177">当前为 GEN 文件，请在预演面板查看走刀</string>
     <string name="s0178">当前图形不支持测量</string>
     <string name="s0179">测量 / 标注</string>
     <string name="s0180">自动标注</string>
@@ -204,12 +161,6 @@
     <string name="s0203">角度</string>
     <string name="s0204">面积</string>
     <string name="s0205">图层数</string>
-    <string name="s0206">当前图形无可预演的数据</string>
-    <string name="s0207">走刀预演</string>
-    <string name="s0208">轨迹</string>
-    <string name="s0209">空走线</string>
-    <string name="s0210">划线</string>
-    <string name="s0211">切割</string>
     <string name="s0212">线段编辑</string>
     <string name="s0213">类型</string>
     <string name="s0214">图层</string>
@@ -238,13 +189,9 @@
     <string name="s0237">创建多段线</string>
     <string name="s0238">添加文字</string>
     <string name="s0239">常用图库 / 标准件</string>
-    <string name="s0240">L 型角钢 / 支架</string>
     <string name="s0241">L 型角钢</string>
-    <string name="s0242">槽钢 / U 型截面</string>
     <string name="s0243">槽钢</string>
-    <string name="s0244">工字钢 / H 型截面</string>
     <string name="s0245">工字钢</string>
-    <string name="s0246">法兰盘 / 螺栓孔阵列</string>
     <string name="s0247">法兰盘</string>
     <string name="s0248">长圆孔板</string>
     <string name="s0249">编辑操作</string>
@@ -314,20 +261,6 @@
     <string name="s0313">暂无历史</string>
     <string name="s0314" formatted="true">当前步骤 %1$s</string>
     <string name="s0315" formatted="true">步骤 %1$s</string>
-    <string name="s0316">走刀模拟</string>
-    <string name="s0317">坡口段</string>
-    <string name="s0318">预演控制</string>
-    <string name="s0319">速度</string>
-    <string name="s0320">进度</string>
-    <string name="s0321">停止</string>
-    <string name="s0322" formatted="true">%1$s 预演已停止</string>
-    <string name="s0323">暂停</string>
-    <string name="s0324">继续</string>
-    <string name="s0325">开始</string>
-    <string name="s0326" formatted="true">%1$s 预演已暂停</string>
-    <string name="s0327" formatted="true">%1$s 预演进行中</string>
-    <string name="s0328">运行中</string>
-    <string name="s0329">已暂停</string>
     <string name="s0330">范围</string>
     <string name="s0331">单位</string>
     <string name="s0332">未指定</string>
@@ -336,18 +269,6 @@
     <string name="s0335">板厚</string>
     <string name="s0336">排版策略</string>
     <string name="s0337">边界</string>
-    <string name="s0338">PDF文字</string>
-    <string name="s0339">显示中</string>
-    <string name="s0340">已隐藏</string>
-    <string name="s0341">区段数</string>
-    <string name="s0342">工艺段</string>
-    <string name="s0343">零件数</string>
-    <string name="s0344">板材</string>
-    <string name="s0345">轨迹段</string>
-    <string name="s0346">厚度</string>
-    <string name="s0347">坡口摘要</string>
-    <string name="s0348">A 角</string>
-    <string name="s0349">B 角</string>
     <string name="s0350">版本</string>
     <string name="s0351">版本码</string>
     <string name="s0352">未打开文件</string>
@@ -383,96 +304,12 @@
     <string name="s0382">预览</string>
     <string name="s0383">取消收藏</string>
     <string name="s0384">重新导入文件</string>
-    <string name="s0385">PDF 转换预览</string>
     <string name="s0386">DXF 图纸</string>
     <string name="s0387" formatted="true">%1$s · %2$s 个实体 · %3$s 个图层 · W %4$s / H %5$s</string>
-    <string name="s0388" formatted="true">GEN 工艺文件 · %1$s 个区段 · %2$s 个工艺段</string>
-    <string name="s0389" formatted="true">NC 程序 · %1$s 条轨迹 · %2$s</string>
     <string name="s0390" formatted="true">DWG 图纸 · %1$s · %2$s</string>
     <string name="s0391">已选择文件，尚未生成预览</string>
     <string name="s0392">置顶</string>
-    <string name="s0393" formatted="true">零件 %1$s · 板材 %2$s x %3$s · 工艺 %4$s</string>
-    <string name="s0394" formatted="true">区段 %1$s · 零件 %2$s</string>
-    <string name="s0395" formatted="true">轨迹 %1$s · %2$s · 板材 %3$s x %4$s</string>
-    <string name="s0396" formatted="true">轨迹 %1$s · 板材 %2$s x %3$s</string>
-    <string name="s0397" formatted="true">轨迹 %1$s</string>
-    <string name="s0398" formatted="true">对称坡口 ±%1$s</string>
-    <string name="s0399" formatted="true">A 对称坡口 ±%1$s</string>
-    <string name="s0400" formatted="true">B 对称坡口 ±%1$s</string>
-    <string name="s0401" formatted="true">坡口 %1$s</string>
-    <string name="s0402">无坡口</string>
-    <string name="s0403">暂无零件</string>
-    <string name="s0404">镜像 X</string>
-    <string name="s0405">编辑零件</string>
-    <string name="s0406">数量</string>
-    <string name="s0407">旋转(度)</string>
-    <string name="s0408">保存</string>
-    <string name="s0409">执行</string>
-    <string name="s0410">矩形参数</string>
-    <string name="s0411" formatted="true">矩形%1$s</string>
-    <string name="s0412">圆形参数</string>
-    <string name="s0413" formatted="true">圆形%1$s</string>
-    <string name="s0414">没有零件可排版</string>
-    <string name="s0415">排版结果</string>
-    <string name="s0416">利用率</string>
-    <string name="s0417">已放置</string>
-    <string name="s0418">浪费面积</string>
-    <string name="s0419">无法放置的零件：</string>
-    <string name="s0420">优化建议</string>
-    <string name="s0421">建议</string>
-    <string name="s0422" formatted="true">排版完成: %1$s/%2$s 零件, 利用率 %3$s%%</string>
-    <string name="s0423">排版方案对比：</string>
-    <string name="s0424" formatted="true">   利用率: %1$s%%</string>
-    <string name="s0425" formatted="true">   已放置: %1$s/%2$s</string>
-    <string name="s0426" formatted="true">   浪费面积: %1$s</string>
-    <string name="s0427" formatted="true">推荐使用: %1$s</string>
-    <string name="s0428">排版方案对比</string>
-    <string name="s0429">应用最优方案</string>
-    <string name="s0430" formatted="true">已应用最优方案: %1$s</string>
-    <string name="s0431">无法进行分板排版</string>
-    <string name="s0432">自动分板完成</string>
-    <string name="s0433" formatted="true">总板数: %1$s</string>
-    <string name="s0434" formatted="true">板材 %1$s:</string>
-    <string name="s0435" formatted="true">  已放置: %1$s</string>
-    <string name="s0436" formatted="true">  利用率: %1$s%%</string>
-    <string name="s0437" formatted="true">总放置: %1$s/%2$s</string>
-    <string name="s0438">分板排版结果</string>
-    <string name="s0439" formatted="true">已应用分板排版: %1$s 张板材</string>
-    <string name="s0440">已应用排版</string>
-    <string name="s0441">没有可应用的排版结果</string>
-    <string name="s0442">排版导入</string>
-    <string name="s0443" formatted="true">图层 %1$s · 实体 %2$s</string>
     <string name="s0444">已选中线段，可修改坐标</string>
-    <string name="s0445">已完成</string>
-    <string name="s0446">预演完成</string>
-    <string name="s0447">智能排版（独立）</string>
-    <string name="s0448">板材参数</string>
-    <string name="s0449">长度</string>
-    <string name="s0450">推荐板材</string>
-    <string name="s0451">套用推荐尺寸</string>
-    <string name="s0452" formatted="true">板材 %1$s x %2$s</string>
-    <string name="s0453">导入/图库</string>
-    <string name="s0454">导入零件文件</string>
-    <string name="s0455">添加矩形</string>
-    <string name="s0456">添加圆形</string>
-    <string name="s0457">零件列表</string>
-    <string name="s0458">排版参数</string>
-    <string name="s0459">间距</string>
-    <string name="s0460">自动排样</string>
-    <string name="s0461">对比方案</string>
-    <string name="s0462">自动分板</string>
-    <string name="s0463">应用到视图</string>
-    <string name="s0464" formatted="true">⚠ 利用率较低 (%1$s%%)，建议调整零件排列或板材尺寸</string>
-    <string name="s0465" formatted="true">⚠ 有 %1$s 个零件无法放置，建议增加板材尺寸或减少间距</string>
-    <string name="s0466" formatted="true">💡 间距较大 (%1$smm)，可尝试减小间距以提高利用率</string>
-    <string name="s0467">💡 板材利用率很高，考虑使用更大的板材或分成多张板</string>
-    <string name="s0468">FFD (首次适配递减)</string>
-    <string name="s0469">按零件面积从大到小排列，对每个零件尝试4个旋转角度</string>
-    <string name="s0470" formatted="true">%1$s (第 %2$s 个)</string>
-    <string name="s0471">BestFit (最优适配)</string>
-    <string name="s0472">对每个零件选择浪费空间最少的放置位置</string>
-    <string name="s0473">条纹排列</string>
-    <string name="s0474">按行排列，每行尽可能紧凑，适合长条形零件</string>
     <string name="s0475">未知错误</string>
     <string name="s0476">无法读取 DXF 文件</string>
     <string name="s0477">无法读取文件</string>
@@ -505,8 +342,6 @@
     <string name="ui_save_png">保存图纸视图为 PNG</string>
     <string name="ui_png_purpose">PNG 保存到下载目录，可用于检查图纸显示</string>
     <string name="ui_about">关于</string>
-    <string name="ui_editor">编辑器</string>
-    <string name="ui_formats">格式</string>
     <string name="ui_translation_panel">文字翻译</string>
     <string name="ui_save_with">带翻译保存</string>
     <string name="ui_drawing_texts">图纸文本</string>
@@ -527,19 +362,13 @@
     <string name="ui_extract_first">请先提取文本。</string>
     <string name="ui_no_translation">— 无翻译 —</string>
     <string name="ui_extracting">正在提取文本…</string>
-    <string name="ui_extraction_failed">提取失败：%1$s</string>
     <string name="ui_preparing">正在准备文件 (%1$s, %2$s)…</string>
-    <string name="ui_save_failed">保存失败：%1$s</string>
     <string name="ui_png_ready">PNG 已就绪 — 请选择保存文件夹</string>
     <string name="ui_dxf_ready">DXF 已就绪 — 仅保存文本更改</string>
-    <string name="ui_dxf_export_failed">DXF 导出失败：%1$s</string>
     <string name="ui_translation_loaded">翻译已加载：%1$d 条</string>
-    <string name="ui_json_error">JSON 错误：%1$s</string>
     <string name="ui_no_file">未打开文件</string>
     <string name="ui_cannot_read">无法读取文件</string>
     <string name="ui_pick_point">点击图纸选择一个点</string>
-    <string name="ui_tap_edit">点击文本或线条进行编辑</string>
-    <string name="ui_pick_first">请先在图纸上选一个点。</string>
     <string name="ui_hint_distance">标尺：两点 — 线段长度</string>
     <string name="ui_hint_angle">三点之间的角度</string>
     <string name="ui_hint_area">按点轮廓的面积</string>
