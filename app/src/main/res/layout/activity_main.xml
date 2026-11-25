@@ -153,65 +153,9 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/view2dChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/bg_overlay_chip"
-                    android:gravity="center"
-                    android:minWidth="46dp"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:text="@string/chip_view_2d"
-                    android:textColor="@color/textOnDark"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/view3dChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/bg_overlay_chip"
-                    android:gravity="center"
-                    android:minWidth="46dp"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:text="@string/chip_view_3d"
-                    android:textColor="@color/textOnDark"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/bevelChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/bg_overlay_chip"
-                    android:gravity="center"
-                    android:minWidth="54dp"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:text="@string/chip_bevel"
-                    android:textColor="@color/textOnDark"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/rapidChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/bg_overlay_chip"
-                    android:gravity="center"
-                    android:minWidth="54dp"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:text="@string/chip_rapid"
-                    android:textColor="@color/textOnDark"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/fileTypeChip"
@@ -243,60 +187,6 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <LinearLayout
-            android:id="@+id/ncConsole"
-            android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:layout_gravity="bottom"
-            android:layout_margin="14dp"
-            android:background="@drawable/bg_nc_console"
-            android:elevation="10dp"
-            android:orientation="vertical"
-            android:padding="12dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/nc_code_title"
-                android:textColor="@color/textOnDark"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <ScrollView
-                android:id="@+id/ncConsoleScroll"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="#0A0F18"
-                android:overScrollMode="never">
-
-                <TextView
-                    android:id="@+id/ncConsoleText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:lineSpacingExtra="2dp"
-                    android:padding="8dp"
-                    android:textColor="#E5EAF2"
-                    android:textSize="12sp"
-                    android:typeface="monospace" />
-            </ScrollView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="end">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnGenNcPreview"
-                    style="@style/Widget.Material3.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/generate_nc"
-                    android:textColor="@color/textOnDark" />
-            </LinearLayout>
-        </LinearLayout>
     </FrameLayout>
 
     <LinearLayout

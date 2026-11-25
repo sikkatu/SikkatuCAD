@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CadPocketViewer"
+rootProject.name = "SikkatuCAD"
 include(":app")
