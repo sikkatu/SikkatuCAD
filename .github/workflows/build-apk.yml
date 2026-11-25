@@ -28,7 +28,9 @@ jobs:
           workspaces: rust-bridge
 
       - name: Install cargo-ndk
-        run: cargo install cargo-ndk
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-ndk
 
       - name: Rust host tests
         run: cd rust-bridge && cargo test --release
