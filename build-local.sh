@@ -70,7 +70,6 @@ SDK_CANDIDATE="$(pick_best_sdk \
   "${ANDROID_HOME:-}" \
   "$HOME/Android/Sdk" \
   "/usr/lib/android-sdk" \
-  "/opt/android-sdk" \
   "/cefiles/android-sdk" \
   "/cefiles/work-android-sdk" \
 )"
