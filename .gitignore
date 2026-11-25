@@ -19,3 +19,8 @@ capture/
 testdata/
 # Native bridge library is built by CI only
 app/src/main/jniLibs/
+# Large test sample files (fetched via fetch_samples.py, see MANIFEST.json)
+rust-bridge/tests/data/*
+!rust-bridge/tests/data/README.md
+!rust-bridge/tests/data/MANIFEST.json
+!rust-bridge/tests/data/fetch_samples.py

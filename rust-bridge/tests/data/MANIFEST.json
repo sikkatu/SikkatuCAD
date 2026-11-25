@@ -1,0 +1,322 @@
+[
+ {
+  "path": "mep_dwg/SONSBEEK-BG Water+Gas+CV.dwg",
+  "size": 414002,
+  "sha256": "57f573f31d50e2336d6a36ae58a87fbf696a79ae08175744bc9c286ccab8e402",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08/IFC%202.3.0.1%20%28IFC%202x3%29/Schependomlaan/Coordination%20model%20and%20subcontractors%20models/BIMsight%20Projectdata1/SONSBEEK-BG%20Water%2BGas%2BCV.dwg",
+  "repo": "https://github.com/buildingsmart-community/Community-Sample-Test-Files",
+  "commit": "31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08",
+  "repo_path": "IFC 2.3.0.1 (IFC 2x3)/Schependomlaan/Coordination model and subcontractors models/BIMsight Projectdata1/SONSBEEK-BG Water+Gas+CV.dwg",
+  "note": "MEP DWG: вода, газ, отопление (цоколь/первый этаж). Line 6093, LwPolyline 84, Hatch 22, Insert 48, Dimension 16, MText 39, Ole2Frame 2"
+ },
+ {
+  "path": "mep_dwg/SONSBEEK-V1 Water+Gas+CV.dwg",
+  "size": 426049,
+  "sha256": "734b17a3cdde6d0cfa9ea232da8a1eabbf165c3852916ef50c1175e610869c1d",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08/IFC%202.3.0.1%20%28IFC%202x3%29/Schependomlaan/Coordination%20model%20and%20subcontractors%20models/BIMsight%20Projectdata1/SONSBEEK-V1%20Water%2BGas%2BCV.dwg",
+  "repo": "https://github.com/buildingsmart-community/Community-Sample-Test-Files",
+  "commit": "31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08",
+  "repo_path": "IFC 2.3.0.1 (IFC 2x3)/Schependomlaan/Coordination model and subcontractors models/BIMsight Projectdata1/SONSBEEK-V1 Water+Gas+CV.dwg",
+  "note": "MEP DWG: вода, газ, отопление (этаж V1). Line 6524, LwPolyline 105"
+ },
+ {
+  "path": "mep_dwg/SONSBEEK-BG Rio+MV+Hwa.dwg",
+  "size": 348788,
+  "sha256": "db0cf6430ba3d3126d8bb60c093f4c58057106665b8b1e3975a1c91361895a11",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08/IFC%202.3.0.1%20%28IFC%202x3%29/Schependomlaan/Coordination%20model%20and%20subcontractors%20models/BIMsight%20Projectdata1/SONSBEEK-BG%20Rio%2BMV%2BHwa.dwg",
+  "repo": "https://github.com/buildingsmart-community/Community-Sample-Test-Files",
+  "commit": "31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08",
+  "repo_path": "IFC 2.3.0.1 (IFC 2x3)/Schependomlaan/Coordination model and subcontractors models/BIMsight Projectdata1/SONSBEEK-BG Rio+MV+Hwa.dwg",
+  "note": "MEP DWG: канализация, механическая вентиляция, ливнёвка. Line 3579, Arc 40, Dimension 16"
+ },
+ {
+  "path": "mep_dwg/SONSBEEK-V1 Sparingen.dwg",
+  "size": 192988,
+  "sha256": "3fedb1bef02f4f856afecc621dd4a1f17ce94923056140779bb684245a71507e",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08/IFC%202.3.0.1%20%28IFC%202x3%29/Schependomlaan/Coordination%20model%20and%20subcontractors%20models/BIMsight%20Projectdata1/SONSBEEK-V1%20Sparingen.dwg",
+  "repo": "https://github.com/buildingsmart-community/Community-Sample-Test-Files",
+  "commit": "31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08",
+  "repo_path": "IFC 2.3.0.1 (IFC 2x3)/Schependomlaan/Coordination model and subcontractors models/BIMsight Projectdata1/SONSBEEK-V1 Sparingen.dwg",
+  "note": "DWG: отверстия и проёмы под инженерные сети (Sparingen). Малый файл, Line 176"
+ },
+ {
+  "path": "mep_ifc/Clinic_HVAC.ifc",
+  "size": 26914597,
+  "sha256": "39c88a79f48fbe56da86afb0fb3ebd188f8930df3df7dbfbd9ecaa535aaeab9b",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08/IFC%202.3.0.1%20%28IFC%202x3%29/Medical-Dental%20Clinic/Clinic_HVAC.ifc",
+  "repo": "https://github.com/buildingsmart-community/Community-Sample-Test-Files",
+  "commit": "31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08",
+  "repo_path": "IFC 2.3.0.1 (IFC 2x3)/Medical-Dental Clinic/Clinic_HVAC.ifc",
+  "note": "IFC2X3, ОВК клиники: 3967 продуктов, 538 954 треугольника; 1 отказ меша (IfcSpace, sliver)"
+ },
+ {
+  "path": "mep_ifc/Duplex_MEP_20110907.ifc",
+  "size": 17871432,
+  "sha256": "13976a8e223f177a6d7123679e4b02e750cd90c13f7bb20c593be125d9407119",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08/IFC%202.3.0.1%20%28IFC%202x3%29/Duplex%20Apartment/Duplex_MEP_20110907.ifc",
+  "repo": "https://github.com/buildingsmart-community/Community-Sample-Test-Files",
+  "commit": "31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08",
+  "repo_path": "IFC 2.3.0.1 (IFC 2x3)/Duplex Apartment/Duplex_MEP_20110907.ifc",
+  "note": "IFC2X3, MEP дуплекса: 968 продуктов, 337 130 треугольников, 0 отказов"
+ },
+ {
+  "path": "mep_ifc/Duplex_Plumbing_20121113.ifc",
+  "size": 31556138,
+  "sha256": "abfaf5c0979b6b4b05182aec7ada8945374bdb414db76c763724d549b41b212b",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08/IFC%202.3.0.1%20%28IFC%202x3%29/Duplex%20Apartment/Duplex_Plumbing_20121113.ifc",
+  "repo": "https://github.com/buildingsmart-community/Community-Sample-Test-Files",
+  "commit": "31eb1dd0a0406fb9ebf0ebd823b48e1ec95afc08",
+  "repo_path": "IFC 2.3.0.1 (IFC 2x3)/Duplex Apartment/Duplex_Plumbing_20121113.ifc",
+  "note": "IFC2X3, водопровод дуплекса: 499 продуктов, 334 682 треугольника, 0 отказов"
+ },
+ {
+  "path": "mep_ifc/Building-Hvac.ifc",
+  "size": 111375,
+  "sha256": "2c17ecad2b0fbd3335420ee42ba48963b5a395294e86bcdcfc786ee559f9a344",
+  "url": "https://raw.githubusercontent.com/buildingSMART/Sample-Test-Files/5030f652e85d3e679b392fcb38bfa3328d6d9f79/IFC%204.0.2.1%20%28IFC%204%20ADD2%20TC1%29/Simple-Scene/Building-Hvac.ifc",
+  "repo": "https://github.com/buildingSMART/Sample-Test-Files",
+  "commit": "5030f652e85d3e679b392fcb38bfa3328d6d9f79",
+  "repo_path": "IFC 4.0.2.1 (IFC 4 ADD2 TC1)/Simple-Scene/Building-Hvac.ifc",
+  "note": "IFC4, ОВК простого здания: 5 продуктов, 1064 треугольника"
+ },
+ {
+  "path": "mep_ifc/Building-Architecture.ifc",
+  "size": 142325,
+  "sha256": "8790a1e193e82b8e7e7f337ec2633cd40f2120590317a1443503a25b079e2e80",
+  "url": "https://raw.githubusercontent.com/buildingSMART/Sample-Test-Files/5030f652e85d3e679b392fcb38bfa3328d6d9f79/IFC%204.0.2.1%20%28IFC%204%20ADD2%20TC1%29/Simple-Scene/Building-Architecture.ifc",
+  "repo": "https://github.com/buildingSMART/Sample-Test-Files",
+  "commit": "5030f652e85d3e679b392fcb38bfa3328d6d9f79",
+  "repo_path": "IFC 4.0.2.1 (IFC 4 ADD2 TC1)/Simple-Scene/Building-Architecture.ifc",
+  "note": "IFC4, архитектура того же здания: 14 продуктов; для наложения с Building-Hvac"
+ },
+ {
+  "path": "mep_ifc/Infra-Plumbing.ifc",
+  "size": 350757,
+  "sha256": "f44c401de3bbc1b08d7717807b5add12a1c319f98b42a6c633a69fbcf61d83d1",
+  "url": "https://raw.githubusercontent.com/buildingSMART/Sample-Test-Files/5030f652e85d3e679b392fcb38bfa3328d6d9f79/IFC%204.0.2.1%20%28IFC%204%20ADD2%20TC1%29/Simple-Scene/Infra-Plumbing.ifc",
+  "repo": "https://github.com/buildingSMART/Sample-Test-Files",
+  "commit": "5030f652e85d3e679b392fcb38bfa3328d6d9f79",
+  "repo_path": "IFC 4.0.2.1 (IFC 4 ADD2 TC1)/Simple-Scene/Infra-Plumbing.ifc",
+  "note": "IFC4, водопровод: 27 продуктов, 6792 треугольника"
+ },
+ {
+  "path": "mep_ifc/Infra-Electrical.ifc",
+  "size": 120095,
+  "sha256": "18ec714203238bc33ef767306cfcaa8209fcda186a8fe8ad2db7f204bc6b5a49",
+  "url": "https://raw.githubusercontent.com/buildingSMART/Sample-Test-Files/5030f652e85d3e679b392fcb38bfa3328d6d9f79/IFC%204.0.2.1%20%28IFC%204%20ADD2%20TC1%29/Simple-Scene/Infra-Electrical.ifc",
+  "repo": "https://github.com/buildingSMART/Sample-Test-Files",
+  "commit": "5030f652e85d3e679b392fcb38bfa3328d6d9f79",
+  "repo_path": "IFC 4.0.2.1 (IFC 4 ADD2 TC1)/Simple-Scene/Infra-Electrical.ifc",
+  "note": "IFC4, электрика: 4 продукта"
+ },
+ {
+  "path": "mep_ifc/building_service_element_air-terminal.ifc",
+  "size": 14548,
+  "sha256": "be57057f72aaffac72b63569c49acb954d128b2404cf8558322efe680de5d0f7",
+  "url": "https://raw.githubusercontent.com/IfcOpenShell/files/79f40be8b37f0d67c1f8b139e546b399f315878b/building_service_element_air-terminal.ifc",
+  "repo": "https://github.com/IfcOpenShell/files",
+  "commit": "79f40be8b37f0d67c1f8b139e546b399f315878b",
+  "repo_path": "building_service_element_air-terminal.ifc",
+  "note": "IFC4, воздухораспределитель: минимальный MEP-элемент"
+ },
+ {
+  "path": "mep_ifc/1269--Project_IfcDuctFitting.ifc",
+  "size": 16318,
+  "sha256": "20e1908a2e3b70db7e43ed098208f2fafbb6baed5ab95a3696289bdbdc3b8ae6",
+  "url": "https://raw.githubusercontent.com/IfcOpenShell/files/79f40be8b37f0d67c1f8b139e546b399f315878b/1269--Project_IfcDuctFitting.ifc",
+  "repo": "https://github.com/IfcOpenShell/files",
+  "commit": "79f40be8b37f0d67c1f8b139e546b399f315878b",
+  "repo_path": "1269--Project_IfcDuctFitting.ifc",
+  "note": "IFC, фасонная часть воздуховода: отрицательный тест, 1 из 3 продуктов не собирается (sweep range exceeds trimmed directrix)"
+ },
+ {
+  "path": "mep_ifc/5473--pipeSegment--wrong-geometry.ifc",
+  "size": 1893,
+  "sha256": "53ed8564972d050aa4a7a6e076fc7e3dd603bdce606ec9fec1e6eb8a6df82a2a",
+  "url": "https://raw.githubusercontent.com/IfcOpenShell/files/79f40be8b37f0d67c1f8b139e546b399f315878b/5473--pipeSegment--wrong-geometry.ifc",
+  "repo": "https://github.com/IfcOpenShell/files",
+  "commit": "79f40be8b37f0d67c1f8b139e546b399f315878b",
+  "repo_path": "5473--pipeSegment--wrong-geometry.ifc",
+  "note": "IFC4, труба 17 178 треугольников; тест на производительность одного тяжёлого элемента"
+ },
+ {
+  "path": "dxf_features/3dsolids.dxf",
+  "size": 161075,
+  "sha256": "8193d9917354a9165d500098aa31209218f0b3d6bf3b24632b89003295806c4d",
+  "url": "https://raw.githubusercontent.com/mozman/ezdxf/175dee00aa187c76ccebb77db9f9fea8f99b01e8/examples/acistools/3dsolids.dxf",
+  "repo": "https://github.com/mozman/ezdxf",
+  "commit": "175dee00aa187c76ccebb77db9f9fea8f99b01e8",
+  "repo_path": "examples/acistools/3dsolids.dxf",
+  "note": "DXF: 4 тела 3DSOLID (ACIS), вход для проверки сохранения тел без потерь"
+ },
+ {
+  "path": "dxf_features/3dface.dxf",
+  "size": 133398,
+  "sha256": "c9447d342e267052354bede75028a934da35bd2bb1a96c1c084bdf7e5f0abc2a",
+  "url": "https://raw.githubusercontent.com/mozman/ezdxf/175dee00aa187c76ccebb77db9f9fea8f99b01e8/examples_dxf/3dface.dxf",
+  "repo": "https://github.com/mozman/ezdxf",
+  "commit": "175dee00aa187c76ccebb77db9f9fea8f99b01e8",
+  "repo_path": "examples_dxf/3dface.dxf",
+  "note": "DXF: 44 грани 3DFACE"
+ },
+ {
+  "path": "dxf_features/dimension_in_block.dxf",
+  "size": 88082,
+  "sha256": "923cc1d0d86bf6738139dbec26b66e299fbfa2c16a49ed206ad06cf719c6e6f2",
+  "url": "https://raw.githubusercontent.com/mozman/ezdxf/175dee00aa187c76ccebb77db9f9fea8f99b01e8/examples_dxf/dimension_in_block.dxf",
+  "repo": "https://github.com/mozman/ezdxf",
+  "commit": "175dee00aa187c76ccebb77db9f9fea8f99b01e8",
+  "repo_path": "examples_dxf/dimension_in_block.dxf",
+  "note": "DXF: DIMENSION внутри блока"
+ },
+ {
+  "path": "dxf_features/dimension_in_nested_blocks.dxf",
+  "size": 91234,
+  "sha256": "03b50bf9a29513147d2b66f6ec1a4377494ced38437082c979639dfa42d613ea",
+  "url": "https://raw.githubusercontent.com/mozman/ezdxf/175dee00aa187c76ccebb77db9f9fea8f99b01e8/examples_dxf/dimension_in_nested_blocks.dxf",
+  "repo": "https://github.com/mozman/ezdxf",
+  "commit": "175dee00aa187c76ccebb77db9f9fea8f99b01e8",
+  "repo_path": "examples_dxf/dimension_in_nested_blocks.dxf",
+  "note": "DXF: DIMENSION во вложенных блоках"
+ },
+ {
+  "path": "dxf_features/multi_insert_with_attribs.dxf",
+  "size": 17346,
+  "sha256": "14951dbef1c750fefc0a452e0bd4fb5b281dc092820d5b6da31b3855dddb4411",
+  "url": "https://raw.githubusercontent.com/mozman/ezdxf/175dee00aa187c76ccebb77db9f9fea8f99b01e8/examples_dxf/multi_insert_with_attribs.dxf",
+  "repo": "https://github.com/mozman/ezdxf",
+  "commit": "175dee00aa187c76ccebb77db9f9fea8f99b01e8",
+  "repo_path": "examples_dxf/multi_insert_with_attribs.dxf",
+  "note": "DXF: INSERT с атрибутами"
+ },
+ {
+  "path": "dxf_features/solid.dxf",
+  "size": 14143,
+  "sha256": "cc20bb43892187ebe8aa8438eaf7c4f7c811836556244e89e259c6ddd9a5a5ad",
+  "url": "https://raw.githubusercontent.com/vagran/dxf-viewer/8faf151086e2e1d116edee3f08d300c1c29d3160/test/fixtures/solid.dxf",
+  "repo": "https://github.com/vagran/dxf-viewer",
+  "commit": "8faf151086e2e1d116edee3f08d300c1c29d3160",
+  "repo_path": "test/fixtures/solid.dxf",
+  "note": "DXF: 2 сущности SOLID (2D-заливка)"
+ },
+ {
+  "path": "dxf_features/points.dxf",
+  "size": 14260,
+  "sha256": "50de54bc5db364bb40fe858aa28044bfa947060d77c494d3712235898a0a67dc",
+  "url": "https://raw.githubusercontent.com/vagran/dxf-viewer/8faf151086e2e1d116edee3f08d300c1c29d3160/test/fixtures/points.dxf",
+  "repo": "https://github.com/vagran/dxf-viewer",
+  "commit": "8faf151086e2e1d116edee3f08d300c1c29d3160",
+  "repo_path": "test/fixtures/points.dxf",
+  "note": "DXF: 5 POINT"
+ },
+ {
+  "path": "dxf_features/mesh-3dface.dxf",
+  "size": 14649,
+  "sha256": "4d5aa3026b6c7a800890d0f8b51ac27ada1f0cc9200b9c8e91e85f0e4a6f1e61",
+  "url": "https://raw.githubusercontent.com/vagran/dxf-viewer/8faf151086e2e1d116edee3f08d300c1c29d3160/test/fixtures/mesh-3dface.dxf",
+  "repo": "https://github.com/vagran/dxf-viewer",
+  "commit": "8faf151086e2e1d116edee3f08d300c1c29d3160",
+  "repo_path": "test/fixtures/mesh-3dface.dxf",
+  "note": "DXF: сетка из 5 3DFACE"
+ },
+ {
+  "path": "dxf_features/dimension-linear.dxf",
+  "size": 14048,
+  "sha256": "c03a7e54ea5534d7820171738a6e49104329ab76f92891a5c449f37bb1798145",
+  "url": "https://raw.githubusercontent.com/vagran/dxf-viewer/8faf151086e2e1d116edee3f08d300c1c29d3160/test/fixtures/dimension-linear.dxf",
+  "repo": "https://github.com/vagran/dxf-viewer",
+  "commit": "8faf151086e2e1d116edee3f08d300c1c29d3160",
+  "repo_path": "test/fixtures/dimension-linear.dxf",
+  "note": "DXF: линейный размер"
+ },
+ {
+  "path": "dxf_features/dimension-aligned.dxf",
+  "size": 14077,
+  "sha256": "43719a19729534d3561b522086065ef023ca567db5bee7a8c4e20bf7e17bf681",
+  "url": "https://raw.githubusercontent.com/vagran/dxf-viewer/8faf151086e2e1d116edee3f08d300c1c29d3160/test/fixtures/dimension-aligned.dxf",
+  "repo": "https://github.com/vagran/dxf-viewer",
+  "commit": "8faf151086e2e1d116edee3f08d300c1c29d3160",
+  "repo_path": "test/fixtures/dimension-aligned.dxf",
+  "note": "DXF: выровненный размер"
+ },
+ {
+  "path": "dxf_features/ocs-faces.dxf",
+  "size": 14367,
+  "sha256": "8bcd4bdc834508a6084804ecea98c9ed3f57c517b5d10b55cd0f062cd71486c3",
+  "url": "https://raw.githubusercontent.com/vagran/dxf-viewer/8faf151086e2e1d116edee3f08d300c1c29d3160/test/fixtures/ocs-faces.dxf",
+  "repo": "https://github.com/vagran/dxf-viewer",
+  "commit": "8faf151086e2e1d116edee3f08d300c1c29d3160",
+  "repo_path": "test/fixtures/ocs-faces.dxf",
+  "note": "DXF: SOLID и HATCH в нестандартной OCS"
+ },
+ {
+  "path": "dxf_features/block-instanced.dxf",
+  "size": 17245,
+  "sha256": "363cb53563a06d309a1995129b519c1784d953573b6ac0893ca07416ba69e2b9",
+  "url": "https://raw.githubusercontent.com/vagran/dxf-viewer/8faf151086e2e1d116edee3f08d300c1c29d3160/test/fixtures/block-instanced.dxf",
+  "repo": "https://github.com/vagran/dxf-viewer",
+  "commit": "8faf151086e2e1d116edee3f08d300c1c29d3160",
+  "repo_path": "test/fixtures/block-instanced.dxf",
+  "note": "DXF: 8 вставок блока"
+ },
+ {
+  "path": "roundtrip/example_2000.dwg",
+  "size": 582572,
+  "sha256": "34574244d7556d1ef7b437443d9b3d1ad8662e1c669c42d80cff6a8a19799be9",
+  "url": "https://raw.githubusercontent.com/LibreDWG/libredwg/dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d/test/test-data/example_2000.dwg",
+  "repo": "https://github.com/LibreDWG/libredwg",
+  "commit": "dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d",
+  "repo_path": "test/test-data/example_2000.dwg",
+  "note": "DWG R2000, 36 типов сущностей (Solid3D, Region, Table, MLine, Spline...) для круговой проверки"
+ },
+ {
+  "path": "roundtrip/example_2000.dxf",
+  "size": 1387952,
+  "sha256": "43284cbdddbeb8720a4895be73f493fc94e670909e76f5871fdcd87b25170597",
+  "url": "https://raw.githubusercontent.com/LibreDWG/libredwg/dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d/test/test-data/example_2000.dxf",
+  "repo": "https://github.com/LibreDWG/libredwg",
+  "commit": "dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d",
+  "repo_path": "test/test-data/example_2000.dxf",
+  "note": "DXF той же сцены"
+ },
+ {
+  "path": "roundtrip/example_2018.dwg",
+  "size": 149218,
+  "sha256": "7bc7721224003062b237845842b7a976e46771c37eba6833b9ed3712e7a5a65a",
+  "url": "https://raw.githubusercontent.com/LibreDWG/libredwg/dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d/test/test-data/example_2018.dwg",
+  "repo": "https://github.com/LibreDWG/libredwg",
+  "commit": "dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d",
+  "repo_path": "test/test-data/example_2018.dwg",
+  "note": "DWG R2018 той же сцены"
+ },
+ {
+  "path": "roundtrip/example_2018.dxf",
+  "size": 845818,
+  "sha256": "e64b0cfb6e1587f9d2bb4387d59064efa5bc667cda9ecbc00313459b304bb997",
+  "url": "https://raw.githubusercontent.com/LibreDWG/libredwg/dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d/test/test-data/example_2018.dxf",
+  "repo": "https://github.com/LibreDWG/libredwg",
+  "commit": "dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d",
+  "repo_path": "test/test-data/example_2018.dxf",
+  "note": "DXF R2018 той же сцены"
+ },
+ {
+  "path": "roundtrip/Point.dwg",
+  "size": 27658,
+  "sha256": "6c4310bd660f2d621c4e5337d4cf9b2621178d4970cf748c210cef520cd1f779",
+  "url": "https://raw.githubusercontent.com/LibreDWG/libredwg/dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d/test/test-data/2018/Point.dwg",
+  "repo": "https://github.com/LibreDWG/libredwg",
+  "commit": "dfa38fffa7df29332bfc89aebdcd938a6fbf1e3d",
+  "repo_path": "test/test-data/2018/Point.dwg",
+  "note": "DWG R2018: один POINT, минимальный файл"
+ },
+ {
+  "path": "ref_ifc/AC20-FZK-Haus.ifc",
+  "size": 2570803,
+  "sha256": "70cc8ff245fc0894201d96496c031005a5cbd7a96b22d8a1b87c5a883fb77994",
+  "url": "https://static.crates.io/crates/ifc_rs/ifc_rs-0.1.0-alpha.9.crate#resources/AC20-FZK-Haus.ifc",
+  "repo": "crates.io ifc_rs 0.1.0-alpha.9",
+  "commit": "",
+  "repo_path": "resources/AC20-FZK-Haus.ifc",
+  "note": "IFC4, эталонный жилой дом (KIT FZK-Haus): 121 продукт, 107 с мешем, 22 272 треугольника, 0 отказов; главный эталон приёмки IFC"
+ }
+]
