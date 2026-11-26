@@ -77,7 +77,13 @@ pub fn type_tag(e: &EntityType) -> String {
 /// explode everything becomes a primitive whose Meta.ty stays the *source
 /// composite's* tag (spec uses original type, e.g. DIMENSION even for its
 /// exploded lines).
-fn meta_for(e: &EntityType, insert_parent: &str) -> Meta {
+fn meta_for(e: &EntityType, insert_parent: &str, layer_colors: &std::collections::HashMap<String, u32>) -> Meta {
+    let col = resolve_color(e, layer_colors);
+    meta_for_color(e, insert_parent, col)
+}
+
+/// Same as `meta_for` but with an explicit resolved color (int 0xRRGGBB).
+fn meta_for_color(e: &EntityType, insert_parent: &str, col: u32) -> Meta {
     let h = entity_handle(e);
     let h = if insert_parent.is_empty() {
         h
@@ -87,17 +93,36 @@ fn meta_for(e: &EntityType, insert_parent: &str) -> Meta {
     Meta {
         h,
         l: e.common().layer.clone(),
-        col: 0xFFFFFF, // fill via resolve_color when a doc-level lookup exists
+        col,
         g: guid_from_xdata(e),
         ty: type_tag(e),
+    }
+}
+
+/// Resolve an entity's color to an integer 0xRRGGBB: `ByLayer` looks up the
+/// layer color map; `Index(i)` / `Rgb{..}` use `Color::rgb()`; `ByBlock`/
+/// `None` stay at white (0xFFFFFF) as a last-resort default per spec 5.1
+/// ("ByLayer разрешить в цвет слоя на стороне Rust").
+fn resolve_color(e: &EntityType, layer_colors: &std::collections::HashMap<String, u32>) -> u32 {
+    use acadrust::types::Color;
+    let c = &e.common().color;
+    match c {
+        Color::ByLayer => layer_colors
+            .get(&e.common().layer)
+            .copied()
+            .unwrap_or(0xFFFFFF),
+        _ => match c.rgb() {
+            Some((r, g, b)) => ((r as u32) << 16) | ((g as u32) << 8) | (b as u32),
+            None => 0xFFFFFF,
+        },
     }
 }
 
 /// Geometry primitives for the elementary entity types the scene supports;
 /// `src_tag` preserves the original type of a composite that exploded into
 /// these primitives (`src_tag` == type_tag(e) for faith-full conversions).
-fn elementary_prims(e: &EntityType, insert_parent: &str, src_tag: &str) -> Option<Vec<Prim>> {
-    let mut meta = meta_for(e, insert_parent);
+fn elementary_prims(e: &EntityType, insert_parent: &str, src_tag: &str, layer_colors: &std::collections::HashMap<String, u32>) -> Option<Vec<Prim>> {
+    let mut meta = meta_for(e, insert_parent, layer_colors);
     meta.ty = src_tag.to_string();
     match e {
         EntityType::Line(line) => {
@@ -210,10 +235,11 @@ fn face_prim(corners: &[Vector3], fill: bool, inv: u32, meta: Meta) -> Vec<Prim>
 /// each bulged segment is approximated by arc points with angular step <= 5°
 /// per spec 5.1 ("включая bulge"; точный шаг по углу для кривых указан для
 /// Hatch — для булавки поли-линии придерживаемся того же 5°).
-fn lw_polyline_prim(pl: &acadrust::entities::LwPolyline, insert_parent: &str) -> Option<Prim> {
+fn lw_polyline_prim(pl: &acadrust::entities::LwPolyline, insert_parent: &str, layer_colors: &std::collections::HashMap<String, u32>) -> Option<Prim> {
     let meta = meta_for(
         &EntityType::LwPolyline(pl.clone()),
         insert_parent,
+        layer_colors,
     );
     let mut pts: Vec<f64> = Vec::new();
     let verts = &pl.vertices;
@@ -313,18 +339,56 @@ fn lw_polyline_prim(pl: &acadrust::entities::LwPolyline, insert_parent: &str) ->
 
 /// Entities for elementary types; LwPolyline handled separately via
 /// bulge-aware POLY construction. Composites are exploded by the caller.
-pub fn prim_for(e: &EntityType, insert_parent: &str, src_tag: &str) -> Option<Vec<Prim>> {
+pub fn prim_for(e: &EntityType, insert_parent: &str, src_tag: &str, layer_colors: &std::collections::HashMap<String, u32>) -> Option<Vec<Prim>> {
     if let EntityType::LwPolyline(pl) = e {
-        return lw_polyline_prim(pl, insert_parent).map(|p| vec![p]);
+        return lw_polyline_prim(pl, insert_parent, layer_colors).map(|p| vec![p]);
     }
-    elementary_prims(e, insert_parent, src_tag)
+    elementary_prims(e, insert_parent, src_tag, layer_colors)
 }
 
-/// Recursively walk one model-space entity, exploding composites
-/// (spec 5.1: `EntityType::explode()` decomposes LwPolyline/Polyline/Circle/
-/// Ellipse/Spline/Hatch/Dimension/Mesh/MLine/Leader/Solid/Face3D/MText,
-/// bulge included; `Insert::explode` expands block references with
-/// scale/rotation/array; nested inserts recurse, depth <= 16, cycles cut).
+/// DXF $INSUNITS code -> human-readable name (Rust-side, since the Kotlin
+/// string resources s0478…s0499 carry localized labels; this canonical
+/// English name matches spec 5.1's `units` field intent for API/CLI use).
+pub fn ins_units_name(code: i16) -> &'static str {
+    match code {
+        0 => "Unspecified",
+        1 => "Inches",
+        2 => "Feet",
+        3 => "Miles",
+        4 => "Millimeters",
+        5 => "Centimeters",
+        6 => "Meters",
+        7 => "Kilometers",
+        8 => "Microinches",
+        9 => "Mils",
+        10 => "Yards",
+        11 => "Angstroms",
+        12 => "Nanometers",
+        13 => "Micrometers",
+        14 => "Decimeters",
+        15 => "Decameters",
+        16 => "Hectometers",
+        17 => "Gigameters",
+        18 => "Astronomical units",
+        19 => "Light years",
+        20 => "Parsecs",
+        21 => "Unit code 21",
+        _ => "Unit code",
+    }
+}
+
+/// Recursively walk one model-space entity:
+/// - elementary types -> `elementary_prims` (+ LwPolyline -> async POLY)
+/// - `Insert` -> `Insert::explode(&[entities_in_block])`, recursing up to
+///   `depth <= 16`; `src_tag` stays the outermost tag (per spec all
+///   descendants keep the INSERT's own handle, so only the parent prefix
+///   grows: "<insert>/<inner>").
+/// - `Dimension` -> if `dimension.base().block_name` names a non-empty block
+///   in the doc, emit that block's entities (as if dimension==insert into
+///   it) with all their `meta.h` set to the dimension's handle per spec
+///   5.1; otherwise fall through to `explode()`.
+/// - everything else -> `e.explode()`; if that is also empty -> tally into
+///   `unsupported`.
 pub fn emit_walk(
     doc: &CadDocument,
     e: &EntityType,
@@ -333,43 +397,125 @@ pub fn emit_walk(
     out: &mut Vec<Prim>,
     unsupported: &mut std::collections::HashMap<String, usize>,
     depth: usize,
+    layer_colors: &std::collections::HashMap<String, u32>,
 ) {
     if depth > 16 {
-        *unsupported.entry(format!("DEPTH_EXCEEDED::{src_tag}")).or_insert(0) += 1;
+        *unsupported
+            .entry(format!("DEPTH_EXCEEDED::{src_tag}"))
+            .or_insert(0) += 1;
         return;
     }
-    if let Some(prims) = prim_for(e, insert_parent, src_tag) {
+    // Elementary types + LwPolyline handled before any explode attempt.
+    if let Some(prims) = prim_for(e, insert_parent, src_tag, layer_colors) {
         out.extend(prims);
         return;
     }
     match e {
         EntityType::Insert(insert) => {
-            let block_name = &insert.block_name;
-            // Inset's own handle becomes the "<parent>" prefix for children.
             let h = entity_handle(e);
+            // Spec 5.1: all descendants handle = "<handle INSERT>/<handle
+            // inside block>"; nested inserts recurse so the prefix grows
+            // per level ("<a>/<b>/<inner>").
             let parent = if insert_parent.is_empty() {
-                h.clone()
+                h
             } else {
                 format!("{insert_parent}/{h}")
             };
-            let block_entities: Vec<EntityType> = doc.entities_in_block(block_name).cloned().collect();
-            for child in &block_entities {
-                emit_walk(doc, child, &parent, src_tag, out, unsupported, depth + 1);
+            let block_entities: Vec<EntityType> =
+                doc.entities_in_block(&insert.block_name).cloned().collect();
+            // Explode modelling: acadrust's Insert::explode applies the
+            // insert's scale/rotation/array to each child and returns them
+            // as new (handle-less) entities; we then walk those with the
+            // parent's handle prefix so handles stay "<insert>/<inner>".
+            let exploded_children = insert.explode(&block_entities);
+            for child in &exploded_children {
+                emit_walk(doc, child, &parent, src_tag, out, unsupported, depth + 1, layer_colors);
+            }
+        }
+        EntityType::Dimension(dimension) => {
+            // Spec 5.1: prefer the ready-made anonymous block (e.g. *D12).
+            let block_name = &dimension.base().block_name;
+            let block_entities: Vec<EntityType> =
+                doc.entities_in_block(block_name).cloned().collect();
+            if !block_entities.is_empty() {
+                let dim_handle = entity_handle(e);
+                for child in &block_entities {
+                    // All descendants get the dimension's own handle per spec
+                    // so tapping any of them selects the whole dimension.
+                    emit_walk_dim(doc, child, &dim_handle, src_tag, out, unsupported, depth + 1, layer_colors);
+                }
+            } else {
+                let exploded = e.explode();
+                if exploded.is_empty() {
+                    *unsupported.entry(type_tag(e)).or_insert(0) += 1;
+                    return;
+                }
+                for part in &exploded {
+                    emit_walk(doc, part, insert_parent, src_tag, out, unsupported, depth + 1, layer_colors);
+                }
             }
         }
         _ => {
-            // Try generic explode first (LwPolyline/Polyline/Spline/Hatch/
-            // Dimension/Mesh/Solid/Face3D decompose here per 5.1).
             let exploded = e.explode();
             if exploded.is_empty() {
                 *unsupported.entry(type_tag(e)).or_insert(0) += 1;
                 return;
             }
             for part in &exploded {
-                emit_walk(doc, part, insert_parent, src_tag, out, unsupported, depth + 1);
+                emit_walk(doc, part, insert_parent, src_tag, out, unsupported, depth + 1, layer_colors);
             }
         }
     }
+}
+
+/// Walk a DIMENSION-block child, stamping every produced primitive's `h`
+/// with the parent dimension's handle (spec 5.1, all descendants same `h`).
+/// Internally reuses `elementary_prims` but overrides `meta.h` afterwards.
+fn emit_walk_dim(
+    doc: &CadDocument,
+    e: &EntityType,
+    dim_handle: &str,
+    src_tag: &str,
+    out: &mut Vec<Prim>,
+    unsupported: &mut std::collections::HashMap<String, usize>,
+    depth: usize,
+    layer_colors: &std::collections::HashMap<String, u32>,
+) {
+    if depth > 16 {
+        *unsupported
+            .entry(format!("DEPTH_EXCEEDED::{src_tag}"))
+            .or_insert(0) += 1;
+        return;
+    }
+    if let Some(mut prims) = prim_for(e, "", src_tag, layer_colors) {
+        for p in &mut prims {
+            set_prim_handle(p, dim_handle);
+        }
+        out.extend(prims);
+        return;
+    }
+    let exploded = e.explode();
+    if exploded.is_empty() {
+        *unsupported.entry(type_tag(e)).or_insert(0) += 1;
+        return;
+    }
+    for part in &exploded {
+        emit_walk_dim(doc, part, dim_handle, src_tag, out, unsupported, depth + 1, layer_colors);
+    }
+}
+
+/// Overwrite `Meta.h` on a primitive (in place).
+fn set_prim_handle(p: &mut Prim, h: &str) {
+    let m: &mut Meta = match p {
+        Prim::Line { meta, .. }
+        | Prim::Poly { meta, .. }
+        | Prim::Circle { meta, .. }
+        | Prim::Arc { meta, .. }
+        | Prim::Text { meta, .. }
+        | Prim::Point { meta, .. }
+        | Prim::Face { meta, .. } => meta,
+    };
+    m.h = h.to_string();
 }
 
 /// Table of layers for `Scene::layers` (name, resolved color, linetype, off,
@@ -377,23 +523,38 @@ pub fn emit_walk(
 pub fn scene_layers(doc: &CadDocument) -> Vec<LayerInfo> {
     doc.layers
         .iter()
-        .map(|l| LayerInfo {
-            name: l.name.clone(),
-            color: 0xFFFFFF,
-            ltype: l.line_type.clone(),
-            off: l.flags.off,
-            frozen: l.flags.frozen,
+        .map(|l| {
+            let color = l
+                .color
+                .rgb()
+                .map(|(r, g, b)| ((r as u32) << 16) | ((g as u32) << 8) | (b as u32))
+                .unwrap_or(0xFFFFFF);
+            LayerInfo {
+                name: l.name.clone(),
+                color,
+                ltype: l.line_type.clone(),
+                off: l.flags.off,
+                frozen: l.flags.frozen,
+            }
         })
         .collect()
 }
 
-/// Assemble a full `Scene` from the model-space entities (spec 5.1).
+/// Assemble a full `Scene` from the model-space entities (spec 5.1):
+/// prims, layers, counts/unsupported histograms, `units` ($INSUNITS name),
+/// `bounds` computed from produced prims (spec: "по примитивам") and
+/// `declared_bounds` straight from the header $EXTMIN/$EXTMAX.
 pub fn build_scene(doc: &CadDocument) -> Scene {
     let mut prims = Vec::new();
     let mut counts = std::collections::HashMap::new();
     let mut unsupported = std::collections::HashMap::new();
     let mut truncated = false;
     let limit = 2_000_000usize;
+
+    let layers = scene_layers(doc);
+    // name -> resolved color 0xRRGGBB, used to resolve entity `ByLayer`.
+    let layer_colors: std::collections::HashMap<String, u32> =
+        layers.iter().map(|l| (l.name.clone(), l.color)).collect();
 
     for e in doc.model_space_entities() {
         if prims.len() >= limit {
@@ -402,17 +563,75 @@ pub fn build_scene(doc: &CadDocument) -> Scene {
         }
         let tag = type_tag(e);
         *counts.entry(tag.clone()).or_insert(0) += 1;
-        emit_walk(doc, e, "", &tag, &mut prims, &mut unsupported, 0);
+        emit_walk(
+            doc,
+            e,
+            "",
+            &tag,
+            &mut prims,
+            &mut unsupported,
+            0,
+            &layer_colors,
+        );
     }
+
+    // Bounds from the produced primitives (spec 5.1: computed across prims).
+    let mut bounds = [0.0f64; 6]; // minx,miny,minz,maxx,maxy,maxz
+    let mut have_point = false;
+    for p in &prims {
+        for pt in prim_points(p) {
+            if !have_point {
+                bounds = [pt[0], pt[1], pt[2], pt[0], pt[1], pt[2]];
+                have_point = true;
+                continue;
+            }
+            bounds[0] = bounds[0].min(pt[0]);
+            bounds[1] = bounds[1].min(pt[1]);
+            bounds[2] = bounds[2].min(pt[2]);
+            bounds[3] = bounds[3].max(pt[0]);
+            bounds[4] = bounds[4].max(pt[1]);
+            bounds[5] = bounds[5].max(pt[2]);
+        }
+    }
+
+    // $EXTMIN/$EXTMAX from the header (spec 5.1: `declared_bounds`).
+    let extmin = doc.header.model_space_extents_min;
+    let extmax = doc.header.model_space_extents_max;
+    let declared_bounds = Some([extmin.x, extmin.y, extmin.z, extmax.x, extmax.y, extmax.z]);
 
     Scene {
         prims,
-        layers: scene_layers(doc),
+        layers,
         counts,
         unsupported,
-        units: None,
-        bounds: [0.0; 6],
-        declared_bounds: None,
+        units: Some(ins_units_name(doc.header.insertion_units).to_string()),
+        bounds,
+        declared_bounds,
         truncated,
+    }
+}
+
+/// All coordinate triplets covered by one primitive (for bounds math).
+fn prim_points(p: &Prim) -> Vec<[f64; 3]> {
+    match p {
+        Prim::Line { p, .. } => vec![[p[0], p[1], p[2]], [p[3], p[4], p[5]]],
+        Prim::Poly { p, .. } => p
+            .chunks_exact(3)
+            .map(|c| [c[0], c[1], c[2]])
+            .collect(),
+        Prim::Circle { c, r, .. } => vec![
+            [c[0] - r, c[1] - r, c[2]],
+            [c[0] + r, c[1] + r, c[2]],
+        ],
+        Prim::Arc { c, r, .. } => vec![
+            [c[0] - r, c[1] - r, c[2]],
+            [c[0] + r, c[1] + r, c[2]],
+        ],
+        Prim::Text { p, .. } => vec![[p[0], p[1], p[2]]],
+        Prim::Point { p, .. } => vec![[p[0], p[1], p[2]]],
+        Prim::Face { p, .. } => p
+            .chunks_exact(3)
+            .map(|c| [c[0], c[1], c[2]])
+            .collect(),
     }
 }

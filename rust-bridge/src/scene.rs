@@ -1,8 +1,6 @@
 //! Scene builder: turns an acadrust CadDocument into flat render primitives
 //! (spec section 5.1). Coordinates are WCS (OCS->WCS by arbitrary-axis
 //! algorithm). No JNI/Android here — shared by JVM, HTTP API and CLI.
-use acadrust::document::CadDocument;
-use acadrust::entities::EntityType;
 use acadrust::types::Vector3;
 use serde_json::{json, Value};
 use std::collections::HashMap;
