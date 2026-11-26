@@ -10,7 +10,7 @@ use std::collections::HashMap;
 /// Common metadata carried by every primitive (spec 5.1): handle (DXF code 5,
 /// uppercase hex without 0x; INSERT descendants get "<insert>/<inner>"),
 /// layer, resolved color (0xRRGGBB int), GUID from XDATA SKT, source type.
-#[derive(Debug, Clone, serde::Serialize)]
+#[derive(Debug, Clone)]
 pub struct Meta {
     pub h: String,
     pub l: String,
@@ -63,14 +63,25 @@ impl Prim {
     }
 }
 
-#[derive(Debug, Clone, serde::Serialize)]
+#[derive(Debug, Clone)]
 pub struct LayerInfo {
     pub name: String,
     pub color: u32,
-    #[serde(rename = "type")]
     pub ltype: String,
     pub off: bool,
     pub frozen: bool,
+}
+
+impl LayerInfo {
+    pub fn to_json(&self) -> Value {
+        json!({
+            "name": self.name,
+            "color": self.color,
+            "type": self.ltype,
+            "off": self.off,
+            "frozen": self.frozen,
+        })
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -88,9 +99,10 @@ pub struct Scene {
 impl Scene {
     pub fn to_json(&self) -> Value {
         let prims: Vec<Value> = self.prims.iter().map(|p| p.to_json()).collect();
+        let layers: Vec<Value> = self.layers.iter().map(|l| l.to_json()).collect();
         json!({
             "prims": prims,
-            "layers": self.layers,
+            "layers": layers,
             "counts": self.counts,
             "unsupported": self.unsupported,
             "units": self.units,
