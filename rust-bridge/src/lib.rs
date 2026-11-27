@@ -344,3 +344,4 @@ fn type_name_of(e: &EntityType) -> String {
         _ => "OTHER".into(),
     }
 }
+pub mod scene_src;

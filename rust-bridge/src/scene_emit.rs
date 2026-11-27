@@ -256,6 +256,7 @@ fn lw_polyline_prim(pl: &acadrust::entities::LwPolyline, insert_parent: &str, la
         x1: f64,
         y1: f64,
         bulge: f64,
+        elev: f64,
         out: &mut Vec<f64>,
     ) {
         // DXF bulge definition: bulge = tan(theta/4), theta included angle
@@ -266,7 +267,7 @@ fn lw_polyline_prim(pl: &acadrust::entities::LwPolyline, insert_parent: &str, la
         if chord < 1e-12 || bulge.abs() < 1e-12 {
             out.push(x1);
             out.push(y1);
-            out.push(0.0);
+            out.push(elev);
             return;
         }
         let theta = 4.0 * bulge.atan(); // included angle, signed
@@ -302,7 +303,7 @@ fn lw_polyline_prim(pl: &acadrust::entities::LwPolyline, insert_parent: &str, la
             let y = cy + r.abs() * a.sin();
             out.push(x);
             out.push(y);
-            out.push(0.0);
+            out.push(elev);
         }
     }
 
@@ -326,6 +327,7 @@ fn lw_polyline_prim(pl: &acadrust::entities::LwPolyline, insert_parent: &str, la
                 nxt.location.x,
                 nxt.location.y,
                 v.bulge,
+                pl.elevation,
                 &mut pts,
             );
         }
