@@ -7,6 +7,7 @@ use acadrust::entities::{EntityType, Face3D, Solid};
 use acadrust::types::Vector3;
 
 use super::scene::{LayerInfo, Meta, Prim, Scene};
+use super::scene::{cross, normalize};
 use super::scene_build::{guid_from_xdata, plain_text};
 
 /// Handle of a whole spec: DXF code 5 uppercase hex without 0x prefix.
@@ -343,6 +344,9 @@ pub fn prim_for(e: &EntityType, insert_parent: &str, src_tag: &str, layer_colors
     if let EntityType::LwPolyline(pl) = e {
         return lw_polyline_prim(pl, insert_parent, layer_colors).map(|p| vec![p]);
     }
+    if let EntityType::Ellipse(ell) = e {
+        return ellipse_poly_prim(ell, insert_parent, layer_colors).map(|p| vec![p]);
+    }
     elementary_prims(e, insert_parent, src_tag, layer_colors)
 }
 
@@ -494,6 +498,17 @@ fn emit_walk_dim(
         out.extend(prims);
         return;
     }
+    if let EntityType::Insert(insert) = e {
+        // Nested INSERT inside a DIMENSION anonymous block (arrow heads,
+        // marker circles) must be expanded, not treated as unsupported.
+        let block_entities: Vec<EntityType> =
+            doc.entities_in_block(&insert.block_name).cloned().collect();
+        let exploded_children = insert.explode(&block_entities);
+        for child in &exploded_children {
+            emit_walk_dim(doc, child, dim_handle, src_tag, out, unsupported, depth + 1, layer_colors);
+        }
+        return;
+    }
     let exploded = e.explode();
     if exploded.is_empty() {
         *unsupported.entry(type_tag(e)).or_insert(0) += 1;
@@ -634,4 +649,42 @@ fn prim_points(p: &Prim) -> Vec<[f64; 3]> {
             .map(|c| [c[0], c[1], c[2]])
             .collect(),
     }
+}
+/// Ellipse -> POLY: approximate with chords at <=5 degree angular step,
+/// bypassing `EntityType::explode()` which bails out on degenerate ellipses
+/// (major_axis_length < 1e-10 -> Vec::new() empties). Review item 6, second
+/// half of the fix (the first half is nested INSERT inside DIMENSION blocks,
+/// handled in emit_walk_dim's explicit Insert branch).
+pub fn ellipse_poly_prim(
+    ell: &acadrust::entities::Ellipse,
+    insert_parent: &str,
+    layer_colors: &std::collections::HashMap<String, u32>,
+) -> Option<Prim> {
+    let meta = meta_for(&EntityType::Ellipse(ell.clone()), insert_parent, layer_colors);
+    let a = ell.major_axis.length();
+    let b = ell.minor_axis_length();
+    let px = ell.major_axis.length().max(1e-12);
+    let major_dir = if a > 1e-12 { ell.major_axis * (1.0 / a) } else { acadrust::types::Vector3::new(1.0, 0.0, 0.0) };
+    let minor_dir = cross(normalize(ell.normal), major_dir);
+    let full = ell.is_full();
+    let t_start = ell.start_parameter;
+    let t_end = if full { t_start + std::f64::consts::TAU } else { ell.end_parameter };
+    let dt = t_end - t_start;
+    let steps = (dt.abs().to_degrees() / 5.0).ceil().max(2.0) as usize;
+    let _ = px; // divisor reserved for future parameter tuning
+    let mut pts: Vec<f64> = Vec::with_capacity((steps + 1) * 3);
+    for i in 0..=steps {
+        let t = t_start + dt * (i as f64 / steps as f64);
+        let p = ell.center
+            + major_dir * (a * t.cos())
+            + minor_dir * (b * t.sin());
+        pts.push(p.x);
+        pts.push(p.y);
+        pts.push(p.z);
+    }
+    Some(Prim::Poly {
+        p: pts,
+        closed: full,
+        meta,
+    })
 }

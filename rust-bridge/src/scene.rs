@@ -111,12 +111,12 @@ impl Scene {
     }
 }
 
-fn normalize(v: Vector3) -> Vector3 {
+pub(crate) fn normalize(v: Vector3) -> Vector3 {
     let len = (v.x * v.x + v.y * v.y + v.z * v.z).sqrt();
     if len < 1e-12 { Vector3::new(0.0, 0.0, 1.0) } else { Vector3::new(v.x / len, v.y / len, v.z / len) }
 }
 
-fn cross(a: Vector3, b: Vector3) -> Vector3 {
+pub(crate) fn cross(a: Vector3, b: Vector3) -> Vector3 {
     Vector3::new(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x)
 }
 

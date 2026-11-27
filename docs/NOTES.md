@@ -3,6 +3,36 @@
 Runtime findings, sizes, and timings recorded while working under the Studio
 spec. Newest entries on top.
 
+## 2026-11-26 — Phase 2 review item 6: ELLIPSE/INSERT in unsupported FIXED
+
+Root causes (diagnosed on `SONSBEEK-BG Water+Gas+CV.dwg`):
+- `INSERT:32` — the 16 DIMENSION anonymous blocks (*D*, *D0..*D14) each
+  contain 2 nested INSERTs (arrow-head circles referencing block
+  "ALL_ML_KREIS"). `emit_walk_dim` had no Insert branch, so those fell into
+  the generic `e.explode()` fallback which returns an empty Vec for Insert
+  (atomic per acadrust's explode() doc) -> counted `unsupported: INSERT`.
+  FIX: explicit `EntityType::Insert` branch in `emit_walk_dim` that expands
+  via `Insert::explode(&block_entities)` and recurses, stamping every
+  descendant prim with the DIMENSION's handle per spec 5.1.
+- `ELLIPSE:40` — small marker circles (block "NSY101", r=0.15 scaled 0.2x =
+  0.03m; 33 model-space CIRCLEs hit the same path via *D* arrow circles).
+  `Insert::explode` -> `explode_single` converts CIRCLE -> ELLIPSE and the
+  resulting `major_axis_length` (~5e-11) trips `explode_ellipse()`'s
+  `a < 1e-10` guard -> empty Vec -> unsupported.
+  FIX: new `ellipse_poly_prim()` in scene_emit.rs emitting a POLY
+  approximation (<=5 deg step) directly; wired into `prim_for()` before any
+  explode() call so degenerate ellipses never reach the bail-out.
+
+After the fix, `mep_histogram` unsupported maps are exactly `{OLE2FRAME: 2}`
+for all four Sonsbeek MEP DWGs, matching spec section 5.4 ("единственная
+нерисуемая сущность — Ole2Frame"). Primitive counts rose correspondingly
+(6505 -> 6641 etc.: minus 32 empty INSERT + 40 degenerate ELLIPSE losses,
+plus the newly emitted arrow-head/marker geometry).
+
+Also: `normalize`/`cross` in scene.rs made `pub(crate)` for reuse by
+scene_emit.rs. Diagnostic script `tests/diag_explode.rs` removed after
+root-causing (kept out of the repo per "не рефакторить то, чего в ТЗ нет").
+
 ## 2026-11-26 — Phase 2 scene build: mep_histogram on real DWG fixtures
 
 - `cargo test --test mep_histogram -- --nocapture` over the owner-provided
@@ -22,14 +52,12 @@ spec. Newest entries on top.
     Unsupported yet: `3DSOLID:1, REGION:2` (ACIS/B-rep meshing pending 5.6)
     `WIPEOUT:2, ATTDEF:2, LIGHT:1, RAY:1, XLINE:1, TABLE:1, TOLERANCE:1`.
   - `Point.dwg` (minimal): prims=1, {POINT:1}, no unsupported.
-- Open questions carried into later commits of this phase:
-  - `ELLIPSE:40` shows up in `unsupported` on the MEP DWGs. `AbstractEllipse`
-    should decompose via `EntityType::explode()` per spec 5.1. Not yet
-    root-caused — TODO for a Phase-2 follow-up commit. `INSERT:32` in
-    `unsupported` likely means nested insert cycle/depth cut triggered on
-    this fixture set (documents 48 INSERT, of which 16 dispatched per level).
-  - ACIS tessellation for 3DSOLID/REGION is explicitly deferred to 5.6
-    (SolidMesher trait + NoMesher), matching the spec.
+- Resolved in a follow-up commit within this phase (see "Phase 2 review
+  item 6" entry above): `ELLIPSE:40` and `INSERT:32` now convert to real
+  scene primitives instead of landing in `unsupported`. The only remaining
+  unsupported content on MEP DWGs is OLE2FRAME (intentional per spec 5.4).
+- ACIS tessellation for 3DSOLID/REGION is explicitly deferred to 5.6
+  (SolidMesher trait + NoMesher), matching the spec.
 
 ## 2026-11-25 — Phase 0 (build and baseline)
 
